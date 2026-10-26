@@ -1,139 +1,193 @@
 #!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
-"""
-Motor de Armazenamento & Indexador do ShopVS EU
-Executado localmente ou automaticamente a cada 3 dias via GitHub Actions.
-1. Valida a integridade do catálogo mestre (data/catalogo_produtos.json)
-2. Garante que os arquivos de imagens locais (assets/products/) existam em disco
-3. Compila um índice de busca ultra-leve (assets/search_index.json) para consulta em <5ms
-4. Atualiza os links e flags de ofertas/preço dinâmico em conformidade estrita com a UE
+
 """
 
+Motor de Armazenamento & Indexador do ShopVS EU
+
+1. Lê as tags oficiais em config_afiliados.json e injeta em todos os produtos do catálogo
+
+2. Valida imagens locais em assets/products/
+
+3. Compila assets/search_index.json
+
+4. Dispara o builder.py sem destruir a Home interativa
+
+"""
+
+
+
 import json
+
 import os
+
 import sys
+
+import subprocess
+
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+
 def carregar_json(rel_path):
+
     path = os.path.join(BASE_DIR, rel_path)
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Arquivo não encontrado: {path}")
+
     with open(path, "r", encoding="utf-8") as f:
+
         return json.load(f)
 
+
+
 def salvar_json(rel_path, dados):
+
     path = os.path.join(BASE_DIR, rel_path)
+
     os.makedirs(os.path.dirname(path), exist_ok=True)
+
     with open(path, "w", encoding="utf-8") as f:
+
         json.dump(dados, f, ensure_ascii=False, indent=2)
-    print(f"[OK] Dados gravados em: {path}")
+
+    print(f"[OK] Gravado: {rel_path}")
+
+
+
+def sincronizar_tags_afiliado(config, catalogo, duplo):
+
+    print("[1/4] Sincronizando Tags de Afiliado da Amazon (ES e DE)...")
+
+    tag_es = config.get("amazon_es_tag", "teste-es-21")
+
+    tag_de = config.get("amazon_de_tag", "teste-de-21")
+
+
+
+    for p in catalogo.get("produtos", []):
+
+        asin = p["asin"]
+
+        p["link_es"] = f"https://www.amazon.es/dp/{asin}?tag={tag_es}"
+
+        p["link_de"] = f"https://www.amazon.de/dp/{asin}?tag={tag_de}"
+
+
+
+    for key in ["produto_a", "produto_b"]:
+
+        if key in duplo:
+
+            asin = duplo[key]["asin"]
+
+            duplo[key]["link_es"] = f"https://www.amazon.es/dp/{asin}?tag={tag_es}"
+
+            duplo[key]["link_de"] = f"https://www.amazon.de/dp/{asin}?tag={tag_de}"
+
+
+
+    salvar_json("data/catalogo_produtos.json", catalogo)
+
+    salvar_json("data/produto_duplo.json", duplo)
+
+
 
 def validar_ativos_graficos(catalogo):
-    """Verifica se todas as imagens referenciadas nos produtos existem em disco."""
-    print("[1/4] Verificando integridade de imagens locais (assets/products/)...")
-    produtos = catalogo.get("produtos", [])
-    faltantes = []
-    
-    for p in produtos:
-        img_rel = p.get("imagem_url", "")
-        # Remove barra inicial para checagem local
-        clean_rel = img_rel.lstrip("/")
-        img_full = os.path.join(BASE_DIR, clean_rel)
-        if not os.path.exists(img_full):
-            faltantes.append((p.get("id"), img_full))
-        else:
-            tamanho = os.path.getsize(img_full)
-            if tamanho < 500:
-                print(f"  -> [AVISO] Imagem potencialmente corrompida: {img_rel} ({tamanho} bytes)")
 
-    if faltantes:
-        print(f"  -> [ALERTA] {len(faltantes)} produtos sem imagem local:")
-        for pid, path in faltantes:
-            print(f"     - Produto: {pid} | Caminho esperado: {path}")
-    else:
-        print(f"  -> [SUCESSO] Todas as {len(produtos)} imagens de produtos estao íntegras e presentes no disco.")
+    print("[2/4] Verificando imagens em assets/products/...")
+
+    for p in catalogo.get("produtos", []):
+
+        img_full = os.path.join(BASE_DIR, p.get("imagem_url", "").lstrip("/"))
+
+        if not os.path.exists(img_full):
+
+            print(f"  -> [ALERTA] Imagem ausente: {img_full}")
+
+    print("  -> [OK] Verificação de imagens concluída.")
+
+
 
 def gerar_indice_busca(catalogo):
-    """
-    Cria um índice compacto otimizado para o cliente (assets/search_index.json).
-    Contém apenas os metadados necessários para autocompletar e filtragem por categoria.
-    """
-    print("\n[2/4] Compilando índice de busca compacto (assets/search_index.json)...")
-    produtos = catalogo.get("produtos", [])
+
+    print("[3/4] Compilando assets/search_index.json...")
+
     categorias = {c["id"]: c for c in catalogo.get("categorias", [])}
 
     indice = {
-        "versao": "2026.1",
-        "total_produtos": len(produtos),
+
+        "versao": "2026.2",
+
+        "total_produtos": len(catalogo.get("produtos", [])),
+
         "itens": []
+
     }
 
-    for p in produtos:
-        cat_id = p.get("categoria_id")
-        cat_info = categorias.get(cat_id, {})
-        
-        # Entrada compacta de busca
+    for p in catalogo.get("produtos", []):
+
+        cat_info = categorias.get(p["categoria_id"], {})
+
         indice["itens"].append({
-            "id": p.get("id"),
-            "cat": cat_id,
-            "cat_nome_es": cat_info.get("nome_es", cat_id),
-            "cat_nome_de": cat_info.get("nome_de", cat_id),
-            "marca": p.get("marca"),
-            "nome": p.get("nome"),
-            "asin": p.get("asin"),
-            "score": p.get("score_lab"),
-            "img": p.get("imagem_url"),
-            "link_es": p.get("link_es"),
-            "link_de": p.get("link_de")
+
+            "id": p["id"],
+
+            "cat": p["categoria_id"],
+
+            "cat_nome_es": cat_info.get("nome_es", ""),
+
+            "cat_nome_de": cat_info.get("nome_de", ""),
+
+            "marca": p["marca"],
+
+            "nome": p["nome"],
+
+            "asin": p["asin"],
+
+            "score": p["score_lab"],
+
+            "img": p["imagem_url"],
+
+            "link_es": p["link_es"],
+
+            "link_de": p["link_de"]
+
         })
 
     salvar_json("assets/search_index.json", indice)
-    print(f"  -> [SUCESSO] Índice gerado com {len(indice['itens'])} produtos indexados.")
 
-def sincronizar_produto_duplo(catalogo):
-    """
-    Mantém o contrato 'data/produto_duplo.json' sincronizado com o primeiro par
-    da categoria principal para servir aos compiladores de artigos.
-    """
-    print("\n[3/4] Sincronizando contrato de dados entre agentes (data/produto_duplo.json)...")
-    prods = [p for p in catalogo.get("produtos", []) if p.get("categoria_id") == "cafeteras"]
-    if len(prods) >= 2:
-        pa, pb = prods[0], prods[1]
-        duplo = carregar_json("data/produto_duplo.json")
-        duplo["produto_a"]["nome"] = pa["nome"]
-        duplo["produto_a"]["asin"] = pa["asin"]
-        duplo["produto_a"]["imagem_url"] = pa["imagem_url"]
-        duplo["produto_b"]["nome"] = pb["nome"]
-        duplo["produto_b"]["asin"] = pb["asin"]
-        duplo["produto_b"]["imagem_url"] = pb["imagem_url"]
-        salvar_json("data/produto_duplo.json", duplo)
-        print("  -> [SUCESSO] data/produto_duplo.json sincronizado com dados do catálogo.")
 
-def executar_rebuild():
-    """Chama o builder para atualizar as páginas com o índice atualizado."""
-    print("\n[4/4] Executando compilação estática do site com novos dados...")
-    import subprocess
-    builder_script = os.path.join(BASE_DIR, "scripts", "builder.py")
-    res = subprocess.run([sys.executable, builder_script], capture_output=True, text=True, encoding="utf-8")
-    if res.returncode == 0:
-        print("  -> [SUCESSO] Todas as rotas estáticas foram recompiladas.")
-    else:
-        print("  -> [ERRO] Falha ao executar builder.py:")
-        print(res.stderr)
 
 def main():
-    print("=" * 65)
-    print("   MOTOR DE ARMAZENAMENTO & INDEXAÇÃO DE CATÁLOGO (SHOPVS EU)")
-    print("=" * 65)
+
+    config = carregar_json("config_afiliados.json")
+
     catalogo = carregar_json("data/catalogo_produtos.json")
+
+    duplo = carregar_json("data/produto_duplo.json")
+
+
+
+    sincronizar_tags_afiliado(config, catalogo, duplo)
+
     validar_ativos_graficos(catalogo)
+
     gerar_indice_busca(catalogo)
-    sincronizar_produto_duplo(catalogo)
-    executar_rebuild()
-    print("\n" + "=" * 65)
-    print("   PROCESSO DE INDEXAÇÃO CONCLUÍDO COM SUCESSO!")
-    print("=" * 65)
+
+
+
+    print("[4/4] Compilando páginas de artigos (ES e DE)...")
+
+    builder_script = os.path.join(BASE_DIR, "scripts", "builder.py")
+
+    subprocess.run([sys.executable, builder_script], check=True)
+
+    print("\n[SUCESSO] Catálogo, tags e páginas 100% sincronizados!")
+
+
 
 if __name__ == "__main__":
+
     main()

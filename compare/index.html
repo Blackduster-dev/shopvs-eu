@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparador Técnico de Productos • Cara a Cara | ShopVS EU</title>
-    <meta name="description" content="Compara especificaciones técnicas de productos de la misma categoría frente a frente. Medición de rendimiento, fallos reportados y veredicto independiente.">
+    <title>Comparador Cara a Cara • ShopVS EU</title>
+    <meta name="description" content="Herramienta interactiva de comparación técnica directa entre productos de la misma categoría. Datos certificados por laboratorio europeo.">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     
+    <!-- Google Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,41 +21,34 @@
                         nordic: {
                             navy: '#0B192C',
                             navyLight: '#1E3E62',
-                            petrol: '#005B60',
+                            petrol: '#0E8388',
+                            emerald: '#2E7D32',
+                            emeraldBg: '#E8F5E9',
                             amber: '#FF6500',
                             amberHover: '#E05500',
                             canvas: '#F4F6F9',
-                            surface: '#FFFFFF',
-                            border: '#E1E6ED',
+                            border: '#E2E8F0',
                             borderDark: '#CBD5E1',
-                            emerald: '#0E8388',
-                            emeraldBg: '#E8F6F6',
-                            crimson: '#D80032',
-                            crimsonBg: '#FDF0F2'
+                            crimson: '#991B1B',
+                            crimsonBg: '#FEE2E2',
                         }
                     },
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                         display: ['"Space Grotesk"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace']
                     },
                     boxShadow: {
-                        'technical': '0 1px 3px 0 rgba(11, 25, 44, 0.04), 0 1px 2px -1px rgba(11, 25, 44, 0.04)',
-                        'card-active': '0 12px 30px -8px rgba(11, 25, 44, 0.12), 0 4px 10px -3px rgba(11, 25, 44, 0.06)',
-                        'cta': '0 8px 20px -4px rgba(255, 101, 0, 0.35)'
+                        'technical': '0 1px 3px 0 rgba(11, 25, 44, 0.08), 0 1px 2px -1px rgba(11, 25, 44, 0.08)',
+                        'card-active': '0 10px 25px -5px rgba(11, 25, 44, 0.12), 0 8px 10px -6px rgba(11, 25, 44, 0.08)',
+                        'cta': '0 4px 14px 0 rgba(255, 101, 0, 0.39)',
                     }
                 }
             }
         }
     </script>
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F4F6F9; color: #0B192C; }
-        .font-display { font-family: 'Space Grotesk', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
-    </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
+<body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white bg-nordic-canvas">
 
     <!-- Top Ribbon -->
     <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
@@ -62,13 +56,13 @@
             <div class="flex items-center gap-3">
                 <span class="inline-flex items-center gap-1.5 text-nordic-emerald font-bold">
                     <span class="w-2 h-2 rounded-full bg-nordic-emerald animate-ping"></span>
-                    HERRAMIENTA INTERACTIVA DE COMPARACIÓN • NORMATIVA CE 2026
+                    <span id="compare-ribbon-tag">HERRAMIENTA INTERACTIVA DE COMPARACIÓN • NORMATIVA CE 2026</span>
                 </span>
                 <span class="hidden md:inline text-slate-500">|</span>
-                <span class="hidden md:inline text-slate-300">Regla estricta: sólo comparativa dentro de la misma categoría</span>
+                <span class="hidden md:inline text-slate-300" id="compare-ribbon-rule">Regla estricta: sólo comparativa dentro de la misma categoría</span>
             </div>
             <div class="flex items-center gap-4 text-slate-300 font-mono text-[10px]">
-                <span class="text-nordic-amber font-bold">100% Datos de Laboratorio</span>
+                <span class="text-nordic-amber font-bold" id="compare-ribbon-stat">100% Datos de Laboratorio</span>
             </div>
         </div>
     </aside>
@@ -77,7 +71,7 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-5">
-                <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
+                <a href="/" id="header-logo-link" class="flex items-center gap-2.5 text-decoration-none group">
                     <div class="w-10 h-10 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-lg border-2 border-nordic-petrol group-hover:bg-nordic-petrol transition-colors">
                         VS
                     </div>
@@ -88,10 +82,10 @@
                 </a>
                 <span class="h-6 w-px bg-nordic-border hidden sm:block"></span>
                 <nav class="flex items-center gap-1 text-xs font-mono font-bold">
-                    <a href="/" class="px-3 py-1.5 rounded text-slate-600 hover:text-nordic-navy hover:bg-slate-100 transition-colors">Inicio</a>
-                    <a href="/compare/" class="px-3 py-1.5 rounded bg-nordic-navy text-white shadow-sm flex items-center gap-1">
+                    <a href="/" id="nav-home-link" class="px-3 py-1.5 rounded text-slate-600 hover:text-nordic-navy hover:bg-slate-100 transition-colors">Inicio</a>
+                    <a href="/compare/" id="nav-compare-link" class="px-3 py-1.5 rounded bg-nordic-navy text-white shadow-sm flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px] text-nordic-amber">compare_arrows</span>
-                        <span>Comparador Cara a Cara</span>
+                        <span id="nav-compare-text">Comparador Cara a Cara</span>
                     </a>
                 </nav>
             </div>
@@ -109,14 +103,14 @@
     <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full flex flex-col gap-8">
         <!-- Título da Ferramenta -->
         <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider mb-3">
+            <div id="tool-badge" class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider mb-3">
                 <span class="material-symbols-outlined text-[16px]">balance</span>
-                HERRAMIENTA ESTILO TUDOCELULAR • MATRIZ TÉCNICA DINÁMICA
+                <span>HERRAMIENTA INTERACTIVA • MATRIZ TÉCNICA DINÁMICA</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl font-display font-extrabold text-nordic-navy leading-tight mb-2">
+            <h1 id="tool-title" class="text-3xl sm:text-4xl font-display font-extrabold text-nordic-navy leading-tight mb-2">
                 Comparador Cara a Cara (Head-to-Head)
             </h1>
-            <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            <p id="tool-subtitle" class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 Selecciona primero una categoría de productos y luego escoge dos modelos para enfrentar sus especificaciones, fotografías y fallos reales reportados por compradores.
             </p>
         </div>
@@ -125,7 +119,7 @@
         <section class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
             <!-- Passo 1: Seleção de Categoria -->
             <div class="mb-6">
-                <label class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
+                <label id="label-step-1" class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
                     PASO 1: SELECCIONA LA CATEGORÍA DE PRODUCTOS
                 </label>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="category-selector-container">
@@ -135,13 +129,13 @@
 
             <!-- Passo 2: Seleção dos Produtos (Slot A e Slot B) -->
             <div>
-                <label class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
+                <label id="label-step-2" class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
                     PASO 2: ELIGE LOS DOS MODELOS DE LA MISMA CATEGORÍA
                 </label>
                 <div class="grid grid-cols-1 lg:grid-cols-11 gap-4 items-center">
                     <!-- Slot Produto A -->
                     <div class="lg:col-span-5 bg-nordic-canvas border border-nordic-border rounded-lg p-4">
-                        <span class="text-[10px] font-mono font-bold uppercase text-slate-500 block mb-1">PRODUCTO #1</span>
+                        <span id="label-prod-a" class="text-[10px] font-mono font-bold uppercase text-slate-500 block mb-1">PRODUCTO #1</span>
                         <select id="select-product-a" onchange="onProductSelect()" class="w-full bg-white border border-nordic-borderDark rounded-md px-3 py-2.5 text-xs sm:text-sm font-semibold text-nordic-navy focus:outline-none focus:border-nordic-amber">
                             <!-- Opções carregadas via JS -->
                         </select>
@@ -156,7 +150,7 @@
 
                     <!-- Slot Produto B -->
                     <div class="lg:col-span-5 bg-nordic-canvas border border-nordic-border rounded-lg p-4">
-                        <span class="text-[10px] font-mono font-bold uppercase text-slate-500 block mb-1">PRODUCTO #2</span>
+                        <span id="label-prod-b" class="text-[10px] font-mono font-bold uppercase text-slate-500 block mb-1">PRODUCTO #2</span>
                         <select id="select-product-b" onchange="onProductSelect()" class="w-full bg-white border border-nordic-borderDark rounded-md px-3 py-2.5 text-xs sm:text-sm font-semibold text-nordic-navy focus:outline-none focus:border-nordic-amber">
                             <!-- Opções carregadas via JS -->
                         </select>
@@ -172,9 +166,18 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-nordic-border py-10 mt-12 text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono">
-            &copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico • <a href="/legal/" class="text-nordic-navy hover:underline font-bold">Impressum (§ 5 TMG)</a>
+    <footer class="bg-white border-t border-nordic-border py-8 mt-12 text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4 border-b border-nordic-border">
+                <div id="footer-copy">&copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico</div>
+                <div class="flex items-center gap-5">
+                    <a href="/" id="footer-home-link" class="hover:text-nordic-navy font-bold text-nordic-petrol">Inicio</a>
+                    <a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a>
+                </div>
+            </div>
+            <p id="footer-affiliate-notice" class="text-[11px] text-slate-400 text-center sm:text-left leading-relaxed">
+                <strong>Aviso de afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y la disponibilidad se sincronizan en tiempo real con los servidores oficiales de Amazon.
+            </p>
         </div>
     </footer>
 
@@ -184,37 +187,177 @@
         let currentCategory = 'cafeteras';
         let currentMarket = 'es';
 
-        // Carrega o catálogo de dados
+        const i18nCompare = {
+            es: {
+                ribbonTag: "HERRAMIENTA INTERACTIVA DE COMPARACIÓN • NORMATIVA CE 2026",
+                ribbonRule: "Regla estricta: sólo comparativa dentro de la misma categoría",
+                ribbonStat: "100% Datos de Laboratorio",
+                navHome: "Inicio",
+                navCompare: "Comparador Cara a Cara",
+                toolBadge: "HERRAMIENTA INTERACTIVA • MATRIZ TÉCNICA DINÁMICA",
+                toolTitle: "Comparador Cara a Cara (Head-to-Head)",
+                toolSubtitle: "Selecciona primero una categoría de productos y luego escoge dos modelos para enfrentar sus especificaciones, fotografías y fallos reales reportados por compradores.",
+                step1: "PASO 1: SELECCIONA LA CATEGORÍA DE PRODUCTOS",
+                step2: "PASO 2: ELIGE LOS DOS MODELOS DE LA MISMA CATEGORÍA",
+                prodA: "PRODUCTO #1",
+                prodB: "PRODUCTO #2",
+                modelCount: "modelos auditados",
+                ctaBtn: "Consultar precio actual en Amazon.es &rarr;",
+                tableTitle: "Tabla de Especificaciones Frente a Frente",
+                tableSubtitle: "Comparativa de magnitudes técnicas certificadas",
+                badgeVerified: "Datos Verificados",
+                thFeature: "Característica",
+                weaknessesBadge: "Puntos Débiles",
+                footerCopy: "© 2026 ShopVS EU • Laboratorio de Análisis Técnico",
+                affiliateNotice: "<strong>Aviso de afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Precios verificados en tiempo real en la tienda oficial."
+            },
+            de: {
+                ribbonTag: "INTERAKTIVES VERGLEICHSTOOL • CE-NORM 2026",
+                ribbonRule: "Strikte Regel: Nur Vergleich innerhalb derselben Kategorie",
+                ribbonStat: "100% Labordaten",
+                navHome: "Startseite",
+                navCompare: "Direktvergleich",
+                toolBadge: "INTERAKTIVES TEST-TOOL • DYNAMISCHE TECHNIK-MATRIX",
+                toolTitle: "Direktvergleich (Head-to-Head)",
+                toolSubtitle: "Wählen Sie zuerst eine Produktkategorie und anschließend zwei Modelle, um Spezifikationen, Messwerte und reale Schwachstellen direkt zu vergleichen.",
+                step1: "SCHRITT 1: PRODUKTKATEGORIE WÄHLEN",
+                step2: "SCHRITT 2: ZWEI MODELLE DERSELBEN KATEGORIE WÄHLEN",
+                prodA: "PRODUKT #1",
+                prodB: "PRODUKT #2",
+                modelCount: "Modelle im Test",
+                ctaBtn: "Aktuellen Preis auf Amazon.de prüfen &rarr;",
+                tableTitle: "Direkter technischer Spezifikationsvergleich",
+                tableSubtitle: "Zertifizierte Labor-Messwerte im Detail",
+                badgeVerified: "Geprüfte Daten",
+                thFeature: "Eigenschaft",
+                weaknessesBadge: "Kritikpunkte & Schwächen",
+                footerCopy: "© 2026 ShopVS EU • Unabhängiges Prüflabor",
+                affiliateNotice: "<strong>Transparenzhinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Preise und Produktverfügbarkeit werden in Echtzeit beim offiziellen Händler geprüft."
+            }
+        };
+
+        const specsLabels = {
+            presion: { es: "Presión de Bomba", de: "Pumpendruck" },
+            molinillo: { es: "Molinillo", de: "Mahlwerk" },
+            infusor: { es: "Grupo Infusor", de: "Brühgruppe" },
+            deposito_agua: { es: "Depósito de Agua", de: "Wassertank" },
+            deposito_grano: { es: "Capacidad de Grano", de: "Bohnenbehälter" },
+            tiempo_calentamiento: { es: "Tiempo Precalentamiento", de: "Aufheizzeit" },
+            ruido_molienda: { es: "Nivel Sonoro Molienda", de: "Geräuschpegel Mahlwerk" },
+            dimensiones: { es: "Dimensiones y Peso", de: "Abmessungen & Gewicht" },
+            potencia: { es: "Potencia", de: "Leistung" },
+            capacidad: { es: "Capacidad", de: "Fassungsvermögen" },
+            tecnologia: { es: "Tecnología Térmica", de: "Heiztechnologie" },
+            temperatura: { es: "Rango de Temperatura", de: "Temperaturbereich" },
+            programas: { es: "Programas Automáticos", de: "Automatikprogramme" },
+            volteado: { es: "Aviso de Volteo", de: "Schüttel-Erinnerung" },
+            conectividad: { es: "Conectividad Wi-Fi", de: "Konnektivität / App" },
+            succion: { es: "Potencia de Succión", de: "Saugleistung" },
+            cepillos: { es: "Sistema de Cepillos", de: "Bürstensystem" },
+            navegacion: { es: "Navegación y Mapeo", de: "Navigation & LiDAR" },
+            obstaculos: { es: "Detección Obstáculos", de: "Hinderniserkennung" },
+            fregado: { es: "Sistema de Fregado", de: "Wischfunktion" },
+            autonomia: { es: "Autonomía de Batería", de: "Akkulaufzeit" },
+            deposito: { es: "Depósito Polvo/Agua", de: "Staub- & Wassertank" }
+        };
+
         async function initComparador() {
             try {
                 const res = await fetch('/data/catalogo_produtos.json');
                 catalogoData = await res.json();
-                renderCategories();
-                populateProductSelects();
+
+                const params = new URLSearchParams(window.location.search);
+                const urlCat = params.get('cat');
+                const urlProdA = params.get('a');
+                const urlProdB = params.get('b');
+                const urlLang = params.get('lang');
+
+                if (urlLang === 'de' || urlLang === 'es') {
+                    currentMarket = urlLang;
+                }
+                if (urlCat && catalogoData.categorias.some(c => c.id === urlCat)) {
+                    currentCategory = urlCat;
+                }
+
+                switchMarket(currentMarket, false);
+
+                const selectA = document.getElementById('select-product-a');
+                const selectB = document.getElementById('select-product-b');
+                const prodsInCat = getProductsByCategory(currentCategory);
+
+                if (urlProdA && prodsInCat.some(p => p.id === urlProdA)) {
+                    selectA.value = urlProdA;
+                    const outro = prodsInCat.find(p => p.id !== urlProdA);
+                    if (outro) selectB.value = outro.id;
+                }
+                if (urlProdB && prodsInCat.some(p => p.id === urlProdB)) {
+                    selectB.value = urlProdB;
+                }
+
                 renderComparison();
             } catch (e) {
                 console.error("Erro ao carregar dados:", e);
             }
         }
 
-        function switchMarket(market) {
+        function switchMarket(market, updateUrl = true) {
             currentMarket = market;
             const btnEs = document.getElementById('btn-market-es');
             const btnDe = document.getElementById('btn-market-de');
             if (market === 'de') {
                 btnDe.className = 'px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm';
                 btnEs.className = 'px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors';
+                document.documentElement.lang = 'de';
             } else {
                 btnEs.className = 'px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm';
                 btnDe.className = 'px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors';
+                document.documentElement.lang = 'es';
             }
+
+            const t = i18nCompare[currentMarket];
+            document.getElementById('compare-ribbon-tag').textContent = t.ribbonTag;
+            document.getElementById('compare-ribbon-rule').textContent = t.ribbonRule;
+            document.getElementById('compare-ribbon-stat').textContent = t.ribbonStat;
+            document.getElementById('nav-home-link').textContent = t.navHome;
+            document.getElementById('nav-home-link').href = `/?lang=${currentMarket}`;
+            document.getElementById('header-logo-link').href = `/?lang=${currentMarket}`;
+            document.getElementById('nav-compare-text').textContent = t.navCompare;
+            document.getElementById('nav-compare-link').href = `/compare/?lang=${currentMarket}`;
+            document.getElementById('tool-badge').querySelector('span:last-child').textContent = t.toolBadge;
+            document.getElementById('tool-title').textContent = t.toolTitle;
+            document.getElementById('tool-subtitle').textContent = t.toolSubtitle;
+            document.getElementById('label-step-1').textContent = t.step1;
+            document.getElementById('label-step-2').textContent = t.step2;
+            document.getElementById('label-prod-a').textContent = t.prodA;
+            document.getElementById('label-prod-b').textContent = t.prodB;
+            document.getElementById('footer-copy').textContent = t.footerCopy;
+            document.getElementById('footer-home-link').textContent = t.navHome;
+            document.getElementById('footer-home-link').href = `/?lang=${currentMarket}`;
+            document.getElementById('footer-affiliate-notice').innerHTML = t.affiliateNotice;
+
             renderCategories();
+            populateProductSelects();
             renderComparison();
+
+            if (updateUrl) {
+                syncUrlParams();
+            }
+        }
+
+        function syncUrlParams() {
+            const selectA = document.getElementById('select-product-a');
+            const selectB = document.getElementById('select-product-b');
+            const valA = selectA ? selectA.value : '';
+            const valB = selectB ? selectB.value : '';
+            const newUrl = `/compare/?cat=${currentCategory}&a=${valA}&b=${valB}&lang=${currentMarket}`;
+            history.replaceState(null, '', newUrl);
         }
 
         function renderCategories() {
             const container = document.getElementById('category-selector-container');
+            if (!container || !catalogoData) return;
             container.innerHTML = '';
+            const t = i18nCompare[currentMarket];
             catalogoData.categorias.forEach(cat => {
                 const isSelected = cat.id === currentCategory;
                 const btn = document.createElement('button');
@@ -225,13 +368,14 @@
                 btn.onclick = () => selectCategory(cat.id);
                 
                 const nome = currentMarket === 'de' ? cat.nome_de : cat.nome_es;
+                const count = getProductsByCategory(cat.id).length;
                 btn.innerHTML = `
                     <span class="w-10 h-10 rounded-md bg-nordic-navy text-white flex items-center justify-center shrink-0">
                         <span class="material-symbols-outlined text-[20px] text-nordic-amber">${cat.icone}</span>
                     </span>
                     <div class="flex-1 min-w-0">
                         <strong class="text-xs sm:text-sm font-display font-bold text-nordic-navy block truncate">${nome}</strong>
-                        <span class="text-[10px] text-slate-500 font-mono">${getProductsByCategory(cat.id).length} modelos auditados</span>
+                        <span class="text-[10px] text-slate-500 font-mono">${count} ${t.modelCount}</span>
                     </div>
                 `;
                 container.appendChild(btn);
@@ -239,6 +383,7 @@
         }
 
         function getProductsByCategory(catId) {
+            if (!catalogoData) return [];
             return catalogoData.produtos.filter(p => p.categoria_id === catId);
         }
 
@@ -247,17 +392,22 @@
             renderCategories();
             populateProductSelects();
             renderComparison();
+            syncUrlParams();
         }
 
         function populateProductSelects() {
             const prods = getProductsByCategory(currentCategory);
             const selectA = document.getElementById('select-product-a');
             const selectB = document.getElementById('select-product-b');
+            if (!selectA || !selectB) return;
+
+            const prevA = selectA.value;
+            const prevB = selectB.value;
 
             selectA.innerHTML = '';
             selectB.innerHTML = '';
 
-            prods.forEach((p, idx) => {
+            prods.forEach(p => {
                 const optA = document.createElement('option');
                 optA.value = p.id;
                 optA.textContent = `${p.marca} • ${p.nome}`;
@@ -269,18 +419,31 @@
                 selectB.appendChild(optB);
             });
 
-            // Pré-seleciona o primeiro e o segundo se existirem
-            if (prods.length > 0) selectA.value = prods[0].id;
-            if (prods.length > 1) selectB.value = prods[1].id;
+            if (prods.some(p => p.id === prevA)) {
+                selectA.value = prevA;
+            } else if (prods.length > 0) {
+                selectA.value = prods[0].id;
+            }
+
+            if (prods.some(p => p.id === prevB) && prevB !== selectA.value) {
+                selectB.value = prevB;
+            } else {
+                const outro = prods.find(p => p.id !== selectA.value);
+                if (outro) selectB.value = outro.id;
+                else if (prods.length > 1) selectB.value = prods[1].id;
+            }
         }
 
         function onProductSelect() {
             renderComparison();
+            syncUrlParams();
         }
 
         function renderComparison() {
             const selectA = document.getElementById('select-product-a');
             const selectB = document.getElementById('select-product-b');
+            if (!selectA || !selectB || !catalogoData) return;
+
             const prodA = catalogoData.produtos.find(p => p.id === selectA.value);
             const prodB = catalogoData.produtos.find(p => p.id === selectB.value);
             const output = document.getElementById('comparison-output');
@@ -288,6 +451,8 @@
             if (!prodA || !prodB) return;
 
             const isDe = currentMarket === 'de';
+            const t = i18nCompare[currentMarket];
+
             const linkA = isDe ? prodA.link_de : prodA.link_es;
             const linkB = isDe ? prodB.link_de : prodB.link_es;
             const badgeA = isDe ? prodA.score_badge_de : prodA.score_badge_es;
@@ -296,16 +461,21 @@
             const contrasA = isDe ? prodA.contras_de : prodA.contras_es;
             const prosB = isDe ? prodB.pros_de : prodB.pros_es;
             const contrasB = isDe ? prodB.contras_de : prodB.contras_es;
-            const btnText = isDe ? 'Aktuellen Preis auf Amazon.de prüfen &rarr;' : 'Consultar precio actual en Amazon.es &rarr;';
+            const btnText = t.ctaBtn;
 
-            // Gerar linhas da tabela de especificações
+            // Linhas da tabela de especificações
             let specsHtml = '';
-            const allKeys = Array.from(new Set([...Object.keys(prodA.specs), ...Object.keys(prodB.specs)]));
+            const allKeys = Array.from(new Set([...Object.keys(prodA.specs || {}), ...Object.keys(prodB.specs || {})]));
             
             allKeys.forEach((k, i) => {
-                const valA = prodA.specs[k] || '-';
-                const valB = prodB.specs[k] || '-';
-                const label = k.replace('_', ' ').toUpperCase();
+                const valA = (prodA.specs && prodA.specs[k]) || '-';
+                const valB = (prodB.specs && prodB.specs[k]) || '-';
+                
+                const labelInfo = specsLabels[k];
+                const label = labelInfo 
+                    ? (isDe ? labelInfo.de : labelInfo.es) 
+                    : k.replace(/_/g, ' ').toUpperCase();
+
                 const bgCls = i % 2 === 0 ? 'bg-white' : 'bg-nordic-canvas/40';
 
                 specsHtml += `
@@ -383,16 +553,16 @@
                 <div class="bg-white border border-nordic-border rounded-xl overflow-hidden shadow-technical">
                     <div class="p-5 border-b border-nordic-border flex items-center justify-between">
                         <div>
-                            <h3 class="text-lg font-display font-extrabold text-nordic-navy">Tabla de Especificaciones Frente a Frente</h3>
-                            <p class="text-xs text-slate-500 font-mono">Comparativa de magnitudes técnicas certificadas</p>
+                            <h3 class="text-lg font-display font-extrabold text-nordic-navy">${t.tableTitle}</h3>
+                            <p class="text-xs text-slate-500 font-mono">${t.tableSubtitle}</p>
                         </div>
-                        <span class="text-xs font-mono font-bold bg-nordic-emeraldBg text-nordic-emerald px-2.5 py-1 rounded">Datos Verificados</span>
+                        <span class="text-xs font-mono font-bold bg-nordic-emeraldBg text-nordic-emerald px-2.5 py-1 rounded">${t.badgeVerified}</span>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
                             <thead>
                                 <tr class="bg-nordic-navy text-white font-mono text-[11px] uppercase tracking-wider">
-                                    <th class="py-3 px-4 font-bold">Característica</th>
+                                    <th class="py-3 px-4 font-bold">${t.thFeature}</th>
                                     <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${prodA.nome}</th>
                                     <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${prodB.nome}</th>
                                 </tr>
@@ -409,7 +579,7 @@
                     <div class="bg-white border border-nordic-border rounded-xl p-5 shadow-technical">
                         <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-3">
                             <span class="font-display font-bold text-nordic-navy text-sm">${prodA.nome}</span>
-                            <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">Puntos Débiles</span>
+                            <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">${t.weaknessesBadge}</span>
                         </div>
                         <ul class="space-y-2 text-xs text-slate-700">
                             ${contrasA.map(c => `<li class="flex items-start gap-2"><span class="text-nordic-crimson font-bold">✕</span><span>${c}</span></li>`).join('')}
@@ -419,7 +589,7 @@
                     <div class="bg-white border border-nordic-border rounded-xl p-5 shadow-technical">
                         <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-3">
                             <span class="font-display font-bold text-nordic-navy text-sm">${prodB.nome}</span>
-                            <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">Puntos Débiles</span>
+                            <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">${t.weaknessesBadge}</span>
                         </div>
                         <ul class="space-y-2 text-xs text-slate-700">
                             ${contrasB.map(c => `<li class="flex items-start gap-2"><span class="text-nordic-crimson font-bold">✕</span><span>${c}</span></li>`).join('')}

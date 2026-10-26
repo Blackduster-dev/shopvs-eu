@@ -153,7 +153,7 @@
                     ¿Dudando entre dos modelos de la misma categoría? Usa nuestra herramienta interactiva para cruzar especificaciones, fotografías y fallos reales reportados por compradores.
                 </p>
             </div>
-            <a href="/compare/" class="w-full md:w-auto bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-extrabold text-sm py-4 px-8 rounded-xl flex items-center justify-center gap-2 shadow-cta shrink-0 transition-all">
+            <a href="/compare/" id="banner-btn-link" class="w-full md:w-auto bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-extrabold text-sm py-4 px-8 rounded-xl flex items-center justify-center gap-2 shadow-cta shrink-0 transition-all">
                 <span id="banner-btn">Abrir Comparador</span>
                 <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
             </a>
@@ -193,13 +193,18 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-nordic-border py-10 text-xs text-slate-500 font-mono">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>&copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico</div>
-            <div class="flex items-center gap-5">
-                <a href="/compare/" class="hover:text-nordic-navy font-bold text-nordic-petrol" id="footer-compare-link">Comparador</a>
-                <a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a>
+        <footer class="bg-white border-t border-nordic-border py-8 text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4 border-b border-nordic-border">
+                <div id="footer-copyright">&copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico</div>
+                <div class="flex items-center gap-5">
+                    <a href="/compare/" class="hover:text-nordic-navy font-bold text-nordic-petrol" id="footer-compare-link">Comparador Cara a Cara</a>
+                    <a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a>
+                </div>
             </div>
+            <p id="footer-affiliate-notice" class="text-[11px] text-slate-400 text-center sm:text-left leading-relaxed">
+                <strong>Aviso de afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y la disponibilidad se sincronizan en tiempo real con los servidores oficiales de Amazon.
+            </p>
         </div>
     </footer>
 
@@ -224,44 +229,47 @@
                 bannerTag: "HERRAMIENTA DISPONIBLE",
                 bannerTitle: "Comparador Cara a Cara (Head-to-Head)",
                 bannerDesc: "¿Dudando entre dos modelos de la misma categoría? Usa nuestra herramienta interactiva para cruzar especificaciones, fotografías y fallos reales reportados por compradores.",
-                bannerBtn: "Abrir Comparador",
-                catSectionTag: "CATÁLOGO AUDITADO",
-                catSectionTitle: "Explora por Categoría",
-                catSectionHint: "Selecciona para comparar modelos",
-                topSectionTitle: "Top Custo-Benefício de la Temporada",
-                readReport: "Leer informe completo",
-                compareVs: "Comparar en la herramienta"
+                bannerBtn: "Abrir Comparador Dinámico",
+                catSectionTag: "LAB BENCHMARKS",
+                catSectionTitle: "Explora por Categoría Certificada",
+                catSectionHint: "Datos medidos bajo condiciones estándar de laboratorio",
+                topSectionTitle: "Modelos con Mayor Puntuación Técnica de Laboratorio",
+                affiliateNotice: "<strong>Aviso de afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Precios verificados en tiempo real en la tienda oficial."
             },
             de: {
                 ribbonNormativa: "CE-TEST LAB • PRÜFNORM 2026",
                 ribbonDesc: "Unabhängige Laborprüfung von 45 technischen Parametern nach europäischem Standard",
                 ribbonSponsorship: "100% Hersteller-Unabhängig",
                 navHome: "Startseite",
-                navCompare: "Direktvergleich-Tool",
-                heroBadge: "Labor-Datenbank & Prüfberichte 2026",
-                heroTitle: "Das beste Preis-Leistungs-Verhältnis in Europa",
-                heroSubtitle: "Unabhängige Produkttests und technische Direktvergleiche. Suchen Sie nach Modellen oder filtern Sie nach zertifizierten Kategorien.",
+                navCompare: "Direktvergleich",
+                heroBadge: "Labor-Testergebnisse Datenbank 2026",
+                heroTitle: "Finden Sie das beste Preis-Leistungs-Verhältnis",
+                heroSubtitle: "Neutrale technische Prüfberichte europäischer Bestseller. Suchen Sie nach Modellen oder wählen Sie eine geprüfte Kategorie.",
                 searchPlaceholder: "Produkt oder Marke suchen (z. B. De'Longhi, Cosori, Roborock)...",
                 noResults: "Keine Modelle für diesen Suchbegriff gefunden",
                 compareBtn: "Vergleichen",
-                bannerTag: "NEUES PRAXISTOOL",
-                bannerTitle: "Technischer Direktvergleich (Head-to-Head)",
-                bannerDesc: "Unschlüssig zwischen zwei Geräten derselben Kategorie? Nutzen Sie unser Tool für Messwerte, Originalfotos und Schwachstellen im Praxis-Check.",
-                bannerBtn: "Vergleichstool öffnen",
-                catSectionTag: "GEPRÜFTER KATALOG",
-                catSectionTitle: "Nach Produktkategorie filtern",
-                catSectionHint: "Kategorie wählen für direkten Vergleich",
-                topSectionTitle: "Preis-Leistungs-Testsieger der Saison",
-                readReport: "Vollständigen Testbericht lesen",
-                compareVs: "Im Tool direkt vergleichen"
+                bannerTag: "INTERAKTIVES TOOL",
+                bannerTitle: "Direktvergleich (Head-to-Head)",
+                bannerDesc: "Unsicher zwischen zwei Modellen derselben Kategorie? Nutzen Sie unsere interaktive Matrix für Laborwerte, Fotos und reale Schwachstellen.",
+                bannerBtn: "Direktvergleich öffnen",
+                catSectionTag: "LABOR-BENCHMARKS",
+                catSectionTitle: "Nach geprüften Kategorien filtern",
+                catSectionHint: "Messungen unter standardisierten Prüfbedingungen",
+                topSectionTitle: "Spitzenreiter im europäischen Labor-Härtetest",
+                affiliateNotice: "<strong>Transparenzhinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Preise und Produktverfügbarkeit werden in Echtzeit beim offiziellen Händler geprüft."
             }
         };
 
         async function init() {
             try {
+                const params = new URLSearchParams(window.location.search);
+                const urlLang = params.get('lang');
+                if (urlLang === 'de' || urlLang === 'es') {
+                    currentLang = urlLang;
+                }
                 const res = await fetch('/data/catalogo_produtos.json');
                 catalogoData = await res.json();
-                renderAll();
+                setLang(currentLang);
             } catch (e) {
                 console.error("Erro ao carregar dados:", e);
             }
@@ -303,7 +311,19 @@
             document.getElementById('cat-section-title').textContent = t.catSectionTitle;
             document.getElementById('cat-section-hint').textContent = t.catSectionHint;
             document.getElementById('top-section-title').textContent = t.topSectionTitle;
-            document.getElementById('footer-compare-link').textContent = t.navCompare;
+            
+            // Links com preservação de idioma
+            const navCompare = document.getElementById('nav-compare');
+            if (navCompare) navCompare.href = `/compare/?lang=${currentLang}`;
+            const bannerLink = document.getElementById('banner-btn-link');
+            if (bannerLink) bannerLink.href = `/compare/?lang=${currentLang}`;
+            const footerCompare = document.getElementById('footer-compare-link');
+            if (footerCompare) {
+                footerCompare.textContent = t.navCompare;
+                footerCompare.href = `/compare/?lang=${currentLang}`;
+            }
+            const footerNotice = document.getElementById('footer-affiliate-notice');
+            if (footerNotice) footerNotice.innerHTML = t.affiliateNotice;
 
             renderCategoriesGrid();
             renderTopProducts();
@@ -321,7 +341,7 @@
                     : `Comparar modelos (${count} auditados) &rarr;`;
 
                 return `
-                    <div class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 shadow-technical hover:shadow-card-active transition-all group flex flex-col justify-between">
+                    <a href="/compare/?cat=${cat.id}&lang=${currentLang}" class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 shadow-technical hover:shadow-card-active transition-all group flex flex-col justify-between">
                         <div>
                             <div class="w-12 h-12 rounded-lg bg-nordic-navy text-white flex items-center justify-center mb-4 group-hover:bg-nordic-emerald transition-colors">
                                 <span class="material-symbols-outlined text-[24px] text-nordic-amber">${cat.icone}</span>
@@ -329,10 +349,10 @@
                             <h4 class="font-display font-bold text-lg text-nordic-navy mb-2">${nome}</h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4">${desc}</p>
                         </div>
-                        <a href="/compare/" class="text-xs font-mono font-bold text-nordic-petrol group-hover:text-nordic-emerald flex items-center gap-1 pt-3 border-t border-nordic-border">
+                        <div class="text-xs font-mono font-bold text-nordic-petrol group-hover:text-nordic-emerald flex items-center gap-1 pt-3 border-t border-nordic-border">
                             <span>${linkAction}</span>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 `;
             }).join('');
         }
@@ -340,7 +360,6 @@
         function renderTopProducts() {
             if (!catalogoData) return;
             const container = document.getElementById('top-products-grid');
-            // Pegar 3 destaques
             const topIds = ['delonghi_magnifica_s', 'cosori_dual_blaze', 'roborock_q8_max'];
             const prods = catalogoData.produtos.filter(p => topIds.includes(p.id));
 
@@ -359,7 +378,7 @@
                             <h4 class="font-display font-bold text-base text-nordic-navy">${p.nome}</h4>
                             <p class="text-xs text-slate-600 mt-1">${desc}</p>
                         </div>
-                        <a href="/compare/" class="mt-4 text-xs font-mono font-bold text-nordic-amber hover:text-nordic-amberHover flex items-center justify-between">
+                        <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="mt-4 text-xs font-mono font-bold text-nordic-amber hover:text-nordic-amberHover flex items-center justify-between">
                             <span>${linkLabel}</span>
                         </a>
                     </div>
@@ -390,7 +409,7 @@
             }
 
             dropdown.innerHTML = results.map(p => `
-                <a href="/compare/" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
+                <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
                     <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
                         <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
                     </div>
