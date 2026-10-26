@@ -24,7 +24,7 @@ def carregar_json(rel_path):
         return json.load(f)
 
 def verificar_skills():
-    skills_dir = os.path.join(BASE_DIR, ".antigravity", "skills")
+    skills_dir = os.path.join(BASE_DIR, ".antigravity", "skills") if os.path.exists(os.path.join(BASE_DIR, ".antigravity", "skills")) else os.path.join(BASE_DIR, "skills")
     skills_esperadas = [
         "01_garimpador_duplo_eu.md",
         "02_redator_bilingue_es_de.md",

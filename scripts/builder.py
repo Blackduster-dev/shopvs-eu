@@ -390,10 +390,8 @@ def render_article(artigo, lang="es"):
 
                         <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
 
-                            <div class="w-36 h-36 bg-nordic-canvas rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0">
-
-                                <img src="{pa['imagem_url']}" alt="{pa['nome']}" class="w-full h-full object-contain mix-blend-multiply">
-
+                            <div class="w-36 h-36 bg-[#0B192C] rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img src="{pa['imagem_url']}" alt="{pa['nome']}" class="w-full h-full object-contain">
                             </div>
 
                             <div class="flex-1 text-center sm:text-left">
@@ -446,10 +444,8 @@ def render_article(artigo, lang="es"):
 
                         <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
 
-                            <div class="w-36 h-36 bg-nordic-canvas rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0">
-
-                                <img src="{pb['imagem_url']}" alt="{pb['nome']}" class="w-full h-full object-contain mix-blend-multiply">
-
+                            <div class="w-36 h-36 bg-[#0B192C] rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img src="{pb['imagem_url']}" alt="{pb['nome']}" class="w-full h-full object-contain">
                             </div>
 
                             <div class="flex-1 text-center sm:text-left">
