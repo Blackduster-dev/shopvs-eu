@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador Técnico de Productos • Cara a Cara | ShopVS EU</title>
+    <meta name="description" content="Compara especificaciones técnicas de productos de la misma categoría frente a frente. Medición de rendimiento, fallos reportados y veredicto independiente.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nordic: {
+                            navy: '#0B192C',
+                            navyLight: '#1E3E62',
+                            petrol: '#005B60',
+                            amber: '#FF6500',
+                            amberHover: '#E05500',
+                            canvas: '#F4F6F9',
+                            surface: '#FFFFFF',
+                            border: '#E1E6ED',
+                            borderDark: '#CBD5E1',
+                            emerald: '#0E8388',
+                            emeraldBg: '#E8F6F6',
+                            crimson: '#D80032',
+                            crimsonBg: '#FDF0F2'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    },
+                    boxShadow: {
+                        'technical': '0 1px 3px 0 rgba(11, 25, 44, 0.04), 0 1px 2px -1px rgba(11, 25, 44, 0.04)',
+                        'card-active': '0 12px 30px -8px rgba(11, 25, 44, 0.12), 0 4px 10px -3px rgba(11, 25, 44, 0.06)',
+                        'cta': '0 8px 20px -4px rgba(255, 101, 0, 0.35)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F4F6F9; color: #0B192C; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
+
+    <!-- Top Ribbon -->
+    <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 text-nordic-emerald font-bold">
+                    <span class="w-2 h-2 rounded-full bg-nordic-emerald animate-ping"></span>
+                    HERRAMIENTA INTERACTIVA DE COMPARACIÓN • NORMATIVA CE 2026
+                </span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="hidden md:inline text-slate-300">Regla estricta: sólo comparativa dentro de la misma categoría</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-300 font-mono text-[10px]">
+                <span class="text-nordic-amber font-bold">100% Datos de Laboratorio</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header Principal com Navegação de Guias -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-5">
+                <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
+                    <div class="w-10 h-10 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-lg border-2 border-nordic-petrol group-hover:bg-nordic-petrol transition-colors">
+                        VS
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-extrabold text-xl text-nordic-navy tracking-tight leading-none">ShopVS<span class="text-nordic-amber">.eu</span></span>
+                        <span class="text-[9px] uppercase tracking-widest font-mono font-bold text-nordic-petrol mt-0.5">European Benchmark Lab</span>
+                    </div>
+                </a>
+                <span class="h-6 w-px bg-nordic-border hidden sm:block"></span>
+                <nav class="flex items-center gap-1 text-xs font-mono font-bold">
+                    <a href="/" class="px-3 py-1.5 rounded text-slate-600 hover:text-nordic-navy hover:bg-slate-100 transition-colors">Inicio</a>
+                    <a href="/compare/" class="px-3 py-1.5 rounded bg-nordic-navy text-white shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px] text-nordic-amber">compare_arrows</span>
+                        <span>Comparador Cara a Cara</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Alternância de Mercado -->
+            <div class="flex items-center gap-3">
+                <div class="flex items-center bg-slate-100 p-0.5 rounded border border-nordic-border text-xs font-bold font-mono">
+                    <button id="btn-market-es" onclick="switchMarket('es')" class="px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm">🇪🇸 ES</button>
+                    <button id="btn-market-de" onclick="switchMarket('de')" class="px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors">🇩🇪 DE</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full flex flex-col gap-8">
+        <!-- Título da Ferramenta -->
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                <span class="material-symbols-outlined text-[16px]">balance</span>
+                HERRAMIENTA ESTILO TUDOCELULAR • MATRIZ TÉCNICA DINÁMICA
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-display font-extrabold text-nordic-navy leading-tight mb-2">
+                Comparador Cara a Cara (Head-to-Head)
+            </h1>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                Selecciona primero una categoría de productos y luego escoge dos modelos para enfrentar sus especificaciones, fotografías y fallos reales reportados por compradores.
+            </p>
+        </div>
+
+        <!-- PAINEL DE CONTROLE DE SELEÇÃO (PASSO A PASSO) -->
+        <section class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
+            <!-- Passo 1: Seleção de Categoria -->
+            <div class="mb-6">
+                <label class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
+                    PASO 1: SELECCIONA LA CATEGORÍA DE PRODUCTOS
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="category-selector-container">
+                    <!-- Gerado dinamicamente -->
+                </div>
+            </div>
+
+            <!-- Passo 2: Seleção dos Produtos (Slot A e Slot B) -->
+            <div>
+                <label class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
+                    PASO 2: ELIGE LOS DOS MODELOS DE LA MISMA CATEGORÍA
+                </label>
+                <div class="grid grid-cols-1 lg:grid-cols-11 gap-4 items-center">
+                    <!-- Slot Produto A -->
+                    <div class="lg:col-span-5 bg-nordic-canvas border border-nordic-border rounded-lg p-4">
+                        <span class="text-[10px] font-mono font-bold uppercase text-slate-500 block mb-1">PRODUCTO #1</span>
+                        <select id="select-product-a" onchange="onProductSelect()" class="w-full bg-white border border-nordic-borderDark rounded-md px-3 py-2.5 text-xs sm:text-sm font-semibold text-nordic-navy focus:outline-none focus:border-nordic-amber">
+                            <!-- Opções carregadas via JS -->
+                        </select>
+                    </div>
+
+                    <!-- Marcador VS Central -->
+                    <div class="lg:col-span-1 flex justify-center py-1 lg:py-0">
+                        <div class="w-10 h-10 rounded-full bg-nordic-navy text-white font-display font-bold text-sm flex items-center justify-center border-2 border-white shadow-md">
+                            VS
+                        </div>
+                    </div>
+
+                    <!-- Slot Produto B -->
+                    <div class="lg:col-span-5 bg-nordic-canvas border border-nordic-border rounded-lg p-4">
+                        <span class="text-[10px] font-mono font-bold uppercase text-slate-500 block mb-1">PRODUCTO #2</span>
+                        <select id="select-product-b" onchange="onProductSelect()" class="w-full bg-white border border-nordic-borderDark rounded-md px-3 py-2.5 text-xs sm:text-sm font-semibold text-nordic-navy focus:outline-none focus:border-nordic-amber">
+                            <!-- Opções carregadas via JS -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTAINER DA MATRIZ COMPARATIVA DINÂMICA (RENDERIZADO VIA JS) -->
+        <section id="comparison-output" class="flex flex-col gap-8">
+            <!-- Conteúdo inserido dinamicamente -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-nordic-border py-10 mt-12 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono">
+            &copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico • <a href="/legal/" class="text-nordic-navy hover:underline font-bold">Impressum (§ 5 TMG)</a>
+        </div>
+    </footer>
+
+    <!-- LÓGICA DO COMPARADOR INTERATIVO -->
+    <script>
+        let catalogoData = null;
+        let currentCategory = 'cafeteras';
+        let currentMarket = 'es';
+
+        // Carrega o catálogo de dados
+        async function initComparador() {
+            try {
+                const res = await fetch('/data/catalogo_produtos.json');
+                catalogoData = await res.json();
+                renderCategories();
+                populateProductSelects();
+                renderComparison();
+            } catch (e) {
+                console.error("Erro ao carregar dados:", e);
+            }
+        }
+
+        function switchMarket(market) {
+            currentMarket = market;
+            const btnEs = document.getElementById('btn-market-es');
+            const btnDe = document.getElementById('btn-market-de');
+            if (market === 'de') {
+                btnDe.className = 'px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm';
+                btnEs.className = 'px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors';
+            } else {
+                btnEs.className = 'px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm';
+                btnDe.className = 'px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors';
+            }
+            renderCategories();
+            renderComparison();
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('category-selector-container');
+            container.innerHTML = '';
+            catalogoData.categorias.forEach(cat => {
+                const isSelected = cat.id === currentCategory;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = isSelected 
+                    ? 'p-4 rounded-lg border-2 border-nordic-petrol bg-nordic-emeraldBg/40 text-left flex items-center gap-3 transition-all'
+                    : 'p-4 rounded-lg border border-nordic-border bg-white hover:bg-slate-50 text-left flex items-center gap-3 transition-all';
+                btn.onclick = () => selectCategory(cat.id);
+                
+                const nome = currentMarket === 'de' ? cat.nome_de : cat.nome_es;
+                btn.innerHTML = `
+                    <span class="w-10 h-10 rounded-md bg-nordic-navy text-white flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[20px] text-nordic-amber">${cat.icone}</span>
+                    </span>
+                    <div class="flex-1 min-w-0">
+                        <strong class="text-xs sm:text-sm font-display font-bold text-nordic-navy block truncate">${nome}</strong>
+                        <span class="text-[10px] text-slate-500 font-mono">${getProductsByCategory(cat.id).length} modelos auditados</span>
+                    </div>
+                `;
+                container.appendChild(btn);
+            });
+        }
+
+        function getProductsByCategory(catId) {
+            return catalogoData.produtos.filter(p => p.categoria_id === catId);
+        }
+
+        function selectCategory(catId) {
+            currentCategory = catId;
+            renderCategories();
+            populateProductSelects();
+            renderComparison();
+        }
+
+        function populateProductSelects() {
+            const prods = getProductsByCategory(currentCategory);
+            const selectA = document.getElementById('select-product-a');
+            const selectB = document.getElementById('select-product-b');
+
+            selectA.innerHTML = '';
+            selectB.innerHTML = '';
+
+            prods.forEach((p, idx) => {
+                const optA = document.createElement('option');
+                optA.value = p.id;
+                optA.textContent = `${p.marca} • ${p.nome}`;
+                selectA.appendChild(optA);
+
+                const optB = document.createElement('option');
+                optB.value = p.id;
+                optB.textContent = `${p.marca} • ${p.nome}`;
+                selectB.appendChild(optB);
+            });
+
+            // Pré-seleciona o primeiro e o segundo se existirem
+            if (prods.length > 0) selectA.value = prods[0].id;
+            if (prods.length > 1) selectB.value = prods[1].id;
+        }
+
+        function onProductSelect() {
+            renderComparison();
+        }
+
+        function renderComparison() {
+            const selectA = document.getElementById('select-product-a');
+            const selectB = document.getElementById('select-product-b');
+            const prodA = catalogoData.produtos.find(p => p.id === selectA.value);
+            const prodB = catalogoData.produtos.find(p => p.id === selectB.value);
+            const output = document.getElementById('comparison-output');
+
+            if (!prodA || !prodB) return;
+
+            const isDe = currentMarket === 'de';
+            const linkA = isDe ? prodA.link_de : prodA.link_es;
+            const linkB = isDe ? prodB.link_de : prodB.link_es;
+            const badgeA = isDe ? prodA.score_badge_de : prodA.score_badge_es;
+            const badgeB = isDe ? prodB.score_badge_de : prodB.score_badge_es;
+            const prosA = isDe ? prodA.pros_de : prodA.pros_es;
+            const contrasA = isDe ? prodA.contras_de : prodA.contras_es;
+            const prosB = isDe ? prodB.pros_de : prodB.pros_es;
+            const contrasB = isDe ? prodB.contras_de : prodB.contras_es;
+            const btnText = isDe ? 'Aktuellen Preis auf Amazon.de prüfen &rarr;' : 'Consultar precio actual en Amazon.es &rarr;';
+
+            // Gerar linhas da tabela de especificações
+            let specsHtml = '';
+            const allKeys = Array.from(new Set([...Object.keys(prodA.specs), ...Object.keys(prodB.specs)]));
+            
+            allKeys.forEach((k, i) => {
+                const valA = prodA.specs[k] || '-';
+                const valB = prodB.specs[k] || '-';
+                const label = k.replace('_', ' ').toUpperCase();
+                const bgCls = i % 2 === 0 ? 'bg-white' : 'bg-nordic-canvas/40';
+
+                specsHtml += `
+                    <tr class="${bgCls} hover:bg-slate-50/80 transition-colors">
+                        <td class="py-3 px-4 font-mono font-bold text-xs text-nordic-petrol w-1/4">${label}</td>
+                        <td class="py-3 px-4 font-mono text-xs sm:text-sm font-medium text-nordic-navy w-3/8 border-l border-nordic-border">${valA}</td>
+                        <td class="py-3 px-4 font-mono text-xs sm:text-sm font-medium text-nordic-navy w-3/8 border-l border-nordic-border">${valB}</td>
+                    </tr>
+                `;
+            });
+
+            output.innerHTML = `
+                <!-- Cards de Topo Head-to-Head -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Produto A -->
+                    <div class="bg-white border-2 border-nordic-emerald rounded-xl p-6 shadow-technical flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-nordic-emerald text-white text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded">${badgeA}</span>
+                                <div class="bg-nordic-emeraldBg text-nordic-emerald px-2 py-0.5 rounded font-mono font-bold text-xs">Score: ${prodA.score_lab}/10</div>
+                            </div>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-28 h-28 bg-nordic-canvas rounded-lg p-2 border border-nordic-border flex items-center justify-center shrink-0">
+                                    <img src="${prodA.imagem_url}" alt="${prodA.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">${prodA.marca}</span>
+                                    <h3 class="text-lg sm:text-xl font-display font-extrabold text-nordic-navy leading-tight mt-0.5">${prodA.nome}</h3>
+                                    <span class="text-[11px] text-slate-500 font-mono block mt-1">ASIN: ${prodA.asin}</span>
+                                </div>
+                            </div>
+                            <div class="space-y-1.5 text-xs text-slate-700 mb-6">
+                                ${prosA.map(p => `<div class="flex items-start gap-2"><span class="text-nordic-emerald font-bold">✓</span><span>${p}</span></div>`).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <a href="${linkA}" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-bold text-xs sm:text-sm py-3.5 px-4 rounded-lg flex items-center justify-between transition-all shadow-cta">
+                                <span>${btnText}</span>
+                                <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto B -->
+                    <div class="bg-white border-2 border-nordic-navyLight rounded-xl p-6 shadow-technical flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-nordic-navy text-white text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded">${badgeB}</span>
+                                <div class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-mono font-bold text-xs">Score: ${prodB.score_lab}/10</div>
+                            </div>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-28 h-28 bg-nordic-canvas rounded-lg p-2 border border-nordic-border flex items-center justify-center shrink-0">
+                                    <img src="${prodB.imagem_url}" alt="${prodB.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-mono font-bold text-slate-500 uppercase">${prodB.marca}</span>
+                                    <h3 class="text-lg sm:text-xl font-display font-extrabold text-nordic-navy leading-tight mt-0.5">${prodB.nome}</h3>
+                                    <span class="text-[11px] text-slate-500 font-mono block mt-1">ASIN: ${prodB.asin}</span>
+                                </div>
+                            </div>
+                            <div class="space-y-1.5 text-xs text-slate-700 mb-6">
+                                ${prosB.map(p => `<div class="flex items-start gap-2"><span class="text-nordic-emerald font-bold">✓</span><span>${p}</span></div>`).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <a href="${linkB}" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-navy hover:bg-slate-800 text-white font-display font-bold text-xs sm:text-sm py-3.5 px-4 rounded-lg flex items-center justify-between transition-all shadow-md">
+                                <span>${btnText}</span>
+                                <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabela Comparativa de Especificações -->
+                <div class="bg-white border border-nordic-border rounded-xl overflow-hidden shadow-technical">
+                    <div class="p-5 border-b border-nordic-border flex items-center justify-between">
+                        <div>
+                            <h3 class="text-lg font-display font-extrabold text-nordic-navy">Tabla de Especificaciones Frente a Frente</h3>
+                            <p class="text-xs text-slate-500 font-mono">Comparativa de magnitudes técnicas certificadas</p>
+                        </div>
+                        <span class="text-xs font-mono font-bold bg-nordic-emeraldBg text-nordic-emerald px-2.5 py-1 rounded">Datos Verificados</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-nordic-navy text-white font-mono text-[11px] uppercase tracking-wider">
+                                    <th class="py-3 px-4 font-bold">Característica</th>
+                                    <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${prodA.nome}</th>
+                                    <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${prodB.nome}</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-nordic-border">
+                                ${specsHtml}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Auditoria de Defeitos Ocultos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-nordic-border rounded-xl p-5 shadow-technical">
+                        <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-3">
+                            <span class="font-display font-bold text-nordic-navy text-sm">${prodA.nome}</span>
+                            <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">Puntos Débiles</span>
+                        </div>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            ${contrasA.map(c => `<li class="flex items-start gap-2"><span class="text-nordic-crimson font-bold">✕</span><span>${c}</span></li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="bg-white border border-nordic-border rounded-xl p-5 shadow-technical">
+                        <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-3">
+                            <span class="font-display font-bold text-nordic-navy text-sm">${prodB.nome}</span>
+                            <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">Puntos Débiles</span>
+                        </div>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            ${contrasB.map(c => `<li class="flex items-start gap-2"><span class="text-nordic-crimson font-bold">✕</span><span>${c}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', initComparador);
+    </script>
+</body>
+</html>
