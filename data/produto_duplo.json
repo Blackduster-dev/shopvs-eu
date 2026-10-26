@@ -1,0 +1,59 @@
+{
+  "slug_es": "delonghi-magnifica-s-vs-krups-essential",
+  "slug_de": "delonghi-magnifica-s-vs-krups-essential-test",
+  "categoria": "Cafeteras Superautomáticas / Kaffeevollautomaten",
+  "data_publicacao": "2026-10-26",
+  "queda_preco_detectada": true,
+  "produto_a": {
+    "nome": "De'Longhi Magnifica S ECAM 22.110.B",
+    "marca": "De'Longhi",
+    "asin": "B00400OMU0",
+    "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21",
+    "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=teste-de-21",
+    "specs_tecnicas": {
+      "potencia": "1450 W",
+      "pressao": "15 bar",
+      "reservatorio_agua": "1.8 L",
+      "capacidade_graos": "250 g",
+      "moedor": "Aço cónico (13 níveis)",
+      "limpeza_infusor": "Extraível lavável em água corrente"
+    },
+    "pros": [
+      "Grupo infusor completamente removível e de fácil limpeza sem químicos caros",
+      "Extração consistente de crema espessa e controle preciso de temperatura",
+      "Durabilidade mecânica comprovada por milhares de compradores ao longo dos anos"
+    ],
+    "contras_reais": [
+      "O bico de vapor manual requer técnica para texturizar o leite perfeitamente",
+      "Nível de ruído moderado no momento da moagem matinal"
+    ]
+  },
+  "produto_b": {
+    "nome": "Krups Essential EA8108",
+    "marca": "Krups",
+    "asin": "B00INSX904",
+    "link_es": "https://www.amazon.es/dp/B00INSX904?tag=teste-es-21",
+    "link_de": "https://www.amazon.de/dp/B00INSX904?tag=teste-de-21",
+    "specs_tecnicas": {
+      "potencia": "1450 W",
+      "pressao": "15 bar",
+      "reservatorio_agua": "1.7 L",
+      "capacidade_graos": "260 g",
+      "moedor": "Aço cónico (3 níveis)",
+      "limpeza_infusor": "Fixo (requer pastilhas automáticas)"
+    },
+    "pros": [
+      "Chassi compacto e estreito, ideal para bancadas e cozinhas com pouco espaço",
+      "Aquecimento ultra-rápido graças ao bloco térmico patenteado Thermoblock",
+      "Excelente custo-benefício de entrada na categoria de grãos automáticos"
+    ],
+    "contras_reais": [
+      "Grupo infusor fixo não lavável na pia; obriga o uso regular de pastilhas de descalcificação",
+      "Apenas 3 configurações de ajuste de moagem (menos flexibilidade para grãos finos)"
+    ]
+  },
+  "veredito_resumo": {
+    "es": "La De'Longhi Magnifica S es la ganadora indiscutible para quienes buscan máxima durabilidad, facilidad de mantenimiento con grupo extraíble y mayor ajuste del molinillo. La Krups Essential resulta la opción indicada exclusivamente si dispones de espacio muy reducido o buscas el precio de acceso más económico.",
+    "de": "Die De'Longhi Magnifica S gewinnt im Praxisvergleich dank der wartungsfreundlichen, herausnehmbaren Brühgruppe und 13 präzisen Mahlgradstufen. Die Krups Essential bleibt eine solide Alternative für sehr kompakte Küchenflächen oder preisbewusste Einsteiger, erfordert aber Reinigungstabletten für die fest verbaute Brüheinheit."
+  }
+}
