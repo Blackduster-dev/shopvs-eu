@@ -1,0 +1,33 @@
+name: Atualizacao e Indexacao Periodica (3 em 3 dias)
+
+on:
+  schedule:
+    # Executa a cada 3 dias as 04:00 UTC
+    - cron: '0 4 */3 * *'
+  workflow_dispatch: # Permite disparo manual com 1 clique pela aba Actions do GitHub
+
+jobs:
+  index-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Ambiente Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar Dependencias Graficas
+        run: pip install pillow
+
+      - name: Executar Motor de Indexacao & Build do Catalogo
+        run: |
+          python scripts/indexer.py
+
+      - name: Publicar Atualizacao no Repositorio
+        run: |
+          git config user.name "ShopVS Indexer Bot"
+          git config user.email "bot@shopvs-eu.pages.dev"
+          git add assets/ data/ es/ de/ index.html compare/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(cron): periodic 3-day catalog re-indexing and data validation [skip ci]" && git push)
