@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopVS EU • Laboratorio de Comparación Técnica & Produkttests</title>
-    <meta name="description" content="Portal europeo independiente de auditoría técnica y comparativas cara a cara. Metodología de laboratorio, especificaciones reales y fallos de compradores.">
+    <meta name="description" content="Portal europeo independiente de auditoría técnica y comparativas cara a cara. Categorías de productos, buscador inteligente y comparador estilo Tudocelular.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -52,44 +53,58 @@
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
     </style>
-
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
+
+    <!-- Top Ribbon com tradução dinâmica -->
     <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <span class="inline-flex items-center gap-1.5 text-nordic-emerald font-bold">
                     <span class="w-2 h-2 rounded-full bg-nordic-emerald animate-ping"></span>
-                    CE-TEST LAB • NORMATIVA 2026
+                    <span id="ribbon-normativa">CE-TEST LAB • NORMATIVA 2026</span>
                 </span>
                 <span class="hidden md:inline text-slate-500">|</span>
-                <span class="hidden md:inline text-slate-300">Auditoría técnica de 45 variables en laboratorio europeo</span>
+                <span class="hidden md:inline text-slate-300" id="ribbon-desc">Auditoría técnica independiente de 45 variables en laboratorio europeo</span>
             </div>
             <div class="flex items-center gap-3 text-slate-300 font-mono text-[10px]">
-                <span>100% Sin Patrocinio</span>
+                <span id="ribbon-sponsorship">100% Sin Patrocinio</span>
                 <span>•</span>
-                <span class="text-nordic-amber">Amazon Verified Partner</span>
+                <span class="text-nordic-amber">Amazon EU Verified Partner</span>
             </div>
         </div>
     </aside>
 
+    <!-- Header Principal -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
-                <div class="w-10 h-10 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-lg border-2 border-nordic-petrol group-hover:bg-nordic-petrol transition-colors">
-                    VS
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-extrabold text-xl text-nordic-navy tracking-tight leading-none">ShopVS<span class="text-nordic-amber">.eu</span></span>
-                    <span class="text-[9px] uppercase tracking-widest font-mono font-bold text-nordic-petrol mt-0.5">European Benchmark Lab</span>
-                </div>
-            </a>
+            <div class="flex items-center gap-5">
+                <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
+                    <div class="w-10 h-10 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-lg border-2 border-nordic-petrol group-hover:bg-nordic-petrol transition-colors">
+                        VS
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-extrabold text-xl text-nordic-navy tracking-tight leading-none">ShopVS<span class="text-nordic-amber">.eu</span></span>
+                        <span class="text-[9px] uppercase tracking-widest font-mono font-bold text-nordic-petrol mt-0.5">European Benchmark Lab</span>
+                    </div>
+                </a>
+                <span class="h-6 w-px bg-nordic-border hidden sm:block"></span>
+                <nav class="flex items-center gap-1 text-xs font-mono font-bold">
+                    <a href="/" class="px-3 py-1.5 rounded bg-nordic-canvas text-nordic-navy" id="nav-home">Inicio</a>
+                    <a href="/compare/" class="px-3 py-1.5 rounded text-slate-600 hover:text-nordic-navy hover:bg-slate-100 transition-colors flex items-center gap-1" id="nav-compare">
+                        <span class="material-symbols-outlined text-[16px] text-nordic-amber">compare_arrows</span>
+                        <span id="nav-compare-text">Comparador Cara a Cara</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- TOGGLE DE IDIOMA PURO: Altera o conteúdo na página sem redirecionar -->
             <div class="flex items-center gap-3">
                 <div class="flex items-center bg-slate-100 p-0.5 rounded border border-nordic-border text-xs font-bold font-mono">
-                    <a href="/es/" class="px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm">🇪🇸 ES</a>
-                    <a href="/de/" class="px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors">🇩🇪 DE</a>
+                    <button id="toggle-es" onclick="setLang('es')" class="px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm transition-all">🇪🇸 ES</button>
+                    <button id="toggle-de" onclick="setLang('de')" class="px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-all">🇩🇪 DE</button>
                 </div>
-                <a href="/legal/" class="text-xs font-semibold text-slate-600 hover:text-nordic-navy border border-nordic-border px-3 py-1.5 rounded hover:bg-slate-50 transition-colors hidden sm:flex items-center gap-1.5">
+                <a href="/legal/" class="text-xs font-semibold text-slate-600 hover:text-nordic-navy border border-nordic-border px-3 py-1.5 rounded hover:bg-slate-50 transition-colors hidden sm:flex items-center gap-1.5" id="nav-legal">
                     <span class="material-symbols-outlined text-[16px] text-nordic-petrol">gavel</span>
                     <span>Impressum (§ 5 TMG)</span>
                 </a>
@@ -97,104 +112,309 @@
         </div>
     </header>
 
-    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 w-full">
-        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 w-full flex flex-col gap-12">
+        <!-- HERO & BARRA DE BUSCA EM TEMPO REAL -->
+        <div class="text-center max-w-3xl mx-auto">
             <div class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4">
                 <span class="w-1.5 h-1.5 rounded-full bg-nordic-amber"></span>
-                Auditoría Técnica Cara a Cara • Fotografías y Datos Verificados
+                <span id="hero-badge">Base de Datos de Pruebas de Laboratorio 2026</span>
             </div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-nordic-navy leading-tight mb-4">
-                Comparativas de Consumo con Datos Reales
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-nordic-navy leading-tight mb-4" id="hero-title">
+                Encuentra el Mejor Custo-Beneficio en Europa
             </h1>
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Ayudamos a compradores de España y Alemania a tomar decisiones inteligentes de alto ticket con imágenes reales de producto, fichas técnicas expandidas y cálculo de costes a 3 años.
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8" id="hero-subtitle">
+                Auditorías técnicas imparciales de productos líderes. Busca por modelo o explora las categorías verificadas por nuestros ingenieros.
             </p>
+
+            <!-- BARRA DE PESQUISA INTELIGENTE (PONTO DE PARTIDA) -->
+            <div class="relative max-w-2xl mx-auto text-left">
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-4 text-slate-400 text-[22px]">search</span>
+                    <input type="text" id="site-search-input" oninput="handleSearch(this.value)" placeholder="Buscar producto o marca (ej. De'Longhi, Cosori, Roborock)..." class="w-full bg-white border-2 border-nordic-borderDark focus:border-nordic-petrol rounded-xl pl-12 pr-4 py-4 text-sm sm:text-base font-semibold text-nordic-navy placeholder:text-slate-400 shadow-technical focus:outline-none transition-all">
+                </div>
+                <!-- Dropdown de Resultados da Busca -->
+                <div id="search-results-dropdown" class="absolute left-0 right-0 top-full mt-2 bg-white border border-nordic-border rounded-xl shadow-card-active z-50 max-h-80 overflow-y-auto hidden">
+                    <!-- Resultados inseridos dinamicamente -->
+                </div>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-14">
-            <a href="/es/" class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-card-active group shadow-technical">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-4xl">🇪🇸</span>
-                        <span class="text-xs font-mono font-bold uppercase bg-nordic-emeraldBg text-nordic-emerald px-2.5 py-1 rounded border border-nordic-emerald/30">Portal España</span>
-                    </div>
-                    <h2 class="text-2xl font-display font-extrabold text-nordic-navy mb-2 group-hover:text-nordic-emerald transition-colors">Edición España (.es)</h2>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Análisis comparativos exhaustivos con foco en relación calidad-precio y costes de mantenimiento para compradores en Amazon España y retail oficial.
-                    </p>
+        <!-- BANNER DE ACESSO AO COMPARADOR (CALL TO ACTION) -->
+        <div class="bg-gradient-to-r from-nordic-navy via-nordic-navyLight to-nordic-petrol text-white rounded-2xl p-6 sm:p-10 shadow-card-active flex flex-col md:flex-row items-center justify-between gap-6 border border-nordic-navyLight">
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-2 text-nordic-amber font-mono font-bold text-xs uppercase tracking-wider mb-2">
+                    <span class="material-symbols-outlined text-[18px]">balance</span>
+                    <span id="banner-tag">HERRAMIENTA DISPONIBLE</span>
                 </div>
-                <div class="inline-flex items-center justify-between w-full font-display font-bold text-sm bg-nordic-canvas group-hover:bg-nordic-emerald group-hover:text-white px-5 py-3 rounded-lg border border-nordic-border group-hover:border-nordic-emerald transition-all">
-                    <span>Acceder a Comparativas en Castellano</span>
-                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </div>
-            </a>
-
-            <a href="/de/" class="bg-white border border-nordic-border hover:border-nordic-petrol rounded-xl p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-card-active group shadow-technical">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-4xl">🇩🇪</span>
-                        <span class="text-xs font-mono font-bold uppercase bg-slate-100 text-slate-800 px-2.5 py-1 rounded border border-slate-300">DACH Region</span>
-                    </div>
-                    <h2 class="text-2xl font-display font-extrabold text-nordic-navy mb-2 group-hover:text-nordic-petrol transition-colors">Edition Deutschland (.de)</h2>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Technische Direktvergleiche nach deutschem Prüfstandard (Testbericht-Standard). Detaillierte Kenngrößen, Schwachstellen-Audit und Preis-Leistungs-Checks.
-                    </p>
-                </div>
-                <div class="inline-flex items-center justify-between w-full font-display font-bold text-sm bg-nordic-canvas group-hover:bg-nordic-navy group-hover:text-white px-5 py-3 rounded-lg border border-nordic-border group-hover:border-nordic-navy transition-all">
-                    <span>Zu den technischen Testberichten</span>
-                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </div>
+                <h2 class="text-2xl sm:text-3xl font-display font-black leading-tight mb-2" id="banner-title">
+                    Comparador Cara a Cara (Head-to-Head)
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal" id="banner-desc">
+                    ¿Dudando entre dos modelos de la misma categoría? Usa nuestra herramienta interactiva para cruzar especificaciones, fotografías y fallos reales reportados por compradores.
+                </p>
+            </div>
+            <a href="/compare/" class="w-full md:w-auto bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-extrabold text-sm py-4 px-8 rounded-xl flex items-center justify-center gap-2 shadow-cta shrink-0 transition-all">
+                <span id="banner-btn">Abrir Comparador</span>
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
             </a>
         </div>
 
-        <!-- Destaques com Miniatura dos Produtos -->
-        <div class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
+        <!-- EXPLORE POR CATEGORIA (LISTAGEM DE NICHOS) -->
+        <section>
             <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
                 <div>
-                    <h3 class="text-xl font-display font-extrabold text-nordic-navy">Últimas Pruebas de Laboratorio Publicadas</h3>
-                    <p class="text-xs text-slate-500 font-mono">Fichas técnicas cara a cara y revisión de averías reportadas</p>
+                    <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-wider" id="cat-section-tag">CATÁLOGO AUDITADO</span>
+                    <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5" id="cat-section-title">Explora por Categoría</h3>
+                </div>
+                <span class="text-xs font-mono text-slate-500 hidden sm:inline" id="cat-section-hint">Selecciona para comparar modelos</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="categories-grid">
+                <!-- Inserido dinamicamente conforme idioma selecionado -->
+            </div>
+        </section>
+
+        <!-- TOP CUSTO-BENEFÍCIO DA TEMPORADA -->
+        <section class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
+            <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-wider">LABORATORY VERIFIED</span>
+                    <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5" id="top-section-title">Top Custo-Benefício de la Temporada</h3>
                 </div>
                 <span class="text-xs font-mono font-bold bg-nordic-emeraldBg text-nordic-emerald px-3 py-1 rounded border border-nordic-emerald/30">
-                    Octubre 2026
+                    Edición 2026
                 </span>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="flex items-center p-4 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-emerald hover:shadow-technical transition-all gap-4 group">
-                    <div class="w-16 h-16 bg-white rounded border border-nordic-border p-1 flex items-center justify-center shrink-0">
-                        <img src="/assets/products/delonghi_magnifica_s.png" alt="De'Longhi Magnifica S ECAM 22.110.B" class="w-full h-full object-contain">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-[11px] font-mono font-bold text-nordic-petrol uppercase">🇪🇸 Cafeteras Superautomáticas / Kaffeevollautomaten</span>
-                            <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1 py-0.2 rounded font-bold font-mono">LAB WINNER</span>
-                        </div>
-                        <h4 class="font-display font-bold text-sm text-nordic-navy group-hover:text-nordic-emerald transition-colors truncate">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
-                    </div>
-                    <span class="material-symbols-outlined text-nordic-amber text-[20px] shrink-0">arrow_forward</span>
-                </a>
-
-                <a href="/de/delonghi-magnifica-s-vs-krups-essential-test.html" class="flex items-center p-4 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-navy hover:shadow-technical transition-all gap-4 group">
-                    <div class="w-16 h-16 bg-white rounded border border-nordic-border p-1 flex items-center justify-center shrink-0">
-                        <img src="/assets/products/krups_essential.png" alt="Krups Essential EA8108" class="w-full h-full object-contain">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-[11px] font-mono font-bold text-nordic-petrol uppercase">🇩🇪 Kaffeevollautomaten</span>
-                            <span class="text-[9px] bg-slate-200 text-slate-800 px-1 py-0.2 rounded font-bold font-mono">TESTBERICHT</span>
-                        </div>
-                        <h4 class="font-display font-bold text-sm text-nordic-navy group-hover:text-nordic-navy transition-colors truncate">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
-                    </div>
-                    <span class="material-symbols-outlined text-nordic-amber text-[20px] shrink-0">arrow_forward</span>
-                </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="top-products-grid">
+                <!-- Inserido dinamicamente conforme idioma selecionado -->
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="bg-white border-t border-nordic-border py-10 mt-12 text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono">
-            &copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico • <a href="/legal/" class="text-nordic-navy hover:underline font-bold">Impressum (§ 5 TMG)</a>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-nordic-border py-10 text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>&copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico</div>
+            <div class="flex items-center gap-5">
+                <a href="/compare/" class="hover:text-nordic-navy font-bold text-nordic-petrol" id="footer-compare-link">Comparador</a>
+                <a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a>
+            </div>
         </div>
     </footer>
+
+    <!-- LÓGICA DO TOGGLE DE IDIOMA E DA BUSCA INTELIGENTE -->
+    <script>
+        let catalogoData = null;
+        let currentLang = 'es';
+
+        const i18n = {
+            es: {
+                ribbonNormativa: "CE-TEST LAB • NORMATIVA 2026",
+                ribbonDesc: "Auditoría técnica independiente de 45 variables en laboratorio europeo",
+                ribbonSponsorship: "100% Sin Patrocinio",
+                navHome: "Inicio",
+                navCompare: "Comparador Cara a Cara",
+                heroBadge: "Base de Datos de Pruebas de Laboratorio 2026",
+                heroTitle: "Encuentra el Mejor Custo-Beneficio en Europa",
+                heroSubtitle: "Auditorías técnicas imparciales de productos líderes. Busca por modelo o explora las categorías verificadas por nuestros ingenieros.",
+                searchPlaceholder: "Buscar producto o marca (ej. De'Longhi, Cosori, Roborock)...",
+                noResults: "No encontramos modelos para ese término",
+                compareBtn: "Comparar",
+                bannerTag: "HERRAMIENTA DISPONIBLE",
+                bannerTitle: "Comparador Cara a Cara (Head-to-Head)",
+                bannerDesc: "¿Dudando entre dos modelos de la misma categoría? Usa nuestra herramienta interactiva para cruzar especificaciones, fotografías y fallos reales reportados por compradores.",
+                bannerBtn: "Abrir Comparador",
+                catSectionTag: "CATÁLOGO AUDITADO",
+                catSectionTitle: "Explora por Categoría",
+                catSectionHint: "Selecciona para comparar modelos",
+                topSectionTitle: "Top Custo-Benefício de la Temporada",
+                readReport: "Leer informe completo",
+                compareVs: "Comparar en la herramienta"
+            },
+            de: {
+                ribbonNormativa: "CE-TEST LAB • PRÜFNORM 2026",
+                ribbonDesc: "Unabhängige Laborprüfung von 45 technischen Parametern nach europäischem Standard",
+                ribbonSponsorship: "100% Hersteller-Unabhängig",
+                navHome: "Startseite",
+                navCompare: "Direktvergleich-Tool",
+                heroBadge: "Labor-Datenbank & Prüfberichte 2026",
+                heroTitle: "Das beste Preis-Leistungs-Verhältnis in Europa",
+                heroSubtitle: "Unabhängige Produkttests und technische Direktvergleiche. Suchen Sie nach Modellen oder filtern Sie nach zertifizierten Kategorien.",
+                searchPlaceholder: "Produkt oder Marke suchen (z. B. De'Longhi, Cosori, Roborock)...",
+                noResults: "Keine Modelle für diesen Suchbegriff gefunden",
+                compareBtn: "Vergleichen",
+                bannerTag: "NEUES PRAXISTOOL",
+                bannerTitle: "Technischer Direktvergleich (Head-to-Head)",
+                bannerDesc: "Unschlüssig zwischen zwei Geräten derselben Kategorie? Nutzen Sie unser Tool für Messwerte, Originalfotos und Schwachstellen im Praxis-Check.",
+                bannerBtn: "Vergleichstool öffnen",
+                catSectionTag: "GEPRÜFTER KATALOG",
+                catSectionTitle: "Nach Produktkategorie filtern",
+                catSectionHint: "Kategorie wählen für direkten Vergleich",
+                topSectionTitle: "Preis-Leistungs-Testsieger der Saison",
+                readReport: "Vollständigen Testbericht lesen",
+                compareVs: "Im Tool direkt vergleichen"
+            }
+        };
+
+        async function init() {
+            try {
+                const res = await fetch('/data/catalogo_produtos.json');
+                catalogoData = await res.json();
+                renderAll();
+            } catch (e) {
+                console.error("Erro ao carregar dados:", e);
+            }
+        }
+
+        function setLang(lang) {
+            currentLang = lang;
+            const btnEs = document.getElementById('toggle-es');
+            const btnDe = document.getElementById('toggle-de');
+            if (lang === 'de') {
+                btnDe.className = 'px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm transition-all';
+                btnEs.className = 'px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-all';
+                document.documentElement.lang = 'de';
+            } else {
+                btnEs.className = 'px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm transition-all';
+                btnDe.className = 'px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-all';
+                document.documentElement.lang = 'es';
+            }
+            renderAll();
+        }
+
+        function renderAll() {
+            const t = i18n[currentLang];
+            // Ribbon & Headers
+            document.getElementById('ribbon-normativa').textContent = t.ribbonNormativa;
+            document.getElementById('ribbon-desc').textContent = t.ribbonDesc;
+            document.getElementById('ribbon-sponsorship').textContent = t.ribbonSponsorship;
+            document.getElementById('nav-home').textContent = t.navHome;
+            document.getElementById('nav-compare-text').textContent = t.navCompare;
+            document.getElementById('hero-badge').textContent = t.heroBadge;
+            document.getElementById('hero-title').textContent = t.heroTitle;
+            document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+            document.getElementById('site-search-input').placeholder = t.searchPlaceholder;
+            document.getElementById('banner-tag').textContent = t.bannerTag;
+            document.getElementById('banner-title').textContent = t.bannerTitle;
+            document.getElementById('banner-desc').textContent = t.bannerDesc;
+            document.getElementById('banner-btn').textContent = t.bannerBtn;
+            document.getElementById('cat-section-tag').textContent = t.catSectionTag;
+            document.getElementById('cat-section-title').textContent = t.catSectionTitle;
+            document.getElementById('cat-section-hint').textContent = t.catSectionHint;
+            document.getElementById('top-section-title').textContent = t.topSectionTitle;
+            document.getElementById('footer-compare-link').textContent = t.navCompare;
+
+            renderCategoriesGrid();
+            renderTopProducts();
+        }
+
+        function renderCategoriesGrid() {
+            if (!catalogoData) return;
+            const container = document.getElementById('categories-grid');
+            container.innerHTML = catalogoData.categorias.map(cat => {
+                const count = catalogoData.produtos.filter(p => p.categoria_id === cat.id).length;
+                const nome = currentLang === 'de' ? cat.nome_de : cat.nome_es;
+                const desc = currentLang === 'de' ? cat.descricao_de : cat.descricao_es;
+                const linkAction = currentLang === 'de' 
+                    ? `Modelle vergleichen (${count} im Test) &rarr;` 
+                    : `Comparar modelos (${count} auditados) &rarr;`;
+
+                return `
+                    <div class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 shadow-technical hover:shadow-card-active transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-lg bg-nordic-navy text-white flex items-center justify-center mb-4 group-hover:bg-nordic-emerald transition-colors">
+                                <span class="material-symbols-outlined text-[24px] text-nordic-amber">${cat.icone}</span>
+                            </div>
+                            <h4 class="font-display font-bold text-lg text-nordic-navy mb-2">${nome}</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">${desc}</p>
+                        </div>
+                        <a href="/compare/" class="text-xs font-mono font-bold text-nordic-petrol group-hover:text-nordic-emerald flex items-center gap-1 pt-3 border-t border-nordic-border">
+                            <span>${linkAction}</span>
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderTopProducts() {
+            if (!catalogoData) return;
+            const container = document.getElementById('top-products-grid');
+            // Pegar 3 destaques
+            const topIds = ['delonghi_magnifica_s', 'cosori_dual_blaze', 'roborock_q8_max'];
+            const prods = catalogoData.produtos.filter(p => topIds.includes(p.id));
+
+            container.innerHTML = prods.map(p => {
+                const badge = currentLang === 'de' ? p.score_badge_de : p.score_badge_es;
+                const linkLabel = currentLang === 'de' ? 'Im Vergleichstool prüfen &rarr;' : 'Comparar en la herramienta &rarr;';
+                const desc = currentLang === 'de' ? p.pros_de[0] : p.pros_es[0];
+
+                return `
+                    <div class="border border-nordic-border rounded-lg p-5 bg-nordic-canvas/40 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-mono font-bold uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">${badge}</span>
+                            <div class="w-full h-32 my-3 p-2 bg-white rounded border border-nordic-border flex items-center justify-center">
+                                <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                            </div>
+                            <h4 class="font-display font-bold text-base text-nordic-navy">${p.nome}</h4>
+                            <p class="text-xs text-slate-600 mt-1">${desc}</p>
+                        </div>
+                        <a href="/compare/" class="mt-4 text-xs font-mono font-bold text-nordic-amber hover:text-nordic-amberHover flex items-center justify-between">
+                            <span>${linkLabel}</span>
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function handleSearch(query) {
+            const dropdown = document.getElementById('search-results-dropdown');
+            const clean = query.trim().toLowerCase();
+            const t = i18n[currentLang];
+
+            if (clean.length < 2) {
+                dropdown.classList.add('hidden');
+                dropdown.innerHTML = '';
+                return;
+            }
+
+            const results = catalogoData.produtos.filter(p => 
+                p.nome.toLowerCase().includes(clean) || 
+                p.marca.toLowerCase().includes(clean)
+            );
+
+            if (results.length === 0) {
+                dropdown.innerHTML = `<div class="p-4 text-xs text-slate-500 font-mono text-center">${t.noResults}</div>`;
+                dropdown.classList.remove('hidden');
+                return;
+            }
+
+            dropdown.innerHTML = results.map(p => `
+                <a href="/compare/" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
+                    <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
+                        <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${p.marca}</span>
+                        <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${p.nome}</strong>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-nordic-amber flex items-center gap-1 shrink-0">
+                        ${t.compareBtn} &rarr;
+                    </span>
+                </a>
+            `).join('');
+            dropdown.classList.remove('hidden');
+        }
+
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('search-results-dropdown');
+            const input = document.getElementById('site-search-input');
+            if (dropdown && !dropdown.contains(e.target) && e.target !== input) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
