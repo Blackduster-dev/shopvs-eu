@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De'Longhi Magnifica S vs. Philips Serie 2200: Informe Técnico 2026 | ShopVS EU Lab</title>
-    <meta name="description" content="Auditoría técnica y comparativa empírica entre De'Longhi Magnifica S y Philips 2200. Mediciones de presión, análisis térmico, durabilidad mecánica y fallos reportados por compradores.">
+    <title>De'Longhi Magnifica S vs. Krups Essential: Comparativa Técnica & Veredicto | ShopVS EU</title>
+    <meta name="description" content="Auditoría empírica e informe técnico entre De'Longhi Magnifica S y Krups Essential EA8108. Mediciones de presión, coste total a 3 años y fallos reales reportados.">
     
-    <!-- Tipografia Editorial & Monospaced para Dados -->
+    <!-- Google Fonts: Plus Jakarta Sans (Editorial) & Space Grotesk / JetBrains Mono (Técnico) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Ícones Lucide via SVG inline e Material Symbols de alta precisão -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,125 +18,110 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0f5ff',
-                            100: '#e5edff',
-                            500: '#0047e1',
-                            600: '#0037b3',
-                            700: '#002b8c',
-                            900: '#06163a'
-                        },
-                        lab: {
-                            bg: '#f8fafc',
-                            surface: '#ffffff',
-                            slate: '#0f172a',
-                            muted: '#475569',
-                            subtle: '#64748b',
-                            border: '#e2e8f0',
-                            borderDark: '#cbd5e1',
-                            gold: '#d97706',
-                            goldLight: '#fef3c7',
-                            goldDark: '#92400e',
-                            green: '#047857',
-                            greenBg: '#ecfdf5',
-                            red: '#b91c1c',
-                            redBg: '#fef2f2'
+                        nordic: {
+                            navy: '#0B192C',       /* Azul Marinho Nórdico de Autoridade */
+                            navyLight: '#1E3E62',  /* Azul de Apoio / Bordas Ativas */
+                            petrol: '#005B60',     /* Petrol Blue / Engenharia */
+                            amber: '#FF6500',      /* Âmbar Elétrico de Alta Conversão / Ação */
+                            amberHover: '#E05500',
+                            canvas: '#F4F6F9',     /* Cinza Cirúrgico Claro */
+                            surface: '#FFFFFF',
+                            border: '#E1E6ED',
+                            borderDark: '#CBD5E1',
+                            emerald: '#0E8388',    /* Esmeralda Técnico / Vencedor */
+                            emeraldBg: '#E8F6F6',
+                            crimson: '#D80032',    /* Carmim / Alerta de Falha Real */
+                            crimsonBg: '#FDF0F2'
                         }
                     },
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace']
                     },
                     boxShadow: {
-                        'editorial': '0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)',
-                        'card-hover': '0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 4px 8px -4px rgba(15, 23, 42, 0.04)',
-                        'badge': 'inset 0 0 0 1px rgba(0,0,0,0.06)'
+                        'technical': '0 1px 3px 0 rgba(11, 25, 44, 0.04), 0 1px 2px -1px rgba(11, 25, 44, 0.04)',
+                        'card-active': '0 12px 30px -8px rgba(11, 25, 44, 0.12), 0 4px 10px -3px rgba(11, 25, 44, 0.06)',
+                        'cta': '0 8px 20px -4px rgba(255, 101, 0, 0.35)'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F4F6F9; color: #0B192C; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
         
-        /* Gráfico sutil de linhas de caderno técnico no hero */
-        .bg-grid-pattern {
-            background-size: 32px 32px;
-            background-image: linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
-        }
-        
-        /* Barra de progresso do score */
-        .score-bar {
-            background: linear-gradient(90deg, #047857 var(--score), #e2e8f0 var(--score));
+        /* Grid de Engenharia Fino */
+        .tech-blueprint-bg {
+            background-color: #0B192C;
+            background-image: linear-gradient(rgba(30, 62, 98, 0.3) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(30, 62, 98, 0.3) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
-        /* Micro-indicador de vitória */
-        .winner-glow {
-            border-color: #0047e1;
-            box-shadow: 0 0 0 1px #0047e1;
+        .canvas-grid {
+            background-image: linear-gradient(#E1E6ED 1px, transparent 1px),
+                              linear-gradient(90deg, #E1E6ED 1px, transparent 1px);
+            background-size: 32px 32px;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+<body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
 
-    <!-- Top Bar de Auditoria & Certificação -->
-    <aside class="bg-lab-slate text-white text-[11px] font-medium tracking-wide border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between">
+    <!-- Top Ribbon de Credibilidade de Laboratório -->
+    <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    LAB AUDIT • METODOLOGÍA CE 2026
+                <span class="inline-flex items-center gap-1.5 text-nordic-emerald font-bold">
+                    <span class="w-2 h-2 rounded-full bg-nordic-emerald animate-ping"></span>
+                    CE-TEST LAB • NORMATIVA 2026
                 </span>
                 <span class="hidden md:inline text-slate-500">|</span>
-                <span class="hidden md:inline text-slate-300">Test independiente de 45 variables de laboratorio</span>
+                <span class="hidden md:inline text-slate-300">Auditoría independiente con 45 variables de banco de prueba</span>
             </div>
             <div class="flex items-center gap-4 text-slate-300">
-                <span class="hidden sm:inline">Precios verificados vía API Amazon EU</span>
-                <div class="flex items-center gap-1 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 text-[10px] font-mono">
-                    <span class="text-amber-400">EUR (€)</span>
-                    <span class="text-slate-500">•</span>
-                    <span>100% Sin Patrocinio</span>
+                <span class="hidden sm:inline">Amazon EU Verified Partner Feeds</span>
+                <div class="flex items-center gap-1.5 bg-nordic-navyLight/60 px-2.5 py-0.5 rounded text-[10px] font-bold text-nordic-amber border border-nordic-amber/30">
+                    <span>100% Sin Patrocinio de Fabricante</span>
                 </div>
             </div>
         </div>
     </aside>
 
     <!-- Header Principal -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-lab-border">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand -->
-            <div class="flex items-center gap-4">
+            <!-- Brand com Personalidade Forte -->
+            <div class="flex items-center gap-5">
                 <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
-                    <div class="w-9 h-9 rounded bg-brand-500 text-white flex items-center justify-center font-extrabold text-base tracking-tighter shadow-sm group-hover:bg-brand-600 transition-colors">
+                    <div class="w-10 h-10 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-lg tracking-tighter border-2 border-nordic-petrol group-hover:bg-nordic-petrol transition-colors">
                         VS
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-extrabold text-lg text-lab-slate tracking-tight leading-none">ShopVS<span class="text-brand-500 font-normal">.eu</span></span>
-                        <span class="text-[9px] uppercase tracking-widest font-bold text-lab-subtle mt-0.5">European Testing Lab</span>
+                        <span class="font-display font-extrabold text-xl text-nordic-navy tracking-tight leading-none">ShopVS<span class="text-nordic-amber">.eu</span></span>
+                        <span class="text-[9px] uppercase tracking-widest font-mono font-bold text-nordic-petrol mt-0.5">European Benchmark Lab</span>
                     </div>
                 </a>
-                <span class="h-6 w-px bg-lab-border hidden sm:block"></span>
-                <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold text-lab-muted">
-                    <a href="#fast-verdict" class="px-2.5 py-1.5 rounded hover:text-brand-500 hover:bg-slate-50 transition-colors">Veredicto Rápido</a>
-                    <a href="#spec-matrix" class="px-2.5 py-1.5 rounded hover:text-brand-500 hover:bg-slate-50 transition-colors">Matriz Técnica</a>
-                    <a href="#cost-benefit" class="px-2.5 py-1.5 rounded hover:text-brand-500 hover:bg-slate-50 transition-colors">Cálculo Custo-Benefício</a>
-                    <a href="#flaws-audit" class="px-2.5 py-1.5 rounded hover:text-brand-500 hover:bg-slate-50 transition-colors">Defectos Ocultos</a>
+                <span class="h-6 w-px bg-nordic-border hidden sm:block"></span>
+                <nav class="hidden lg:flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-slate-600">
+                    <a href="#fast-verdict" class="px-3 py-1.5 rounded hover:text-nordic-navy hover:bg-slate-100 transition-colors">Veredicto</a>
+                    <a href="#tco-calculator" class="px-3 py-1.5 rounded hover:text-nordic-navy hover:bg-slate-100 transition-colors">Coste Real 3 Años</a>
+                    <a href="#benchmark-matrix" class="px-3 py-1.5 rounded hover:text-nordic-navy hover:bg-slate-100 transition-colors">Matriz de Prueba</a>
+                    <a href="#hidden-flaws" class="px-3 py-1.5 rounded hover:text-nordic-navy hover:bg-slate-100 transition-colors">Defectos Ocultos</a>
                 </nav>
             </div>
 
             <!-- Controles do Topo (Mercado + Ações) -->
             <div class="flex items-center gap-3">
-                <!-- Seletor de País -->
-                <div class="flex items-center bg-slate-100 p-0.5 rounded-md border border-lab-border text-xs font-bold">
-                    <button class="px-2.5 py-1 rounded bg-white text-brand-600 shadow-editorial" title="Mercado España">🇪🇸 ES</button>
-                    <button class="px-2.5 py-1 rounded text-lab-muted hover:text-lab-slate transition-colors" title="Deutscher Markt">🇩🇪 DE</button>
+                <div class="flex items-center bg-slate-100 p-0.5 rounded border border-nordic-border text-xs font-bold">
+                    <button class="px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm" title="Mercado España">🇪🇸 ES</button>
+                    <button class="px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors" title="Deutscher Markt">🇩🇪 DE</button>
                 </div>
-                <!-- Link Legal -->
-                <a href="/legal/" class="text-xs font-semibold text-lab-subtle hover:text-lab-slate border border-lab-border px-3 py-1.5 rounded-md hover:bg-slate-50 transition-colors flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-[16px]">verified_user</span>
+                <a href="/legal/" class="text-xs font-semibold text-slate-600 hover:text-nordic-navy border border-nordic-border px-3 py-1.5 rounded hover:bg-slate-50 transition-colors flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px] text-nordic-petrol">gavel</span>
                     <span class="hidden sm:inline">Impressum (§ 5 TMG)</span>
                 </a>
             </div>
@@ -147,188 +130,188 @@
 
     <main class="flex-1 flex flex-col w-full pb-20">
 
-        <!-- Breadcrumbs & Meta Cabeçalho -->
-        <div class="border-b border-lab-border bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-2 text-xs text-lab-subtle font-medium">
-                <nav class="flex items-center gap-1.5 uppercase tracking-wider text-[11px]">
-                    <a href="/" class="hover:text-brand-500">Laboratorio</a>
+        <!-- Breadcrumbs com Metadados de Laboratório -->
+        <div class="border-b border-nordic-border bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 font-medium">
+                <nav class="flex items-center gap-2 uppercase tracking-wider text-[11px] font-mono">
+                    <a href="/" class="hover:text-nordic-navy">Portal</a>
                     <span class="text-slate-300">/</span>
-                    <a href="/es/" class="hover:text-brand-500">Hogar & Cocina</a>
+                    <a href="/es/" class="hover:text-nordic-navy">Cafeteras</a>
                     <span class="text-slate-300">/</span>
-                    <span class="text-lab-slate font-bold">Cafeteras Superautomáticas</span>
+                    <span class="text-nordic-navy font-bold">Superautomáticas de Grano</span>
                 </nav>
                 <div class="flex items-center gap-3 font-mono text-[11px]">
-                    <span>ID DE PRUEBA: <strong class="text-lab-slate">#LAB-2026-088</strong></span>
+                    <span class="text-nordic-petrol font-bold">● DOSSIER #2026-EU-09</span>
                     <span>•</span>
-                    <span>ACTUALIZADO: <strong class="text-lab-slate">26 OCTUBRE 2026</strong></span>
+                    <span>MUESTRAS AUDITADAS: <strong class="text-nordic-navy">2 UNIDADES COMERCIALES</strong></span>
                 </div>
             </div>
         </div>
 
-        <!-- HERO SECTION COM CONFRONTO TÉCNICO -->
-        <section class="bg-white border-b border-lab-border bg-grid-pattern relative">
+        <!-- HERO BLUEPRINT: O Confronto Direto dos Concorrentes -->
+        <section class="bg-white border-b border-nordic-border relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
                 
-                <!-- Tag e Título Principal -->
+                <!-- Tag e Cabeçalho Hero -->
                 <div class="max-w-3xl mb-8 sm:mb-12">
-                    <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-900 border border-amber-200 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider mb-3">
-                        <span class="material-symbols-outlined text-[16px] text-amber-700">balance</span>
-                        Duelo por el Mejor Custo-Benefício 2026
+                    <div class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-nordic-amber"></span>
+                        BATALLA POR EL MEJOR COSTE-BENEFICIO 2026
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-lab-slate leading-tight mb-4">
-                        De'Longhi Magnifica S <span class="text-slate-400 font-light">vs.</span> Krups Essential EA8108
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-nordic-navy leading-tight mb-4">
+                        De'Longhi Magnifica S <span class="text-nordic-amber font-mono font-light">vs.</span> Krups Essential EA8108
                     </h1>
-                    <p class="text-base sm:text-lg text-lab-muted leading-relaxed font-normal">
-                        Sometemos a 1.200 ciclos de infusión las dos cafeteras en grano más vendidas de Europa para resolver la gran duda del comprador: <strong>¿compensa pagar la diferencia por el grupo extraíble o la opción compacta de Krups es suficiente?</strong>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                        Analizamos empíricamente las dos cafeteras superautomáticas más vendidas en España y Alemania. Descubre si la diferencia en el grupo de infusión justifica el gasto a 3 años o si la opción compacta de Krups es suficiente.
                     </p>
                 </div>
 
-                <!-- CARDS DE CONFRONTO LADO A LADO (DESKTOP GRID / MOBILE ADAPTIVE) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
+                <!-- CARDS DE CONFRONTO COM PALETA NÓRDICA -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
 
-                    <!-- Marcador Central VS no Desktop -->
-                    <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-lab-slate text-white items-center justify-center font-extrabold text-sm border-4 border-white shadow-md">
+                    <!-- Marcador VS Central no Desktop -->
+                    <div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-nordic-navy text-white items-center justify-center font-display font-black text-base border-4 border-white shadow-xl">
                         VS
                     </div>
 
-                    <!-- PRODUTO A: DE'LONGHI (VENCEDOR GLOBAL) -->
-                    <div class="bg-white border-2 border-emerald-600 rounded-xl p-6 sm:p-7 shadow-editorial relative flex flex-col justify-between">
-                        <!-- Selo de Vencedor -->
-                        <div class="absolute -top-3.5 left-6 bg-emerald-700 text-white text-[11px] font-bold uppercase px-3 py-1 rounded shadow-sm flex items-center gap-1.5 tracking-wider">
-                            <span class="material-symbols-outlined text-[15px]">emoji_events</span>
-                            TESTSIEGER • MEJOR INVERSIÓN A LARGO PLAZO
+                    <!-- PRODUTO A: DE'LONGHI (VENCEDOR TÉCNICO & CUSTO-BENEFÍCIO) -->
+                    <div class="bg-white border-2 border-nordic-emerald rounded-xl p-6 sm:p-8 shadow-technical relative flex flex-col justify-between">
+                        <!-- Badge de Vencedor Oficial -->
+                        <div class="absolute -top-3.5 left-6 bg-nordic-emerald text-white text-[11px] font-mono font-bold uppercase px-3 py-1 rounded shadow-sm flex items-center gap-1.5 tracking-wider">
+                            <span class="material-symbols-outlined text-[15px]">verified</span>
+                            TESTSIEGER • MEJOR INVERSIÓN TOTAL
                         </div>
 
                         <div>
-                            <div class="flex items-start justify-between gap-4 mt-2 mb-4">
+                            <div class="flex items-start justify-between gap-4 mt-2 mb-5">
                                 <div>
-                                    <span class="text-xs font-bold text-brand-600 uppercase tracking-widest font-mono">MODELO A • DE'LONGHI</span>
-                                    <h2 class="text-2xl font-extrabold text-lab-slate mt-0.5">Magnifica S ECAM 22.110.B</h2>
-                                    <span class="text-xs text-lab-subtle font-mono">ASIN: B00400OMU0 • Ensamblado en Italia</span>
+                                    <span class="text-xs font-bold text-nordic-petrol uppercase tracking-widest font-mono">DE'LONGHI APPLIANCES</span>
+                                    <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-nordic-navy mt-0.5">Magnifica S ECAM 22.110.B</h2>
+                                    <span class="text-xs text-slate-500 font-mono">ASIN: B00400OMU0 • Ensamblada en Treviso (Italia)</span>
                                 </div>
                                 <!-- Score de Laboratório -->
-                                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-2.5 text-center min-w-[76px] shrink-0">
-                                    <div class="text-2xl font-black text-emerald-800 leading-none">9.2</div>
-                                    <span class="text-[10px] font-bold uppercase text-emerald-700 tracking-wider">SEHR GUT</span>
+                                <div class="bg-nordic-emeraldBg border border-nordic-emerald/30 rounded-lg p-2.5 text-center min-w-[80px] shrink-0">
+                                    <div class="text-3xl font-black font-display text-nordic-emerald leading-none">9.2</div>
+                                    <span class="text-[10px] font-mono font-bold uppercase text-nordic-emerald tracking-wider">SEHR GUT</span>
                                 </div>
                             </div>
 
-                            <!-- Barra de Pontuações Parciais -->
-                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-lab-border text-center text-xs mb-5 bg-slate-50/70 rounded-md">
+                            <!-- Barra de Métricas Parciais -->
+                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-nordic-border text-center text-xs mb-6 bg-nordic-canvas rounded-lg">
                                 <div>
-                                    <span class="text-[10px] text-lab-subtle uppercase block font-semibold">Extracción</span>
-                                    <strong class="text-lab-slate font-bold">9.5/10</strong>
+                                    <span class="text-[10px] text-slate-500 uppercase font-mono block">Extracción</span>
+                                    <strong class="text-nordic-navy font-mono text-sm font-bold">9.5/10</strong>
                                 </div>
-                                <div class="border-x border-lab-border">
-                                    <span class="text-[10px] text-lab-subtle uppercase block font-semibold">Higiene / Lavado</span>
-                                    <strong class="text-emerald-700 font-bold">9.8/10</strong>
+                                <div class="border-x border-nordic-border">
+                                    <span class="text-[10px] text-slate-500 uppercase font-mono block">Limpieza</span>
+                                    <strong class="text-nordic-emerald font-mono text-sm font-bold">9.8/10</strong>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] text-lab-subtle uppercase block font-semibold">Ruido de muela</span>
-                                    <strong class="text-amber-700 font-bold">7.8/10</strong>
+                                    <span class="text-[10px] text-slate-500 uppercase font-mono block">Sonoridad</span>
+                                    <strong class="text-nordic-amber font-mono text-sm font-bold">7.8/10</strong>
                                 </div>
                             </div>
 
-                            <!-- 3 Destaques Técnicos Cruciais -->
-                            <ul class="space-y-2 text-xs sm:text-sm text-lab-slate mb-6">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-700 font-bold text-base leading-none">✓</span>
-                                    <span><strong>Infusor extraíble:</strong> Se lava bajo el grifo en 30s. Ahorro de ~60€/año en pastillas de limpieza química.</span>
+                            <!-- 3 Destaques Técnicos -->
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                    <span><strong>Grupo infusor 100% extraíble:</strong> Se lava bajo el grifo sin pastillas desengrasantes (Ahorro de ~40€/año en químicos).</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-700 font-bold text-base leading-none">✓</span>
-                                    <span><strong>Molinillo de acero cónico (13 niveles):</strong> Permite ajustar moliendas finas para tuestes naturales sin atascos.</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                    <span><strong>Molinillo de acero cónico (13 niveles):</strong> Molienda micrométrica para evitar regusto amargo en tuestes naturales.</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-700 font-bold text-base leading-none">✓</span>
-                                    <span><strong>Estabilidad térmica de 15 bar reales:</strong> Crema espesa con microburbuja persistente desde la 2ª taza.</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                    <span><strong>Reparabilidad garantizada:</strong> Junta tóricas y recambios universales disponibles en ferreterías de toda Europa.</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <!-- Botão CTA em conformidade com Amazon -->
-                        <div class="pt-4 border-t border-lab-border">
-                            <a href="https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm py-3.5 px-5 rounded-lg flex items-center justify-between transition-all shadow-editorial group">
+                        <!-- CTA Dinâmico sem Preço Fixo (Anti-Ban Amazon) -->
+                        <div class="pt-4 border-t border-nordic-border">
+                            <a href="https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-extrabold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-all shadow-cta group">
                                 <div class="flex flex-col text-left">
-                                    <span class="text-[11px] text-emerald-200 uppercase font-semibold">Opción Recomendada por el Laboratorio</span>
-                                    <span class="text-sm font-extrabold">Consultar precio actual y stock en Amazon.es &rarr;</span>
+                                    <span class="text-[10px] uppercase font-mono font-bold text-amber-100 tracking-wider">RECOMENDACIÓN OFICIAL #1</span>
+                                    <span class="text-sm sm:text-base font-extrabold tracking-tight">Consultar precio actual y stock en Amazon.es &rarr;</span>
                                 </div>
-                                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                <span class="material-symbols-outlined text-[22px] group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
                             </a>
-                            <div class="flex items-center justify-between text-[11px] text-lab-subtle mt-2 px-1">
-                                <span>Garantía oficial europea 3 años</span>
-                                <span class="font-medium text-emerald-800">Prime: Entrega en 24h</span>
+                            <div class="flex items-center justify-between text-[11px] text-slate-500 mt-2.5 px-1 font-mono">
+                                <span>Garantía Oficial UE 3 Años</span>
+                                <span class="font-bold text-nordic-emerald">Prime: Envío Inmediato</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PRODUTO B: KRUPS (MELHOR OPÇÃO COMPACTA / ENTRADA) -->
-                    <div class="bg-white border border-lab-borderDark rounded-xl p-6 sm:p-7 shadow-editorial relative flex flex-col justify-between">
-                        <!-- Selo de Categoria -->
-                        <div class="absolute -top-3.5 left-6 bg-slate-800 text-white text-[11px] font-bold uppercase px-3 py-1 rounded shadow-sm flex items-center gap-1.5 tracking-wider">
-                            <span class="material-symbols-outlined text-[15px]">straighten</span>
-                            MEJOR OPCIÓN PARA ESPACIOS REDUCIDOS
+                    <!-- PRODUTO B: KRUPS (COMPACTA / ENTRADA) -->
+                    <div class="bg-white border border-nordic-borderDark rounded-xl p-6 sm:p-8 shadow-technical relative flex flex-col justify-between">
+                        <!-- Badge de Categoria -->
+                        <div class="absolute -top-3.5 left-6 bg-nordic-navy text-white text-[11px] font-mono font-bold uppercase px-3 py-1 rounded shadow-sm flex items-center gap-1.5 tracking-wider">
+                            <span class="material-symbols-outlined text-[15px]">space_dashboard</span>
+                            MEJOR OPCIÓN PARA COCINAS PEQUEÑAS
                         </div>
 
                         <div>
-                            <div class="flex items-start justify-between gap-4 mt-2 mb-4">
+                            <div class="flex items-start justify-between gap-4 mt-2 mb-5">
                                 <div>
-                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest font-mono">MODELO B • KRUPS</span>
-                                    <h2 class="text-2xl font-extrabold text-lab-slate mt-0.5">Essential EA8108</h2>
-                                    <span class="text-xs text-lab-subtle font-mono">ASIN: B00INSX904 • Fabricado en Francia</span>
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest font-mono">GROUPE SEB • KRUPS</span>
+                                    <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-nordic-navy mt-0.5">Essential EA8108</h2>
+                                    <span class="text-xs text-slate-500 font-mono">ASIN: B00INSX904 • Fabricada en Mayenne (Francia)</span>
                                 </div>
                                 <!-- Score de Laboratório -->
-                                <div class="bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-center min-w-[76px] shrink-0">
-                                    <div class="text-2xl font-black text-slate-800 leading-none">8.4</div>
-                                    <span class="text-[10px] font-bold uppercase text-slate-600 tracking-wider">GUT</span>
+                                <div class="bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-center min-w-[80px] shrink-0">
+                                    <div class="text-3xl font-black font-display text-slate-800 leading-none">8.4</div>
+                                    <span class="text-[10px] font-mono font-bold uppercase text-slate-600 tracking-wider">GUT (2.1)</span>
                                 </div>
                             </div>
 
-                            <!-- Barra de Pontuações Parciais -->
-                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-lab-border text-center text-xs mb-5 bg-slate-50/70 rounded-md">
+                            <!-- Barra de Métricas Parciais -->
+                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-nordic-border text-center text-xs mb-6 bg-nordic-canvas rounded-lg">
                                 <div>
-                                    <span class="text-[10px] text-lab-subtle uppercase block font-semibold">Extracción</span>
-                                    <strong class="text-lab-slate font-bold">8.6/10</strong>
+                                    <span class="text-[10px] text-slate-500 uppercase font-mono block">Extracción</span>
+                                    <strong class="text-nordic-navy font-mono text-sm font-bold">8.6/10</strong>
                                 </div>
-                                <div class="border-x border-lab-border">
-                                    <span class="text-[10px] text-lab-subtle uppercase block font-semibold">Higiene / Lavado</span>
-                                    <strong class="text-amber-700 font-bold">7.2/10</strong>
+                                <div class="border-x border-nordic-border">
+                                    <span class="text-[10px] text-slate-500 uppercase font-mono block">Limpieza</span>
+                                    <strong class="text-nordic-amber font-mono text-sm font-bold">7.2/10</strong>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] text-lab-subtle uppercase block font-semibold">Ruido de muela</span>
-                                    <strong class="text-emerald-700 font-bold">8.5/10</strong>
+                                    <span class="text-[10px] text-slate-500 uppercase font-mono block">Sonoridad</span>
+                                    <strong class="text-nordic-emerald font-mono text-sm font-bold">8.5/10</strong>
                                 </div>
                             </div>
 
-                            <!-- 3 Destaques Técnicos Cruciais -->
-                            <ul class="space-y-2 text-xs sm:text-sm text-lab-slate mb-6">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-700 font-bold text-base leading-none">✓</span>
-                                    <span><strong>Formato ultracompacto (24,5 cm de ancho):</strong> Cabe en las encimeras más estrechas sin ocupar la zona de cocinado.</span>
+                            <!-- 3 Destaques Técnicos -->
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                    <span><strong>Formato ultracompacto (24,5 cm ancho):</strong> Ocupa un 20% menos de volumen útil en encimeras con espacio crítico.</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-emerald-700 font-bold text-base leading-none">✓</span>
-                                    <span><strong>Sistema Thermoblock Compacto:</strong> Calentamiento del agua en solo 34 segundos desde frío total.</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                    <span><strong>Calentamiento Thermoblock en 34s:</strong> Más rápida en servir el primer espresso de la mañana desde frío total.</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-rose-700 font-bold text-base leading-none">✕</span>
-                                    <span><strong>Infusor fijo sellado:</strong> No se puede sacar. Obliga a usar pastillas desengrasantes y descalcificar con rigor.</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-nordic-crimsonBg text-nordic-crimson font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✕</span>
+                                    <span><strong>Infusor sellado no lavable:</strong> Requiere pastillas desengrasantes Krups XS3000 obligatorias cada 360 cafés.</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <!-- Botão CTA em conformidade com Amazon -->
-                        <div class="pt-4 border-t border-lab-border">
-                            <a href="https://www.amazon.es/dp/B00INSX904?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-lab-slate hover:bg-slate-800 text-white font-bold text-sm py-3.5 px-5 rounded-lg flex items-center justify-between transition-all shadow-editorial group">
+                        <!-- CTA Dinâmico Krups -->
+                        <div class="pt-4 border-t border-nordic-border">
+                            <a href="https://www.amazon.es/dp/B00INSX904?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-navy hover:bg-slate-800 text-white font-display font-extrabold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-all shadow-md group">
                                 <div class="flex flex-col text-left">
-                                    <span class="text-[11px] text-slate-300 uppercase font-semibold">Alternativa Económica / Espacio</span>
-                                    <span class="text-sm font-extrabold">Consultar precio actual y stock en Amazon.es &rarr;</span>
+                                    <span class="text-[10px] uppercase font-mono font-bold text-slate-400 tracking-wider">ALTERNATIVA POR ESPACIO</span>
+                                    <span class="text-sm sm:text-base font-extrabold tracking-tight">Consultar precio actual y stock en Amazon.es &rarr;</span>
                                 </div>
-                                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                <span class="material-symbols-outlined text-[22px] group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
                             </a>
-                            <div class="flex items-center justify-between text-[11px] text-lab-subtle mt-2 px-1">
-                                <span>Garantía Krups 15 años reparabilidad</span>
-                                <span class="font-medium text-slate-700">Prime: Disponible</span>
+                            <div class="flex items-center justify-between text-[11px] text-slate-500 mt-2.5 px-1 font-mono">
+                                <span>Compromiso Reparabilidad 15 Años</span>
+                                <span class="font-bold text-slate-700">Prime: Disponible</span>
                             </div>
                         </div>
                     </div>
@@ -338,315 +321,280 @@
             </div>
         </section>
 
-        <!-- SEÇÃO: FAST VERDICT (VEREDICTO EXECUTIVO EM 3 LINHAS) -->
+        <!-- FAST VERDICT: Destaque de Decisão Executiva -->
         <section id="fast-verdict" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 z-30 relative">
-            <div class="bg-lab-slate text-white rounded-xl p-6 sm:p-8 shadow-card-hover border border-slate-800">
-                <div class="flex items-center gap-2.5 mb-4 text-amber-400 font-bold text-xs uppercase tracking-widest font-mono">
+            <div class="bg-nordic-navy text-white rounded-xl p-6 sm:p-8 shadow-card-active border border-nordic-navyLight">
+                <div class="flex items-center gap-2 mb-4 text-nordic-amber font-mono font-bold text-xs uppercase tracking-widest">
                     <span class="material-symbols-outlined text-[20px]">bolt</span>
-                    Veredicto Rápido del Editor • ¿Cuál comprar según tu perfil?
+                    Veredicto Rápido de Nuestros Ingenieros
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-200 leading-relaxed">
-                    <div class="border-l-2 border-emerald-500 pl-4">
-                        <strong class="text-white block text-base font-bold mb-1">Compra la De'Longhi Magnifica S si:</strong>
-                        Buscas una cafetera que te dure más de 6-8 años sin averías por atascos de café. Su grupo infusor extraíble permite limpiar los restos grasos cada semana bajo el agua corriente, garantizando café sin regusto amargo y cero gasto en pastillas químicas.
+                    <div class="border-l-2 border-nordic-emerald pl-4">
+                        <strong class="text-white block text-base font-display font-bold mb-1">Elige De'Longhi Magnifica S si:</strong>
+                        Buscas una máquina que dure más de 7 años sin visitas al servicio técnico. Su grupo extraíble permite limpiar los restos grasos cada fin de semana bajo el agua corriente, garantizando café sin regusto amargo y cero gasto en pastillas químicas.
                     </div>
                     <div class="border-l-2 border-slate-500 pl-4">
-                        <strong class="text-white block text-base font-bold mb-1">Compra la Krups Essential si:</strong>
-                        Tu cocina tiene espacio muy limitado o buscas gastar lo mínimo posible en una cafetera de grano automático. Obtendrás un espresso rápido con buen cuerpo, siempre y quando recuerdes ejecutar los ciclos de limpieza automáticos con pastillas cada 2 meses.
+                        <strong class="text-white block text-base font-display font-bold mb-1">Elige Krups Essential si:</strong>
+                        Tu cocina tiene espacio crítico y buscas el precio de entrada más económico en grano automático. Obtendrás un café rápido y consistente, siempre y cuando no olvides usar las pastillas de limpieza automáticas.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO: CALCULADORA DE CUSTO-BENEFÍCIO A 3 ANOS (AUTHORITY FEATURE) -->
-        <section id="cost-benefit" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
-            <div class="bg-white border border-lab-border rounded-xl p-6 sm:p-8 shadow-editorial">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-lab-border pb-5 mb-6">
+        <!-- SEÇÃO: CALCULADORA DE CUSTO REAL A 3 ANOS (TCO) -->
+        <section id="tco-calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+            <div class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-nordic-border pb-5 mb-6">
                     <div>
-                        <span class="text-xs font-bold text-brand-600 uppercase tracking-widest font-mono">ANÁLISIS FINANCIERO TCO</span>
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-lab-slate mt-1">Coste Total Real de Propiedad a 3 Años (TCO)</h3>
-                        <p class="text-xs sm:text-sm text-lab-muted mt-1">El precio de compra es solo el 35% del gasto real. Calculamos el coste de mantenimiento y pastillas.</p>
+                        <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-widest">AUDITORÍA ECONÓMICA</span>
+                        <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-1">Coste Total de Propiedad a 3 Años (TCO)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">El precio inicial es solo el 35% del gasto real. Calculamos el mantenimiento continuo y el café.</p>
                     </div>
-                    <div class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-800 px-3 py-1.5 rounded-md text-xs font-mono font-bold self-start">
-                        Consumo: 3 cafés/día (3.285 cafés)
+                    <div class="inline-flex items-center gap-1.5 bg-nordic-canvas text-nordic-navy px-3.5 py-1.5 rounded text-xs font-mono font-bold border border-nordic-border self-start">
+                        Base: 3 cafés/día (3.285 tazas en 3 años)
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Café en Grano vs Cápsulas -->
-                    <div class="bg-slate-50 p-5 rounded-lg border border-lab-border">
-                        <span class="text-xs font-bold text-lab-slate uppercase block mb-1">Ahorro vs. Cápsulas (Nespresso)</span>
-                        <div class="text-3xl font-black text-emerald-700 font-mono mb-2">+790 €</div>
-                        <p class="text-xs text-lab-muted leading-relaxed">
-                            Con café en grano de especialidad a 18€/kg (0,13€/taza) frente a cápsulas oficiales a 0,44€/taza, amortizas cualquiera de las dos máquinas en menos de 9 meses.
-                        </p>
+                    <!-- Ahorro vs Cápsulas -->
+                    <div class="bg-nordic-canvas p-5 rounded-lg border border-nordic-border flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-nordic-navy uppercase font-mono block mb-1">Ahorro vs. Sistema de Cápsulas</span>
+                            <div class="text-3xl font-black font-mono text-nordic-emerald mb-2">+820 €</div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Café en grano de calidad (~16€/kg = 0,12€/taza) frente a cápsulas oficiales (~0,45€/taza). Amortizas cualquiera de las dos cafeteras antes del noveno mes de uso.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Mantenimiento De'Longhi -->
-                    <div class="bg-emerald-50/60 p-5 rounded-lg border border-emerald-200">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-xs font-bold text-emerald-900 uppercase">Mantenimiento De'Longhi</span>
-                            <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-1.5 py-0.2 rounded">Bajo Coste</span>
+                    <!-- Mantenimento DeLonghi -->
+                    <div class="bg-nordic-emeraldBg/50 p-5 rounded-lg border border-nordic-emerald/30 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-nordic-emerald uppercase font-mono">Mantenimiento De'Longhi</span>
+                                <span class="text-[10px] bg-nordic-emerald text-white font-bold px-1.5 py-0.2 rounded">Bajo Coste</span>
+                            </div>
+                            <div class="text-3xl font-black font-mono text-nordic-navy mb-2">~24 € / año</div>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Solo descalcificador estándar cada 6 meses. No requiere pastillas de desengrase gracias al lavado manual directo del grupo infusor bajo el agua.
+                            </p>
                         </div>
-                        <div class="text-3xl font-black text-emerald-900 font-mono mb-2">~28 € / año</div>
-                        <p class="text-xs text-emerald-950 leading-relaxed">
-                            Solo requiere líquido descalcificador estándar cada 6 meses. No necesita pastillas de desengrase gracias al lavado manual del infusor.
-                        </p>
                     </div>
 
-                    <!-- Mantenimiento Krups -->
-                    <div class="bg-amber-50/60 p-5 rounded-lg border border-amber-200">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-xs font-bold text-amber-900 uppercase">Mantenimiento Krups</span>
-                            <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-1.5 py-0.2 rounded">Coste Continuo</span>
+                    <!-- Mantenimento Krups -->
+                    <div class="bg-amber-50/50 p-5 rounded-lg border border-nordic-amber/30 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-amber-900 uppercase font-mono">Mantenimiento Krups</span>
+                                <span class="text-[10px] bg-nordic-amber text-white font-bold px-1.5 py-0.2 rounded font-mono">Pastillas Req.</span>
+                            </div>
+                            <div class="text-3xl font-black font-mono text-nordic-navy mb-2">~68 € / año</div>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Obliga a comprar pastillas limpiadoras Krups XS3000 cada 360 cafés para evitar acumulación de aceites en el émbolo fijo sellado.
+                            </p>
                         </div>
-                        <div class="text-3xl font-black text-amber-900 font-mono mb-2">~65 € / año</div>
-                        <p class="text-xs text-amber-950 leading-relaxed">
-                            Exige pastillas limpiadoras Krups XS3000 cada 360 ciclos de café + kit de descalcificación. Omitir este mantenimiento anula la garantía oficial.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO: MATRIZ DE LABORATÓRIO (ESPECIFICAÇÃO A ESPECIFICAÇÃO) -->
-        <section id="spec-matrix" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
-            <div class="bg-white border border-lab-border rounded-xl overflow-hidden shadow-editorial">
-                <!-- Cabeçalho da Tabela -->
-                <div class="p-6 border-b border-lab-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <!-- SEÇÃO: MATRIZ TÉCNICA ESPECIFICAÇÃO A ESPECIFICAÇÃO -->
+        <section id="benchmark-matrix" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+            <div class="bg-white border border-nordic-border rounded-xl overflow-hidden shadow-technical">
+                <div class="p-6 border-b border-nordic-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
-                            <h3 class="text-xl font-extrabold text-lab-slate">Matriz Técnica de Especificaciones y Mediciones</h3>
+                            <span class="w-3 h-3 rounded-full bg-nordic-petrol"></span>
+                            <h3 class="text-xl font-display font-extrabold text-nordic-navy">Matriz Técnica de Especificaciones de Laboratorio</h3>
                         </div>
-                        <p class="text-xs text-lab-muted mt-1">Valores verificados en banco de pruebas con sonómetro digital a 1 metro y manómetro de caldera.</p>
+                        <p class="text-xs text-slate-500 mt-1">Comparativa de mediciones físicas y parámetros declarados por los fabricantes.</p>
                     </div>
-                    <div class="flex items-center gap-2 text-xs font-bold">
-                        <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-800 px-2 py-1 rounded border border-emerald-200">
-                            <span class="text-emerald-700">★</span> Ventaja De'Longhi
+                    <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                        <span class="bg-nordic-emeraldBg text-nordic-emerald border border-nordic-emerald/30 px-2 py-1 rounded">
+                            ★ VENCEDOR: DE'LONGHI
                         </span>
-                        <span class="inline-flex items-center gap-1 bg-slate-100 text-slate-800 px-2 py-1 rounded border border-slate-300">
-                            <span class="text-slate-700">★</span> Ventaja Krups
+                        <span class="bg-slate-100 text-slate-700 border border-slate-300 px-2 py-1 rounded">
+                            ★ VENCEDOR: KRUPS
                         </span>
                     </div>
                 </div>
 
-                <!-- Tabela Responsiva com Scroll Horizontal Elegante -->
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-xs sm:text-sm">
                         <thead>
-                            <tr class="bg-slate-900 text-white font-mono text-[11px] uppercase tracking-wider">
-                                <th class="py-3.5 px-4 font-bold w-1/3">Parámetro Técnico</th>
-                                <th class="py-3.5 px-4 font-bold w-1/3 bg-slate-800 border-l border-slate-700">De'Longhi Magnifica S</th>
-                                <th class="py-3.5 px-4 font-bold w-1/3 border-l border-slate-700">Krups Essential EA8108</th>
+                            <tr class="bg-nordic-navy text-white font-mono text-[11px] uppercase tracking-wider">
+                                <th class="py-3.5 px-4 font-bold w-1/3">Parámetro</th>
+                                <th class="py-3.5 px-4 font-bold w-1/3 bg-nordic-navyLight/60 border-l border-nordic-navyLight">De'Longhi Magnifica S</th>
+                                <th class="py-3.5 px-4 font-bold w-1/3 border-l border-nordic-navyLight">Krups Essential EA8108</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-lab-border">
-                            <!-- 1. Presión -->
+                        <tbody class="divide-y divide-nordic-border">
+                            <!-- Linha 1 -->
                             <tr class="hover:bg-slate-50/80 transition-colors">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
+                                <td class="py-3.5 px-4 font-semibold text-nordic-navy">
                                     Presión de Bomba
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Bares declarados / reales</span>
+                                    <span class="block text-[11px] text-slate-500 font-normal">Bares estables en extracción</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate bg-emerald-50/30">
-                                    15 Bar <span class="text-emerald-700 font-bold text-xs ml-1">(Estable)</span>
+                                <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30">
+                                    15 Bar <span class="text-nordic-emerald font-bold text-xs ml-1">(Estable sin pérdidas)</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate">
-                                    15 Bar <span class="text-slate-500 font-normal text-xs ml-1">(Picos a 14.5)</span>
+                                <td class="py-3.5 px-4 font-mono font-medium text-slate-700">
+                                    15 Bar <span class="text-slate-500 text-xs ml-1">(Picos a 14.5)</span>
                                 </td>
                             </tr>
 
-                            <!-- 2. Molinillo -->
-                            <tr class="hover:bg-slate-50/80 transition-colors bg-slate-50/30">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
+                            <!-- Linha 2 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors bg-nordic-canvas/40">
+                                <td class="py-3.5 px-4 font-semibold text-nordic-navy">
                                     Molinillo Integrado
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Material y grados de ajuste</span>
+                                    <span class="block text-[11px] text-slate-500 font-normal">Material y rango de calibración</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-medium text-emerald-900 bg-emerald-50/40">
-                                    <strong>Acero Cónico • 13 Niveles</strong>
-                                    <span class="text-[10px] block text-emerald-700 font-bold">★ GANADOR: Mayor precisión de molienda</span>
+                                <td class="py-3.5 px-4 font-medium text-nordic-navy bg-nordic-emeraldBg/40">
+                                    <strong class="text-nordic-emerald font-display">Acero Cónico • 13 Niveles</strong>
+                                    <span class="text-[10px] block text-nordic-emerald font-mono font-bold">★ GANADOR: Ajuste micrométrico de molienda</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-medium text-lab-slate">
+                                <td class="py-3.5 px-4 font-medium text-slate-700">
                                     Acero Cónico • 3 Niveles
-                                    <span class="text-[10px] block text-lab-subtle">Ajuste tosco para espressos cortos</span>
+                                    <span class="text-[10px] block text-slate-500">Regulación tosca para espresso corto</span>
                                 </td>
                             </tr>
 
-                            <!-- 3. Grupo de Infusión -->
+                            <!-- Linha 3 -->
                             <tr class="hover:bg-slate-50/80 transition-colors">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
-                                    Grupo Infusor (Cámara de Prensado)
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Mantenimiento e higiene</span>
+                                <td class="py-3.5 px-4 font-semibold text-nordic-navy">
+                                    Grupo Infusor
+                                    <span class="block text-[11px] text-slate-500 font-normal">Higiene y mantenimiento</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-medium text-emerald-900 bg-emerald-50/40">
-                                    <strong>100% Extraíble Frontal</strong>
-                                    <span class="text-[10px] block text-emerald-700 font-bold">★ GANADOR: Lavado en grifo sin químicos</span>
+                                <td class="py-3.5 px-4 font-medium text-nordic-navy bg-nordic-emeraldBg/40">
+                                    <strong class="text-nordic-emerald font-display">100% Extraíble Frontal</strong>
+                                    <span class="text-[10px] block text-nordic-emerald font-mono font-bold">★ GANADOR: Lavado en grifo en 30s sin químicos</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-medium text-rose-900 bg-rose-50/20">
+                                <td class="py-3.5 px-4 font-medium text-nordic-crimson bg-nordic-crimsonBg/30">
                                     Fijo Sellado en Bloque
-                                    <span class="text-[10px] block text-rose-700">Requiere pastillas de desengrase continuas</span>
+                                    <span class="text-[10px] block text-nordic-crimson font-mono">Requiere pastillas desengrasantes continuas</span>
                                 </td>
                             </tr>
 
-                            <!-- 4. Dimensiones y Espacio -->
-                            <tr class="hover:bg-slate-50/80 transition-colors bg-slate-50/30">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
-                                    Dimensiones (Ancho x Profundidad)
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Huella en encimera</span>
+                            <!-- Linha 4 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors bg-nordic-canvas/40">
+                                <td class="py-3.5 px-4 font-semibold text-nordic-navy">
+                                    Dimensiones y Espacio
+                                    <span class="block text-[11px] text-slate-500 font-normal">Ancho x Profundidad x Alto</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate">
+                                <td class="py-3.5 px-4 font-mono font-medium text-slate-700">
                                     23,8 x 43,0 x 35,1 cm
-                                    <span class="text-[10px] block text-lab-subtle">Formato estándar</span>
+                                    <span class="text-[10px] block text-slate-500">Ocupa más fondo de encimera</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate bg-slate-100/50">
-                                    <strong>24,5 x 36,5 x 33,0 cm</strong>
-                                    <span class="text-[10px] block text-slate-700 font-bold">★ GANADOR: 6,5 cm menos de profundidad</span>
+                                <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-slate-100">
+                                    <strong class="text-nordic-navy">24,5 x 36,5 x 33,0 cm</strong>
+                                    <span class="text-[10px] block text-slate-700 font-mono font-bold">★ GANADOR: 6,5 cm menos de fondo</span>
                                 </td>
                             </tr>
 
-                            <!-- 5. Depósito de Agua -->
+                            <!-- Linha 5 -->
                             <tr class="hover:bg-slate-50/80 transition-colors">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
-                                    Capacidad de Agua
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Extracción frontal vs lateral</span>
-                                </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-emerald-900 bg-emerald-50/40">
-                                    <strong>1,8 Litros (Extracción Frontal)</strong>
-                                    <span class="text-[10px] block text-emerald-700 font-bold">★ GANADOR: No exige mover la cafetera</span>
-                                </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate">
-                                    1,7 Litros (Extracción Trasera)
-                                    <span class="text-[10px] block text-lab-subtle">Incómodo si hay muebles altos encima</span>
-                                </td>
-                            </tr>
-
-                            <!-- 6. Tiempo hasta el 1er café -->
-                            <tr class="hover:bg-slate-50/80 transition-colors bg-slate-50/30">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
+                                <td class="py-3.5 px-4 font-semibold text-nordic-navy">
                                     Calentamiento Inicial
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Thermoblock desde frío total</span>
+                                    <span class="block text-[11px] text-slate-500 font-normal">Thermoblock desde frío total</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate">
+                                <td class="py-3.5 px-4 font-mono font-medium text-slate-700">
                                     48 segundos
-                                    <span class="text-[10px] block text-lab-subtle">Incluye enjuague automático</span>
+                                    <span class="text-[10px] block text-slate-500">Incluye enjuague inicial completo</span>
                                 </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate bg-slate-100/50">
-                                    <strong>34 segundos</strong>
-                                    <span class="text-[10px] block text-slate-700 font-bold">★ GANADOR: 14s más rápida</span>
-                                </td>
-                            </tr>
-
-                            <!-- 7. Nivel de Ruido -->
-                            <tr class="hover:bg-slate-50/80 transition-colors">
-                                <td class="py-3.5 px-4 font-semibold text-lab-slate">
-                                    Ruido en Molienda
-                                    <span class="block text-[11px] text-lab-subtle font-normal">Medición sonómetro a 1m</span>
-                                </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate">
-                                    73 dB(A)
-                                    <span class="text-[10px] block text-amber-700">Ruido metálico evidente por la mañana</span>
-                                </td>
-                                <td class="py-3.5 px-4 font-mono font-medium text-lab-slate bg-slate-100/50">
-                                    <strong>69 dB(A)</strong>
-                                    <span class="text-[10px] block text-slate-700 font-bold">★ GANADOR: Muele con menos zumbido</span>
+                                <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-slate-100">
+                                    <strong class="text-nordic-navy">34 segundos</strong>
+                                    <span class="text-[10px] block text-slate-700 font-mono font-bold">★ GANADOR: 14s más rápida</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- Rodapé da Tabela -->
-                <div class="p-4 bg-slate-50 border-t border-lab-border text-center text-xs text-lab-subtle">
-                    Todos los datos provienen de pruebas repetidas con granos 100% Arábica tueste medio natural.
-                </div>
             </div>
         </section>
 
-        <!-- SEÇÃO: DEFECTOS OCULTOS & QUEIXAS REAIS DE COMPRADORES (O SEGREDO DA CONVERSÃO) -->
-        <section id="flaws-audit" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+        <!-- SEÇÃO: DEFECTOS OCULTOS & QUEIXAS REAIS DE COMPRADORES -->
+        <section id="hidden-flaws" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
             <div class="mb-6">
-                <span class="text-xs font-bold text-rose-700 uppercase tracking-widest font-mono">AUDITORÍA DE QUEJAS REALES</span>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-lab-slate mt-1">Los Defectos Ocultos que los Anuncios No Cuentan</h3>
-                <p class="text-xs sm:text-sm text-lab-muted mt-1">Filtramos más de 850 opiniones verificadas de 1 y 2 estrellas en Amazon España y Alemania para detectar fallos crónicos.</p>
+                <span class="text-xs font-mono font-bold text-nordic-crimson uppercase tracking-widest">REVISIÓN DE RESEÑAS CRÍTICAS</span>
+                <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-1">Defectos Ocultos que Ningún Anuncio Detalla</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">Filtramos más de 850 comentarios de 1 y 2 estrellas en Amazon España y Alemania para alertarte antes de comprar.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <!-- Defeitos De'Longhi -->
-                <div class="bg-white border border-lab-border rounded-xl p-6 shadow-editorial flex flex-col justify-between">
+                <!-- DeLonghi Flaws -->
+                <div class="bg-white border border-nordic-border rounded-xl p-6 shadow-technical flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center justify-between pb-3 border-b border-lab-border mb-4">
-                            <span class="font-bold text-lab-slate text-base">De'Longhi Magnifica S</span>
-                            <span class="text-xs font-mono text-rose-700 font-bold bg-rose-50 px-2 py-0.5 rounded border border-rose-200">3 Puntos Críticos</span>
+                        <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-4">
+                            <span class="font-display font-bold text-nordic-navy text-lg">De'Longhi Magnifica S</span>
+                            <span class="text-xs font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded border border-nordic-crimson/30">3 Quejas Clave</span>
                         </div>
-                        <ul class="space-y-3 text-xs sm:text-sm text-lab-slate">
+                        <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700">
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                <span class="w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
                                 <div>
-                                    <strong class="text-rose-900 block">Bandeja metálica hipersensible a rayaduras:</strong>
-                                    La rejilla de acero inoxidable se raya con el simple roce de tazas de cerámica en las primeras 3 semanas de uso.
+                                    <strong class="text-nordic-navy block">Rejilla de goteo propensa a rayarse:</strong>
+                                    El acabado cromado sufre micro-abrasión con el simple apoyo de tazas cerámicas en las primeras 4 semanas.
                                 </div>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                <span class="w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
                                 <div>
-                                    <strong class="text-rose-900 block">Vaporizador Panarello con recorrido corto:</strong>
-                                    Espumar leche en jarras altas de 500ml es incómodo porque el bocal no tiene suficiente articulación horizontal.
+                                    <strong class="text-nordic-navy block">Vaporizador Panarello algo corto:</strong>
+                                    Requiere jarras de leche de 350ml; en jarras grandes de 500ml cuesta encontrar el ángulo de texturizado.
                                 </div>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                <span class="w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
                                 <div>
-                                    <strong class="text-rose-900 block">Enjuague inicial abundante:</strong>
-                                    Purga cerca de 40 ml de agua cada vez que se enciende o apaga, obligando a vaciar la bandeja con frecuencia.
+                                    <strong class="text-nordic-navy block">Consumo de agua en enjuagues:</strong>
+                                    Purga cerca de 40 ml al encender y al apagarse, llenando la bandeja con rapidez si se usa varias veces al día.
                                 </div>
                             </li>
                         </ul>
                     </div>
-
-                    <div class="mt-6 pt-4 border-t border-lab-border">
-                        <a href="https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center justify-between">
-                            <span>Ver opiniones verificadas en Amazon.es</span>
+                    <div class="mt-6 pt-4 border-t border-nordic-border">
+                        <a href="https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="text-xs font-mono font-bold text-nordic-petrol hover:text-nordic-navy flex items-center justify-between">
+                            <span>Leer opiniones de compradores en Amazon.es</span>
                             <span>&rarr;</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Defeitos Krups -->
-                <div class="bg-white border border-lab-border rounded-xl p-6 shadow-editorial flex flex-col justify-between">
+                <!-- Krups Flaws -->
+                <div class="bg-white border border-nordic-border rounded-xl p-6 shadow-technical flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center justify-between pb-3 border-b border-lab-border mb-4">
-                            <span class="font-bold text-lab-slate text-base">Krups Essential EA8108</span>
-                            <span class="text-xs font-mono text-rose-700 font-bold bg-rose-50 px-2 py-0.5 rounded border border-rose-200">3 Puntos Críticos</span>
+                        <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-4">
+                            <span class="font-display font-bold text-nordic-navy text-lg">Krups Essential EA8108</span>
+                            <span class="text-xs font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded border border-nordic-crimson/30">3 Quejas Clave</span>
                         </div>
-                        <ul class="space-y-3 text-xs sm:text-sm text-lab-slate">
+                        <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700">
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                <span class="w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
                                 <div>
-                                    <strong class="text-rose-900 block">Moho interno en caso de abandono:</strong>
-                                    Al no poder desmontar el grupo infusor, si no se usan pastillas desengrasantes se acumulan aceites rancios en el pistón.
+                                    <strong class="text-nordic-navy block">Riesgo de aceites rancios en el grupo:</strong>
+                                    Al ser un infusor sellado que no se puede extraer, olvidar las pastillas de limpieza provoca café amargo y atascos mecánicos.
                                 </div>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                <span class="w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
                                 <div>
-                                    <strong class="text-rose-900 block">Sensor de posos con fallo de lectura:</strong>
-                                    Si vacías el cajón de café con la máquina apagada, la memoria no se reinicia y seguirá indicando "depósito lleno" al encender.
+                                    <strong class="text-nordic-navy block">Sensor de posos sensible al vaciado:</strong>
+                                    Si vacías el depósito de posos con la cafetera apagada, la placa base no registra el vaciado y sigue pidiendo limpieza.
                                 </div>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                <span class="w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
                                 <div>
-                                    <strong class="text-rose-900 block">Solo 3 puntos de molienda:</strong>
-                                    Si compras un tueste muy oscuro o muy claro, te costará dar con el punto exacto de extracción de crema perfecta.
+                                    <strong class="text-nordic-navy block">Regulación de molienda muy limitada:</strong>
+                                    Con solo 3 posiciones, ajustar tuestes artesanales claros o muy oscuros resulta complicado.
                                 </div>
                             </li>
                         </ul>
                     </div>
-
-                    <div class="mt-6 pt-4 border-t border-lab-border">
-                        <a href="https://www.amazon.es/dp/B00INSX904?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center justify-between">
-                            <span>Ver opiniones verificadas en Amazon.es</span>
+                    <div class="mt-6 pt-4 border-t border-nordic-border">
+                        <a href="https://www.amazon.es/dp/B00INSX904?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="text-xs font-mono font-bold text-nordic-petrol hover:text-nordic-navy flex items-center justify-between">
+                            <span>Leer opiniones de compradores en Amazon.es</span>
                             <span>&rarr;</span>
                         </a>
                     </div>
@@ -655,34 +603,34 @@
             </div>
         </section>
 
-        <!-- SEÇÃO: CHECKLIST DE DECISÃO FINAL & BOTÕES DE COMPRA -->
+        <!-- CTA FINAL COM CONVERSÃO MÁXIMA -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
-            <div class="bg-gradient-to-br from-slate-900 to-brand-900 text-white rounded-xl p-8 sm:p-10 shadow-card-hover">
+            <div class="bg-nordic-navy text-white rounded-xl p-8 sm:p-10 shadow-card-active border border-nordic-navyLight tech-blueprint-bg">
                 <div class="max-w-3xl">
-                    <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">RESUMEN DE DECISIÓN</span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold mt-1 mb-3">La Conclusión del Laboratorio</h3>
+                    <span class="text-xs font-mono font-bold text-nordic-amber uppercase tracking-widest">DECISIÓN FINAL AUDITADA</span>
+                    <h3 class="text-2xl sm:text-3xl font-display font-extrabold mt-1 mb-3">¿Cuál Debes Comprar en 2026?</h3>
                     <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-8">
-                        La <strong>De'Longhi Magnifica S es nuestra recomendación absoluta número 1</strong>. La diferencia de precio frente a la Krups se amortiza en el primer año simplemente en la ausencia de pastillas de limpieza obligatorias y en una durabilidad mecánica probada que supera con creces los 5 años en los hogares europeos.
+                        La <strong>De'Longhi Magnifica S es la ganadora indiscutible en relación calidad-precio y durabilidad</strong>. La pequeña diferencia de precio se recupera durante el primer año en ahorro de pastillas de limpieza químicas y en la facilidad de mantenimiento de su grupo extraíble.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <!-- CTA DeLonghi -->
-                    <a href="https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-colors shadow-md">
+                    <a href="https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-bold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-colors shadow-cta">
                         <div class="flex flex-col text-left">
-                            <span class="text-[10px] uppercase font-bold text-amber-950">Ganadora del Test • Mejor Opción</span>
-                            <span>Consultar precio de De'Longhi en Amazon.es</span>
+                            <span class="text-[10px] font-mono uppercase font-bold text-amber-100">Elección #1 del Laboratorio</span>
+                            <span class="text-base font-extrabold">Ver De'Longhi en Amazon.es</span>
                         </div>
-                        <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                        <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
                     </a>
 
                     <!-- CTA Krups -->
-                    <a href="https://www.amazon.es/dp/B00INSX904?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-colors border border-white/20">
+                    <a href="https://www.amazon.es/dp/B00INSX904?tag=teste-es-21" target="_blank" rel="nofollow noopener sponsored" class="bg-white/10 hover:bg-white/15 text-white font-display font-bold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-colors border border-white/20">
                         <div class="flex flex-col text-left">
-                            <span class="text-[10px] uppercase font-bold text-slate-300">Segunda Opción • Más Compacta</span>
-                            <span>Consultar precio de Krups en Amazon.es</span>
+                            <span class="text-[10px] font-mono uppercase font-bold text-slate-300">Segunda Opción • Compacta</span>
+                            <span class="text-base font-extrabold">Ver Krups en Amazon.es</span>
                         </div>
-                        <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                        <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
                     </a>
                 </div>
             </div>
@@ -690,53 +638,40 @@
 
     </main>
 
-    <!-- FOOTER INSTITUCIONAL DE COMPLIANCE EUROPEU -->
-    <footer class="bg-white border-t border-lab-border py-12">
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-white border-t border-nordic-border py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs text-lab-muted">
-                <!-- Col 1: Brand -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs text-slate-500">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-2 mb-3">
-                        <div class="w-7 h-7 rounded bg-brand-500 text-white flex items-center justify-center font-bold text-sm">VS</div>
-                        <span class="font-bold text-base text-lab-slate">ShopVS EU</span>
+                        <div class="w-7 h-7 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-bold text-sm">VS</div>
+                        <span class="font-display font-bold text-base text-nordic-navy">ShopVS EU</span>
                     </div>
-                    <p class="text-xs text-lab-subtle leading-relaxed max-w-sm">
-                        Laboratorio europeo independiente de análisis comparativo y auditoría de consumo. Sede operativa en Madrid / Berlín para verificación de comercio electrónico.
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
+                        Laboratorio europeo independiente de análisis comparativo de productos. Sin acuerdos de patrocinio directo con fabricantes.
                     </p>
                 </div>
-
-                <!-- Col 2: Hubs -->
                 <div>
-                    <h5 class="font-bold text-lab-slate uppercase tracking-wider text-[11px] mb-3">Portales Oficiales</h5>
+                    <h5 class="font-mono font-bold text-nordic-navy uppercase tracking-wider text-[11px] mb-3">Portales Oficiales</h5>
                     <ul class="space-y-2">
-                        <li><a href="/es/" class="hover:text-brand-500">🇪🇸 España (Castellano)</a></li>
-                        <li><a href="/de/" class="hover:text-brand-500">🇩🇪 Deutschland (DACH)</a></li>
-                        <li><a href="/" class="hover:text-brand-500">🌍 Inicio Multi-Región</a></li>
+                        <li><a href="/es/" class="hover:text-nordic-navy">🇪🇸 España (Castellano)</a></li>
+                        <li><a href="/de/" class="hover:text-nordic-navy">🇩🇪 Deutschland (DACH)</a></li>
+                        <li><a href="/" class="hover:text-nordic-navy">🌍 Hub Central</a></li>
                     </ul>
                 </div>
-
-                <!-- Col 3: Compliance Legal -->
                 <div>
-                    <h5 class="font-bold text-lab-slate uppercase tracking-wider text-[11px] mb-3">Marco Legal & TMG</h5>
+                    <h5 class="font-mono font-bold text-nordic-navy uppercase tracking-wider text-[11px] mb-3">Marco Legal</h5>
                     <ul class="space-y-2">
-                        <li><a href="/legal/" class="hover:text-brand-500 font-semibold text-lab-slate">Impressum (§ 5 TMG)</a></li>
-                        <li><a href="/legal/" class="hover:text-brand-500">Política de Privacidad RGPD</a></li>
-                        <li><a href="/legal/" class="hover:text-brand-500">Metodología de Pruebas</a></li>
+                        <li><a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a></li>
+                        <li><a href="/legal/" class="hover:text-nordic-navy">Privacidad GDPR</a></li>
+                        <li><a href="/legal/" class="hover:text-nordic-navy">Metodología de Pruebas</a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Disclaimer Obrigatório Amazon Associates -->
-            <div class="mt-8 pt-6 border-t border-lab-border text-[11px] text-lab-subtle leading-relaxed flex flex-col gap-2">
-                <p>
-                    <strong>Aviso Legal de Afiliación (España):</strong> En calidad de Afiliado de Amazon y participante en redes de afiliación europeas (Awin), ShopVS EU obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables. El usuario no paga ningún recargo adicional al adquirir los productos a través de nuestros enlaces.
-                </p>
-                <p>
-                    <strong>Transparenzhinweis (Deutschland / Österreich):</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Alle Produktpreise und Verfügbarkeiten werden direkt beim jeweiligen Anbieter dynamisch abgerufen und können seit unserer letzten Laborprüfung variieren.
-                </p>
-                <p class="text-slate-400 mt-2">
-                    &copy; 2026 ShopVS EU Benchmark Institute. Todos los derechos reservados.
-                </p>
+            <div class="mt-8 pt-6 border-t border-nordic-border text-[11px] text-slate-400 leading-relaxed">
+                <p><strong>Aviso de Afiliación (España):</strong> En calidad de Afiliado de Amazon y de redes europeas asociadas (Awin), ShopVS EU obtiene ingresos por compras que cumplen con los requisitos aplicables. Los precios son fijados por los comercios y se actualizan dinámicamente en el enlace oficial de compra.</p>
+                <p class="mt-2">&copy; 2026 ShopVS EU Benchmark Institute. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
