@@ -120,7 +120,7 @@
                 <span id="hero-badge">Base de Datos de Pruebas de Laboratorio 2026</span>
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-nordic-navy leading-tight mb-4" id="hero-title">
-                Encuentra el Mejor Custo-Beneficio en Europa
+                Encuentra la Mejor Relación Calidad-Precio en Europa
             </h1>
             <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8" id="hero-subtitle">
                 Auditorías técnicas imparciales de productos líderes. Busca por modelo o explora las categorías verificadas por nuestros ingenieros.
@@ -179,7 +179,7 @@
             <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
                 <div>
                     <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-wider">LABORATORY VERIFIED</span>
-                    <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5" id="top-section-title">Top Custo-Benefício de la Temporada</h3>
+                    <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5" id="top-section-title">Top Calidad-Precio de la Temporada</h3>
                 </div>
                 <span class="text-xs font-mono font-bold bg-nordic-emeraldBg text-nordic-emerald px-3 py-1 rounded border border-nordic-emerald/30">
                     Edición 2026
@@ -222,7 +222,7 @@
                 navHome: "Inicio",
                 navCompare: "Comparador Cara a Cara",
                 heroBadge: "Base de Datos de Pruebas de Laboratorio 2026",
-                heroTitle: "Encuentra el Mejor Custo-Beneficio en Europa",
+                heroTitle: "Encuentra la Mejor Relación Calidad-Precio en Europa",
                 heroSubtitle: "Auditorías técnicas imparciales de productos líderes. Busca por modelo o explora las categorías verificadas por nuestros ingenieros.",
                 searchPlaceholder: "Buscar producto o marca (ej. De'Longhi, Cosori, Roborock)...",
                 noResults: "No encontramos modelos para ese término",
@@ -373,8 +373,8 @@
                     <div class="border border-nordic-border rounded-lg p-5 bg-nordic-canvas/40 flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-mono font-bold uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">${badge}</span>
-                            <div class="w-full h-32 my-3 p-2 bg-[#0B192C] rounded border border-nordic-border flex items-center justify-center overflow-hidden">
-                                <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain">
+                            <div class="w-full h-32 my-3 p-2 bg-white rounded border border-nordic-border flex items-center justify-center">
+                                <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
                             </div>
                             <h4 class="font-display font-bold text-base text-nordic-navy">${p.nome}</h4>
                             <p class="text-xs text-slate-600 mt-1">${desc}</p>
@@ -411,8 +411,8 @@
 
             dropdown.innerHTML = results.map(p => `
                 <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
-                    <div class="w-10 h-10 bg-[#0B192C] rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center overflow-hidden">
-                        <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain">
+                    <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
+                        <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
                     </div>
                     <div class="flex-1 min-w-0">
                         <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${p.marca}</span>

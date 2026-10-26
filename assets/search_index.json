@@ -70,7 +70,7 @@
     {
       "id": "roborock_q8_max",
       "cat": "aspiradoras_robot",
-      "cat_nome_es": "Aspiradores Robô",
+      "cat_nome_es": "Robots Aspiradores",
       "cat_nome_de": "Saugroboter",
       "marca": "Roborock",
       "nome": "Roborock Q8 Max (DuoRoller & LiDAR)",
@@ -83,7 +83,7 @@
     {
       "id": "dreame_d10s_pro",
       "cat": "aspiradoras_robot",
-      "cat_nome_es": "Aspiradores Robô",
+      "cat_nome_es": "Robots Aspiradores",
       "cat_nome_de": "Saugroboter",
       "marca": "Dreame",
       "nome": "Dreame D10s Pro (Cámara IA & LiDAR)",

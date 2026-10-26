@@ -18,7 +18,7 @@
     },
     {
       "id": "aspiradoras_robot",
-      "nome_es": "Aspiradores Robô",
+      "nome_es": "Robots Aspiradores",
       "nome_de": "Saugroboter",
       "icone": "smart_toy",
       "descricao_es": "Navegación láser LiDAR, potencia de succión en Pascales y base de autovaciado.",
@@ -65,7 +65,17 @@
       "contras_de": [
         "Abtropfgitter neigt zu Mikrokratzern durch Keramiktassen",
         "Manuelle Milchschaumdüse etwas kurz für hohe 500ml-Kannen"
-      ]
+      ],
+      "specs_de": {
+        "presion": "15 Bar (konstanter Brühdruck)",
+        "molinillo": "Edelstahl-Kegelmahlwerk (13 Stufen)",
+        "infusor": "100% Herausnehmbar (unter fließendem Wasser abwaschbar)",
+        "deposito_agua": "1,8 L (frontal entnehmbar)",
+        "deposito_grano": "250 g mit Aromaschutzdeckel",
+        "tiempo_calentamiento": "48 Sekunden (inkl. automatischer Spülung)",
+        "ruido_molienda": "68 dB (leiser Mahlvorgang)",
+        "dimensiones": "23,8 x 43,0 x 35,1 cm (9,0 kg)"
+      }
     },
     {
       "id": "krups_essential",
@@ -106,7 +116,17 @@
       "contras_de": [
         "Fest verbaute Brüheinheit erfordert zwingend Reinigungstabletten",
         "Lediglich 3 Mahlgradeinstellungen vorhanden"
-      ]
+      ],
+      "specs_de": {
+        "presion": "15 Bar (Thermoblock)",
+        "molinillo": "Edelstahl-Kegelmahlwerk (3 Stufen)",
+        "infusor": "Fest verbaut (Reinigung nur per Tablette)",
+        "deposito_agua": "1,7 L (rückseitig entnehmbar)",
+        "deposito_grano": "260 g Klarsichtbehälter",
+        "tiempo_calentamiento": "34 Sekunden ab Kaltstart",
+        "ruido_molienda": "74 dB (höherer Geräuschpegel)",
+        "dimensiones": "24,5 x 36,5 x 33,0 cm (7,2 kg)"
+      }
     },
     {
       "id": "philips_series_2200",
@@ -147,7 +167,17 @@
       "contras_de": [
         "Keramik anfälliger gegen Fremdkörper in ungerösteten Bohnen",
         "Schmierung der Brühgruppe mit Silikonfett alle 500 Zyklen nötig"
-      ]
+      ],
+      "specs_de": {
+        "presion": "15 Bar Pumpendruck",
+        "molinillo": "100% Keramik-Mahlwerk (12 Stufen)",
+        "infusor": "Vollständig herausnehmbare Brühgruppe",
+        "deposito_agua": "1,8 L mit AquaClean-Filter",
+        "deposito_grano": "275 g Bohnenbehälter",
+        "tiempo_calentamiento": "45 Sekunden",
+        "ruido_molienda": "66 dB",
+        "dimensiones": "24,6 x 43,3 x 37,1 cm (7,5 kg)"
+      }
     },
     {
       "id": "cosori_dual_blaze",
@@ -188,7 +218,17 @@
       "contras_de": [
         "Ausladendes Gehäuse erfordert ausreichend Freiraum auf der Arbeitsplatte",
         "Silikonpuffer am Einlegegitter müssen nach intensiver Nutzung ersetzt werden"
-      ]
+      ],
+      "specs_de": {
+        "potencia": "1700 W",
+        "capacidad": "6,4 Liter (XXL-Frittierkorb)",
+        "tecnologia": "360 ThermoIQ Doppelheizelement (oben + unten)",
+        "temperatura": "75 °C bis 205 °C",
+        "programas": "12 voreingestellte Automatikprogramme",
+        "volteado": "Kein manuelles Schütteln/Wenden erforderlich",
+        "conectividad": "Wi-Fi & VeSync App-Steuerung",
+        "dimensiones": "29,7 x 32,7 x 35,2 cm (6,2 kg)"
+      }
     },
     {
       "id": "ninja_foodi_dualzone",
@@ -229,7 +269,17 @@
       "contras_de": [
         "Schubladen sind schmal geschnitten (kein Platz für ganze Brathähnchen)",
         "Höhere maximale Leistungsaufnahme von 2.400 Watt"
-      ]
+      ],
+      "specs_de": {
+        "potencia": "2470 W",
+        "capacidad": "7,6 Liter (2x 3,8 L getrennte Zonen)",
+        "tecnologia": "DualZone Heißluft mit Sync-Cook",
+        "temperatura": "40 °C bis 240 °C (Max Crisp)",
+        "programas": "6 Garfunktionen (Heißluft-Frittieren, Max Crisp, Braten, Aufwärmen, Dörren, Backen)",
+        "volteado": "Manuelles Schütteln beider Frittierkörbe empfohlen",
+        "conectividad": "Keine App (mechanische Dreh- und Drucktasten)",
+        "dimensiones": "31,5 x 38,0 x 26,5 cm (8,2 kg)"
+      }
     },
     {
       "id": "roborock_q8_max",
@@ -270,7 +320,17 @@
       "contras_de": [
         "Wischfunktion arbeitet nur passiv (keine vibrierenden Wischpads)",
         "Bauhöhe von 9,65 cm passt nicht unter sehr flache Möbel"
-      ]
+      ],
+      "specs_de": {
+        "succion": "5500 Pa HyperForce-Saugleistung",
+        "cepillos": "DuoRoller Vollgummibürsten (verfilzungsfrei)",
+        "navegacion": "PreciSense LiDAR-Lasernavigation",
+        "obstaculos": "Reactive Tech strukturierte Lichterkennung",
+        "fregado": "Elektronischer Wassertank (30 Durchflussstufen)",
+        "autonomia": "Bis zu 240 Minuten (5200 mAh Akku)",
+        "deposito": "470 ml Staub / 350 ml Wasser",
+        "dimensiones": "35,0 x 35,3 x 9,6 cm (4,0 kg)"
+      }
     },
     {
       "id": "dreame_d10s_pro",
@@ -311,7 +371,17 @@
       "contras_de": [
         "Nur eine einzelne Bürstenwalze (etwas schwächer auf Hochflor-Teppichen)",
         "Videoüberwachungsfunktion erfordert zusätzliche App-Freigaben"
-      ]
+      ],
+      "specs_de": {
+        "succion": "5000 Pa Vormax-Saugleistung",
+        "cepillos": "Gummilamellenbürste",
+        "navegacion": "LDS-Lasernavigation & Kartierung",
+        "obstaculos": "KI-gestützte RGB-Kamera & 3D-Hinderniserkennung",
+        "fregado": "Kombiniertes Saugen und Wischen mit Textilpad",
+        "autonomia": "Bis zu 280 Minuten (5200 mAh Akku)",
+        "deposito": "570 ml Staub / 235 ml Wasser",
+        "dimensiones": "35,0 x 35,0 x 9,7 cm (3,6 kg)"
+      }
     }
   ]
 }

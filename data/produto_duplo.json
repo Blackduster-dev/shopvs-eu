@@ -68,7 +68,9 @@
     "contras_de": [
       "Abtropfgitter aus Edelstahl verkratzt leicht durch Keramiktassen",
       "Manuelle Milchschaumdüse etwas kurz für große 500-ml-Milchkännchen"
-    ]
+    ],
+    "score_label_es": "TESTSIEGER • SOBRESALIENTE",
+    "score_label_de": "TESTSIEGER • SEHR GUT"
   },
   "produto_b": {
     "id": "krups_essential",
@@ -133,7 +135,9 @@
     "contras_de": [
       "Fest verbaute Metall-Brühgruppe erfordert regelmäßigen Kauf von Reinigungstabletten",
       "Nur 3 grobe Mahlgradstufen wählbar"
-    ]
+    ],
+    "score_label_es": "GUT (2.1) • COMPACTA",
+    "score_label_de": "GUT (2.1) • KOMPAKT"
   },
   "veredito_resumo": {
     "es": "La De'Longhi Magnifica S es la ganadora indiscutible en relación calidad-precio y durabilidad: su grupo infusor extraíble se lava en el grifo y ahorra más de 45€ al año en pastillas químicas. La Krups Essential solo se recomienda si tienes una encimera extremadamente estrecha.",

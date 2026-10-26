@@ -316,7 +316,7 @@ def render_article(artigo, lang="es"):
 
             <div class="flex items-center gap-4">
 
-                <a href="/{lang}/" class="w-8 h-8 rounded border border-nordic-border flex items-center justify-center text-nordic-navy hover:border-nordic-navy transition-colors">
+                <a href="/?lang={lang}" class="w-8 h-8 rounded border border-nordic-border flex items-center justify-center text-nordic-navy hover:border-nordic-navy transition-colors">
 
                     <span class="material-symbols-outlined text-[18px]">arrow_back</span>
 
@@ -390,8 +390,8 @@ def render_article(artigo, lang="es"):
 
                         <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
 
-                            <div class="w-36 h-36 bg-[#0B192C] rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 overflow-hidden">
-                                <img src="{pa['imagem_url']}" alt="{pa['nome']}" class="w-full h-full object-contain">
+                            <div class="w-36 h-36 bg-white rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 shadow-sm">
+                                <img src="{pa['imagem_url']}" alt="{pa['nome']}" class="w-full h-full object-contain mix-blend-multiply">
                             </div>
 
                             <div class="flex-1 text-center sm:text-left">
@@ -444,8 +444,8 @@ def render_article(artigo, lang="es"):
 
                         <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
 
-                            <div class="w-36 h-36 bg-[#0B192C] rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 overflow-hidden">
-                                <img src="{pb['imagem_url']}" alt="{pb['nome']}" class="w-full h-full object-contain">
+                            <div class="w-36 h-36 bg-white rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 shadow-sm">
+                                <img src="{pb['imagem_url']}" alt="{pb['nome']}" class="w-full h-full object-contain mix-blend-multiply">
                             </div>
 
                             <div class="flex-1 text-center sm:text-left">
