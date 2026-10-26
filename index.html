@@ -195,6 +195,7 @@
     <!-- Footer -->
         <footer class="bg-white border-t border-nordic-border py-8 text-xs text-slate-500 font-mono">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
+            <p class="mt-2 text-[11px] text-slate-400">En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. | Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p>
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4 border-b border-nordic-border">
                 <div id="footer-copyright">&copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico</div>
                 <div class="flex items-center gap-5">
@@ -372,8 +373,8 @@
                     <div class="border border-nordic-border rounded-lg p-5 bg-nordic-canvas/40 flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-mono font-bold uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">${badge}</span>
-                            <div class="w-full h-32 my-3 p-2 bg-white rounded border border-nordic-border flex items-center justify-center">
-                                <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                            <div class="w-full h-32 my-3 p-2 bg-[#0B192C] rounded border border-nordic-border flex items-center justify-center overflow-hidden">
+                                <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain">
                             </div>
                             <h4 class="font-display font-bold text-base text-nordic-navy">${p.nome}</h4>
                             <p class="text-xs text-slate-600 mt-1">${desc}</p>
@@ -410,8 +411,8 @@
 
             dropdown.innerHTML = results.map(p => `
                 <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
-                    <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
-                        <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                    <div class="w-10 h-10 bg-[#0B192C] rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center overflow-hidden">
+                        <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain">
                     </div>
                     <div class="flex-1 min-w-0">
                         <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${p.marca}</span>

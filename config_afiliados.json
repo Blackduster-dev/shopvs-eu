@@ -1,7 +1,7 @@
 {
   "dominio_site": "https://shopvs-eu.pages.dev",
-  "amazon_es_tag": "teste-es-21",
-  "amazon_de_tag": "teste-de-21",
+  "amazon_es_tag": "shopvseu-21",
+  "amazon_de_tag": "shopvseu-21",
   "awin_publisher_id": "SEU_ID_AWIN",
   "lojas_awin": {
     "mediamarkt_de": "11223",

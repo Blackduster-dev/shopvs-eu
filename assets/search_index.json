@@ -12,8 +12,8 @@
       "asin": "B00400OMU0",
       "score": "9.2",
       "img": "/assets/products/delonghi_magnifica_s.png",
-      "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=shopvseu-21"
     },
     {
       "id": "krups_essential",
@@ -25,8 +25,8 @@
       "asin": "B00INSX904",
       "score": "8.4",
       "img": "/assets/products/krups_essential.png",
-      "link_es": "https://www.amazon.es/dp/B00INSX904?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B00INSX904?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B00INSX904?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00INSX904?tag=shopvseu-21"
     },
     {
       "id": "philips_series_2200",
@@ -38,8 +38,8 @@
       "asin": "B07MMS6W26",
       "score": "8.6",
       "img": "/assets/products/philips_series_2200.png",
-      "link_es": "https://www.amazon.es/dp/B07MMS6W26?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B07MMS6W26?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B07MMS6W26?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07MMS6W26?tag=shopvseu-21"
     },
     {
       "id": "cosori_dual_blaze",
@@ -51,8 +51,8 @@
       "asin": "B09N8TVT33",
       "score": "9.4",
       "img": "/assets/products/cosori_dual_blaze.png",
-      "link_es": "https://www.amazon.es/dp/B09N8TVT33?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B09N8TVT33?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B09N8TVT33?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B09N8TVT33?tag=shopvseu-21"
     },
     {
       "id": "ninja_foodi_dualzone",
@@ -64,8 +64,8 @@
       "asin": "B08K3MVLND",
       "score": "9.1",
       "img": "/assets/products/ninja_foodi_dualzone.png",
-      "link_es": "https://www.amazon.es/dp/B08K3MVLND?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B08K3MVLND?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B08K3MVLND?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B08K3MVLND?tag=shopvseu-21"
     },
     {
       "id": "roborock_q8_max",
@@ -77,8 +77,8 @@
       "asin": "B0CCVDK34L",
       "score": "9.3",
       "img": "/assets/products/roborock_q8_max.png",
-      "link_es": "https://www.amazon.es/dp/B0CCVDK34L?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B0CCVDK34L?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B0CCVDK34L?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0CCVDK34L?tag=shopvseu-21"
     },
     {
       "id": "dreame_d10s_pro",
@@ -90,8 +90,8 @@
       "asin": "B0BPG631W5",
       "score": "8.8",
       "img": "/assets/products/dreame_d10s_pro.png",
-      "link_es": "https://www.amazon.es/dp/B0BPG631W5?tag=teste-es-21",
-      "link_de": "https://www.amazon.de/dp/B0BPG631W5?tag=teste-de-21"
+      "link_es": "https://www.amazon.es/dp/B0BPG631W5?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0BPG631W5?tag=shopvseu-21"
     }
   ]
 }
