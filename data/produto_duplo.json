@@ -8,48 +8,74 @@
     "nome": "De'Longhi Magnifica S ECAM 22.110.B",
     "marca": "De'Longhi",
     "asin": "B00400OMU0",
+    "imagem_url": "https://m.media-amazon.com/images/I/71YtSndp1LL._AC_SL1500_.jpg",
     "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=teste-es-21",
     "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=teste-de-21",
+    "score_lab": "9.2",
+    "score_label": "TESTSIEGER • SEHR GUT",
     "specs_tecnicas": {
       "potencia": "1450 W",
-      "pressao": "15 bar",
-      "reservatorio_agua": "1.8 L",
-      "capacidade_graos": "250 g",
-      "moedor": "Aço cónico (13 níveis)",
-      "limpeza_infusor": "Extraível lavável em água corrente"
+      "pressao": "15 bar (estable)",
+      "reservatorio_agua": "1.8 L (extracción frontal)",
+      "capacidade_graos": "250 g con junta sellada",
+      "moedor": "Acero cónico (13 niveles de molienda)",
+      "limpeza_infusor": "Extraíble frontal lavable bajo el grifo",
+      "altura_taza": "86 a 142 mm (boquillas ajustables)",
+      "dimensiones": "23,8 x 43,0 x 35,1 cm (9.0 kg)"
+    },
+    "ficha_expandida": {
+      "material_caldera": "Acero inoxidable con doble sistema de calentamiento térmico",
+      "ajustes_aroma": "Selector mecánico continuo de intensidad (7g a 14g de café por dosis)",
+      "tiempo_precalentamiento": "48 segundos (incluye purga automática de circuito)",
+      "descalcificacion": "Programa guiado semiautomático (duración aproximada: 25 min)",
+      "compatibilidad_filtro": "Filtro de agua De'Longhi DLS C002 y compatibles universales",
+      "eficiencia_energetica": "Clase A con desconexión automática programable (15m a 3h)"
     },
     "pros": [
-      "Grupo infusor completamente removível e de fácil limpeza sem químicos caros",
-      "Extração consistente de crema espessa e controle preciso de temperatura",
-      "Durabilidade mecânica comprovada por milhares de compradores ao longo dos anos"
+      "Grupo infusor completamente extraíble y de fácil lavado en grifo sin químicos",
+      "Molinillo de acero cónico de 13 posiciones para calibrar tuestes artesanales",
+      "Excelente durabilidad comprobada por más de 10 años en el mercado europeo"
     ],
     "contras_reais": [
-      "O bico de vapor manual requer técnica para texturizar o leite perfeitamente",
-      "Nível de ruído moderado no momento da moagem matinal"
+      "Rejilla metálica de la bandeja de goteo propensa a micro-rayaduras tempranas",
+      "Bocal Panarello manual algo corto: requiere jarras bajas de 350ml para espumar cómodamente"
     ]
   },
   "produto_b": {
     "nome": "Krups Essential EA8108",
     "marca": "Krups",
     "asin": "B00INSX904",
+    "imagem_url": "https://m.media-amazon.com/images/I/61r5t+95U5L._AC_SL1500_.jpg",
     "link_es": "https://www.amazon.es/dp/B00INSX904?tag=teste-es-21",
     "link_de": "https://www.amazon.de/dp/B00INSX904?tag=teste-de-21",
+    "score_lab": "8.4",
+    "score_label": "GUT (2.1) • COMPACTA",
     "specs_tecnicas": {
       "potencia": "1450 W",
-      "pressao": "15 bar",
-      "reservatorio_agua": "1.7 L",
-      "capacidade_graos": "260 g",
-      "moedor": "Aço cónico (3 níveis)",
-      "limpeza_infusor": "Fixo (requer pastilhas automáticas)"
+      "pressao": "15 bar (picos a 14.5)",
+      "reservatorio_agua": "1.7 L (extracción vertical trasera)",
+      "capacidade_graos": "260 g transparente",
+      "moedor": "Acero cónico (3 niveles de molienda)",
+      "limpeza_infusor": "Fijo sellado (pastillas automáticas)",
+      "altura_taza": "65 a 105 mm",
+      "dimensiones": "24,5 x 36,5 x 33,0 cm (7.2 kg)"
+    },
+    "ficha_expandida": {
+      "material_caldera": "Bloque de aluminio patentado Krups Compact Thermoblock System (CTS)",
+      "ajustes_aroma": "3 selecciones de volumen y 2 intensidades de café",
+      "tiempo_precalentamiento": "34 segundos desde frío (la más rápida de su segmento)",
+      "descalcificacion": "Ciclo automático mediante pastillas desengrasantes Krups XS3000",
+      "compatibilidad_filtro": "Cartucho Claris Aqua Filter System F088",
+      "eficiencia_energetica": "Modo Auto-Off personalizable de 1 a 4 horas"
     },
     "pros": [
-      "Chassi compacto e estreito, ideal para bancadas e cozinhas com pouco espaço",
-      "Aquecimento ultra-rápido graças ao bloco térmico patenteado Thermoblock",
-      "Excelente custo-benefício de entrada na categoria de grãos automáticos"
+      "Chasis compacto con solo 36,5 cm de profundidad (ideal para encimeras estrechas)",
+      "Calentamiento Thermoblock ultrarrápido en solo 34 segundos desde frío",
+      "Precio de entrada más accesible en la gama de grano automático"
     ],
     "contras_reais": [
-      "Grupo infusor fixo não lavável na pia; obriga o uso regular de pastilhas de descalcificação",
-      "Apenas 3 configurações de ajuste de moagem (menos flexibilidade para grãos finos)"
+      "Grupo infusor fijo sellado: no desmontable en casa, exige pastillas químicas continuas",
+      "Solo 3 niveles de ajuste de molienda (poca versatilidad en moliendas muy finas)"
     ]
   },
   "veredito_resumo": {

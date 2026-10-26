@@ -51,17 +51,10 @@
         .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
-        .tech-blueprint-bg {
-            background-color: #0B192C;
-            background-image: linear-gradient(rgba(30, 62, 98, 0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(30, 62, 98, 0.3) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
     </style>
 
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
-    <!-- Top Ribbon -->
     <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -78,7 +71,6 @@
         </div>
     </aside>
 
-    <!-- Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-4">
@@ -104,7 +96,6 @@
     </header>
 
     <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex flex-col gap-8">
-        <!-- Breadcrumbs -->
         <div class="border-b border-nordic-border pb-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 font-mono">
             <nav class="flex items-center gap-2 uppercase tracking-wider text-[11px]">
                 <a href="/" class="hover:text-nordic-navy">Startseite</a>
@@ -115,6 +106,8 @@
             </nav>
             <div class="flex items-center gap-2 text-[11px] text-nordic-petrol font-bold">
                 <span>● PRÜFBERICHT #2026-DE-01</span>
+                <span>•</span>
+                <span>ORIGINAL-FOTOGRAFIEN</span>
             </div>
         </div>
 
@@ -134,29 +127,37 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
-                <!-- Concorrente A (Testsieger) -->
+                <!-- Concorrente A -->
                 <div class="bg-white border-2 border-nordic-emerald rounded-xl p-6 sm:p-7 shadow-technical relative flex flex-col justify-between">
                     <div class="absolute -top-3.5 left-6 bg-nordic-emerald text-white text-[11px] font-mono font-bold uppercase px-3 py-1 rounded shadow-sm flex items-center gap-1.5 tracking-wider">
                         <span class="material-symbols-outlined text-[15px]">verified</span>
                         TESTSIEGER • EMPFEHLUNG DER REDAKTION
                     </div>
+
                     <div>
-                        <div class="flex items-start justify-between gap-4 mt-2 mb-4">
-                            <div>
-                                <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">De'Longhi</span>
-                                <h2 class="text-2xl font-display font-extrabold text-nordic-navy mt-0.5">De'Longhi Magnifica S ECAM 22.110.B</h2>
-                                <span class="text-xs text-slate-500 font-mono">ASIN: B00400OMU0</span>
+                        <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
+                            <div class="w-36 h-36 bg-nordic-canvas rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0">
+                                <img src="https://m.media-amazon.com/images/I/71YtSndp1LL._AC_SL1500_.jpg" alt="De'Longhi Magnifica S ECAM 22.110.B" class="w-full h-full object-contain mix-blend-multiply">
                             </div>
-                            <div class="bg-nordic-emeraldBg border border-nordic-emerald/30 rounded-lg p-2.5 text-center min-w-[76px] shrink-0">
-                                <div class="text-3xl font-black font-display text-nordic-emerald leading-none">9.2</div>
-                                <span class="text-[10px] font-mono font-bold uppercase text-nordic-emerald tracking-wider">SEHR GUT (1.6)</span>
+                            <div class="flex-1 text-center sm:text-left">
+                                <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">De'Longhi</span>
+                                <h2 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5">De'Longhi Magnifica S ECAM 22.110.B</h2>
+                                <span class="text-xs text-slate-500 font-mono block mt-1">ASIN: B00400OMU0</span>
+                                
+                                <div class="inline-flex items-center gap-2 mt-2 bg-nordic-emeraldBg text-nordic-emerald border border-nordic-emerald/30 px-2.5 py-0.5 rounded text-xs font-mono font-bold">
+                                    <span>Labor-Note: 9.2</span>
+                                    <span>•</span>
+                                    <span>SEHR GUT (1.6)</span>
+                                </div>
                             </div>
                         </div>
+
                         <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-6">
-                            <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Grupo infusor completamente removível e de fácil limpeza sem químicos caros</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Extração consistente de crema espessa e controle preciso de temperatura</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Durabilidade mecânica comprovada por milhares de compradores ao longo dos anos</span></li>
+                            <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Grupo infusor completamente extraíble y de fácil lavado en grifo sin químicos</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Molinillo de acero cónico de 13 posiciones para calibrar tuestes artesanales</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Excelente durabilidad comprobada por más de 10 años en el mercado europeo</span></li>
                         </ul>
                     </div>
-                    <div class="pt-4 border-t border-nordic-border">
+
+                    <div class="pt-4 border-t border-nordic-border flex flex-col gap-3">
                         <a href="https://www.amazon.de/dp/B00400OMU0?tag=teste-de-21" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-extrabold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-all shadow-cta group">
                             <div class="flex flex-col text-left">
                                 <span class="text-[10px] uppercase font-mono font-bold text-amber-100">Labortest-Sieger</span>
@@ -164,6 +165,11 @@
                             </div>
                             <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
+
+                        <button type="button" onclick="toggleTechDrawer('drawer-delonghi-de')" class="w-full bg-nordic-canvas hover:bg-slate-200 text-nordic-navy border border-nordic-border font-mono font-bold text-xs py-2.5 px-4 rounded flex items-center justify-center gap-2 transition-colors">
+                            <span class="material-symbols-outlined text-[16px] text-nordic-petrol">tune</span>
+                            <span>Erweiterte technische Datenblätter (De'Longhi)</span>
+                        </button>
                     </div>
                 </div>
 
@@ -173,23 +179,31 @@
                         <span class="material-symbols-outlined text-[15px]">space_dashboard</span>
                         KOMPAKTE ALTERNATIVE
                     </div>
+
                     <div>
-                        <div class="flex items-start justify-between gap-4 mt-2 mb-4">
-                            <div>
-                                <span class="text-xs font-mono font-bold text-slate-500 uppercase">Krups</span>
-                                <h2 class="text-2xl font-display font-extrabold text-nordic-navy mt-0.5">Krups Essential EA8108</h2>
-                                <span class="text-xs text-slate-500 font-mono">ASIN: B00INSX904</span>
+                        <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
+                            <div class="w-36 h-36 bg-nordic-canvas rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0">
+                                <img src="https://m.media-amazon.com/images/I/61r5t+95U5L._AC_SL1500_.jpg" alt="Krups Essential EA8108" class="w-full h-full object-contain mix-blend-multiply">
                             </div>
-                            <div class="bg-slate-100 border border-slate-200 rounded-lg p-2.5 text-center min-w-[76px] shrink-0">
-                                <div class="text-3xl font-black font-display text-slate-800 leading-none">8.4</div>
-                                <span class="text-[10px] font-mono font-bold uppercase text-slate-600 tracking-wider">GUT (2.1)</span>
+                            <div class="flex-1 text-center sm:text-left">
+                                <span class="text-xs font-mono font-bold text-slate-500 uppercase">Krups</span>
+                                <h2 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5">Krups Essential EA8108</h2>
+                                <span class="text-xs text-slate-500 font-mono block mt-1">ASIN: B00INSX904</span>
+                                
+                                <div class="inline-flex items-center gap-2 mt-2 bg-slate-100 text-slate-700 border border-slate-300 px-2.5 py-0.5 rounded text-xs font-mono font-bold">
+                                    <span>Labor-Note: 8.4</span>
+                                    <span>•</span>
+                                    <span>GUT (2.1)</span>
+                                </div>
                             </div>
                         </div>
+
                         <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-6">
-                            <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Chassi compacto e estreito, ideal para bancadas e cozinhas com pouco espaço</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Aquecimento ultra-rápido graças ao bloco térmico patenteado Thermoblock</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Excelente custo-benefício de entrada na categoria de grãos automáticos</span></li>
+                            <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Chasis compacto con solo 36,5 cm de profundidad (ideal para encimeras estrechas)</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Calentamiento Thermoblock ultrarrápido en solo 34 segundos desde frío</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded-full bg-nordic-emeraldBg text-nordic-emerald font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✓</span><span>Precio de entrada más accesible en la gama de grano automático</span></li>
                         </ul>
                     </div>
-                    <div class="pt-4 border-t border-nordic-border">
+
+                    <div class="pt-4 border-t border-nordic-border flex flex-col gap-3">
                         <a href="https://www.amazon.de/dp/B00INSX904?tag=teste-de-21" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-navy hover:bg-slate-800 text-white font-display font-extrabold text-sm py-4 px-6 rounded-lg flex items-center justify-between transition-all shadow-md group">
                             <div class="flex flex-col text-left">
                                 <span class="text-[10px] uppercase font-mono font-bold text-slate-400">Kompakte Bauweise</span>
@@ -197,6 +211,11 @@
                             </div>
                             <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
+
+                        <button type="button" onclick="toggleTechDrawer('drawer-krups-de')" class="w-full bg-nordic-canvas hover:bg-slate-200 text-nordic-navy border border-nordic-border font-mono font-bold text-xs py-2.5 px-4 rounded flex items-center justify-center gap-2 transition-colors">
+                            <span class="material-symbols-outlined text-[16px] text-slate-700">tune</span>
+                            <span>Erweiterte technische Datenblätter (Krups)</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -234,39 +253,51 @@
                     <tbody class="divide-y divide-nordic-border">
                         
         <tr class="bg-white hover:bg-slate-50/80 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Leistung</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">1450 W</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">1450 W</td>
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Leistung</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">1450 W</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">1450 W</td>
         </tr>
         
         <tr class="bg-nordic-canvas/40 hover:bg-slate-50/80 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Pumpendruck</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">15 bar</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">15 bar</td>
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Pumpendruck</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">15 bar (estable)</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">15 bar (picos a 14.5)</td>
         </tr>
         
         <tr class="bg-white hover:bg-slate-50/80 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Wassertank</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">1.8 L</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">1.7 L</td>
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Wassertank</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">1.8 L (extracción frontal)</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">1.7 L (extracción vertical trasera)</td>
         </tr>
         
         <tr class="bg-nordic-canvas/40 hover:bg-slate-50/80 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Bohnenbehälter</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">250 g</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">260 g</td>
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Bohnenbehälter</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">250 g con junta sellada</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">260 g transparente</td>
         </tr>
         
         <tr class="bg-white hover:bg-slate-50/80 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Mahlwerk</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">Aço cónico (13 níveis)</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">Aço cónico (3 níveis)</td>
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Mahlwerk</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">Acero cónico (13 niveles de molienda)</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">Acero cónico (3 niveles de molienda)</td>
         </tr>
         
         <tr class="bg-nordic-canvas/40 hover:bg-slate-50/80 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Brühgruppe</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">Extraível lavável em água corrente</td>
-            <td class="py-3.5 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">Fixo (requer pastilhas automáticas)</td>
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Brühgruppe</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">Extraíble frontal lavable bajo el grifo</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">Fijo sellado (pastillas automáticas)</td>
+        </tr>
+        
+        <tr class="bg-white hover:bg-slate-50/80 transition-colors">
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Kaffeeauslauf-Höhe</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">86 a 142 mm (boquillas ajustables)</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">65 a 105 mm</td>
+        </tr>
+        
+        <tr class="bg-nordic-canvas/40 hover:bg-slate-50/80 transition-colors">
+            <td class="py-3 px-4 font-semibold text-nordic-navy w-1/3 sm:w-1/4">Abmessungen (BxTxH)</td>
+            <td class="py-3 px-4 font-mono font-medium text-nordic-navy bg-nordic-emeraldBg/30 w-1/3 sm:w-auto">23,8 x 43,0 x 35,1 cm (9.0 kg)</td>
+            <td class="py-3 px-4 font-mono font-medium text-slate-700 w-1/3 sm:w-auto">24,5 x 36,5 x 33,0 cm (7.2 kg)</td>
         </tr>
         
                     </tbody>
@@ -282,7 +313,7 @@
                     <span class="text-xs font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded border border-nordic-crimson/30">Schwachstellen</span>
                 </div>
                 <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
-                    <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>O bico de vapor manual requer técnica para texturizar o leite perfeitamente</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Nível de ruído moderado no momento da moagem matinal</span></li>
+                    <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Rejilla metálica de la bandeja de goteo propensa a micro-rayaduras tempranas</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Bocal Panarello manual algo corto: requiere jarras bajas de 350ml para espumar cómodamente</span></li>
                 </ul>
             </div>
             <div class="bg-white border border-nordic-border rounded-xl p-6 shadow-technical">
@@ -291,15 +322,81 @@
                     <span class="text-xs font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded border border-nordic-crimson/30">Schwachstellen</span>
                 </div>
                 <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
-                    <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Grupo infusor fixo não lavável na pia; obriga o uso regular de pastilhas de descalcificação</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Apenas 3 configurações de ajuste de moagem (menos flexibilidade para grãos finos)</span></li>
+                    <li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Grupo infusor fijo sellado: no desmontable en casa, exige pastillas químicas continuas</span></li><li class='flex items-start gap-2.5'><span class='w-5 h-5 rounded bg-nordic-crimsonBg text-nordic-crimson font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5'>✕</span><span>Solo 3 niveles de ajuste de molienda (poca versatilidad en moliendas muy finas)</span></li>
                 </ul>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-nordic-border py-10 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- MODAL DE -->
+    <div id="drawer-delonghi-de" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-xl border border-nordic-border max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-nordic-border mb-5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-nordic-canvas rounded p-1 border border-nordic-border flex items-center justify-center">
+                        <img src="https://m.media-amazon.com/images/I/71YtSndp1LL._AC_SL1500_.jpg" alt="De'Longhi Magnifica S ECAM 22.110.B" class="w-full h-full object-contain mix-blend-multiply">
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">Labor-Datenblatt</span>
+                        <h3 class="font-display font-extrabold text-lg text-nordic-navy">De'Longhi Magnifica S ECAM 22.110.B</h3>
+                    </div>
+                </div>
+                <button type="button" onclick="toggleTechDrawer('drawer-delonghi-de')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                <div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-nordic-petrol uppercase block mb-1'>Material Caldera</span><span class='text-xs text-slate-700 font-medium'>Acero inoxidable con doble sistema de calentamiento térmico</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-nordic-petrol uppercase block mb-1'>Ajustes Aroma</span><span class='text-xs text-slate-700 font-medium'>Selector mecánico continuo de intensidad (7g a 14g de café por dosis)</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-nordic-petrol uppercase block mb-1'>Tiempo Precalentamiento</span><span class='text-xs text-slate-700 font-medium'>48 segundos (incluye purga automática de circuito)</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-nordic-petrol uppercase block mb-1'>Descalcificacion</span><span class='text-xs text-slate-700 font-medium'>Programa guiado semiautomático (duración aproximada: 25 min)</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-nordic-petrol uppercase block mb-1'>Compatibilidad Filtro</span><span class='text-xs text-slate-700 font-medium'>Filtro de agua De'Longhi DLS C002 y compatibles universales</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-nordic-petrol uppercase block mb-1'>Eficiencia Energetica</span><span class='text-xs text-slate-700 font-medium'>Clase A con desconexión automática programable (15m a 3h)</span></div>
+            </div>
+            <div class="pt-4 border-t border-nordic-border flex justify-end">
+                <button type="button" onclick="toggleTechDrawer('drawer-delonghi-de')" class="bg-nordic-navy hover:bg-slate-800 text-white font-mono font-bold text-xs py-2.5 px-6 rounded">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="drawer-krups-de" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-xl border border-nordic-border max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-nordic-border mb-5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-nordic-canvas rounded p-1 border border-nordic-border flex items-center justify-center">
+                        <img src="https://m.media-amazon.com/images/I/61r5t+95U5L._AC_SL1500_.jpg" alt="Krups Essential EA8108" class="w-full h-full object-contain mix-blend-multiply">
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono font-bold text-slate-600 uppercase">Labor-Datenblatt</span>
+                        <h3 class="font-display font-extrabold text-lg text-nordic-navy">Krups Essential EA8108</h3>
+                    </div>
+                </div>
+                <button type="button" onclick="toggleTechDrawer('drawer-krups-de')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                <div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-slate-600 uppercase block mb-1'>Material Caldera</span><span class='text-xs text-slate-700 font-medium'>Bloque de aluminio patentado Krups Compact Thermoblock System (CTS)</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-slate-600 uppercase block mb-1'>Ajustes Aroma</span><span class='text-xs text-slate-700 font-medium'>3 selecciones de volumen y 2 intensidades de café</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-slate-600 uppercase block mb-1'>Tiempo Precalentamiento</span><span class='text-xs text-slate-700 font-medium'>34 segundos desde frío (la más rápida de su segmento)</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-slate-600 uppercase block mb-1'>Descalcificacion</span><span class='text-xs text-slate-700 font-medium'>Ciclo automático mediante pastillas desengrasantes Krups XS3000</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-slate-600 uppercase block mb-1'>Compatibilidad Filtro</span><span class='text-xs text-slate-700 font-medium'>Cartucho Claris Aqua Filter System F088</span></div><div class='p-3 bg-white rounded border border-nordic-border'><span class='text-xs font-mono font-bold text-slate-600 uppercase block mb-1'>Eficiencia Energetica</span><span class='text-xs text-slate-700 font-medium'>Modo Auto-Off personalizable de 1 a 4 horas</span></div>
+            </div>
+            <div class="pt-4 border-t border-nordic-border flex justify-end">
+                <button type="button" onclick="toggleTechDrawer('drawer-krups-de')" class="bg-nordic-navy hover:bg-slate-800 text-white font-mono font-bold text-xs py-2.5 px-6 rounded">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+<script>
+function toggleTechDrawer(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    } else {
+        el.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+}
+</script>
+
+
+    <footer class="bg-white border-t border-nordic-border py-10 mt-12 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>&copy; 2026 ShopVS EU • Unabhängige Produktvergleiche</div>
             <div class="flex items-center gap-5 font-mono">
                 <a href="/de/" class="hover:text-nordic-navy">Portal Deutschland</a>

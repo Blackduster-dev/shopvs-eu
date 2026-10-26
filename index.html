@@ -51,17 +51,10 @@
         .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
-        .tech-blueprint-bg {
-            background-color: #0B192C;
-            background-image: linear-gradient(rgba(30, 62, 98, 0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(30, 62, 98, 0.3) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
     </style>
 
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
-    <!-- Top Ribbon -->
     <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -80,7 +73,6 @@
         </div>
     </aside>
 
-    <!-- Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
@@ -106,23 +98,20 @@
     </header>
 
     <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 w-full">
-        <!-- Hero Section -->
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4">
                 <span class="w-1.5 h-1.5 rounded-full bg-nordic-amber"></span>
-                Auditoría Técnica Cara a Cara • Sin Publicidad Engañosa
+                Auditoría Técnica Cara a Cara • Fotografías y Datos Verificados
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-nordic-navy leading-tight mb-4">
                 Comparativas de Consumo con Datos Reales
             </h1>
             <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Ayudamos a compradores de España y Alemania a tomar decisiones inteligentes de alto ticket. Especificaciones empíricas, cálculo de coste a 3 años y filtrado de fallos crónicos de compradores.
+                Ayudamos a compradores de España y Alemania a tomar decisiones inteligentes de alto ticket con imágenes reales de producto, fichas técnicas expandidas y cálculo de costes a 3 años.
             </p>
         </div>
 
-        <!-- Portais Regionais (Cards) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-14">
-            <!-- Espanha -->
             <a href="/es/" class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-card-active group shadow-technical">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -140,7 +129,6 @@
                 </div>
             </a>
 
-            <!-- Alemanha -->
             <a href="/de/" class="bg-white border border-nordic-border hover:border-nordic-petrol rounded-xl p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-card-active group shadow-technical">
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -159,7 +147,7 @@
             </a>
         </div>
 
-        <!-- Lista de Artigos em Destaque -->
+        <!-- Destaques com Miniatura dos Produtos -->
         <div class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
             <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
                 <div>
@@ -172,53 +160,40 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-emerald hover:shadow-technical transition-all gap-3 group">
-                    <div>
-                        <div class="flex items-center gap-2 mb-1.5">
-                            <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">🇪🇸 Cafeteras Superautomáticas / Kaffeevollautomaten</span>
-                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold font-mono">LAB WINNER</span>
-                        </div>
-                        <h4 class="font-display font-bold text-base text-nordic-navy group-hover:text-nordic-emerald transition-colors">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
+                <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="flex items-center p-4 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-emerald hover:shadow-technical transition-all gap-4 group">
+                    <div class="w-16 h-16 bg-white rounded border border-nordic-border p-1 flex items-center justify-center shrink-0">
+                        <img src="https://m.media-amazon.com/images/I/71YtSndp1LL._AC_SL1500_.jpg" alt="De'Longhi Magnifica S ECAM 22.110.B" class="w-full h-full object-contain">
                     </div>
-                    <span class="text-xs font-mono font-bold text-nordic-amber self-end sm:self-center shrink-0 flex items-center gap-1">
-                        Ver informe <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                    </span>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-[11px] font-mono font-bold text-nordic-petrol uppercase">🇪🇸 Cafeteras Superautomáticas / Kaffeevollautomaten</span>
+                            <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1 py-0.2 rounded font-bold font-mono">LAB WINNER</span>
+                        </div>
+                        <h4 class="font-display font-bold text-sm text-nordic-navy group-hover:text-nordic-emerald transition-colors truncate">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
+                    </div>
+                    <span class="material-symbols-outlined text-nordic-amber text-[20px] shrink-0">arrow_forward</span>
                 </a>
 
-                <a href="/de/delonghi-magnifica-s-vs-krups-essential-test.html" class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-navy hover:shadow-technical transition-all gap-3 group">
-                    <div>
-                        <div class="flex items-center gap-2 mb-1.5">
-                            <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">🇩🇪 Kaffeevollautomaten</span>
-                            <span class="text-[10px] bg-slate-200 text-slate-800 px-1.5 py-0.2 rounded font-bold font-mono">TESTBERICHT</span>
-                        </div>
-                        <h4 class="font-display font-bold text-base text-nordic-navy group-hover:text-nordic-navy transition-colors">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
+                <a href="/de/delonghi-magnifica-s-vs-krups-essential-test.html" class="flex items-center p-4 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-navy hover:shadow-technical transition-all gap-4 group">
+                    <div class="w-16 h-16 bg-white rounded border border-nordic-border p-1 flex items-center justify-center shrink-0">
+                        <img src="https://m.media-amazon.com/images/I/61r5t+95U5L._AC_SL1500_.jpg" alt="Krups Essential EA8108" class="w-full h-full object-contain">
                     </div>
-                    <span class="text-xs font-mono font-bold text-nordic-amber self-end sm:self-center shrink-0 flex items-center gap-1">
-                        Testbericht <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                    </span>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-[11px] font-mono font-bold text-nordic-petrol uppercase">🇩🇪 Kaffeevollautomaten</span>
+                            <span class="text-[9px] bg-slate-200 text-slate-800 px-1 py-0.2 rounded font-bold font-mono">TESTBERICHT</span>
+                        </div>
+                        <h4 class="font-display font-bold text-sm text-nordic-navy group-hover:text-nordic-navy transition-colors truncate">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
+                    </div>
+                    <span class="material-symbols-outlined text-nordic-amber text-[20px] shrink-0">arrow_forward</span>
                 </a>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-nordic-border py-10 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-bold text-xs">VS</div>
-                    <span class="font-display font-bold text-nordic-navy">ShopVS EU</span>
-                    <span>• Laboratorio Técnico Independiente de Comparación</span>
-                </div>
-                <div class="flex items-center gap-5 font-mono">
-                    <a href="/es/" class="hover:text-nordic-navy">España</a>
-                    <a href="/de/" class="hover:text-nordic-navy">Deutschland</a>
-                    <a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a>
-                </div>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-400 leading-relaxed">
-                <strong>Aviso de Transparencia de Afiliación:</strong> En calidad de Afiliado de Amazon y redes colaboradoras europeas (Awin), ShopVS EU obtiene ingresos por compras cualificadas. Por motivos de rigor comercial y normativa europea, ningún precio en este portal es fijo: todos los enlaces consultan el precio y stock en tiempo real en los minoristas oficiales.
-            </div>
+    <footer class="bg-white border-t border-nordic-border py-10 mt-12 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono">
+            &copy; 2026 ShopVS EU • Laboratorio de Análisis Técnico • <a href="/legal/" class="text-nordic-navy hover:underline font-bold">Impressum (§ 5 TMG)</a>
         </div>
     </footer>
 </body>
