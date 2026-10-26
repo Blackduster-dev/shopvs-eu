@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -16,146 +16,185 @@
             theme: {
                 extend: {
                     colors: {
-                        'lab-bg': '#f8f9ff',
-                        'lab-surface': '#ffffff',
-                        'lab-border': '#e2e8f0',
-                        'lab-border-dark': '#cbd5e1',
-                        'lab-primary': '#0037b0',
-                        'lab-primary-container': '#1d4ed8',
-                        'lab-text': '#0b1c30',
-                        'lab-muted': '#565e74',
-                        'lab-tertiary': '#004f38',
-                        'lab-tertiary-fixed': '#97f5cc',
-                        'lab-amber': '#d97706',
-                        'lab-error': '#ba1a1a',
-                        'lab-error-bg': '#ffdad6'
+                        nordic: {
+                            navy: '#0B192C',
+                            navyLight: '#1E3E62',
+                            petrol: '#005B60',
+                            amber: '#FF6500',
+                            amberHover: '#E05500',
+                            canvas: '#F4F6F9',
+                            surface: '#FFFFFF',
+                            border: '#E1E6ED',
+                            borderDark: '#CBD5E1',
+                            emerald: '#0E8388',
+                            emeraldBg: '#E8F6F6',
+                            crimson: '#D80032',
+                            crimsonBg: '#FDF0F2'
+                        }
                     },
                     fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    },
+                    boxShadow: {
+                        'technical': '0 1px 3px 0 rgba(11, 25, 44, 0.04), 0 1px 2px -1px rgba(11, 25, 44, 0.04)',
+                        'card-active': '0 12px 30px -8px rgba(11, 25, 44, 0.12), 0 4px 10px -3px rgba(11, 25, 44, 0.06)',
+                        'cta': '0 8px 20px -4px rgba(255, 101, 0, 0.35)'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f8f9ff; color: #0b1c30; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F4F6F9; color: #0B192C; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
+        .tech-blueprint-bg {
+            background-color: #0B192C;
+            background-image: linear-gradient(rgba(30, 62, 98, 0.3) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(30, 62, 98, 0.3) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
     </style>
 
 </head>
-<body class="min-h-screen flex flex-col bg-lab-bg text-lab-text antialiased">
+<body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
+    <!-- Top Ribbon -->
+    <aside class="bg-nordic-navy text-white text-[11px] font-mono tracking-wide border-b border-nordic-navyLight/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 text-nordic-emerald font-bold">
+                    <span class="w-2 h-2 rounded-full bg-nordic-emerald animate-ping"></span>
+                    CE-TEST LAB • NORMATIVA 2026
+                </span>
+                <span class="hidden md:inline text-slate-500">|</span>
+                <span class="hidden md:inline text-slate-300">Auditoría técnica de 45 variables en laboratorio europeo</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300 font-mono text-[10px]">
+                <span>100% Sin Patrocinio</span>
+                <span>•</span>
+                <span class="text-nordic-amber">Amazon Verified Partner</span>
+            </div>
+        </div>
+    </aside>
+
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-lab-border">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center gap-2.5 text-decoration-none group">
-                <span class="w-9 h-9 rounded bg-lab-primary text-white flex items-center justify-center font-bold text-lg shadow-sm">VS</span>
+                <div class="w-10 h-10 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-lg border-2 border-nordic-petrol group-hover:bg-nordic-petrol transition-colors">
+                    VS
+                </div>
                 <div class="flex flex-col">
-                    <span class="font-bold text-base tracking-tight text-lab-text leading-tight group-hover:text-lab-primary transition-colors">ShopVS EU</span>
-                    <span class="text-[10px] text-lab-muted uppercase tracking-wider font-semibold">Test Laboratory & Benchmark</span>
+                    <span class="font-display font-extrabold text-xl text-nordic-navy tracking-tight leading-none">ShopVS<span class="text-nordic-amber">.eu</span></span>
+                    <span class="text-[9px] uppercase tracking-widest font-mono font-bold text-nordic-petrol mt-0.5">European Benchmark Lab</span>
                 </div>
             </a>
             <div class="flex items-center gap-3">
-                <div class="flex items-center bg-slate-100 rounded-md p-1 border border-lab-border text-xs font-semibold">
-                    <a href="/es/" class="px-2.5 py-1 rounded bg-white text-lab-primary shadow-xs">🇪🇸 ES</a>
-                    <a href="/de/" class="px-2.5 py-1 rounded text-lab-muted hover:text-lab-text transition-colors">🇩🇪 DE</a>
+                <div class="flex items-center bg-slate-100 p-0.5 rounded border border-nordic-border text-xs font-bold font-mono">
+                    <a href="/es/" class="px-2.5 py-1 rounded bg-nordic-navy text-white shadow-sm">🇪🇸 ES</a>
+                    <a href="/de/" class="px-2.5 py-1 rounded text-slate-600 hover:text-nordic-navy transition-colors">🇩🇪 DE</a>
                 </div>
-                <a href="/legal/" class="text-xs font-medium text-lab-muted hover:text-lab-text hidden sm:inline-flex items-center gap-1">
-                    <span class="material-symbols-outlined text-[16px]">gavel</span> Impressum (§ 5 TMG)
+                <a href="/legal/" class="text-xs font-semibold text-slate-600 hover:text-nordic-navy border border-nordic-border px-3 py-1.5 rounded hover:bg-slate-50 transition-colors hidden sm:flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px] text-nordic-petrol">gavel</span>
+                    <span>Impressum (§ 5 TMG)</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 w-full">
         <!-- Hero Section -->
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-800 border border-blue-200 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                <span class="material-symbols-outlined text-[15px] text-blue-700">verified</span>
-                Auditoría Técnica Independiente • Normativa UE
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div class="inline-flex items-center gap-2 bg-nordic-amber/10 text-nordic-amber border border-nordic-amber/30 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4">
+                <span class="w-1.5 h-1.5 rounded-full bg-nordic-amber"></span>
+                Auditoría Técnica Cara a Cara • Sin Publicidad Engañosa
             </div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-lab-text leading-tight mb-4">
-                Comparativas de Productos Sin Sesgo Comercial
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-nordic-navy leading-tight mb-4">
+                Comparativas de Consumo con Datos Reales
             </h1>
-            <p class="text-base sm:text-lg text-lab-muted leading-relaxed">
-                Evaluamos cara a cara los modelos más vendidos en los mercados de España y Alemania. Fichas técnicas auditadas, mediciones de laboratorio y fallos crónicos reales.
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Ayudamos a compradores de España y Alemania a tomar decisiones inteligentes de alto ticket. Especificaciones empíricas, cálculo de coste a 3 años y filtrado de fallos crónicos de compradores.
             </p>
         </div>
 
-        <!-- Portales Regionales (Cards) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <!-- España -->
-            <a href="/es/" class="bg-white border border-lab-border hover:border-lab-primary rounded-lg p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-md group">
+        <!-- Portais Regionais (Cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-14">
+            <!-- Espanha -->
+            <a href="/es/" class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-card-active group shadow-technical">
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="text-3xl">🇪🇸</span>
-                        <span class="text-[11px] font-bold uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Mercado España</span>
+                        <span class="text-4xl">🇪🇸</span>
+                        <span class="text-xs font-mono font-bold uppercase bg-nordic-emeraldBg text-nordic-emerald px-2.5 py-1 rounded border border-nordic-emerald/30">Portal España</span>
                     </div>
-                    <h2 class="text-xl font-bold text-lab-text mb-2 group-hover:text-lab-primary transition-colors">Edición España (.es)</h2>
-                    <p class="text-sm text-lab-muted mb-6 leading-relaxed">
-                        Análisis comparativos exhaustivos con foco en relación calidad-precio para compradores en Amazon España y cadenas oficiales.
+                    <h2 class="text-2xl font-display font-extrabold text-nordic-navy mb-2 group-hover:text-nordic-emerald transition-colors">Edición España (.es)</h2>
+                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                        Análisis comparativos exhaustivos con foco en relación calidad-precio y costes de mantenimiento para compradores en Amazon España y retail oficial.
                     </p>
                 </div>
-                <div class="inline-flex items-center justify-between w-full font-semibold text-sm bg-slate-50 group-hover:bg-lab-primary group-hover:text-white px-4 py-2.5 rounded border border-lab-border group-hover:border-lab-primary transition-all">
-                    <span>Acceder al Portal España</span>
+                <div class="inline-flex items-center justify-between w-full font-display font-bold text-sm bg-nordic-canvas group-hover:bg-nordic-emerald group-hover:text-white px-5 py-3 rounded-lg border border-nordic-border group-hover:border-nordic-emerald transition-all">
+                    <span>Acceder a Comparativas en Castellano</span>
                     <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </div>
             </a>
 
             <!-- Alemanha -->
-            <a href="/de/" class="bg-white border border-lab-border hover:border-lab-primary rounded-lg p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-md group">
+            <a href="/de/" class="bg-white border border-nordic-border hover:border-nordic-petrol rounded-xl p-6 sm:p-8 flex flex-col justify-between transition-all hover:shadow-card-active group shadow-technical">
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="text-3xl">🇩🇪</span>
-                        <span class="text-[11px] font-bold uppercase bg-slate-100 text-slate-700 px-2 py-0.5 rounded">DACH Region</span>
+                        <span class="text-4xl">🇩🇪</span>
+                        <span class="text-xs font-mono font-bold uppercase bg-slate-100 text-slate-800 px-2.5 py-1 rounded border border-slate-300">DACH Region</span>
                     </div>
-                    <h2 class="text-xl font-bold text-lab-text mb-2 group-hover:text-lab-primary transition-colors">Edition Deutschland (.de)</h2>
-                    <p class="text-sm text-lab-muted mb-6 leading-relaxed">
-                        Technische Direktvergleiche nach strengen Prüfrichtlinien (Testbericht-Standard). Detaillierte Kenngrößen und Schwachstellen-Audit.
+                    <h2 class="text-2xl font-display font-extrabold text-nordic-navy mb-2 group-hover:text-nordic-petrol transition-colors">Edition Deutschland (.de)</h2>
+                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                        Technische Direktvergleiche nach deutschem Prüfstandard (Testbericht-Standard). Detaillierte Kenngrößen, Schwachstellen-Audit und Preis-Leistungs-Checks.
                     </p>
                 </div>
-                <div class="inline-flex items-center justify-between w-full font-semibold text-sm bg-slate-50 group-hover:bg-lab-primary group-hover:text-white px-4 py-2.5 rounded border border-lab-border group-hover:border-lab-primary transition-all">
-                    <span>Zu den Direktvergleichen</span>
+                <div class="inline-flex items-center justify-between w-full font-display font-bold text-sm bg-nordic-canvas group-hover:bg-nordic-navy group-hover:text-white px-5 py-3 rounded-lg border border-nordic-border group-hover:border-nordic-navy transition-all">
+                    <span>Zu den technischen Testberichten</span>
                     <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </div>
             </a>
         </div>
 
-        <!-- Últimos Testes de Laboratório -->
-        <div class="bg-white border border-lab-border rounded-lg p-6 sm:p-8 shadow-xs">
-            <div class="flex items-center justify-between border-b border-lab-border pb-4 mb-6">
+        <!-- Lista de Artigos em Destaque -->
+        <div class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
+            <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
                 <div>
-                    <h3 class="text-lg font-bold text-lab-text">Últimos Informes Técnicos Publicados</h3>
-                    <p class="text-xs text-lab-muted">Fichas técnicas comparativas y auditoría de averías frecuentes</p>
+                    <h3 class="text-xl font-display font-extrabold text-nordic-navy">Últimas Pruebas de Laboratorio Publicadas</h3>
+                    <p class="text-xs text-slate-500 font-mono">Fichas técnicas cara a cara y revisión de averías reportadas</p>
                 </div>
-                <span class="text-xs font-semibold bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded border border-emerald-200">
+                <span class="text-xs font-mono font-bold bg-nordic-emeraldBg text-nordic-emerald px-3 py-1 rounded border border-nordic-emerald/30">
                     Octubre 2026
                 </span>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-md border border-lab-border bg-slate-50/60 hover:bg-blue-50/50 hover:border-blue-300 transition-all gap-3 group">
+                <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-emerald hover:shadow-technical transition-all gap-3 group">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-xs font-bold text-lab-primary uppercase">🇪🇸 Cafeteras Superautomáticas / Kaffeevollautomaten</span>
-                            <span class="text-[10px] bg-slate-200 px-1.5 py-0.2 rounded font-semibold text-slate-700">Lab Test</span>
+                        <div class="flex items-center gap-2 mb-1.5">
+                            <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">🇪🇸 Cafeteras Superautomáticas / Kaffeevollautomaten</span>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold font-mono">LAB WINNER</span>
                         </div>
-                        <h4 class="font-bold text-sm text-lab-text group-hover:text-lab-primary">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
+                        <h4 class="font-display font-bold text-base text-nordic-navy group-hover:text-nordic-emerald transition-colors">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
                     </div>
-                    <span class="text-xs font-semibold text-lab-primary self-end sm:self-center shrink-0 flex items-center gap-1">
-                        Leer análisis <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                    <span class="text-xs font-mono font-bold text-nordic-amber self-end sm:self-center shrink-0 flex items-center gap-1">
+                        Ver informe <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </span>
                 </a>
 
-                <a href="/de/delonghi-magnifica-s-vs-krups-essential-test.html" class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-md border border-lab-border bg-slate-50/60 hover:bg-blue-50/50 hover:border-blue-300 transition-all gap-3 group">
+                <a href="/de/delonghi-magnifica-s-vs-krups-essential-test.html" class="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-lg border border-nordic-border bg-nordic-canvas/50 hover:bg-white hover:border-nordic-navy hover:shadow-technical transition-all gap-3 group">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-xs font-bold text-lab-primary uppercase">🇩🇪 Kaffeevollautomaten</span>
-                            <span class="text-[10px] bg-slate-200 px-1.5 py-0.2 rounded font-semibold text-slate-700">Testbericht</span>
+                        <div class="flex items-center gap-2 mb-1.5">
+                            <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">🇩🇪 Kaffeevollautomaten</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-800 px-1.5 py-0.2 rounded font-bold font-mono">TESTBERICHT</span>
                         </div>
-                        <h4 class="font-bold text-sm text-lab-text group-hover:text-lab-primary">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
+                        <h4 class="font-display font-bold text-base text-nordic-navy group-hover:text-nordic-navy transition-colors">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h4>
                     </div>
-                    <span class="text-xs font-semibold text-lab-primary self-end sm:self-center shrink-0 flex items-center gap-1">
-                        Testbericht lesen <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                    <span class="text-xs font-mono font-bold text-nordic-amber self-end sm:self-center shrink-0 flex items-center gap-1">
+                        Testbericht <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </span>
                 </a>
             </div>
@@ -163,20 +202,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-lab-border mt-16 py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-lab-muted">
-                <div>
-                    <strong>ShopVS EU</strong> • Laboratorio Técnico Independiente de Comparación de Productos
+    <footer class="bg-white border-t border-nordic-border py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-bold text-xs">VS</div>
+                    <span class="font-display font-bold text-nordic-navy">ShopVS EU</span>
+                    <span>• Laboratorio Técnico Independiente de Comparación</span>
                 </div>
-                <div class="flex items-center gap-4">
-                    <a href="/es/" class="hover:text-lab-text">España</a>
-                    <a href="/de/" class="hover:text-lab-text">Deutschland</a>
-                    <a href="/legal/" class="hover:text-lab-text font-semibold">Impressum & Aviso Legal (§ 5 TMG)</a>
+                <div class="flex items-center gap-5 font-mono">
+                    <a href="/es/" class="hover:text-nordic-navy">España</a>
+                    <a href="/de/" class="hover:text-nordic-navy">Deutschland</a>
+                    <a href="/legal/" class="hover:text-nordic-navy font-bold text-nordic-navy">Impressum (§ 5 TMG)</a>
                 </div>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] text-slate-400 leading-relaxed">
-                <strong>Aviso de Transparencia:</strong> En calidad de Afiliado de Amazon y colaborador de programas de afiliados (Awin), ShopVS EU obtiene ingresos por compras que cumplen con los requisitos aplicables. Por motivos de cumplimiento legal y exactitud comercial, ningún precio es fijo; todos los enlaces conducen a la consulta en tiempo real en los minoristas oficiales.
+                <strong>Aviso de Transparencia de Afiliación:</strong> En calidad de Afiliado de Amazon y redes colaboradoras europeas (Awin), ShopVS EU obtiene ingresos por compras cualificadas. Por motivos de rigor comercial y normativa europea, ningún precio en este portal es fijo: todos los enlaces consultan el precio y stock en tiempo real en los minoristas oficiales.
             </div>
         </div>
     </footer>

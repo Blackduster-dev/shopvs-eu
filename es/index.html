@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,63 +15,80 @@
             theme: {
                 extend: {
                     colors: {
-                        'lab-bg': '#f8f9ff',
-                        'lab-surface': '#ffffff',
-                        'lab-border': '#e2e8f0',
-                        'lab-border-dark': '#cbd5e1',
-                        'lab-primary': '#0037b0',
-                        'lab-primary-container': '#1d4ed8',
-                        'lab-text': '#0b1c30',
-                        'lab-muted': '#565e74',
-                        'lab-tertiary': '#004f38',
-                        'lab-tertiary-fixed': '#97f5cc',
-                        'lab-amber': '#d97706',
-                        'lab-error': '#ba1a1a',
-                        'lab-error-bg': '#ffdad6'
+                        nordic: {
+                            navy: '#0B192C',
+                            navyLight: '#1E3E62',
+                            petrol: '#005B60',
+                            amber: '#FF6500',
+                            amberHover: '#E05500',
+                            canvas: '#F4F6F9',
+                            surface: '#FFFFFF',
+                            border: '#E1E6ED',
+                            borderDark: '#CBD5E1',
+                            emerald: '#0E8388',
+                            emeraldBg: '#E8F6F6',
+                            crimson: '#D80032',
+                            crimsonBg: '#FDF0F2'
+                        }
                     },
                     fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    },
+                    boxShadow: {
+                        'technical': '0 1px 3px 0 rgba(11, 25, 44, 0.04), 0 1px 2px -1px rgba(11, 25, 44, 0.04)',
+                        'card-active': '0 12px 30px -8px rgba(11, 25, 44, 0.12), 0 4px 10px -3px rgba(11, 25, 44, 0.06)',
+                        'cta': '0 8px 20px -4px rgba(255, 101, 0, 0.35)'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #f8f9ff; color: #0b1c30; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F4F6F9; color: #0B192C; }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20; vertical-align: middle; }
+        .tech-blueprint-bg {
+            background-color: #0B192C;
+            background-image: linear-gradient(rgba(30, 62, 98, 0.3) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(30, 62, 98, 0.3) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
     </style>
 
 </head>
-<body class="min-h-screen flex flex-col bg-lab-bg text-lab-text antialiased">
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-lab-border">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2">
-                <span class="w-8 h-8 rounded bg-lab-primary text-white flex items-center justify-center font-bold">VS</span>
-                <span class="font-bold text-base text-lab-text">ShopVS EU</span>
+<body class="min-h-screen flex flex-col antialiased selection:bg-nordic-amber selection:text-white">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-nordic-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded bg-nordic-navy text-white flex items-center justify-center font-display font-extrabold text-base">VS</div>
+                <span class="font-display font-extrabold text-lg text-nordic-navy">ShopVS<span class="text-nordic-amber">.eu</span></span>
             </a>
-            <div class="flex items-center gap-4 text-xs font-semibold">
-                <a href="/" class="text-lab-muted hover:text-lab-text">Inicio</a>
-                <a href="/de/" class="text-lab-muted hover:text-lab-text">🇩🇪 Deutschland</a>
-                <a href="/legal/" class="text-lab-muted hover:text-lab-text">Aviso Legal</a>
+            <div class="flex items-center gap-4 text-xs font-mono font-bold">
+                <a href="/" class="text-slate-600 hover:text-nordic-navy">Inicio</a>
+                <a href="/de/" class="text-slate-600 hover:text-nordic-navy">🇩🇪 Deutschland</a>
+                <a href="/legal/" class="text-slate-600 hover:text-nordic-navy">Aviso Legal</a>
             </div>
         </div>
     </header>
 
-    <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
-        <div class="mb-8">
-            <span class="text-xs font-bold text-lab-primary uppercase tracking-wider">Edición España</span>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-lab-text mt-1 mb-2">Comparativas Técnicas de Consumo</h1>
-            <p class="text-sm text-lab-muted">Informes objetivos de laboratorio para decisiones de compra de alto valor.</p>
+    <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        <div class="mb-10">
+            <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-wider">Edición España</span>
+            <h1 class="text-3xl sm:text-4xl font-display font-extrabold text-nordic-navy mt-1 mb-2">Comparativas Técnicas de Consumo</h1>
+            <p class="text-sm text-slate-600">Informes independientes cara a cara con foco en relación calidad-precio y coste total a largo plazo.</p>
         </div>
 
         <div class="grid grid-cols-1 gap-4">
-            <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="bg-white border border-lab-border hover:border-lab-primary rounded-lg p-5 sm:p-6 transition-all shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
+            <a href="/es/delonghi-magnifica-s-vs-krups-essential.html" class="bg-white border border-nordic-border hover:border-nordic-emerald rounded-xl p-6 transition-all shadow-technical hover:shadow-card-active flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
                 <div>
-                    <span class="text-xs font-bold text-lab-primary uppercase tracking-wider">Cafeteras Superautomáticas / Kaffeevollautomaten</span>
-                    <h2 class="text-lg font-bold text-lab-text group-hover:text-lab-primary transition-colors mt-1 mb-2">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h2>
-                    <p class="text-xs text-lab-muted max-w-xl">Comparativa de presión real en bares, facilidad de limpieza del grupo de infusión y análisis de fallos reportados en uso diario.</p>
+                    <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-wider">Cafeteras Superautomáticas / Kaffeevollautomaten</span>
+                    <h2 class="text-xl font-display font-extrabold text-nordic-navy group-hover:text-nordic-emerald transition-colors mt-1 mb-2">De'Longhi Magnifica S ECAM 22.110.B vs Krups Essential EA8108</h2>
+                    <p class="text-xs text-slate-600 max-w-2xl leading-relaxed">Comparativa completa de presión en bomba, durabilidad del grupo infusor y análisis de fallos reportados en uso diario.</p>
                 </div>
-                <div class="inline-flex items-center gap-1.5 text-xs font-bold bg-slate-50 group-hover:bg-lab-primary group-hover:text-white px-3.5 py-2 rounded border border-lab-border group-hover:border-lab-primary transition-all self-start sm:self-center shrink-0">
+                <div class="inline-flex items-center gap-1.5 text-xs font-mono font-bold bg-nordic-canvas group-hover:bg-nordic-emerald group-hover:text-white px-4 py-2.5 rounded-lg border border-nordic-border group-hover:border-nordic-emerald transition-all self-start sm:self-center shrink-0">
                     <span>Ver informe</span>
                     <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
@@ -79,10 +96,8 @@
         </div>
     </main>
 
-    <footer class="bg-white border-t border-lab-border py-6 mt-12">
-        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-lab-muted">
-            &copy; 2026 ShopVS EU • <a href="/legal/" class="text-lab-primary hover:underline">Aviso Legal & Privacidad</a>
-        </div>
+    <footer class="bg-white border-t border-nordic-border py-8 mt-12 text-center text-xs text-slate-500 font-mono">
+        &copy; 2026 ShopVS EU • <a href="/legal/" class="text-nordic-navy hover:underline">Aviso Legal & Privacidad</a>
     </footer>
 </body>
 </html>
