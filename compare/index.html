@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador Cara a Cara • ShopVS EU</title>
     <meta name="description" content="Herramienta interactiva de comparación técnica directa entre productos de la misma categoría. Datos certificados por laboratorio europeo.">
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     
     <!-- Google Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -461,6 +462,44 @@
             const isDe = currentMarket === 'de';
             const t = i18nCompare[currentMarket];
 
+            // Verificar se existe um artigo editorial completo para esse confronto
+            let matchingDuel = null;
+            if (duelosData) {
+                matchingDuel = duelosData.find(d => 
+                    (d.produto_a.id === prodA.id && d.produto_b.id === prodB.id) ||
+                    (d.produto_a.id === prodB.id && d.produto_b.id === prodA.id)
+                );
+            }
+
+            let articleCalloutHtml = '';
+            if (matchingDuel) {
+                const slug = isDe ? matchingDuel.slug_de : matchingDuel.slug_es;
+                const artUrl = isDe ? `/de/${slug}.html` : `/es/${slug}.html`;
+                const bannerBadge = isDe ? "OFFIZIELLER PRÜFBERICHT VORHANDEN" : "INFORME DE LABORATORIO DISPONIBLE";
+                const bannerTitle = isDe ? `Vollständiger Labor-Härtetest: ${matchingDuel.produto_a.nome} vs ${matchingDuel.produto_b.nome}` : `Auditoría técnica editorial completa: ${matchingDuel.produto_a.nome} vs ${matchingDuel.produto_b.nome}`;
+                const bannerDesc = isDe ? "Unsere Ingenieure haben beide Modelle in 45 Parametern geprüft. Klicken Sie hier für Messwerte, Zerlegbarkeit und Langzeit-Schwachstellen." : "Nuestros ingenieros han enfrentado ambos modelos en 45 variables de laboratorio. Haz clic para ver mediciones, desmontaje y análisis de fallos crónicos.";
+                const btnLabel = isDe ? "Testbericht öffnen" : "Leer Informe Editorial Completo";
+
+                articleCalloutHtml = `
+                    <div class="bg-gradient-to-r from-nordic-navy via-nordic-navyLight to-nordic-petrol text-white rounded-xl p-5 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 border-2 border-nordic-emerald shadow-technical">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-11 h-11 rounded-lg bg-nordic-emerald text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <span class="material-symbols-outlined text-[24px]">science</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-mono font-bold uppercase text-nordic-amber block tracking-wider">${bannerBadge}</span>
+                                <h4 class="font-display font-extrabold text-sm sm:text-base text-white mt-0.5">${bannerTitle}</h4>
+                                <p class="text-xs text-slate-300 font-normal mt-0.5">${bannerDesc}</p>
+                            </div>
+                        </div>
+                        <a href="${artUrl}" class="bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-extrabold text-xs sm:text-sm py-3 px-5 rounded-lg flex items-center gap-2 shrink-0 transition-all shadow-cta">
+                            <span>${btnLabel}</span>
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </a>
+                    </div>
+                `;
+            }
+
             const linkA = isDe ? prodA.link_de : prodA.link_es;
             const linkB = isDe ? prodB.link_de : prodB.link_es;
             const badgeA = isDe ? prodA.score_badge_de : prodA.score_badge_es;
@@ -498,6 +537,7 @@
             });
 
             output.innerHTML = `
+                ${articleCalloutHtml}
                 <!-- Cards de Topo Head-to-Head -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Produto A -->
@@ -604,6 +644,42 @@
                         <ul class="space-y-2 text-xs text-slate-700">
                             ${contrasB.map(c => `<li class="flex items-start gap-2"><span class="text-nordic-crimson font-bold">✕</span><span>${c}</span></li>`).join('')}
                         </ul>
+                    </div>
+                </div>
+
+                <!-- Seção de Duelos Editoriais Publicados dentro do Comparador -->
+                <div class="mt-8 border-t border-nordic-border pt-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase tracking-wider block">${isDe ? 'TESTBERICHTE DER REDAKTION' : 'INFORMES TÉCNICOS DESTACADOS'}</span>
+                            <h3 class="text-lg font-display font-extrabold text-nordic-navy">${isDe ? 'Ausführliche Labor-Prüfberichte zum Weiterlesen' : 'Análisis Completos de Laboratorio Publicados'}</h3>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        ${(duelosData || []).map(d => {
+                            const slug = isDe ? d.slug_de : d.slug_es;
+                            const artUrl = isDe ? `/de/${slug}.html` : `/es/${slug}.html`;
+                            const catName = isDe ? d.categoria_de : d.categoria_es;
+                            return `
+                                <a href="${artUrl}" class="bg-white border border-nordic-border hover:border-nordic-emerald p-4 rounded-xl shadow-technical hover:shadow-card-active transition-all flex flex-col justify-between group">
+                                    <div>
+                                        <span class="text-[9px] font-mono font-bold uppercase text-nordic-emerald block mb-2">${catName}</span>
+                                        <div class="flex items-center justify-center gap-2 my-2 bg-nordic-canvas/50 p-2 rounded">
+                                            <img src="${d.produto_a.imagem_url}" class="w-10 h-10 object-contain mix-blend-multiply">
+                                            <span class="text-[10px] font-bold text-slate-400 font-mono">VS</span>
+                                            <img src="${d.produto_b.imagem_url}" class="w-10 h-10 object-contain mix-blend-multiply">
+                                        </div>
+                                        <h5 class="font-display font-bold text-xs text-nordic-navy group-hover:text-nordic-emerald transition-colors line-clamp-2 mt-1">
+                                            ${d.produto_a.nome} vs ${d.produto_b.nome}
+                                        </h5>
+                                    </div>
+                                    <span class="text-[11px] font-mono font-bold text-nordic-amber mt-3 flex items-center justify-between pt-2 border-t border-nordic-border">
+                                        <span>${isDe ? 'Testbericht' : 'Leer informe'}</span>
+                                        <span>&rarr;</span>
+                                    </span>
+                                </a>
+                            `;
+                        }).join('')}
                     </div>
                 </div>
             `;

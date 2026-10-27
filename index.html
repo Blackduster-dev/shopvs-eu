@@ -6,6 +6,8 @@
     <title>ShopVS EU • Laboratorio de Comparación Técnica & Produkttests</title>
     <meta name="description" content="Portal europeo independiente de auditoría técnica y comparativas cara a cara. Categorías de productos, buscador inteligente y comparador estilo Tudocelular.">
     
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
@@ -174,7 +176,22 @@
             </div>
         </section>
 
-        <!-- TOP CUSTO-BENEFÍCIO DA TEMPORADA -->
+        <!-- SEÇÃO DE COMPARATIVAS TÉCNICAS DESTACADAS (INFORMES DE LABORATORIO) -->
+        <section id="duelos-section">
+            <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono font-bold text-nordic-petrol uppercase tracking-wider" id="duelos-section-tag">INFORMES DE LABORATORIO</span>
+                    <h3 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5" id="duelos-section-title">Comparativas Técnicas Frente a Frente (Test 2026)</h3>
+                </div>
+                <span class="text-xs font-mono text-slate-500 hidden sm:inline" id="duelos-section-hint">Mediciones imparciales, pros, contras y fallos reales</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="duelos-grid">
+                <!-- Inserido dinamicamente conforme idioma selecionado -->
+            </div>
+        </section>
+
+        <!-- TOP CALIDAD-PRECIO DE LA TEMPORADA -->
         <section class="bg-white border border-nordic-border rounded-xl p-6 sm:p-8 shadow-technical">
             <div class="flex items-center justify-between border-b border-nordic-border pb-4 mb-6">
                 <div>
@@ -212,6 +229,7 @@
     <!-- LÓGICA DO TOGGLE DE IDIOMA E DA BUSCA INTELIGENTE -->
     <script>
         let catalogoData = null;
+        let duelosData = null;
         let currentLang = 'es';
 
         const i18n = {
@@ -234,6 +252,12 @@
                 catSectionTag: "LAB BENCHMARKS",
                 catSectionTitle: "Explora por Categoría Certificada",
                 catSectionHint: "Datos medidos bajo condiciones estándar de laboratorio",
+                duelosSectionTag: "INFORMES DE LABORATORIO 2026",
+                duelosSectionTitle: "Comparativas Técnicas de Laboratorio Publicadas",
+                duelosSectionHint: "Pruebas exhaustivas cara a cara con 45 parámetros técnicos",
+                duelosReadArticle: "Leer Informe Editorial Completo &rarr;",
+                duelosCompareTool: "Abrir en Comparador",
+                articleSearchBadge: "Informe Editorial",
                 topSectionTitle: "Modelos con Mayor Puntuación Técnica de Laboratorio",
                 affiliateNotice: "<strong>Aviso de afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Precios verificados en tiempo real en la tienda oficial."
             },
@@ -256,6 +280,12 @@
                 catSectionTag: "LABOR-BENCHMARKS",
                 catSectionTitle: "Nach geprüften Kategorien filtern",
                 catSectionHint: "Messungen unter standardisierten Prüfbedingungen",
+                duelosSectionTag: "LABOR-PRÜFBERICHTE 2026",
+                duelosSectionTitle: "Veröffentlichte Labor-Direktvergleiche im Härtetest",
+                duelosSectionHint: "Ausführliche technische Prüfberichte mit realen Messwerten",
+                duelosReadArticle: "Vollständigen Prüfbericht lesen &rarr;",
+                duelosCompareTool: "Im Tool vergleichen",
+                articleSearchBadge: "Laborbericht",
                 topSectionTitle: "Spitzenreiter im europäischen Labor-Härtetest",
                 affiliateNotice: "<strong>Transparenzhinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Preise und Produktverfügbarkeit werden in Echtzeit beim offiziellen Händler geprüft."
             }
@@ -268,8 +298,14 @@
                 if (urlLang === 'de' || urlLang === 'es') {
                     currentLang = urlLang;
                 }
-                const res = await fetch('/data/catalogo_produtos.json');
-                catalogoData = await res.json();
+                const [resCat, resDue] = await Promise.all([
+                    fetch('/data/catalogo_produtos.json'),
+                    fetch('/data/duelos.json').catch(() => null)
+                ]);
+                catalogoData = await resCat.json();
+                if (resDue && resDue.ok) {
+                    duelosData = await resDue.json();
+                }
                 setLang(currentLang);
             } catch (e) {
                 console.error("Erro ao carregar dados:", e);
@@ -326,8 +362,90 @@
             const footerNotice = document.getElementById('footer-affiliate-notice');
             if (footerNotice) footerNotice.innerHTML = t.affiliateNotice;
 
+            // Títulos da seção de duelos
+            const elDueTag = document.getElementById('duelos-section-tag');
+            if (elDueTag) elDueTag.textContent = t.duelosSectionTag;
+            const elDueTitle = document.getElementById('duelos-section-title');
+            if (elDueTitle) elDueTitle.textContent = t.duelosSectionTitle;
+            const elDueHint = document.getElementById('duelos-section-hint');
+            if (elDueHint) elDueHint.textContent = t.duelosSectionHint;
+
             renderCategoriesGrid();
+            renderDuelosGrid();
             renderTopProducts();
+        }
+
+        function renderDuelosGrid() {
+            const container = document.getElementById('duelos-grid');
+            if (!container || !duelosData) return;
+            const isDe = currentLang === 'de';
+            const t = i18n[currentLang];
+
+            container.innerHTML = duelosData.map(d => {
+                const slug = isDe ? d.slug_de : d.slug_es;
+                const articleUrl = isDe ? `/de/${slug}.html` : `/es/${slug}.html`;
+                const categoria = isDe ? d.categoria_de : d.categoria_es;
+                const catId = d.categoria_id || 'cafeteras';
+                const pa = d.produto_a;
+                const pb = d.produto_b;
+                const scoreLabA = pa.score_lab || '9.0';
+                const scoreLabB = pb.score_lab || '8.5';
+                const resumo = (d.veredito_resumo && d.veredito_resumo[currentLang]) ? d.veredito_resumo[currentLang] : '';
+
+                return `
+                    <div class="bg-white border-2 border-nordic-border hover:border-nordic-emerald rounded-2xl p-6 shadow-technical hover:shadow-card-active transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-[10px] font-mono font-bold uppercase bg-nordic-emeraldBg text-nordic-emerald px-2.5 py-1 rounded border border-nordic-emerald/20">${categoria}</span>
+                                <span class="text-[10px] font-mono font-bold text-slate-400">LAB BENCHMARK 2026</span>
+                            </div>
+
+                            <div class="flex items-center justify-between gap-3 py-4 px-3 bg-nordic-canvas/60 rounded-xl border border-nordic-border mb-4">
+                                <div class="flex flex-col items-center text-center w-5/12">
+                                    <div class="w-20 h-20 bg-white rounded-lg p-1.5 border border-nordic-border flex items-center justify-center shadow-sm mb-2">
+                                        <img src="${pa.imagem_url}" alt="${pa.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                    </div>
+                                    <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${pa.marca}</span>
+                                    <strong class="text-xs font-display font-extrabold text-nordic-navy leading-tight truncate max-w-full">${pa.nome}</strong>
+                                    <span class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded mt-1 font-bold">Score: ${scoreLabA}/10</span>
+                                </div>
+
+                                <div class="w-2/12 flex items-center justify-center">
+                                    <span class="w-8 h-8 rounded-full bg-nordic-navy text-nordic-amber flex items-center justify-center font-display font-black text-xs shadow-sm">
+                                        VS
+                                    </span>
+                                </div>
+
+                                <div class="flex flex-col items-center text-center w-5/12">
+                                    <div class="w-20 h-20 bg-white rounded-lg p-1.5 border border-nordic-border flex items-center justify-center shadow-sm mb-2">
+                                        <img src="${pb.imagem_url}" alt="${pb.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                    </div>
+                                    <span class="text-[10px] font-mono font-bold text-slate-500 uppercase">${pb.marca}</span>
+                                    <strong class="text-xs font-display font-extrabold text-nordic-navy leading-tight truncate max-w-full">${pb.nome}</strong>
+                                    <span class="text-[10px] font-mono text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded mt-1 font-bold">Score: ${scoreLabB}/10</span>
+                                </div>
+                            </div>
+
+                            <h4 class="font-display font-extrabold text-base sm:text-lg text-nordic-navy group-hover:text-nordic-emerald transition-colors mb-2">
+                                ${pa.nome} vs. ${pb.nome}
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-5 line-clamp-3">
+                                ${resumo}
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-2.5 pt-4 border-t border-nordic-border">
+                            <a href="${articleUrl}" class="w-full sm:flex-1 bg-nordic-navy hover:bg-nordic-emerald text-white font-display font-bold text-xs py-3 px-4 rounded-lg flex items-center justify-center gap-1.5 transition-all shadow-sm">
+                                <span>${t.duelosReadArticle}</span>
+                            </a>
+                            <a href="/compare/?cat=${catId}&a=${pa.id}&b=${pb.id}&lang=${currentLang}" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 font-mono font-bold text-xs py-3 px-3.5 rounded-lg flex items-center justify-center gap-1 border border-nordic-border transition-colors">
+                                <span class="material-symbols-outlined text-[15px] text-nordic-amber">compare_arrows</span>
+                                <span>${t.duelosCompareTool}</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderCategoriesGrid() {
@@ -398,31 +516,74 @@
                 return;
             }
 
-            const results = catalogoData.produtos.filter(p => 
+            const isDe = currentLang === 'de';
+            const prodResults = catalogoData.produtos.filter(p => 
                 p.nome.toLowerCase().includes(clean) || 
                 p.marca.toLowerCase().includes(clean)
             );
 
-            if (results.length === 0) {
+            let duelResults = [];
+            if (duelosData) {
+                duelResults = duelosData.filter(d => 
+                    d.produto_a.nome.toLowerCase().includes(clean) ||
+                    d.produto_a.marca.toLowerCase().includes(clean) ||
+                    d.produto_b.nome.toLowerCase().includes(clean) ||
+                    d.produto_b.marca.toLowerCase().includes(clean) ||
+                    (d.categoria_es && d.categoria_es.toLowerCase().includes(clean)) ||
+                    (d.categoria_de && d.categoria_de.toLowerCase().includes(clean))
+                );
+            }
+
+            if (prodResults.length === 0 && duelResults.length === 0) {
                 dropdown.innerHTML = `<div class="p-4 text-xs text-slate-500 font-mono text-center">${t.noResults}</div>`;
                 dropdown.classList.remove('hidden');
                 return;
             }
 
-            dropdown.innerHTML = results.map(p => `
-                <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
-                    <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
-                        <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${p.marca}</span>
-                        <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${p.nome}</strong>
-                    </div>
-                    <span class="text-xs font-mono font-bold text-nordic-amber flex items-center gap-1 shrink-0">
-                        ${t.compareBtn} &rarr;
-                    </span>
-                </a>
-            `).join('');
+            let htmlItems = '';
+
+            // Artigos editoriais correspondentes
+            duelResults.forEach(d => {
+                const slug = isDe ? d.slug_de : d.slug_es;
+                const artUrl = isDe ? `/de/${slug}.html` : `/es/${slug}.html`;
+                const catName = isDe ? d.categoria_de : d.categoria_es;
+                const btnLabel = isDe ? "Prüfbericht lesen" : "Leer Informe Editorial";
+
+                htmlItems += `
+                    <a href="${artUrl}" class="flex items-center justify-between p-3 bg-nordic-emeraldBg/40 hover:bg-nordic-emeraldBg/80 border-b border-nordic-border transition-colors">
+                        <div class="flex items-center gap-2.5 min-w-0">
+                            <span class="material-symbols-outlined text-nordic-emerald text-[20px] shrink-0">menu_book</span>
+                            <div class="min-w-0">
+                                <span class="text-[9px] font-mono font-bold uppercase text-nordic-emerald block">${t.articleSearchBadge} • ${catName}</span>
+                                <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${d.produto_a.nome} vs ${d.produto_b.nome}</strong>
+                            </div>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-nordic-emerald shrink-0">
+                            ${btnLabel} &rarr;
+                        </span>
+                    </a>
+                `;
+            });
+
+            // Produtos individuais para o comparador
+            prodResults.forEach(p => {
+                htmlItems += `
+                    <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
+                        <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
+                            <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${p.marca}</span>
+                            <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${p.nome}</strong>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-nordic-amber flex items-center gap-1 shrink-0">
+                            ${t.compareBtn} &rarr;
+                        </span>
+                    </a>
+                `;
+            });
+
+            dropdown.innerHTML = htmlItems;
             dropdown.classList.remove('hidden');
         }
 
