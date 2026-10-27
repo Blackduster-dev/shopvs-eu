@@ -1,0 +1,590 @@
+[
+  {
+    "slug_es": "delonghi-magnifica-s-vs-krups-essential",
+    "slug_de": "delonghi-magnifica-s-vs-krups-essential-test",
+    "categoria_id": "cafeteras",
+    "categoria_es": "Cafeteras Superautomáticas",
+    "categoria_de": "Kaffeevollautomaten",
+    "data_publicacao": "2026-10-26",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "delonghi_magnifica_s",
+      "nome": "De'Longhi Magnifica S ECAM 22.110.B",
+      "marca": "De'Longhi",
+      "asin": "B00400OMU0",
+      "imagem_url": "/assets/products/delonghi_magnifica_s.png",
+      "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=shopvseu-21",
+      "score_lab": "9.2",
+      "score_label": "TESTSIEGER • SEHR GUT",
+      "score_label_es": "TESTSIEGER • SOBRESALIENTE",
+      "score_label_de": "TESTSIEGER • SEHR GUT",
+      "specs_es": {
+        "Potencia": "1450 W",
+        "Presión de Bomba": "15 bar (estable en extracción)",
+        "Depósito de Agua": "1.8 L (extracción frontal)",
+        "Capacidad de Grano": "250 g con junta hermética",
+        "Molinillo": "Acero cónico (13 niveles de molienda)",
+        "Grupo Infusor": "100% Extraíble (lavable bajo el grifo)",
+        "Altura de Taza": "86 a 142 mm (boquillas ajustables)",
+        "Dimensiones y Peso": "23,8 x 43,0 x 35,1 cm (9.0 kg)"
+      },
+      "specs_de": {
+        "Leistung": "1450 W",
+        "Pumpendruck": "15 Bar (konstant bei Extraktion)",
+        "Wassertank": "1,8 L (frontal entnehmbar)",
+        "Bohnenbehälter": "250 g mit Aromaschutzdeckel",
+        "Mahlwerk": "Edelstahl-Kegelmahlwerk (13 Stufen)",
+        "Brühgruppe": "100% Herausnehmbar (Reinigung unter fließendem Wasser)",
+        "Tassenhöhe": "86 bis 142 mm (höhenverstellbar)",
+        "Abmessungen & Gewicht": "23,8 x 43,0 x 35,1 cm (9,0 kg)"
+      },
+      "ficha_expandida_es": {
+        "Material de Caldera": "Acero inoxidable con doble sistema Thermoblock",
+        "Ajustes de Aroma": "Selector mecánico continuo (7g a 14g de café por dosis)",
+        "Tiempo Precalentamiento": "48 segundos (incluye purga automática)",
+        "Descalcificación": "Programa guiado semiautomático (~25 min)",
+        "Compatibilidad Filtro": "Filtro De'Longhi DLS C002 y universales",
+        "Eficiencia Energética": "Clase A con apagado automático (15m a 3h)"
+      },
+      "ficha_expandida_de": {
+        "Heizsystem": "Edelstahl-Thermoblock mit Zweikreissystem",
+        "Aromawahl": "Stufenloser Drehregler (7g bis 14g Kaffeemehl pro Brühung)",
+        "Aufheizzeit": "48 Sekunden (inkl. automatischer Spülung)",
+        "Entkalkung": "Halbautomatisches Prüfprogramm (ca. 25 Min.)",
+        "Wasserfilter": "De'Longhi DLS C002 Wasserfilter kompatibel",
+        "Energieeffizienz": "Klasse A mit Abschaltautomatik (15 Min. bis 3 Std.)"
+      },
+      "pros_es": [
+        "Grupo infusor 100% extraíble y de fácil lavado en el grifo sin pastillas químicas",
+        "Molinillo de acero cónico de 13 niveles para calibrar cualquier tueste",
+        "Durabilidad mecánica comprobada superior a 6 años en hogares europeos"
+      ],
+      "contras_es": [
+        "Rejilla metálica de la bandeja de goteo propensa a micro-rayaduras tempranas",
+        "Vaporizador Panarello manual algo corto para jarras altas de 500 ml"
+      ],
+      "pros_de": [
+        "Vollständig herausnehmbare Brühgruppe – Reinigung unter klarem Wasser ohne Chemie-Tabletten",
+        "Flüsterleises 13-stufiges Kegelmahlwerk aus gehärtetem Edelstahl",
+        "Überragende Langzeit-Haltbarkeit und günstige Ersatzteilversorgung in der EU"
+      ],
+      "contras_de": [
+        "Abtropfgitter aus Edelstahl verkratzt leicht durch Keramiktassen",
+        "Manuelle Milchschaumdüse etwas kurz für große 500-ml-Milchkännchen"
+      ]
+    },
+    "produto_b": {
+      "id": "krups_essential",
+      "nome": "Krups Essential EA8108",
+      "marca": "Krups",
+      "asin": "B00INSX904",
+      "imagem_url": "/assets/products/krups_essential.png",
+      "link_es": "https://www.amazon.es/dp/B00INSX904?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00INSX904?tag=shopvseu-21",
+      "score_lab": "8.4",
+      "score_label": "GUT (2.1) • COMPACTA",
+      "score_label_es": "GUT (2.1) • COMPACTA",
+      "score_label_de": "GUT (2.1) • KOMPAKT",
+      "specs_es": {
+        "Potencia": "1450 W",
+        "Presión de Bomba": "15 bar (picos a 14.5)",
+        "Depósito de Agua": "1.7 L (extracción trasera)",
+        "Capacidad de Grano": "260 g transparente",
+        "Molinillo": "Acero cónico (3 niveles de molienda)",
+        "Grupo Infusor": "Fijo sellado (exige pastillas automáticas)",
+        "Altura de Taza": "65 a 105 mm",
+        "Dimensiones y Peso": "24,5 x 36,5 x 33,0 cm (7.2 kg)"
+      },
+      "specs_de": {
+        "Leistung": "1450 W",
+        "Pumpendruck": "15 Bar (Spitzen bis 14,5 Bar)",
+        "Wassertank": "1,7 L (rückseitig entnehmbar)",
+        "Bohnenbehälter": "260 g Sichtbehälter",
+        "Mahlwerk": "Edelstahl-Kegelmahlwerk (3 Stufen)",
+        "Brühgruppe": "Fest verbaut (Reinigung nur per Tablette)",
+        "Tassenhöhe": "65 bis 105 mm",
+        "Abmessungen & Gewicht": "24,5 x 36,5 x 33,0 cm (7,2 kg)"
+      },
+      "ficha_expandida_es": {
+        "Material de Caldera": "Bloque de aluminio Krups Compact Thermoblock (CTS)",
+        "Ajustes de Aroma": "3 selecciones de volumen y 2 intensidades",
+        "Tiempo Precalentamiento": "34 segundos desde frío total",
+        "Descalcificación": "Ciclo automático con pastillas Krups XS3000",
+        "Compatibilidad Filtro": "Cartucho Claris Aqua Filter System F088",
+        "Eficiencia Energética": "Modo Auto-Off programable de 1 a 4 horas"
+      },
+      "ficha_expandida_de": {
+        "Heizsystem": "Patentiertes Krups Compact Thermoblock System (CTS)",
+        "Aromawahl": "3 Tassengrößen und 2 Kaffeestärken wählbar",
+        "Aufheizzeit": "34 Sekunden ab Kaltstart (Spitzenwert)",
+        "Entkalkung": "Automatisches Reinigungsprogramm mit Krups XS3000 Tabs",
+        "Wasserfilter": "Claris Aqua Filter System F088 Patrone",
+        "Energieeffizienz": "Auto-Off-Modus einstellbar (1 bis 4 Stunden)"
+      },
+      "pros_es": [
+        "Chasis ultracompacto con solo 36,5 cm de fondo (ideal para cocinas pequeñas)",
+        "Calentamiento Thermoblock rápido en solo 34 segundos",
+        "Precio de entrada muy competitivo para iniciarse en el café en grano"
+      ],
+      "contras_es": [
+        "Grupo infusor fijo sellado: no desmontable, obliga a gastar en pastillas Krups XS3000",
+        "Solo 3 niveles de ajuste de molienda"
+      ],
+      "pros_de": [
+        "Extrem kompakte Stellfläche (nur 36,5 cm Tiefe für schmale Küchenzeilen)",
+        "Schnellste Aufheizzeit im Testfeld (34 Sekunden dank CTS-Thermoblock)",
+        "Attraktiver Einstiegspreis im Segment der Kaffeevollautomaten"
+      ],
+      "contras_de": [
+        "Fest verbaute Metall-Brühgruppe erfordert regelmäßigen Kauf von Reinigungstabletten",
+        "Nur 3 grobe Mahlgradstufen wählbar"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "La De'Longhi Magnifica S es la ganadora indiscutible en relación calidad-precio y durabilidad: su grupo infusor extraíble se lava en el grifo y ahorra en pastillas químicas. La Krups Essential solo se recomienda si tienes una encimera extremadamente estrecha.",
+      "de": "Die De'Longhi Magnifica S sichert sich den klaren Testsieg beim Preis-Leistungs-Verhältnis: Dank der herausnehmbaren Brühgruppe entfallen teure Reinigungstabletten, und das 13-stufige Mahlwerk liefert deutlich feineres Espresso-Aroma. Die Krups Essential lohnt sich nur bei akutem Platzmangel."
+    }
+  },
+  {
+    "slug_es": "delonghi-magnifica-s-vs-philips-series-2200",
+    "slug_de": "delonghi-magnifica-s-vs-philips-series-2200-test",
+    "categoria_id": "cafeteras",
+    "categoria_es": "Cafeteras Superautomáticas",
+    "categoria_de": "Kaffeevollautomaten",
+    "data_publicacao": "2026-10-26",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "delonghi_magnifica_s",
+      "nome": "De'Longhi Magnifica S ECAM 22.110.B",
+      "marca": "De'Longhi",
+      "asin": "B00400OMU0",
+      "imagem_url": "/assets/products/delonghi_magnifica_s.png",
+      "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=shopvseu-21",
+      "score_lab": "9.2",
+      "score_label": "TESTSIEGER • MEJOR INVERSIÓN",
+      "score_label_es": "TESTSIEGER • MEJOR INVERSIÓN",
+      "score_label_de": "TESTSIEGER • EMPFEHLUNG",
+      "specs_es": {
+        "Potencia": "1450 W",
+        "Presión de Bomba": "15 bar (estable en extracción)",
+        "Depósito de Agua": "1.8 L (extracción frontal)",
+        "Capacidad de Grano": "250 g con junta hermética",
+        "Molinillo": "Acero cónico (13 niveles de molienda)",
+        "Grupo Infusor": "100% Extraíble (lavable bajo el grifo)",
+        "Altura de Taza": "86 a 142 mm (boquillas ajustables)",
+        "Dimensiones y Peso": "23,8 x 43,0 x 35,1 cm (9.0 kg)"
+      },
+      "specs_de": {
+        "Leistung": "1450 W",
+        "Pumpendruck": "15 Bar (konstant bei Extraktion)",
+        "Wassertank": "1,8 L (frontal entnehmbar)",
+        "Bohnenbehälter": "250 g mit Aromaschutzdeckel",
+        "Mahlwerk": "Edelstahl-Kegelmahlwerk (13 Stufen)",
+        "Brühgruppe": "100% Herausnehmbar (Reinigung unter fließendem Wasser)",
+        "Tassenhöhe": "86 bis 142 mm (höhenverstellbar)",
+        "Abmessungen & Gewicht": "23,8 x 43,0 x 35,1 cm (9,0 kg)"
+      },
+      "ficha_expandida_es": {
+        "Material de Caldera": "Acero inoxidable con doble Thermoblock",
+        "Ajustes de Aroma": "Selector mecánico continuo (7g a 14g)",
+        "Tiempo Precalentamiento": "48 segundos (incluye purga)",
+        "Descalcificación": "Programa guiado semiautomático (~25 min)",
+        "Compatibilidad Filtro": "De'Longhi DLS C002 y universales",
+        "Eficiencia Energética": "Clase A con apagado automático"
+      },
+      "ficha_expandida_de": {
+        "Heizsystem": "Edelstahl-Thermoblock mit Zweikreissystem",
+        "Aromawahl": "Stufenloser Drehregler (7g bis 14g Kaffeemehl)",
+        "Aufheizzeit": "48 Sekunden (inkl. automatischer Spülung)",
+        "Entkalkung": "Halbautomatisches Prüfprogramm (ca. 25 Min.)",
+        "Wasserfilter": "De'Longhi DLS C002 kompatibel",
+        "Energieeffizienz": "Klasse A mit Abschaltautomatik"
+      },
+      "pros_es": [
+        "Grupo infusor extraíble sin coste mensual de pastillas químicas",
+        "Molinillo de acero cónico de 13 niveles para calibrar tuestes artesanales",
+        "Durabilidad mecánica comprobada superior a 6 años en hogares europeos"
+      ],
+      "contras_es": [
+        "Bandeja de goteo en acero propensa a micro-rayaduras tempranas",
+        "Vaporizador manual con poco recorrido en jarras altas"
+      ],
+      "pros_de": [
+        "Vollständig herausnehmbare Brühgruppe – Reinigung unter klarem Wasser",
+        "Langlebiges 13-stufiges Kegelmahlwerk aus gehärtetem Edelstahl",
+        "Überragende Langzeit-Haltbarkeit und einfache Ersatzteilversorgung"
+      ],
+      "contras_de": [
+        "Edelstahl-Abtropfgitter neigt zu Mikrokratzern",
+        "Manuelle Milchschaumdüse etwas kurz für hohe Kännchen"
+      ]
+    },
+    "produto_b": {
+      "id": "philips_series_2200",
+      "nome": "Philips Serie 2200 EP2220/10",
+      "marca": "Philips",
+      "asin": "B07MMS6W26",
+      "imagem_url": "/assets/products/philips_series_2200.png",
+      "link_es": "https://www.amazon.es/dp/B07MMS6W26?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07MMS6W26?tag=shopvseu-21",
+      "score_lab": "8.6",
+      "score_label": "PANEL TÁCTIL INTUITIVO",
+      "score_label_es": "PANEL TÁCTIL INTUITIVO",
+      "score_label_de": "INTUITIVE TOUCH-BEDIENUNG",
+      "specs_es": {
+        "Potencia": "1500 W",
+        "Presión de Bomba": "15 bar",
+        "Depósito de Agua": "1.8 L (con filtro AquaClean)",
+        "Capacidad de Grano": "275 g con sellado aroma",
+        "Molinillo": "Cerámica 100% (12 niveles de molienda)",
+        "Grupo Infusor": "Extraíble lateral (lavado en grifo)",
+        "Altura de Taza": "85 a 145 mm (regulable)",
+        "Dimensiones y Peso": "24,6 x 43,3 x 37,1 cm (7.5 kg)"
+      },
+      "specs_de": {
+        "Leistung": "1500 W",
+        "Pumpendruck": "15 Bar",
+        "Wassertank": "1,8 L (mit AquaClean-Filter)",
+        "Bohnenbehälter": "275 g mit Aromaversiegelung",
+        "Mahlwerk": "100% Keramik-Mahlwerk (12 Stufen)",
+        "Brühgruppe": "Seitlich entnehmbar (unter Wasser abwaschbar)",
+        "Tassenhöhe": "85 bis 145 mm (höhenverstellbar)",
+        "Abmessungen & Gewicht": "24,6 x 43,3 x 37,1 cm (7,5 kg)"
+      },
+      "ficha_expandida_es": {
+        "Material de Caldera": "Thermoblock de calentamiento rápido",
+        "Ajustes de Aroma": "3 intensidades mediante panel táctil",
+        "Tiempo Precalentamiento": "42 segundos desde frío total",
+        "Descalcificación": "Filtro AquaClean: hasta 5.000 tazas sin descalcificar",
+        "Compatibilidad Filtro": "Cartucho patentado Philips AquaClean CA6903",
+        "Eficiencia Energética": "Modo ECO con autoapagado programable"
+      },
+      "ficha_expandida_de": {
+        "Heizsystem": "Aluminium-Thermoblock mit schneller Wärmeleitung",
+        "Aromawahl": "3 Stärkestufen über SensorTouch Display",
+        "Aufheizzeit": "42 Sekunden ab Kaltstart",
+        "Entkalkung": "AquaClean Filter: bis zu 5.000 Tassen ohne Entkalken",
+        "Wasserfilter": "Patentierter Philips AquaClean CA6903 Filter",
+        "Energieeffizienz": "ECO-Modus mit automatischer Abschaltung"
+      },
+      "pros_es": [
+        "Molinillo cerámico ultra-silencioso que no recalienta el grano en moliendas seguidas",
+        "Panel táctil SensorTouch moderno e intuitivo con iconos de selección directa",
+        "Filtro AquaClean que prolonga el tiempo entre descalcificaciones"
+      ],
+      "contras_es": [
+        "Muelas cerámicas más frágiles si se cuela alguna impureza dura en el café",
+        "El émbolo requiere lubricación periódica con grasa de silicona"
+      ],
+      "pros_de": [
+        "Besonders leises 100% Keramikmahlwerk verhindert Aromaverlust durch Hitze",
+        "Intuitives SensorTouch-Bedienfeld mit Direktwahltasten",
+        "AquaClean-Filtersystem minimiert den Entkalkungsaufwand drastisch"
+      ],
+      "contras_de": [
+        "Keramik anfälliger gegen Verunreinigungen in rohen Kaffeebohnen",
+        "Brühgruppe muss alle paar Monate mit Silikonfett nachgefettet werden"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "La De'Longhi Magnifica S sigue siendo la campeona en robustez mecánica y coste cero de mantenimiento a largo plazo. La Philips Serie 2200 destaca para quienes prefieren la modernidad de un panel táctil y un molinillo cerámico más silencioso en cocina.",
+      "de": "Die De'Longhi Magnifica S behauptet ihren Spitzenplatz bei Langlebigkeit und unkomplizierter Pflege ohne Spezialfett. Die Philips Serie 2200 ist die Empfehlung für alle, die ein modernes Touch-Panel und ein leiseres Keramikmahlwerk bevorzugen."
+    }
+  },
+  {
+    "slug_es": "cosori-dual-blaze-vs-ninja-foodi-dualzone",
+    "slug_de": "cosori-dual-blaze-vs-ninja-foodi-dualzone-test",
+    "categoria_id": "freidoras_aire",
+    "categoria_es": "Freidoras de Aire (Airfryers)",
+    "categoria_de": "Heißluftfritteusen",
+    "data_publicacao": "2026-10-26",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "cosori_dual_blaze",
+      "nome": "Cosori Dual Blaze 6.4L (Doble Resistencia)",
+      "marca": "Cosori",
+      "asin": "B09N8TVT33",
+      "imagem_url": "/assets/products/cosori_dual_blaze.png",
+      "link_es": "https://www.amazon.es/dp/B09N8TVT33?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B09N8TVT33?tag=shopvseu-21",
+      "score_lab": "9.4",
+      "score_label": "TESTSIEGER • SIN VOLTEAR",
+      "score_label_es": "TESTSIEGER • SIN VOLTEAR",
+      "score_label_de": "TESTSIEGER • BESTE LEISTUNG",
+      "specs_es": {
+        "Potencia": "1700 W",
+        "Capacidad": "6.4 L (cesta cuadrada familiar)",
+        "Tecnología Térmica": "360 ThermoIQ con doble resistencia (superior e inferior)",
+        "Rango de Temperatura": "30°C a 205°C con regulación precisa",
+        "Removido de Alimentos": "No requiere precalentamiento ni agitar cestas",
+        "Programas Automáticos": "12 programas + modo manual",
+        "Conectividad": "WiFi VeSync con recetario guiado en smartphone",
+        "Dimensiones y Peso": "32,7 x 29,7 x 35,2 cm (6.2 kg)"
+      },
+      "specs_de": {
+        "Leistung": "1700 W",
+        "Fassungsvermögen": "6,4 L (quadratischer XXL-Frittierkorb)",
+        "Heiztechnologie": "360 ThermoIQ Doppelheizelement (oben und unten)",
+        "Temperaturbereich": "30 °C bis 205 °C",
+        "Wenden der Speisen": "Kein Vorheizen oder manuelles Schütteln nötig",
+        "Automatikprogramme": "12 vordefinierte Programme + manueller Modus",
+        "Konnektivität": "WLAN & VeSync App mit Rezepten",
+        "Abmessungen & Gewicht": "29,7 x 32,7 x 35,2 cm (6,2 kg)"
+      },
+      "ficha_expandida_es": {
+        "Construcción de Cesta": "Aluminio fundido triple espesor antiadherente",
+        "Ajuste Resistencia": "Termostatos independientes para resistencia superior e inferior",
+        "Limpieza": "Cesta y bandeja aptas para lavavajillas (BPA/PFOA Free)",
+        "Nivel de Ruido": "62 dB(A) a máxima potencia de convección",
+        "Seguridad": "Sensor de sobrecalentamiento y autoapagado al retirar cesta",
+        "Capacidad Útil": "Pollo entero de hasta 2.5 kg o 1.5 kg de patatas"
+      },
+      "ficha_expandida_de": {
+        "Korbmaterial": "Druckguss-Aluminium mit Antihaftbeschichtung",
+        "Heizelement-Steuerung": "Unabhängige Thermostate für Ober- und Unterhitze",
+        "Reinigung": "Korb und Einsatz spülmaschinengeeignet (BPA- & PFOA-frei)",
+        "Geräuschpegel": "62 dB(A) bei maximaler Heißluftzirkulation",
+        "Sicherheit": "Überhitzungsschutz und automatische Korb-Abschaltung",
+        "Nutzvolumen": "Ganzes Hähnchen bis 2,5 kg oder 1,5 kg Pommes"
+      },
+      "pros_es": [
+        "Doble resistencia que cocina por arriba y por abajo sin necesidad de voltear la comida",
+        "Cesta cuadrada amplia en la que cabe un pollo entero de 2.5 kg o moldes de repostería",
+        "Conectividad WiFi con control de tiempo y recetas paso a paso desde el móvil"
+      ],
+      "contras_es": [
+        "Una sola cesta: no permite preparar dos platos independientes a temperaturas distintas",
+        "Ocupa espacio considerable en cocinas de encimera reducida"
+      ],
+      "pros_de": [
+        "Ober- und Unterhitze: Bräunt gleichmäßig ohne lästiges Schütteln oder Wenden",
+        "Großzügiger quadratischer Korb bietet Platz für ganze Hähnchen und Backformen",
+        "Smarte App-Anbindung mit Rezepten und Statusmeldungen aufs Smartphone"
+      ],
+      "contras_de": [
+        "Nur eine Garzone: Zwei unterschiedliche Gerichte können nicht getrennt zubereitet werden",
+        "Benötigt ausreichend Stellfläche auf der Arbeitsplatte"
+      ]
+    },
+    "produto_b": {
+      "id": "ninja_foodi_dualzone",
+      "nome": "Ninja Foodi DualZone AF300EU (2 Cajones 7.6L)",
+      "marca": "Ninja",
+      "asin": "B08K3MVLND",
+      "imagem_url": "/assets/products/ninja_foodi_dualzone.png",
+      "link_es": "https://www.amazon.es/dp/B08K3MVLND?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B08K3MVLND?tag=shopvseu-21",
+      "score_lab": "9.1",
+      "score_label": "DOBLE ZONA INDEPENDIENTE",
+      "score_label_es": "DOBLE ZONA INDEPENDIENTE",
+      "score_label_de": "DUAL-ZONE FLEXIBILITÄT",
+      "specs_es": {
+        "Potencia": "2470 W",
+        "Capacidad": "7.6 L (2 cajones independientes de 3.8 L)",
+        "Tecnología Térmica": "DualZone con 2 ventiladores de convección y función Sync",
+        "Rango de Temperatura": "40°C a 240°C (función Max Crisp ultra-rápida)",
+        "Removido de Alimentos": "Requiere agitar ocasionalmente en cocciones densas",
+        "Programas Automáticos": "6 funciones (Air Fry, Max Crisp, Asar, Recalentar, Deshidratar, Hornear)",
+        "Conectividad": "Sin WiFi (panel digital físico de respuesta inmediata)",
+        "Dimensiones y Peso": "31,5 x 38,0 x 26,5 cm (8.2 kg)"
+      },
+      "specs_de": {
+        "Leistung": "2470 W",
+        "Fassungsvermögen": "7,6 L (2 separate Frittierfächer à 3,8 L)",
+        "Heiztechnologie": "DualZone mit 2 getrennten Lüftern und Sync-Funktion",
+        "Temperaturbereich": "40 °C bis 240 °C (Max Crisp Modus)",
+        "Wenden der Speisen": "Gelegentliches Schütteln bei dicht befüllten Körben empfohlen",
+        "Automatikprogramme": "6 Garfunktionen (Air Fry, Max Crisp, Roast, Reheat, Dehydrate, Bake)",
+        "Konnektivität": "Keine App (mechanisch-digitales Bedienfeld mit Direktzugriff)",
+        "Abmessungen & Gewicht": "31,5 x 38,0 x 26,5 cm (8,2 kg)"
+      },
+      "ficha_expandida_es": {
+        "Construcción de Cesta": "Acero con revestimiento cerámico antiadherente",
+        "Ajuste Resistencia": "2 zonas térmicas con tiempos y programas 100% aislados",
+        "Limpieza": "Cajones y platos para dorar aptos para lavavajillas",
+        "Nivel de Ruido": "66 dB(A) con ambos ventiladores activos",
+        "Seguridad": "Protección térmica dual y asas frías al tacto antideslizantes",
+        "Capacidad Útil": "Hasta 1 kg de patatas por cajón (2 kg totales en Match Cook)"
+      },
+      "ficha_expandida_de": {
+        "Korbmaterial": "Keramik-Antihaftbeschichtung ohne PTFE/PFOA",
+        "Heizelement-Steuerung": "2 thermisch getrennte Garzonen für unterschiedliche Speisen",
+        "Reinigung": "Schubladen und Knusperbleche spülmaschinenfest",
+        "Geräuschpegel": "66 dB(A) bei simultanem Doppelbetrieb",
+        "Sicherheit": "Zwei getrennte Hitzesensoren und isolierte Cool-Touch-Griffe",
+        "Nutzvolumen": "Bis zu 1 kg Pommes pro Korb (2 kg Gesamtkapazität)"
+      },
+      "pros_es": [
+        "Dos cajones con temperatura y tiempos independientes para cocinar dos alimentos a la vez",
+        "Función SYNC que sincroniza el final de ambos cajones para servir todo caliente al mismo tiempo",
+        "Alcanza 240°C en modo Max Crisp con un dorado crujiente superior en rebozados y patatas"
+      ],
+      "contras_es": [
+        "Cajones estrechos y alargados que impiden meter un pollo entero de gran tamaño",
+        "Consumo eléctrico pico de 2.470 W superior al de modelos monocesta"
+      ],
+      "pros_de": [
+        "Zwei voneinander getrennte Garzonen für unterschiedliche Gerichte",
+        "Sync-Funktion beendet beide Schubladen zeitgleich",
+        "Max Crisp Modus mit bis zu 240°C für besonders krosse Texturen"
+      ],
+      "contras_de": [
+        "Schubladen sind schmal geschnitten (kein Platz für ganze Brathähnchen)",
+        "Höhere maximale Leistungsaufnahme von 2.470 Watt"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "La Cosori Dual Blaze es la ganadora en calidad de cocción uniforme sin esfuerzo: su doble resistencia cocina por arriba y por abajo sin agitar la cesta. La Ninja DualZone es la mejor opción para familias que desean cocinar dos ingredientes distintos a la vez y tenerlos listos en el mismo instante.",
+      "de": "Die Cosori Dual Blaze bietet den höchsten Bedienkomfort im Alltag: Das Doppelheizelement bräunt oben und unten ohne manuelles Schütteln. Die Ninja Foodi DualZone ist die unschlagbare Empfehlung für alle, die Hauptspeise und Beilage auf den Punkt gleichzeitig servieren möchten."
+    }
+  },
+  {
+    "slug_es": "roborock-q8-max-vs-dreame-d10s-pro",
+    "slug_de": "roborock-q8-max-vs-dreame-d10s-pro-test",
+    "categoria_id": "aspiradoras_robot",
+    "categoria_es": "Robots Aspiradores",
+    "categoria_de": "Saugroboter",
+    "data_publicacao": "2026-10-26",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "roborock_q8_max",
+      "nome": "Roborock Q8 Max (DuoRoller & LiDAR)",
+      "marca": "Roborock",
+      "asin": "B0CCVDK34L",
+      "imagem_url": "/assets/products/roborock_q8_max.png",
+      "link_es": "https://www.amazon.es/dp/B0CCVDK34L?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0CCVDK34L?tag=shopvseu-21",
+      "score_lab": "9.3",
+      "score_label": "TESTSIEGER • ANTI-ENREDOS",
+      "score_label_es": "TESTSIEGER • ANTI-ENREDOS",
+      "score_label_de": "TESTSIEGER • SAUGKRAFT",
+      "specs_es": {
+        "Potencia de Succión": "5500 Pa HyperForce",
+        "Sistema de Cepillos": "DuoRoller (dos cepillos de goma contra-rotatorios)",
+        "Navegación y Mapeo": "PreciSense LiDAR con mapas 3D y multinivel (hasta 4 plantas)",
+        "Detección de Obstáculos": "Reactive Tech mediante sensor óptico de luz estructurada",
+        "Sistema de Fregado": "Mopa por goteo con bomba electrónica y 30 niveles de caudal",
+        "Autonomía de Batería": "5200 mAh (hasta 240 minutos de funcionamiento continuo)",
+        "Capacidad de Depósitos": "Mixto 470 ml (polvo) y 350 ml (agua)",
+        "Dimensiones y Altura": "35,0 x 35,3 x 9,65 cm (4.0 kg)"
+      },
+      "specs_de": {
+        "Saugleistung": "5500 Pa HyperForce-Saugkraft",
+        "Bürstensystem": "DuoRoller Doppel-Vollgummibürsten (gegenläufig)",
+        "Navigation & Mapping": "PreciSense LiDAR mit 3D- und Mehretagen-Kartierung",
+        "Hinderniserkennung": "Reactive Tech strukturierte Lichttechnologie",
+        "Wischfunktion": "Elektronische Wasserzufuhr mit 30 regulierbaren Durchflussstufen",
+        "Akkulaufzeit": "5200 mAh Kapazität (bis zu 240 Minuten Dauerbetrieb)",
+        "Behältervolumen": "Kombibehälter: 470 ml Staub / 350 ml Wasser",
+        "Abmessungen & Bauhöhe": "35,0 x 35,3 x 9,65 cm (4,0 kg)"
+      },
+      "ficha_expandida_es": {
+        "Rendimiento en Alfombras": "Refuerzo automático Carpet Boost y desincrustación con DuoRoller",
+        "Zonas Restringidas": "Paredes invisibles, zonas no-mopa y límites virtuales en app",
+        "Filtro de Aire": "Filtro lavable de grado E11 que retiene el 99.2% de alérgenos",
+        "Sensores Anticaída": "4 sensores infrarrojos de desnivel para escaleras",
+        "Conectividad": "WiFi 2.4 GHz compatible con Alexa, Google Home y Siri Shortcuts",
+        "Superación de Umbrales": "Ruedas tractoras todoterreno que escalan hasta 20 mm"
+      },
+      "ficha_expandida_de": {
+        "Teppicherkennung": "Automatische Carpet-Boost-Saugleistungserhöhung",
+        "Sperrzonen": "Virtuelle Wände, No-Go-Zonen und No-Mop-Areale per App",
+        "Abluftfiltration": "Abwaschbarer E11-Partikelfilter (filtert 99,2% Feinstaub)",
+        "Absturzsensoren": "4 Infrarot-Klippensensoren für Treppenabsätze",
+        "Smart Home": "WLAN 2,4 GHz, Amazon Alexa, Google Assistant und Siri",
+        "Kletterfähigkeit": "Gefederte Antriebsräder überwinden Schwellen bis 20 mm"
+      },
+      "pros_es": [
+        "Doble rodillo de goma DuoRoller: cero enredos con pelos de mascotas o cabellos largos",
+        "Potencia de 5500 Pa con succión profunda en alfombras y juntas de suelo",
+        "Mapeo láser LiDAR ultrarrápido y navegación precisa en habitaciones oscuras"
+      ],
+      "contras_es": [
+        "El fregado es pasivo (no vibra ni rota, solo arrastra una mopa húmeda)",
+        "Supera los 9,6 cm de altura: no entra debajo de algunos muebles muy bajos"
+      ],
+      "pros_de": [
+        "DuoRoller Doppelgummi-Walzen verhindern Verheddern von Tierhaaren",
+        "Extrem schnelle und präzise LiDAR-Raumkartierung",
+        "Sehr hohe Saugleistung von 5.500 Pascal auf Teppichböden"
+      ],
+      "contras_de": [
+        "Wischfunktion arbeitet nur passiv (keine vibrierenden Wischpads)",
+        "Bauhöhe von 9,65 cm passt nicht unter sehr flache Möbel"
+      ]
+    },
+    "produto_b": {
+      "id": "dreame_d10s_pro",
+      "nome": "Dreame D10s Pro (Cámara IA & LiDAR)",
+      "marca": "Dreame",
+      "asin": "B0BPG631W5",
+      "imagem_url": "/assets/products/dreame_d10s_pro.png",
+      "link_es": "https://www.amazon.es/dp/B0BPG631W5?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0BPG631W5?tag=shopvseu-21",
+      "score_lab": "8.8",
+      "score_label": "CÁMARA IA DE PRECISIÓN",
+      "score_label_es": "CÁMARA IA DE PRECISIÓN",
+      "score_label_de": "KI-KAMERA NAVIGATION",
+      "specs_es": {
+        "Potencia de Succión": "5000 Pa Vormax",
+        "Sistema de Cepillos": "Cepillo de goma único con aletas espirales antienredo",
+        "Navegación y Mapeo": "LiDAR LDS + Cámara frontal RGB con Inteligencia Artificial",
+        "Detección de Obstáculos": "IA visual que reconoce cables, zapatillas y excrementos de mascotas",
+        "Sistema de Fregado": "Control electrónico del flujo de agua con 3 niveles seleccionables",
+        "Autonomía de Batería": "5200 mAh (hasta 280 minutos en modo silencioso)",
+        "Capacidad de Depósitos": "Depósito de polvo independiente de 570 ml y agua de 235 ml",
+        "Dimensiones y Altura": "35,0 x 35,0 x 9,68 cm (3.6 kg)"
+      },
+      "specs_de": {
+        "Saugleistung": "5000 Pa Vormax-Saugleistung",
+        "Bürstensystem": "Einzelne Vollgummibürste mit optimierten Schaufellamellen",
+        "Navigation & Mapping": "LDS-Lasernavigation & KI-gestützte optische RGB-Frontkamera",
+        "Hinderniserkennung": "KI-Algorithmus erkennt Ladekabel, Schuhe und Hindernisse",
+        "Wischfunktion": "Elektronische Wasserpumpe mit 3 einstellbaren Befeuchtungsgraden",
+        "Akkulaufzeit": "5200 mAh Kapazität (bis zu 280 Minuten im Eco-Modus)",
+        "Behältervolumen": "Großer 570 ml Staubbehälter / 235 ml Wassertank",
+        "Abmessungen & Bauhöhe": "35,0 x 35,0 x 9,68 cm (3,6 kg)"
+      },
+      "ficha_expandida_es": {
+        "Rendimiento en Alfombras": "Sensor ultrasónico que detecta alfombras y eleva la succión",
+        "Zonas Restringidas": "Gestión inteligente de estancias y zonas prohibidas en mapa 3D",
+        "Filtro de Aire": "Filtro HEPA lavable de alta densidad",
+        "Vigilancia en Vivo": "Transmisión de vídeo en directo y audio bidireccional para vigilar el hogar",
+        "Conectividad": "App Dreamehome, compatible con Alexa, Google Assistant y Siri",
+        "Superación de Umbrales": "Tracción optimizada para desniveles de hasta 20 mm"
+      },
+      "ficha_expandida_de": {
+        "Teppicherkennung": "Ultraschallsensor erkennt Teppiche und schaltet automatisch auf Maximalleistung",
+        "Sperrzonen": "Individuelle Raumaufteilung und Ausschlusszonen per Dreamehome App",
+        "Abluftfiltration": "Waschbarer Hochleistungs-Schwebstofffilter",
+        "Live-Videofunktion": "Sichere Videoübertragung aus der Wohnung mit Zwei-Wege-Audio",
+        "Smart Home": "Dreamehome App mit Unterstützung für Alexa und Google Assistant",
+        "Kletterfähigkeit": "Überwindet Schwellen und Teppichkanten bis zu 20 mm"
+      },
+      "pros_es": [
+        "Cámara con IA que identifica y esquiva cables olvidados y zapatillas en el suelo",
+        "Función de cámara de vigilancia remota para supervisar el hogar o mascotas",
+        "Depósito de polvo amplio de 570 ml con vaciado menos frecuente"
+      ],
+      "contras_es": [
+        "Un solo cepillo de goma: recoge menos pelo en alfombras que el DuoRoller de Roborock",
+        "La función de videovigilancia exige permisos adicionales en la aplicación móvil"
+      ],
+      "pros_de": [
+        "Optische KI-Kamera erkennt herumliegende Kabel und Socken zuverlässig",
+        "Live-Videoübertragung aus der Wohnung für Haustier-Kontrolle",
+        "Großer Staubbehälter mit 570 ml Volumen"
+      ],
+      "contras_de": [
+        "Nur eine einzelne Bürstenwalze (etwas schwächer auf Hochflor-Teppichen)",
+        "Videoüberwachungsfunktion erfordert zusätzliche App-Freigaben"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "El Roborock Q8 Max es el ganador en poder de succión y limpieza en alfombras, gracias a su sistema de doble rodillo DuoRoller que evita atascos de pelo. El Dreame D10s Pro resulta más práctico en hogares donde suele haber cables o calcetines en el suelo, ya que su cámara con IA los esquiva activamente.",
+      "de": "Der Roborock Q8 Max sichert sich den Testsieg bei der reinen Saugleistung auf Teppichböden dank der DuoRoller-Doppelwalzen. Der Dreame D10s Pro ist die cleverere Alternative für unaufgeräumte Böden, da seine KI-Kamera Kabel und Schuhe zuverlässig umfährt."
+    }
+  }
+]

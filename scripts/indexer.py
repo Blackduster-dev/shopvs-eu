@@ -98,6 +98,17 @@ def sincronizar_tags_afiliado(config, catalogo, duplo):
 
     salvar_json("data/produto_duplo.json", duplo)
 
+    duelos_path = os.path.join(BASE_DIR, "data", "duelos.json")
+    if os.path.exists(duelos_path):
+        duelos = carregar_json("data/duelos.json")
+        for d in duelos:
+            for key in ["produto_a", "produto_b"]:
+                if key in d:
+                    asin = d[key]["asin"]
+                    d[key]["link_es"] = f"https://www.amazon.es/dp/{asin}?tag={tag_es}"
+                    d[key]["link_de"] = f"https://www.amazon.de/dp/{asin}?tag={tag_de}"
+        salvar_json("data/duelos.json", duelos)
+
 
 
 def validar_ativos_graficos(catalogo):

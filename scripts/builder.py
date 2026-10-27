@@ -230,7 +230,7 @@ def render_article(artigo, lang="es"):
 
         title = f"{pa['nome']} vs. {pb['nome']} im Test: Direktvergleich 2026 | ShopVS Deutschland"
 
-        desc = f"Technischer Direktvergleich zwischen {pa['nome']} und {pb['nome']}. Messwerte, Brühgruppen-Check und Kaufempfehlung."
+        desc = f"Technischer Direktvergleich zwischen {pa['nome']} und {pb['nome']}. Messwerte, Labor-Audit und Praxistest."
 
         legal_notice = '<strong>Transparenzhinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Preise werden dynamisch beim Händler geprüft.'
 
@@ -252,7 +252,7 @@ def render_article(artigo, lang="es"):
 
         title = f"{pa['nome']} vs. {pb['nome']}: Comparativa Técnica 2026 | ShopVS España"
 
-        desc = f"Auditoría técnica entre {pa['nome']} y {pb['nome']}. Mediciones de presión, mantenimiento del infusor y opiniones reales."
+        desc = f"Auditoría técnica entre {pa['nome']} y {pb['nome']}. Mediciones en laboratorio, comparativa a fondo y opiniones reales."
 
         legal_notice = '<strong>Aviso de Afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.'
 
@@ -276,6 +276,7 @@ def render_article(artigo, lang="es"):
     th_param = "Kenngröße" if is_de else "Parámetro"
     score_label_pa = pa.get(f"score_label_{lang}", pa.get("score_label", ""))
     score_label_pb = pb.get(f"score_label_{lang}", pb.get("score_label", ""))
+    cat_id = artigo.get("categoria_id") or pa.get("categoria_id", "cafeteras")
 
 
 
@@ -305,7 +306,7 @@ def render_article(artigo, lang="es"):
 
             <span class="text-slate-300">{legal_notice}</span>
 
-            <a href="/compare/?cat=cafeteras&a={pa['id']}&b={pb['id']}&lang={lang}" class="text-nordic-amber font-bold hover:underline">{compare_tool_text} &rarr;</a>
+            <a href="/compare/?cat={cat_id}&a={pa['id']}&b={pb['id']}&lang={lang}" class="text-nordic-amber font-bold hover:underline">{compare_tool_text} &rarr;</a>
 
         </div>
 
@@ -665,15 +666,24 @@ def render_article(artigo, lang="es"):
 
 def build_all():
 
-    artigo = load_json("data/produto_duplo.json")
+    duelos_file = os.path.join(BASE_DIR, "data", "duelos.json")
+    if os.path.exists(duelos_file):
+        with open(duelos_file, "r", encoding="utf-8") as f:
+            duelos = json.load(f)
+    else:
+        duplo_data = load_json("data/produto_duplo.json")
+        duelos = duplo_data if isinstance(duplo_data, list) else [duplo_data]
 
     os.makedirs(os.path.join(BASE_DIR, "es"), exist_ok=True)
 
     os.makedirs(os.path.join(BASE_DIR, "de"), exist_ok=True)
 
-    render_article(artigo, "es")
+    for artigo in duelos:
+        render_article(artigo, "es")
+        render_article(artigo, "de")
+    
 
-    render_article(artigo, "de")
+
 
 
 
