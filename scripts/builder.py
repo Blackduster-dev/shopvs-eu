@@ -273,6 +273,9 @@ def render_article(artigo, lang="es"):
 
 
     other_url = f"/es/{artigo['slug_es']}.html" if is_de else f"/de/{artigo['slug_de']}.html"
+    th_param = "Kenngröße" if is_de else "Parámetro"
+    score_label_pa = pa.get(f"score_label_{lang}", pa.get("score_label", ""))
+    score_label_pb = pb.get(f"score_label_{lang}", pb.get("score_label", ""))
 
 
 
@@ -382,7 +385,7 @@ def render_article(artigo, lang="es"):
 
                     <div class="absolute -top-3.5 left-6 bg-nordic-emerald text-white text-[11px] font-mono font-bold uppercase px-3 py-1 rounded shadow-sm">
 
-                        ★ {pa['score_label']}
+                        ★ {score_label_pa}
 
                     </div>
 
@@ -436,7 +439,7 @@ def render_article(artigo, lang="es"):
 
                     <div class="absolute -top-3.5 left-6 bg-nordic-navy text-white text-[11px] font-mono font-bold uppercase px-3 py-1 rounded shadow-sm">
 
-                        {pb['score_label']}
+                        {score_label_pb}
 
                     </div>
 
@@ -522,7 +525,7 @@ def render_article(artigo, lang="es"):
 
                         <tr class="bg-nordic-navy text-white font-mono text-[11px] uppercase tracking-wider">
 
-                            <th class="py-3.5 px-4 font-bold">Parámetro / Kenngröße</th>
+                            <th class="py-3.5 px-4 font-bold">{th_param}</th>
 
                             <th class="py-3.5 px-4 font-bold bg-nordic-navyLight/60 border-l border-nordic-navyLight">{pa['nome']}</th>
 
