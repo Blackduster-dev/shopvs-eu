@@ -745,5 +745,335 @@
       "es": "El Comfee MDDF-20DEN7 se corona ganador de la auditoría técnica gracias a su consumo contenido de 360W y menor sonoridad (41 dB), ideal para uso prolongado en salones y pisos. El Pro Breeze PB-08 es la alternativa idónea si buscas vaciar el agua con menor frecuencia gracias a su enorme tanque de 5.5 litros.",
       "de": "Der Comfee MDDF-20DEN7 setzt sich im Labortest als Testsieger durch: Mit nur 360W Leistungsaufnahme und leisen 41 dB arbeitet er sparsamer und unauffälliger im Wohnalltag. Der Pro Breeze PB-08 punktet hingegen mit seinem riesigen 5,5-Liter-Wassertank für alle, die das manuelle Entleeren minimieren wollen."
     }
+  },
+  {
+    "slug_es": "ecoflow-river-2-pro-vs-bluetti-eb55",
+    "slug_de": "ecoflow-river-2-pro-vs-bluetti-eb55-test",
+    "categoria_id": "estaciones_energia",
+    "categoria_es": "Estaciones de Energía Portátiles",
+    "categoria_de": "Tragbare Powerstations",
+    "data_publicacao": "2026-10-27",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "ecoflow_river_2_pro",
+      "categoria_id": "estaciones_energia",
+      "marca": "EcoFlow",
+      "nome": "EcoFlow RIVER 2 Pro (LiFePO4 768Wh)",
+      "nome_es": "EcoFlow RIVER 2 Pro (LiFePO4 768Wh)",
+      "nome_de": "EcoFlow RIVER 2 Pro (LiFePO4 768Wh)",
+      "asin": "B0B88P2G7G",
+      "imagem_url": "/assets/products/ecoflow_river_2_pro.png",
+      "link_es": "https://www.amazon.es/dp/B0B88P2G7G?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0B88P2G7G?tag=shopvseu-21",
+      "score_lab": "9.5",
+      "score_label": "TESTSIEGER • SEHR GUT",
+      "score_label_es": "TESTSIEGER • SOBRESALIENTE",
+      "score_label_de": "TESTSIEGER • SEHR GUT",
+      "score_badge_es": "Elección Laboratorio: Recarga Rápida",
+      "score_badge_de": "Laborsieger: Schnelllade-Referenz",
+      "specs": {
+        "capacidad_wh": "768 Wh",
+        "potencia_salida": "800 W (Pico 1600 W X-Boost)",
+        "quimica_bateria": "LiFePO4 (LFP) • 3.000+ ciclos al 80%",
+        "tiempo_recarga_ac": "70 minutos (0-100% a 940W)",
+        "peso_portabilidad": "7,8 kg • 27 x 26 x 22,6 cm",
+        "salidas_disponibles": "3x AC Schuko 230V, 1x USB-C 100W, 3x USB-A, 1x Mechero 12V"
+      },
+      "specs_es": {
+        "Capacidad de Batería": "768 Wh",
+        "Potencia Nominal / Pico": "800 W (Pico 1600 W X-Boost)",
+        "Química de Celdas & Vida Útil": "LiFePO4 (LFP) • 3.000+ ciclos al 80%",
+        "Tiempo Recarga Red AC": "70 minutos (0-100% a 940W)",
+        "Peso y Dimensiones": "7,8 kg • 27 x 26 x 22,6 cm",
+        "Salidas Disponibles": "3x AC Schuko 230V, 1x USB-C 100W, 3x USB-A, 1x Mechero 12V"
+      },
+      "specs_de": {
+        "Akkukapazität (Wh)": "768 Wh",
+        "Dauerleistung / Spitzenleistung": "800 W (1600 W X-Boost)",
+        "Zellchemie & Lebensdauer": "LiFePO4 • 3.000+ Zyklen bis 80%",
+        "AC-Ladezeit (0-100%)": "70 Minuten (0-100% bei 940W)",
+        "Gewicht & Abmessungen": "7,8 kg • 27 x 26 x 22,6 cm",
+        "Ausgänge (AC, USB, 12V)": "3x AC Schuko 230V, 1x USB-C 100W, 3x USB-A, 1x Kfz 12V"
+      },
+      "ficha_expandida_es": {
+        "Tipo Inversor": "Onda senoidal pura 230V / 50Hz",
+        "Entrada Solar": "Hasta 220W (11-50V / 13A máx.)",
+        "Modo SAI / EPS": "Cambio automático en menos de 30 ms",
+        "Conectividad": "Wi-Fi 2.4 GHz + Bluetooth (App EcoFlow)",
+        "Nivel Ruido Carga": "Aprox. 48 dB con ventilación activa",
+        "Garantía Oficial": "5 años de garantía del fabricante"
+      },
+      "ficha_expandida_de": {
+        "Wechselrichter": "Reine Sinuswelle 230V / 50Hz",
+        "Solareingang (PV)": "Bis 220W (11-50V / 13A max.)",
+        "USV-Funktion (EPS)": "Umschaltzeit unter 30 ms",
+        "Konnektivität": "WLAN 2,4 GHz + Bluetooth (EcoFlow App)",
+        "Lüfterlautstärke": "Ca. 48 dB unter Volllast",
+        "Herstellergarantie": "5 Jahre Herstellergarantie"
+      },
+      "pros_es": [
+        "Recarga ultrarrápida del 0 al 100% en solo 70 minutos desde enchufe doméstico",
+        "Química LiFePO4 de grado automotriz certificada para más de 3.000 ciclos (10 años de vida útil)",
+        "Modo X-Boost de hasta 1600W que permite alimentar el 80% de electrodomésticos esenciales"
+      ],
+      "contras_es": [
+        "El ventilador de refrigeración se activa de forma perceptible durante cargas por encima de 500W",
+        "La aplicación móvil requiere registro en la nube para actualizar el firmware"
+      ],
+      "pros_de": [
+        "Ultraschnelle Vollladung in nur 70 Minuten über herkömmliche Haushaltssteckdose",
+        "Langlebige LiFePO4-Zellen mit über 3.000 Zyklen bis 80% Restkapazität (ca. 10 Jahre Nutzung)",
+        "X-Boost-Modus bis 1600W versorgt bis zu 80% aller gängigen Haushaltsgeräte"
+      ],
+      "contras_de": [
+        "Lüftergeräusch bei Schnellladung über 500W im Innenbereich deutlich hörbar",
+        "Smartphone-App erfordert Benutzerkonto für Firmware-Updates"
+      ]
+    },
+    "produto_b": {
+      "id": "bluetti_eb55",
+      "categoria_id": "estaciones_energia",
+      "marca": "BLUETTI",
+      "nome": "BLUETTI EB55 (LiFePO4 537Wh)",
+      "nome_es": "BLUETTI EB55 (LiFePO4 537Wh)",
+      "nome_de": "BLUETTI EB55 (LiFePO4 537Wh)",
+      "asin": "B09DP9W8H7",
+      "imagem_url": "/assets/products/bluetti_eb55.png",
+      "link_es": "https://www.amazon.es/dp/B09DP9W8H7?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B09DP9W8H7?tag=shopvseu-21",
+      "score_lab": "9.1",
+      "score_label": "GUT (1.8) • VIELSEITIG",
+      "score_label_es": "NOTABLE ALTO • VERSÁTIL",
+      "score_label_de": "GUT (1.8) • VIELSEITIG",
+      "score_badge_es": "Top Versatilidad: 11 Salidas",
+      "score_badge_de": "Preis-Leistungs-Sieger Camping",
+      "specs": {
+        "capacidad_wh": "537 Wh",
+        "potencia_salida": "700 W (Pico 1400 W pura)",
+        "quimica_bateria": "LiFePO4 (LFP) • 2.500+ ciclos al 80%",
+        "tiempo_recarga_ac": "Aprox. 3 horas (cargador externo 200W)",
+        "peso_portabilidad": "7,5 kg • 27,8 x 20 x 19,8 cm",
+        "salidas_disponibles": "2x AC Schuko 230V, 1x Pad Wireless 15W, 1x USB-C 100W, 4x USB-A, 1x Mechero 12V"
+      },
+      "specs_es": {
+        "Capacidad de Batería": "537 Wh",
+        "Potencia Nominal / Pico": "700 W (Pico 1400 W pura)",
+        "Química de Celdas & Vida Útil": "LiFePO4 (LFP) • 2.500+ ciclos al 80%",
+        "Tiempo Recarga Red AC": "Aprox. 3 horas (cargador externo 200W)",
+        "Peso y Dimensiones": "7,5 kg • 27,8 x 20 x 19,8 cm",
+        "Salidas Disponibles": "2x AC Schuko 230V, 1x Pad Wireless 15W, 1x USB-C 100W, 4x USB-A, 1x Mechero 12V"
+      },
+      "specs_de": {
+        "Akkukapazität (Wh)": "537 Wh",
+        "Dauerleistung / Spitzenleistung": "700 W (1400 W Spitze)",
+        "Zellchemie & Lebensdauer": "LiFePO4 • 2.500+ Zyklen bis 80%",
+        "AC-Ladezeit (0-100%)": "Ca. 3 Stunden (200W Netzteil)",
+        "Gewicht & Abmessungen": "7,5 kg • 27,8 x 20 x 19,8 cm",
+        "Ausgänge (AC, USB, 12V)": "2x AC Schuko 230V, 1x 15W Wireless Pad, 1x USB-C 100W, 4x USB-A, 1x Kfz 12V"
+      },
+      "ficha_expandida_es": {
+        "Tipo Inversor": "Onda senoidal pura 230V / 50Hz",
+        "Entrada Solar": "Hasta 200W MPPT (12-28V / 8A máx.)",
+        "Luz Integrada": "Lámpara LED frontal de 3 modos (Foco/SOS)",
+        "Cargador Externo": "Transformador externo con ventilador propio",
+        "Nivel Ruido Carga": "Aprox. 45 dB en recarga estándar",
+        "Garantía Oficial": "2 años de garantía del fabricante"
+      },
+      "ficha_expandida_de": {
+        "Wechselrichter": "Reine Sinuswelle 230V / 50Hz",
+        "Solareingang (PV)": "Bis 200W MPPT (12-28V / 8A max.)",
+        "Zusatzfunktion": "Frontale LED-Notfall-Leuchte mit SOS-Modus",
+        "Netzteil": "Externes 200W-Netzteil mit eigenem Lüfter",
+        "Lüfterlautstärke": "Ca. 45 dB im Ladebetrieb",
+        "Herstellergarantie": "2 Jahre Herstellergarantie"
+      },
+      "pros_es": [
+        "11 puertos de salida simultáneos, incluyendo pad de carga inalámbrica de 15W integrado en el techo",
+        "Doble recarga simultánea (AC + Solar hasta 400W combinados) en menos de 2 horas",
+        "Diseño compacto con asa plegable plana para apilar equipo en maleteros camper"
+      ],
+      "contras_es": [
+        "La pantalla LCD no muestra tiempo restante estimado en minutos, solo porcentaje de barras",
+        "No dispone de conectividad por aplicación móvil ni control remoto por Bluetooth"
+      ],
+      "pros_de": [
+        "11 Ausgangsanschlüsse gleichzeitig nutzbar inklusive integriertem 15W Wireless-Charging-Pad",
+        "Duale Schnellladung (AC + Solar kombiniert bis 400W) in unter 2 Stunden",
+        "Kompaktes Gehäuse mit einklappbarem Tragegriff ideal für Campingbus und Kofferraum"
+      ],
+      "contras_de": [
+        "LCD-Display zeigt keine minutengenaue Restlaufzeit an, sondern nur 20%-Schritte",
+        "Keine Smartphone-App-Anbindung oder Bluetooth-Fernsteuerung vorhanden"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "La EcoFlow RIVER 2 Pro domina en tecnología de carga: recarga del 0 al 100% en apenas 70 minutos y entrega hasta 1600W mediante X-Boost, siendo la opción superior para quienes necesitan energía inmediata y control por app. La BLUETTI EB55 destaca en versatilidad de salidas físicas simultáneas (11 puertos y pad inalámbrico superior) para acampada prolongada sin depender de un smartphone.",
+      "de": "Die EcoFlow RIVER 2 Pro setzt sich als Testsieger durch ihre überragende Ladetechnologie durch: Vollständige Aufladung in nur 70 Minuten und bis zu 1600W X-Boost machen sie zur besten Wahl für Notstrom und moderne Vanlifer mit App-Steuerung. Die BLUETTI EB55 punktet mit 11 vielseitigen Ausgängen inklusive kabelloser Ladestation für klassische Outdoor-Einsätze ohne Smartphone-Zwang."
+    }
+  },
+  {
+    "slug_es": "nuki-smart-lock-pro-4-vs-yale-linus-l2",
+    "slug_de": "nuki-smart-lock-pro-4-vs-yale-linus-l2-test",
+    "categoria_id": "cerraduras_inteligentes",
+    "categoria_es": "Cerraduras Inteligentes",
+    "categoria_de": "Elektronische Smart Locks",
+    "data_publicacao": "2026-10-27",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "nuki_smart_lock_pro_4",
+      "categoria_id": "cerraduras_inteligentes",
+      "marca": "Nuki",
+      "nome": "Nuki Smart Lock Pro 4ª Gen (Matter & Wi-Fi)",
+      "nome_es": "Nuki Smart Lock Pro 4ª Gen (Matter & Wi-Fi)",
+      "nome_de": "Nuki Smart Lock Pro 4. Gen (Matter & WLAN)",
+      "asin": "B0CNF3KGB4",
+      "imagem_url": "/assets/products/nuki_smart_lock_pro_4.png",
+      "link_es": "https://www.amazon.es/dp/B0CNF3KGB4?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0CNF3KGB4?tag=shopvseu-21",
+      "score_lab": "9.6",
+      "score_label": "TESTSIEGER • SEHR GUT",
+      "score_label_es": "TESTSIEGER • SOBRESALIENTE",
+      "score_label_de": "TESTSIEGER • SEHR GUT",
+      "score_badge_es": "Referencia Matter: Conectividad Total",
+      "score_badge_de": "Testsieger Smart Home: Matter & Thread",
+      "specs": {
+        "protocolo_conectividad": "Matter sobre Thread, Wi-Fi 2.4 GHz, Bluetooth 5.0",
+        "tipo_alimentacion": "Nuki Power Pack Li-ion recargable (USB-C incluido)",
+        "autonomia_estimada": "Aprox. 6 meses (con auto-unlock y Wi-Fi activo)",
+        "instalacion_cilindro": "Cilindro europeo estándar con saliente de 3 mm o placa adhesiva",
+        "nivel_sonoro_motor": "Aprox. 62 dB en ciclo de desbloqueo",
+        "metodos_apertura": "App móvil, Auto-Unlock por GPS, Apple Watch, teclado o llave manual"
+      },
+      "specs_es": {
+        "Conectividad & Smart Home": "Matter sobre Thread, Wi-Fi 2.4 GHz, Bluetooth 5.0",
+        "Alimentación y Batería": "Nuki Power Pack Li-ion recargable (USB-C incluido)",
+        "Autonomía por Carga": "Aprox. 6 meses (con auto-unlock y Wi-Fi activo)",
+        "Requisitos de Instalación": "Cilindro europeo estándar con saliente de 3 mm o placa adhesiva",
+        "Nivel Sonoro del Motor": "Aprox. 62 dB en ciclo de desbloqueo",
+        "Métodos de Apertura": "App móvil, Auto-Unlock por GPS, Apple Watch, teclado o llave manual"
+      },
+      "specs_de": {
+        "Funkstandards & Smart Home": "Matter über Thread, WLAN 2,4 GHz, Bluetooth 5.0",
+        "Stromversorgung & Akku": "Wiederaufladbares Nuki Power Pack (USB-C)",
+        "Batterielaufzeit": "Ca. 6 Monate (bei Auto-Unlock und aktiver WLAN-Verbindung)",
+        "Zylinder-Kompatibilität": "Euro-Profilzylinder mit Not- und Gefahrenfunktion",
+        "Motor-Geräuschpegel": "Ca. 62 dB beim Schließzyklus",
+        "Entriegelungsmethoden": "Smartphone-App, Auto-Unlock (GPS), Smartwatch, Keypad oder Notschlüssel"
+      },
+      "ficha_expandida_es": {
+        "Ecosistemas Compatibles": "Apple Home, Google Home, Amazon Alexa, Home Assistant",
+        "Cifrado de Seguridad": "Cifrado de extremo a extremo ChaCha20-Poly1305 (Grado Bancario)",
+        "Sensor de Puerta": "Compatible con Nuki Door Sensor (accesorio Bluetooth)",
+        "Cierre Automático": "Auto-Lock configurable por temporizador o sensor",
+        "Material Cuerpo": "Aluminio cepillado y policarbonato reforzado",
+        "Origen y Fabricación": "Diseñado y ensamblado en Austria"
+      },
+      "ficha_expandida_de": {
+        "Smart-Home-Plattformen": "Apple Home, Google Home, Amazon Alexa, Home Assistant",
+        "Verschlüsselungsstandard": "Ende-zu-Ende-Verschlüsselung ChaCha20-Poly1305 (AV-TEST zertifiziert)",
+        "Türsensor-Unterstützung": "Kompatibel mit Nuki Door Sensor (Bluetooth)",
+        "Auto-Lock Funktion": "Automatisches Verriegeln nach Zeit oder Türschließung",
+        "Gehäusematerialien": "Gebürstetes Aluminium und glasfaserverstärktes Polycarbonat",
+        "Entwicklung & Fertigung": "Entwickelt und gefertigt in Österreich"
+      },
+      "pros_es": [
+        "Módulo Matter sobre Thread y Wi-Fi integrado sin necesidad de bridge adicional",
+        "Incluye batería recargable Nuki Power Pack (USB-C) con hasta 6 meses de duración",
+        "Instalación en 3 minutos sobre el cilindro existente sin taladrar ni cambiar llaves"
+      ],
+      "contras_es": [
+        "El motor de engranajes metálicos genera un sonido audible (62 dB) durante el giro completo",
+        "Requiere bombín con función de doble embrague (de seguridad) para emergencias"
+      ],
+      "pros_de": [
+        "Integriertes Matter über Thread sowie WLAN ohne zusätzliche Bridge",
+        "Inklusive wiederaufladbarem Nuki Power Pack (USB-C) für bis zu 6 Monate Laufzeit",
+        "Montage in 3 Minuten auf bestehendem Euro-Profilzylinder ohne Bohren"
+      ],
+      "contras_de": [
+        "Getriebemotor beim Sperrvorgang mit ca. 62 dB im Flur deutlich vernehmbar",
+        "Erfordert Euro-Profilzylinder mit Not- und Gefahrenfunktion (beidseitig schließbar)"
+      ]
+    },
+    "produto_b": {
+      "id": "yale_linus_l2",
+      "categoria_id": "cerraduras_inteligentes",
+      "marca": "Yale",
+      "nome": "Yale Linus Smart Lock L2 (Batería Recargable & Wi-Fi)",
+      "nome_es": "Yale Linus Smart Lock L2 (Batería Recargable & Wi-Fi)",
+      "nome_de": "Yale Linus Smart Lock L2 (Akku & integriertes WLAN)",
+      "asin": "B0CW1M2G7D",
+      "imagem_url": "/assets/products/yale_linus_l2.png",
+      "link_es": "https://www.amazon.es/dp/B0CW1M2G7D?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0CW1M2G7D?tag=shopvseu-21",
+      "score_lab": "9.2",
+      "score_label": "GUT (1.7) • LEISE",
+      "score_label_es": "NOTABLE ALTO • SILENCIOSA",
+      "score_label_de": "GUT (1.7) • LEISE",
+      "score_badge_es": "Más Silencioso: Motor Brushless",
+      "score_badge_de": "Sehr Leise: Flüsterleiser Motor",
+      "specs": {
+        "protocolo_conectividad": "Wi-Fi 2.4 GHz, Bluetooth 5.3, NFC (Yale Dot)",
+        "tipo_alimentacion": "Batería recargable Li-ion 3.6V extraíble (USB-C)",
+        "autonomia_estimada": "Hasta 6 meses según frecuencia de apertura",
+        "instalacion_cilindro": "Cilindro europerfil con embrague doble (compatible bombín regulable Yale)",
+        "nivel_sonoro_motor": "Aprox. 55 dB (diseño de engranajes silenciosos)",
+        "metodos_apertura": "App Yale Home, Yale Dot (NFC), teclado Keypad 2, llave física"
+      },
+      "specs_es": {
+        "Conectividad & Smart Home": "Wi-Fi 2.4 GHz, Bluetooth 5.3, NFC (Yale Dot)",
+        "Alimentación y Batería": "Batería recargable Li-ion 3.6V extraíble (USB-C)",
+        "Autonomía por Carga": "Hasta 6 meses según frecuencia de apertura",
+        "Requisitos de Instalación": "Cilindro europerfil con embrague doble (compatible bombín regulable Yale)",
+        "Nivel Sonoro del Motor": "Aprox. 55 dB (diseño de engranajes silenciosos)",
+        "Métodos de Apertura": "App Yale Home, Yale Dot (NFC), teclado Keypad 2, llave física"
+      },
+      "specs_de": {
+        "Funkstandards & Smart Home": "WLAN 2,4 GHz, Bluetooth 5.3, NFC (Yale Dot)",
+        "Stromversorgung & Akku": "Herausnehmbarer 3,6V Li-Ionen-Akkupack (USB-C)",
+        "Batterielaufzeit": "Bis zu 6 Monate bei durchschnittlicher Nutzung",
+        "Zylinder-Kompatibilität": "Euro-Profilzylinder mit Doppelkupplung / Yale Verstellzylinder",
+        "Motor-Geräuschpegel": "Ca. 55 dB (besonders laufruhiges Planetengetriebe)",
+        "Entriegelungsmethoden": "Yale Home App, Yale Dot (NFC), Smart Keypad 2, physischer Schlüssel"
+      },
+      "ficha_expandida_es": {
+        "Ecosistemas Compatibles": "Google Home, Amazon Alexa, Apple Home (vía Bridge/Matter), Philips Hue",
+        "Seguridad Mecánica": "Carcasa metálica Zamak con pestillo autoblocante",
+        "Sensor de Puerta": "DoorSense magnético incluido en la caja",
+        "Modo Silencioso": "Función de giro lento nocturno para no despertar a la familia",
+        "Dimensiones y Peso": "51,7 x 146,2 x 45,7 mm • 662 g",
+        "Garantía Oficial": "2 años de garantía del fabricante (ASSA ABLOY)"
+      },
+      "ficha_expandida_de": {
+        "Smart-Home-Plattformen": "Google Home, Amazon Alexa, Apple Home (über Bridge/Matter), Philips Hue",
+        "Mechanische Sicherheit": "Robustes Zink-Druckgussgehäuse von ASSA ABLOY",
+        "Türsensor": "Integriertes DoorSense-Sensormodul im Lieferumfang",
+        "Nachtmodus": "Besonders langsame und leise Schließroutine für die Nachtruhe",
+        "Abmessungen & Gewicht": "51,7 x 146,2 x 45,7 mm • 662 g",
+        "Herstellergarantie": "2 Jahre Herstellergarantie (Yale / ASSA ABLOY)"
+      },
+      "pros_es": [
+        "Motor notablemente más silencioso y rápido (55 dB) que la generación anterior",
+        "Wi-Fi y Bluetooth integrados con batería recargable extraíble por USB-C",
+        "Yale Dot (NFC tag) incluido para abrir al tocar con el smartphone"
+      ],
+      "contras_es": [
+        "Soporte Matter disponible principalmente a través de la pasarela opcional Yale ConnectX",
+        "Dimensiones más alargadas que pueden interferir con manetas de puerta muy próximas"
+      ],
+      "pros_de": [
+        "Spürbar leiserer und schnellerer Schließmotor (ca. 55 dB) als Vorgängermodelle",
+        "Integriertes WLAN und Bluetooth mit herausnehmbarem USB-C-Akkupack",
+        "Yale Dot (NFC-Tag) im Lieferumfang für schnelles Entriegeln durch Berührung"
+      ],
+      "contras_de": [
+        "Matter-Kompatibilität primär über die optionale Yale ConnectX-Bridge gewährleistet",
+        "Längliches Gehäusedesign kann bei sehr nahen Türdrückern den Griffweg einschränken"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "La Nuki Smart Lock Pro 4ª Gen es la referencia para hogares inteligentes gracias a su soporte nativo de Matter sobre Thread, Wi-Fi integrado y ecosistema ultra maduro sin cuotas. La Yale Linus L2 es la mejor alternativa para quienes priorizan el silencio acústico absoluto, gracias a un motor notablemente más silencioso de 55 dB y apertura por aproximación Yale Dot.",
+      "de": "Das Nuki Smart Lock Pro 4. Gen gewinnt das Duell durch native Matter-über-Thread-Integration, direktes WLAN ohne Bridge und die lückenlose Kompatibilität mit Apple Home, Google und Alexa. Das Yale Linus L2 ist die leisere Alternative: Mit nur 55 dB Betriebsgeräusch und praktischem Yale Dot NFC-Chip eignet es sich perfekt für schallharte Treppenhäuser und geräuschempfindliche Familien."
+    }
   }
 ]

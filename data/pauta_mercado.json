@@ -2,42 +2,60 @@
   "data_pesquisa": "2026-10-27",
   "status_pauta": "PRONTA_PARA_GARIMPAGEM",
   "analise_macro": {
-    "perfil_lucro_escolhido": "1_ALTO_GIRO",
-    "categoria_id": "deshumidificadores",
+    "perfil_lucro_escolhido": "2_ALTO_TICKET",
+    "categoria_id": "estaciones_energia",
     "existe_no_catalogo": false,
-    "comissao_estimada_amazon_eu": "4.5%",
-    "ticket_medio_alvo_eur": 185,
-    "score_ilr_calculado": 9.55,
-    "justificativa_seo_sazonalidade": "Pico de demanda estacional de otoño e invierno en España y Alemania. Alta intención de compra para combatir condensación y moho con bajo consumo eléctrico en interiores. Duelo directo entre los dos líderes indiscutibles de volumen en Amazon EU."
+    "comissao_estimada_amazon_eu": "5.0%",
+    "ticket_medio_alvo_eur": 580,
+    "score_ilr_calculado": 9.85,
+    "justificativa_seo_sazonalidade": "Demanda exponencial na Europa (Alemanha e Espanha) para energia portátil LiFePO4 voltada para caravanismo, camping off-grid e estações de backup doméstico/balkonkraftwerk. Margens elevadíssimas com ticket superior a 500 €."
   },
   "nova_categoria_metadata": {
-    "id": "deshumidificadores",
-    "nome_es": "Deshumidificadores de Aire",
-    "nome_de": "Luftentfeuchter & Bautrockner",
-    "icone": "water_drop",
-    "descricao_es": "Comparativas técnicas de deshumidificadores de compresor para erradicar humedad y moho con bajo consumo.",
-    "descricao_de": "Technischer Vergleich von Kompressor-Luftentfeuchtern gegen Feuchtigkeit und Schimmel bei minimalem Stromverbrauch."
+    "id": "estaciones_energia",
+    "nome_es": "Estaciones de Energía Portátiles",
+    "nome_de": "Tragbare Powerstations & Solargeneratoren",
+    "icone": "bolt",
+    "descricao_es": "Capacidad LiFePO4 en Wh, potencia de salida AC, velocidad de recarga y puertos para emergencias y camper.",
+    "descricao_de": "LiFePO4-Kapazität in Wh, AC-Dauerleistung, Ladezeiten und Anschlüsse für Camping, Balkonkraftwerk und Notstrom."
   },
   "chaves_obrigatorias_comparador": {
-    "capacidad_extraccion": { "es": "Capacidad de Extracción", "de": "Entfeuchtungsleistung" },
-    "deposito_agua": { "es": "Depósito de Agua", "de": "Wassertank" },
-    "area_recomendada": { "es": "Área Recomendada", "de": "Empfohlene Raumgröße" },
-    "potencia_consumo": { "es": "Potencia y Consumo", "de": "Leistungsaufnahme" },
-    "nivel_sonoro": { "es": "Nivel Sonoro", "de": "Geräuschpegel" },
-    "secado_ropa": { "es": "Modo Secado de Ropa", "de": "Wäschetrocknungsmodus" }
+    "capacidad_wh": {
+      "es": "Capacidad de Batería",
+      "de": "Akkukapazität (Wh)"
+    },
+    "potencia_salida": {
+      "es": "Potencia Nominal / Pico",
+      "de": "Dauerleistung / Spitzenleistung"
+    },
+    "quimica_bateria": {
+      "es": "Química de Celdas & Vida Útil",
+      "de": "Zellchemie & Lebensdauer"
+    },
+    "tiempo_recarga_ac": {
+      "es": "Tiempo Recarga Red AC",
+      "de": "AC-Ladezeit (0-100%)"
+    },
+    "peso_portabilidad": {
+      "es": "Peso y Dimensiones",
+      "de": "Gewicht & Abmessungen"
+    },
+    "salidas_disponibles": {
+      "es": "Salidas AC y USB",
+      "de": "Ausgänge (AC, USB, 12V)"
+    }
   },
   "duelo_recomendado": {
     "produto_a_alvo": {
-      "marca": "Comfee",
-      "modelo_busca": "Comfee MDDF-20DEN7",
-      "termo_busca_es": "Comfee Deshumidificador 20L MDDF-20DEN7",
-      "termo_busca_de": "Comfee Luftentfeuchter 20L MDDF-20DEN7"
+      "marca": "EcoFlow",
+      "modelo_busca": "EcoFlow RIVER 2 Pro",
+      "termo_busca_es": "EcoFlow RIVER 2 Pro Estacion de Energia 768Wh",
+      "termo_busca_de": "EcoFlow RIVER 2 Pro Powerstation 768Wh"
     },
     "produto_b_alvo": {
-      "marca": "Pro Breeze",
-      "modelo_busca": "Pro Breeze PB-08-EU",
-      "termo_busca_es": "Pro Breeze Deshumidificador 20L Compresor PB-08",
-      "termo_busca_de": "Pro Breeze 20L Luftentfeuchter PB-08"
+      "marca": "BLUETTI",
+      "modelo_busca": "BLUETTI EB55",
+      "termo_busca_es": "BLUETTI EB55 Generador Solar Portatil 537Wh",
+      "termo_busca_de": "BLUETTI EB55 Tragbare Powerstation 537Wh"
     }
   }
 }

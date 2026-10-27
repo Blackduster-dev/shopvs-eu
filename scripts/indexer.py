@@ -161,6 +161,10 @@ def gerar_indice_busca(catalogo):
 
             "nome": p["nome"],
 
+            "nome_es": p.get("nome_es", p["nome"]),
+
+            "nome_de": p.get("nome_de", p["nome"]),
+
             "asin": p["asin"],
 
             "score": p["score_lab"],

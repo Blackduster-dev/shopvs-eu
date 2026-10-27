@@ -123,7 +123,7 @@
                 <label id="label-step-1" class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
                     PASO 1: SELECCIONA LA CATEGORÍA DE PRODUCTOS
                 </label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" id="category-selector-container">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="category-selector-container">
                     <!-- Gerado dinamicamente -->
                 </div>
             </div>
@@ -608,7 +608,7 @@
             const statusIndicator = document.getElementById('status-indicator-dot');
             const statusEl = document.getElementById('label-engine-status');
             const btn = document.getElementById('btn-do-compare');
-            const btnText = document.getElementById('btn-do-compare-text');
+            const btnDoCompareText = document.getElementById('btn-do-compare-text');
 
             if (!prodA || !prodB) return;
 
@@ -631,8 +631,8 @@
                 if (statusEl) {
                     statusEl.textContent = t.sameProductStatus;
                 }
-                if (btnText) {
-                    btnText.textContent = t.sameProductBtn;
+                if (btnDoCompareText) {
+                    btnDoCompareText.textContent = t.sameProductBtn;
                 }
 
                 const alternatives = catalogoData.produtos.filter(p => p.categoria_id === currentCategory && p.id !== prodA.id);
@@ -689,8 +689,8 @@
             if (statusIndicator) {
                 statusIndicator.className = 'w-2.5 h-2.5 rounded-full bg-nordic-emerald inline-block animate-pulse shrink-0';
             }
-            if (btnText) {
-                btnText.textContent = t.btnCompare;
+            if (btnDoCompareText) {
+                btnDoCompareText.textContent = t.btnCompare;
             }
 
             // Verificar se existe um artigo editorial completo para esse confronto
@@ -741,7 +741,7 @@
             const contrasA = isDe ? prodA.contras_de : prodA.contras_es;
             const prosB = isDe ? prodB.pros_de : prodB.pros_es;
             const contrasB = isDe ? prodB.contras_de : prodB.contras_es;
-            const btnText = t.ctaBtn;
+            const ctaBtnText = t.ctaBtn;
 
             // Linhas da tabela de especificações com suporte a specs_de
             let specsHtml = '';
@@ -803,7 +803,7 @@
                         </div>
                         <div>
                             <a href="${linkA}" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-amber hover:bg-nordic-amberHover text-white font-display font-bold text-xs sm:text-sm py-3.5 px-4 rounded-lg flex items-center justify-between transition-all shadow-cta">
-                                <span>${btnText}</span>
+                                <span>${ctaBtnText}</span>
                                 <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
                             </a>
                         </div>
@@ -832,7 +832,7 @@
                         </div>
                         <div>
                             <a href="${linkB}" target="_blank" rel="nofollow noopener sponsored" class="w-full bg-nordic-navy hover:bg-slate-800 text-white font-display font-bold text-xs sm:text-sm py-3.5 px-4 rounded-lg flex items-center justify-between transition-all shadow-md">
-                                <span>${btnText}</span>
+                                <span>${ctaBtnText}</span>
                                 <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
                             </a>
                         </div>
