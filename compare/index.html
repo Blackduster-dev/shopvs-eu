@@ -158,6 +158,22 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Passo 3: Ação Primária de Comparação -->
+            <div class="mt-6 pt-6 border-t border-nordic-border flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2.5 text-xs font-mono text-slate-500 order-2 sm:order-1 text-center sm:text-left">
+                    <span class="w-2.5 h-2.5 rounded-full bg-nordic-emerald inline-block animate-pulse shrink-0"></span>
+                    <span id="label-engine-status">Motor técnico listo • 2 modelos seleccionados</span>
+                </div>
+                <button type="button" 
+                        id="btn-do-compare" 
+                        onclick="executeComparison(true)" 
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-nordic-amber hover:bg-nordic-amberHover active:scale-[0.98] text-white font-display font-extrabold text-sm sm:text-base py-3.5 px-8 rounded-xl shadow-cta transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-nordic-amber select-none group order-1 sm:order-2">
+                    <span class="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-180">compare_arrows</span>
+                    <span id="btn-do-compare-text">Comparar Productos</span>
+                    <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-y-0.5">keyboard_double_arrow_down</span>
+                </button>
+            </div>
         </section>
 
         <!-- CONTAINER DA MATRIZ COMPARATIVA DINÂMICA (RENDERIZADO VIA JS) -->
@@ -186,6 +202,7 @@
     <!-- LÓGICA DO COMPARADOR INTERATIVO -->
     <script>
         let catalogoData = null;
+        let duelosData = null;
         let currentCategory = 'cafeteras';
         let currentMarket = 'es';
 
@@ -201,6 +218,10 @@
                 toolSubtitle: "Selecciona primero una categoría de productos y luego escoge dos modelos para enfrentar sus especificaciones, fotografías y fallos reales reportados por compradores.",
                 step1: "PASO 1: SELECCIONA LA CATEGORÍA DE PRODUCTOS",
                 step2: "PASO 2: ELIGE LOS DOS MODELOS DE LA MISMA CATEGORÍA",
+                btnCompare: "Comparar Productos",
+                engineReady: "Motor técnico listo • 2 modelos seleccionados",
+                engineChanged: "Modelos actualizados • Haz clic para comparar",
+                calculating: "Calculando matriz...",
                 prodA: "PRODUCTO #1",
                 prodB: "PRODUCTO #2",
                 modelCount: "modelos auditados",
@@ -224,6 +245,10 @@
                 toolSubtitle: "Wählen Sie zuerst eine Produktkategorie und anschließend zwei Modelle, um Spezifikationen, Messwerte und reale Schwachstellen direkt zu vergleichen.",
                 step1: "SCHRITT 1: PRODUKTKATEGORIE WÄHLEN",
                 step2: "SCHRITT 2: ZWEI MODELLE DERSELBEN KATEGORIE WÄHLEN",
+                btnCompare: "Modelle Vergleichen",
+                engineReady: "Labor-Matrix bereit • 2 Modelle gewählt",
+                engineChanged: "Modelle aktualisiert • Klick zum Vergleichen",
+                calculating: "Matrix wird berechnet...",
                 prodA: "PRODUKT #1",
                 prodB: "PRODUKT #2",
                 modelCount: "Modelle im Test",
@@ -265,8 +290,18 @@
 
         async function initComparador() {
             try {
-                const res = await fetch('/data/catalogo_produtos.json');
-                catalogoData = await res.json();
+                const [resCat, resDuelos] = await Promise.all([
+                    fetch('/data/catalogo_produtos.json'),
+                    fetch('/data/duelos.json').catch(() => null)
+                ]);
+                catalogoData = await resCat.json();
+                if (resDuelos && resDuelos.ok) {
+                    try {
+                        duelosData = await resDuelos.json();
+                    } catch (e) {
+                        console.warn("Duelos não carregados:", e);
+                    }
+                }
 
                 const params = new URLSearchParams(window.location.search);
                 const urlCat = params.get('cat');
@@ -330,6 +365,10 @@
             document.getElementById('tool-subtitle').textContent = t.toolSubtitle;
             document.getElementById('label-step-1').textContent = t.step1;
             document.getElementById('label-step-2').textContent = t.step2;
+            const btnDoCompareText = document.getElementById('btn-do-compare-text');
+            if (btnDoCompareText) btnDoCompareText.textContent = t.btnCompare;
+            const engineStatusEl = document.getElementById('label-engine-status');
+            if (engineStatusEl) engineStatusEl.textContent = t.engineReady;
             document.getElementById('label-prod-a').textContent = t.prodA;
             document.getElementById('label-prod-b').textContent = t.prodB;
             document.getElementById('footer-copy').textContent = t.footerCopy;
@@ -444,8 +483,65 @@
                 const outro = prods.find(p => p.id !== selectA.value);
                 if (outro) selectB.value = outro.id;
             }
+
+            const t = i18nCompare[currentMarket];
+            const statusEl = document.getElementById('label-engine-status');
+            if (statusEl) {
+                statusEl.textContent = t.engineChanged;
+            }
+
+            const btn = document.getElementById('btn-do-compare');
+            if (btn) {
+                btn.classList.add('ring-4', 'ring-nordic-amber/40');
+                setTimeout(() => {
+                    btn.classList.remove('ring-4', 'ring-nordic-amber/40');
+                }, 1000);
+            }
+
             renderComparison();
             syncUrlParams();
+        }
+
+        function executeComparison(shouldScroll = true) {
+            const btn = document.getElementById('btn-do-compare');
+            const btnText = document.getElementById('btn-do-compare-text');
+            const t = i18nCompare[currentMarket];
+
+            if (btn && btnText) {
+                btnText.textContent = t.calculating;
+                btn.classList.add('scale-[0.98]', 'brightness-95');
+                setTimeout(() => {
+                    btnText.textContent = t.btnCompare;
+                    btn.classList.remove('scale-[0.98]', 'brightness-95');
+                }, 200);
+            }
+
+            const statusEl = document.getElementById('label-engine-status');
+            if (statusEl) {
+                statusEl.textContent = t.engineReady;
+            }
+
+            renderComparison();
+            syncUrlParams();
+
+            if (shouldScroll) {
+                const target = document.getElementById('comparison-output');
+                if (target) {
+                    const navHeight = 90;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                    window.scrollTo({
+                        top: Math.max(0, offsetPosition),
+                        behavior: 'smooth'
+                    });
+
+                    target.classList.add('ring-2', 'ring-nordic-emerald', 'ring-offset-4', 'rounded-2xl', 'transition-all', 'duration-500');
+                    setTimeout(() => {
+                        target.classList.remove('ring-2', 'ring-nordic-emerald', 'ring-offset-4', 'rounded-2xl');
+                    }, 1200);
+                }
+            }
         }
 
         function renderComparison() {
@@ -549,7 +645,7 @@
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="w-28 h-28 bg-white rounded-lg p-2 border border-nordic-border flex items-center justify-center shrink-0 shadow-sm">
-                                    <img src="${prodA.imagem_url}" alt="${prodA.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                    <img src="${prodA.imagem_url}" alt="${prodA.nome}" class="w-full h-full object-contain">
                                 </div>
                                 <div>
                                     <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">${prodA.marca}</span>
@@ -578,7 +674,7 @@
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="w-28 h-28 bg-white rounded-lg p-2 border border-nordic-border flex items-center justify-center shrink-0 shadow-sm">
-                                    <img src="${prodB.imagem_url}" alt="${prodB.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                    <img src="${prodB.imagem_url}" alt="${prodB.nome}" class="w-full h-full object-contain">
                                 </div>
                                 <div>
                                     <span class="text-xs font-mono font-bold text-slate-500 uppercase">${prodB.marca}</span>
@@ -665,9 +761,9 @@
                                     <div>
                                         <span class="text-[9px] font-mono font-bold uppercase text-nordic-emerald block mb-2">${catName}</span>
                                         <div class="flex items-center justify-center gap-2 my-2 bg-nordic-canvas/50 p-2 rounded">
-                                            <img src="${d.produto_a.imagem_url}" class="w-10 h-10 object-contain mix-blend-multiply">
+                                            <img src="${d.produto_a.imagem_url}" class="w-10 h-10 object-contain">
                                             <span class="text-[10px] font-bold text-slate-400 font-mono">VS</span>
-                                            <img src="${d.produto_b.imagem_url}" class="w-10 h-10 object-contain mix-blend-multiply">
+                                            <img src="${d.produto_b.imagem_url}" class="w-10 h-10 object-contain">
                                         </div>
                                         <h5 class="font-display font-bold text-xs text-nordic-navy group-hover:text-nordic-emerald transition-colors line-clamp-2 mt-1">
                                             ${d.produto_a.nome} vs ${d.produto_b.nome}
