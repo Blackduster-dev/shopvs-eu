@@ -1,41 +1,50 @@
 ---
 name: 02_redator_bilingue_es_de
-description: Redator Técnico Bilíngue Espelhado (ES + DE) com padrão editorial Stiftung Warentest / OCU e compliance estrito.
+description: Redator Técnico Bilíngue Espelhado (ES + DE), Indexador de Catálogo e Compilador Estático HTML com padrão Stiftung Warentest / OCU.
 ---
+# Skill: Redator Técnico Bilíngue Espelhado (ES + DE) & Build HTML
 
-# Skill: Redator Técnico Bilíngue Espelhado (ES + DE)
 **ID:** `redator_bilingue_es_de`  
-**Função:** Ler `data/produto_duplo.json` e redigir o comparativo técnico simultaneamente para os mercados da Espanha e Alemanha com linguagem editorial nativa, objetiva e rigorosa.
+**Função:** Auditar a qualidade linguística e técnica de `data/produto_duplo.json` e `data/catalogo_produtos.json`, sincronizar o StoreID `shopvseu-21` via `scripts/indexer.py`, compilar as páginas HTML estáticas via `scripts/builder.py` e atualizar o `sitemap.xml`.
 
 ## Regras Globais de Compliance e Anti-Ban (Amazon EU)
-1. **PROIBIÇÃO DE PREÇO FIXO:** É estritamente proibido escrever valores numéricos em Euro (ex: *cuesta 349€* ou *kostet 299€*) no corpo do texto. Use chamadas dinâmicas como:
-   - ES: `[Consultar precio actual en Amazon.es]`
-   - DE: `[Aktuellen Preis auf Amazon.de prüfen]`
-2. **ZERO CLICHÊS DE IA:**
-   - Proibido iniciar com generalidades: *"En el mundo actual acelerado...", "Elegir la cafetera adecuada es vital..."*, ou *"In der heutigen schnelllebigen Welt..."*.
-   - Vá direto para a conclusão e análise dos dados técnicos.
-3. **AVISOS LEGAIS OBRIGATÓRIOS (Transparência Europeia):**
-   - **ES (Topo ou Rodapé):** *"En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables."*
-   - **DE (Topo ou Rodapé):** *"Als Amazon-Partner verdiene ich an qualifizierten Verkäufen."*
+
+1. **PROIBIÇÃO ESTRITA DE PREÇO FIXO:** É proibido exibir valores numéricos de preço do produto em Euro no texto (ex: *cuesta 349€* ou *kostet 299€*). Apenas custos estimados de manutenção genéricos são tolerados no veredito, e todos os botões de compra devem usar chamadas dinâmicas:
+   - **ES:** `Consultar precio actual y stock en Amazon.es →`
+   - **DE:** `Aktuellen Preis auf Amazon.de prüfen →`
+   - Todos os links de afiliado devem conter `target="_blank" rel="nofollow noopener sponsored"`.
+2. **ZERO CLICHÊS DE IA E ZERO "PORTUNHOL":**
+   - Proibido iniciar textos com introduções vagas (*"En el mundo actual..."*, *"In der heutigen..."*).
+   - Proibido vazar termos em português nos arquivos JSON ou HTML (usar sempre *Calidad-Precio* em ES e *Preis-Leistungs-Verhältnis* em DE; *Robots Aspiradores* em ES e *Saugroboter* em DE).
+   - Em `specs_es` e `specs_de` do `produto_duplo.json`, garantir que os dois produtos tenham exatamente o mesmo número de linhas na mesma ordem para que `scripts/builder.py` monte a tabela comparativa perfeitamente alinhada.
+3. **AVISOS LEGAIS OBRIGATÓRIOS (Transparência Europeia & § 5 TMG):**
+   - **ES:** *"En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables."*
+   - **DE:** *"Als Amazon-Partner verdiene ich an qualifizierten Verkäufen."*
+   - Manter sempre o link funcional para `/legal/` (`Impressum § 5 TMG`) no cabeçalho e rodapé.
 
 ## Padrão Editorial por País
 
 ### Versão Espanha (`/es/{slug_es}.html`)
-- **Tom:** Espanhol neutro da Espanha (Castelhano nativo), analítico, focado em relação qualidade-preço (*calidad-precio*), durabilidade e clareza no custo de manutenção.
-- **Seções Obrigatórias:**
-  1. *Veredicto Rápido (Kurzfazit):* Qual modelo comprar de acordo com o perfil do comprador em 3 linhas.
-  2. *Tabla Comparativa de Especificaciones Técnicas:* Tabela lado a lado comparando as variáveis exatas.
-  3. *Puntos Fuertes y Fallos Reais Reportados:* Análise equilibrada dos prós e defeitos ocultos apontados por donos do produto.
-  4. *Conclusión y Recomendación de Compra:* CTA claro direcionando para o `link_es`.
+- **Tom:** Castelhano nativo da Espanha, analítico, focado em *relación calidad-precio*, facilidade de limpeza/manutenção e durabilidade real.
+- **Componentes compilados pelo `builder.py`:**
+  1. Cards lado a lado com selo de pontuação (`score_label_es`), ASIN, nota de laboratório, 3 pontos fortes (`pros_es`), botão CTA com `?tag=shopvseu-21` e gaveta modal (*Ver Ficha Técnica Expandida - 6 Parámetros*).
+  2. *Veredicto Rápido de Nuestros Ingenieros* (`veredito_resumo.es`).
+  3. *Matriz de Especificaciones Técnicas* (cabeçalho `Parámetro`).
+  4. *Fallos Crónicos Reportados* (`contras_es`).
+  5. Link direto no topo para abrir a disputa pré-selecionada no comparador interativo (`/compare/?cat={categoria_id}&a={id_a}&b={id_b}&lang=es`).
 
 ### Versão Alemanha (`/de/{slug_de}.html`)
-- **Tom:** Hochdeutsch técnico, seco, direto, inspirado em laboratórios de teste alemães (*Stiftung Warentest, Chip Test*).
-- **Termos Nativos Essenciais:** *Direktvergleich, Technische Daten im Überblick, Praxistest, Schwachstellen, Preis-Leistungs-Verhältnis, Kaufempfehlung*.
-- **Seções Obrigatórias:**
-  1. *Kurzfazit im Direktvergleich:* Vencedor da categoria e distinção técnica clara.
-  2. *Technische Daten im Detail:* Tabela técnica precisa.
-  3. *Echte Käufererfahrungen & Schwachstellen:* Pontos fracos crônicos comprovados em uso diário.
-  4. *Empfehlung und Bezugsquellen:* CTA claro direcionando para o `link_de`.
+- **Tom:** *Hochdeutsch* técnico, seco e rigoroso, padrão *Stiftung Warentest*.
+- **Vocabulário Nativo Obrigatório:** *Direktvergleich, Technische Daten im Direktvergleich, Kenngröße, Kurzfazit der Prüfredaktion, Bekannte Schwachstellen, Erweiterte technische Datenblätter*.
+- **Componentes compilados pelo `builder.py`:**
+  1. Cards lado a lado com `score_label_de`, ASIN, `pros_de`, botão CTA para `amazon.de` com `?tag=shopvseu-21` e gaveta modal (`ficha_expandida_de`).
+  2. *Kurzfazit der Prüfredaktion* (`veredito_resumo.de`).
+  3. *Technische Daten im Direktvergleich* (cabeçalho `Kenngröße`).
+  4. *Bekannte Schwachstellen* (`contras_de`).
+  5. Link direto no topo para `/compare/?cat={categoria_id}&a={id_a}&b={id_b}&lang=de`.
 
-## Ação Pós-Geração
-Salvar os dados e acionar a compilação estática através de `scripts/builder.py`, garantindo que as páginas sejam integradas ao repositório para deploy imediato no Cloudflare Pages.
+## Pipeline de Execução Pós-Redação
+
+1. Executar `python scripts/indexer.py` (que sincroniza a tag `shopvseu-21` de `config_afiliados.json` em todos os itens, valida imagens em `assets/products/`, gera `assets/search_index.json` e dispara `scripts/builder.py` preservando o `index.html` interativo da raiz).
+2. Atualizar as vitrines regionais (`es/index.html` e `de/index.html`) caso um novo duelo ou categoria precise ser destacado nos cards.
+3. Adicionar as novas URLs geradas (`/es/{slug_es}.html` e `/de/{slug_de}.html`) dentro do arquivo `sitemap.xml` na raiz do projeto.

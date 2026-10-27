@@ -1,47 +1,64 @@
 ---
 name: 03_distribuidor_pinterest_telegram
-description: Distribuidor Visual Multicanal para Pinterest EU (1000x1500) e alertas Telegram Chollos/Schnäppchen.
+description: Distribuidor Visual Multicanal para Pinterest EU (1000x1500px via Pillow) e alertas nativos para Telegram (Chollos ES & Schnäppchen DE).
 ---
-
 # Skill: Distribuidor Visual Multicanal (Pinterest EU & Telegram)
+
 **ID:** `distribuidor_pinterest_telegram`  
-**Função:** Converter os comparativos publicados em ativos visuais de alta conversão para o Pinterest Europeu e disparos estruturados para canais de Telegram na Espanha e Alemanha.
+**Função:** Converter os comparativos publicados em ativos visuais verticais (1000x1500px) para o Pinterest Europeu e gerar os textos de disparo 100% nativos para os canais de Telegram na Espanha e Alemanha.
 
 ## Etapa 1: Ativos Visuais para Pinterest EU (1000x1500px)
-O Pinterest na Europa funciona como um catálogo visual de compras e pesquisa de intenção. O robô deve executar `scripts/gerar_pins.py` para produzir duas imagens verticais com tipografia limpa e alto contraste:
+
+O script `scripts/gerar_pins.py` (acionado diretamente ou via `scripts/pipeline_master.py`) utiliza a biblioteca `Pillow` para renderizar os cartões verticais de alta conversão na pasta `assets/pins/`:
 
 1. **Pin Espanha (`assets/pins/{slug_es}.png`):**
-   - Topo: `COMPARATIVA TÉCNICA 2026: [Produto A] vs [Produto B]`
-   - Miolo: Tabela resumida de 3 especificações decisivas.
-   - Rodapé CTA: `¿Cuál merece la pena comprar? Leer veredicto completo`
-   - Link de destino: `{dominio_site}/es/{slug_es}.html`
+   - **Badge Superior:** `LABORATORIO DE COMPARATIVAS TÉCNICAS · EUROPA`
+   - **Título:** `COMPARATIVA TÉCNICA 2026: [Produto A] VS. [Produto B]`
+   - **Destaques Centrais:** 3 especificações técnicas extraídas de `specs_es` (sem textos em português).
+   - **Botão CTA:** `VER VEREDICTO Y PRECIOS ACTUALES`
+   - **URL de Destino no Pinterest ES:** `https://shopvs-eu.pages.dev/es/{slug_es}.html`
 
 2. **Pin Alemanha (`assets/pins/{slug_de}.png`):**
-   - Topo: `DIREKTVERGLEICH 2026: [Produto A] vs. [Produto B]`
-   - Miolo: 3 itens técnicos decisivos em alemão (*Technische Daten*).
-   - Rodapé CTA: `Welches Modell ist besser? Jetzt Testbericht lesen`
-   - Link de destino: `{dominio_site}/de/{slug_de}.html`
+   - **Badge Superior:** `EUROPÄISCHES TESTLABOR · DIREKTVERGLEICH`
+   - **Título:** `DIREKTVERGLEICH 2026: [Produto A] VS. [Produto B]`
+   - **Destaques Centrais:** 3 especificações técnicas extraídas de `specs_de` em alemão puro.
+   - **Botão CTA:** `JETZT TESTBERICHT & PREISE PRÜFEN`
+   - **URL de Destino no Pinterest DE:** `https://shopvs-eu.pages.dev/de/{slug_de}.html`
 
-## Etapa 2: Formatação de Disparos para Telegram
+## Etapa 2: Formatação de Disparos para Telegram (`data/telegram_disparos.txt`)
+
+Gerar e salvar os disparos em `data/telegram_disparos.txt` puxando os campos `pros_es[0]` e `pros_de[0]` de cada produto e garantindo que o link da Amazon contenha `?tag=shopvseu-21`:
 
 ### Canal Espanha (Estilo "Chollos & Comparativas")
 ```text
-⚡ Comparativa & Oferta Técnica: [Produto A] vs [Produto B]
-🔍 Analizamos opiniones reales y fallos ocultos antes de que compres:
-- [Ponto forte chave A]
-- [Ponto forte chave B]
+⚡ Comparativa & Oferta Técnica: {produto_a.nome} vs {produto_b.nome}
 
-📊 Ver análisis técnico completo: {dominio_site}/es/{slug_es}.html
-🛒 Ver precio actual en Amazon España: {link_es} *(Enlace de Afiliado)*
+🔎 Analizamos opiniones reales y fallos ocultos antes de que compres:
+• {produto_a.marca}: {produto_a.pros_es[0]}
+• {produto_b.marca}: {produto_b.pros_es[0]}
+
+📊 Ver tabla comparativa completa: https://shopvs-eu.pages.dev/es/{slug_es}.html
+🛒 Ver oferta actual en Amazon España: {produto_a.link_es} *(Enlace de Afiliado)*
 ```
 
 ### Canal Alemanha (Estilo "Schnäppchen & Testbericht")
 ```text
-🔥 Direktvergleich & Kaufberatung: [Produto A] vs [Produto B]
-✅ Echte Käufermeinungen und technische Daten im Praxis-Check:
-- [Stärke A]
-- [Stärke B]
+⚡ Direktvergleich & Kaufberatung: {produto_a.nome} vs. {produto_b.nome}
 
-📊 Zum vollständigen Testbericht: {dominio_site}/de/{slug_de}.html
-🛒 Direkt zu Amazon Deutschland: {link_de} *(Affiliate-Link)*
+🔎 Echte Käufermeinungen und technische Daten im Praxis-Check:
+• {produto_a.marca}: {produto_a.pros_de[0]}
+• {produto_b.marca}: {produto_b.pros_de[0]}
+
+📊 Zum vollständigen Testbericht: https://shopvs-eu.pages.dev/de/{slug_de}.html
+🛒 Direkt zu Amazon Deutschland: {produto_a.link_de} *(Affiliate-Link)*
+```
+
+## Etapa 3: Orquestração Completa e Deploy
+
+Sempre que um novo duelo for processado, executar a esteira completa na raiz do repositório:
+```bash
+python scripts/pipeline_master.py
+git add .
+git commit -m "Add comparison & assets: {slug_es}"
+git push origin main
 ```
