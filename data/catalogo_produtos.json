@@ -30,7 +30,53 @@
       "nome_de": "Luftentfeuchter & Bautrockner",
       "icone": "water_drop",
       "descricao_es": "Comparativas técnicas de deshumidificadores de compresor para erradicar humedad y moho con bajo consumo.",
-      "descricao_de": "Technischer Vergleich von Kompressor-Luftentfeuchtern gegen Feuchtigkeit und Schimmel bei minimalem Stromverbrauch."
+      "descricao_de": "Technischer Vergleich von Kompressor-Luftentfeuchtern gegen Feuchtigkeit und Schimmel bei minimalem Stromverbrauch.",
+      "labels_specs": {
+        "capacidad_extraccion": {
+          "es": "Capacidad de Extracción",
+          "de": "Entfeuchtungsleistung"
+        },
+        "deposito_agua": {
+          "es": "Depósito de Agua",
+          "de": "Wassertank"
+        },
+        "area_recomendada": {
+          "es": "Área Recomendada",
+          "de": "Empfohlene Raumgröße"
+        },
+        "potencia_consumo": {
+          "es": "Potencia y Consumo",
+          "de": "Leistungsaufnahme"
+        },
+        "nivel_sonoro": {
+          "es": "Nivel Sonoro",
+          "de": "Geräuschpegel"
+        },
+        "secado_ropa": {
+          "es": "Modo Secado de Ropa",
+          "de": "Wäschetrocknungsmodus"
+        },
+        "extraccion_diaria": {
+          "es": "Extracción Diaria",
+          "de": "Tägliche Entfeuchtung"
+        },
+        "deposito_litros": {
+          "es": "Depósito en Litros",
+          "de": "Wassertank (Liter)"
+        },
+        "area_cobertura": {
+          "es": "Área de Cobertura",
+          "de": "Raumabdeckung"
+        },
+        "consumo_w": {
+          "es": "Consumo Eléctrico",
+          "de": "Stromverbrauch (Watt)"
+        },
+        "nivel_ruido": {
+          "es": "Nivel de Ruido",
+          "de": "Geräuschpegel"
+        }
+      }
     }
   ],
   "produtos": [
@@ -83,7 +129,9 @@
         "tiempo_calentamiento": "48 Sekunden (inkl. automatischer Spülung)",
         "ruido_molienda": "68 dB (leiser Mahlvorgang)",
         "dimensiones": "23,8 x 43,0 x 35,1 cm (9,0 kg)"
-      }
+      },
+      "nome_es": "De'Longhi Magnifica S ECAM 22.110.B",
+      "nome_de": "De'Longhi Magnifica S ECAM 22.110.B"
     },
     {
       "id": "krups_essential",
@@ -134,7 +182,9 @@
         "tiempo_calentamiento": "34 Sekunden ab Kaltstart",
         "ruido_molienda": "74 dB (höherer Geräuschpegel)",
         "dimensiones": "24,5 x 36,5 x 33,0 cm (7,2 kg)"
-      }
+      },
+      "nome_es": "Krups Essential EA8108",
+      "nome_de": "Krups Essential EA8108"
     },
     {
       "id": "philips_series_2200",
@@ -185,7 +235,9 @@
         "tiempo_calentamiento": "45 Sekunden",
         "ruido_molienda": "66 dB",
         "dimensiones": "24,6 x 43,3 x 37,1 cm (7,5 kg)"
-      }
+      },
+      "nome_es": "Philips Serie 2200 EP2220/10",
+      "nome_de": "Philips Serie 2200 EP2220/10"
     },
     {
       "id": "cosori_dual_blaze",
@@ -236,7 +288,9 @@
         "volteado": "Kein manuelles Schütteln/Wenden erforderlich",
         "conectividad": "Wi-Fi & VeSync App-Steuerung",
         "dimensiones": "29,7 x 32,7 x 35,2 cm (6,2 kg)"
-      }
+      },
+      "nome_es": "Cosori Dual Blaze 6.4L (Doble Resistencia)",
+      "nome_de": "Cosori Dual Blaze 6.4L (Doppelheizelement)"
     },
     {
       "id": "ninja_foodi_dualzone",
@@ -287,7 +341,9 @@
         "volteado": "Manuelles Schütteln beider Frittierkörbe empfohlen",
         "conectividad": "Keine App (mechanische Dreh- und Drucktasten)",
         "dimensiones": "31,5 x 38,0 x 26,5 cm (8,2 kg)"
-      }
+      },
+      "nome_es": "Ninja Foodi DualZone AF300EU (2 Cajones 7.6L)",
+      "nome_de": "Ninja Foodi DualZone AF300EU (2 Kammern 7,6L)"
     },
     {
       "id": "roborock_q8_max",
@@ -338,7 +394,9 @@
         "autonomia": "Bis zu 240 Minuten (5200 mAh Akku)",
         "deposito": "470 ml Staub / 350 ml Wasser",
         "dimensiones": "35,0 x 35,3 x 9,6 cm (4,0 kg)"
-      }
+      },
+      "nome_es": "Roborock Q8 Max (DuoRoller & LiDAR)",
+      "nome_de": "Roborock Q8 Max (DuoRoller & LiDAR)"
     },
     {
       "id": "dreame_d10s_pro",
@@ -389,7 +447,9 @@
         "autonomia": "Bis zu 280 Minuten (5200 mAh Akku)",
         "deposito": "570 ml Staub / 235 ml Wasser",
         "dimensiones": "35,0 x 35,0 x 9,7 cm (3,6 kg)"
-      }
+      },
+      "nome_es": "Dreame D10s Pro (Cámara IA & LiDAR)",
+      "nome_de": "Dreame D10s Pro (KI-Kamera & LiDAR)"
     },
     {
       "id": "comfee_mddf_20den7",
@@ -436,7 +496,9 @@
       "contras_de": [
         "3-Liter-Wassertank muss bei extrem feuchten Räumen täglich geleert werden",
         "Hartplastik-Rollen übertragen auf unebenem Dielenboden minimale Vibrationen"
-      ]
+      ],
+      "nome_es": "Comfee MDDF-20DEN7 (20L / 40m²)",
+      "nome_de": "Comfee MDDF-20DEN7 (20L / 40m²)"
     },
     {
       "id": "pro_breeze_20l",
@@ -483,7 +545,9 @@
       "contras_de": [
         "Stromaufnahme von 450W liegt ca. 25% über dem sparsameren Comfee-Modell",
         "Mit 45 dB im Schlafzimmer bei absoluter Nachtruhe wahrnehmbar"
-      ]
+      ],
+      "nome_es": "Pro Breeze 20L Compresor PB-08",
+      "nome_de": "Pro Breeze 20L Kompressor PB-08"
     }
   ]
 }

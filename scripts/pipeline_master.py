@@ -81,13 +81,18 @@ def executar_geracao_pins(lista_duelos):
         pa = d["produto_a"]
         pb = d["produto_b"]
 
+        nome_pa_es = pa.get("nome_es", pa.get("nome", ""))
+        nome_pb_es = pb.get("nome_es", pb.get("nome", ""))
+        nome_pa_de = pa.get("nome_de", pa.get("nome", ""))
+        nome_pb_de = pb.get("nome_de", pb.get("nome", ""))
+
         # Destaques ES dinâmicos
         specs_es = pa.get("specs_es", {})
         destaques_es = [f"{k}: {v}" for k, v in list(specs_es.items())[:3]]
         if len(destaques_es) < 3:
             destaques_es = pa.get("pros_es", ["Prestaciones avanzadas", "Calidad comprobada", "Alta durabilidad"])[:3]
         pin_es_path = os.path.join(output_dir, f"{d['slug_es']}.png")
-        criar_card_pinterest("ES", pa["nome"], pb["nome"], destaques_es, pin_es_path)
+        criar_card_pinterest("ES", nome_pa_es, nome_pb_es, destaques_es, pin_es_path)
 
         # Destaques DE dinâmicos
         specs_de = pa.get("specs_de", {})
@@ -95,7 +100,7 @@ def executar_geracao_pins(lista_duelos):
         if len(destaques_de) < 3:
             destaques_de = pa.get("pros_de", ["Hervorragende Leistung", "Geprüfte Qualität", "Hohe Langlebigkeit"])[:3]
         pin_de_path = os.path.join(output_dir, f"{d['slug_de']}.png")
-        criar_card_pinterest("DE", pa["nome"], pb["nome"], destaques_de, pin_de_path)
+        criar_card_pinterest("DE", nome_pa_de, nome_pb_de, destaques_de, pin_de_path)
 
 def formatar_telegram(config, lista_duelos):
     print(f"\n[4/4] Formatando disparos 100% nativos para Telegram (ES & DE) [{len(lista_duelos)} duelos]...")
@@ -107,12 +112,17 @@ def formatar_telegram(config, lista_duelos):
         pa = d["produto_a"]
         pb = d["produto_b"]
 
+        nome_pa_es = pa.get("nome_es", pa.get("nome", ""))
+        nome_pb_es = pb.get("nome_es", pb.get("nome", ""))
+        nome_pa_de = pa.get("nome_de", pa.get("nome", ""))
+        nome_pb_de = pb.get("nome_de", pb.get("nome", ""))
+
         pros_a_es = pa.get("pros_es", pa.get("pros", ["Excelente rendimiento"]))[0]
         pros_b_es = pb.get("pros_es", pb.get("pros", ["Excelente rendimiento"]))[0]
         pros_a_de = pa.get("pros_de", pa.get("pros", ["Hervorragende Leistung"]))[0]
         pros_b_de = pb.get("pros_de", pb.get("pros", ["Hervorragende Leistung"]))[0]
 
-        msg_es = f"""⚡ Comparativa & Oferta Técnica: {pa['nome']} vs {pb['nome']}
+        msg_es = f"""⚡ Comparativa & Oferta Técnica: {nome_pa_es} vs {nome_pb_es}
 🔍 Analizamos opiniones reales y fallos ocultos antes de que compres:
 • {pa['marca']}: {pros_a_es}
 • {pb['marca']}: {pros_b_es}
@@ -121,7 +131,7 @@ def formatar_telegram(config, lista_duelos):
 🛒 Ver oferta actual en Amazon España: {pa['link_es']} *(Enlace de Afiliado)*"""
         blocos_es.append(msg_es)
 
-        msg_de = f"""🔥 Direktvergleich & Kaufberatung: {pa['nome']} vs. {pb['nome']}
+        msg_de = f"""🔥 Direktvergleich & Kaufberatung: {nome_pa_de} vs. {nome_pb_de}
 ✅ Echte Käufermeinungen und technische Daten im Praxis-Check:
 • {pa['marca']}: {pros_a_de}
 • {pb['marca']}: {pros_b_de}

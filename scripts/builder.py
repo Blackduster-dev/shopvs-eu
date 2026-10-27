@@ -160,6 +160,10 @@ def render_article(artigo, lang="es"):
 
     pb = artigo["produto_b"]
 
+    nome_pa = pa.get("nome_de" if is_de else "nome_es", pa.get("nome", ""))
+
+    nome_pb = pb.get("nome_de" if is_de else "nome_es", pb.get("nome", ""))
+
 
 
     specs_a = pa.get("specs_de" if is_de else "specs_es", pa.get("specs_tecnicas", {}))
@@ -230,9 +234,9 @@ def render_article(artigo, lang="es"):
 
     if is_de:
 
-        title = f"{pa['nome']} vs. {pb['nome']} im Test: Direktvergleich 2026 | ShopVS Deutschland"
+        title = f"{nome_pa} vs. {nome_pb} im Test: Direktvergleich 2026 | ShopVS Deutschland"
 
-        desc = f"Technischer Direktvergleich zwischen {pa['nome']} und {pb['nome']}. Messwerte, Labor-Audit und Praxistest."
+        desc = f"Technischer Direktvergleich zwischen {nome_pa} und {nome_pb}. Messwerte, Labor-Audit und Praxistest."
 
         legal_notice = '<strong>Transparenzhinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Preise werden dynamisch beim Händler geprüft.'
 
@@ -252,9 +256,9 @@ def render_article(artigo, lang="es"):
 
     else:
 
-        title = f"{pa['nome']} vs. {pb['nome']}: Comparativa Técnica 2026 | ShopVS España"
+        title = f"{nome_pa} vs. {nome_pb}: Comparativa Técnica 2026 | ShopVS España"
 
-        desc = f"Auditoría técnica entre {pa['nome']} y {pb['nome']}. Mediciones en laboratorio, comparativa a fondo y opiniones reales."
+        desc = f"Auditoría técnica entre {nome_pa} y {nome_pb}. Mediciones en laboratorio, comparativa a fondo y opiniones reales."
 
         legal_notice = '<strong>Aviso de Afiliación:</strong> En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.'
 
@@ -374,7 +378,7 @@ def render_article(artigo, lang="es"):
 
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-nordic-navy leading-tight mt-1 mb-3">
 
-                    {pa['nome']} <span class="text-nordic-amber font-mono font-light">vs.</span> {pb['nome']}
+                    {nome_pa} <span class="text-nordic-amber font-mono font-light">vs.</span> {nome_pb}
 
                 </h1>
 
@@ -397,14 +401,14 @@ def render_article(artigo, lang="es"):
                         <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
 
                             <div class="w-36 h-36 bg-white rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 shadow-sm">
-                                <img src="{pa['imagem_url']}" alt="{pa['nome']}" class="w-full h-full object-contain mix-blend-multiply">
+                                <img src="{pa['imagem_url']}" alt="{nome_pa}" class="w-full h-full object-contain">
                             </div>
 
                             <div class="flex-1 text-center sm:text-left">
 
                                 <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">{pa['marca']}</span>
 
-                                <h2 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5">{pa['nome']}</h2>
+                                <h2 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5">{nome_pa}</h2>
 
                                 <span class="text-xs text-slate-500 font-mono block mt-1">ASIN: {pa['asin']} • Score: {pa['score_lab']}/10</span>
 
@@ -451,14 +455,14 @@ def render_article(artigo, lang="es"):
                         <div class="flex flex-col sm:flex-row items-center gap-5 mt-2 mb-6">
 
                             <div class="w-36 h-36 bg-white rounded-lg border border-nordic-border p-2 flex items-center justify-center shrink-0 shadow-sm">
-                                <img src="{pb['imagem_url']}" alt="{pb['nome']}" class="w-full h-full object-contain mix-blend-multiply">
+                                <img src="{pb['imagem_url']}" alt="{nome_pb}" class="w-full h-full object-contain">
                             </div>
 
                             <div class="flex-1 text-center sm:text-left">
 
                                 <span class="text-xs font-mono font-bold text-slate-500 uppercase">{pb['marca']}</span>
 
-                                <h2 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5">{pb['nome']}</h2>
+                                <h2 class="text-xl sm:text-2xl font-display font-extrabold text-nordic-navy mt-0.5">{nome_pb}</h2>
 
                                 <span class="text-xs text-slate-500 font-mono block mt-1">ASIN: {pb['asin']} • Score: {pb['score_lab']}/10</span>
 
@@ -530,9 +534,9 @@ def render_article(artigo, lang="es"):
 
                             <th class="py-3.5 px-4 font-bold">{th_param}</th>
 
-                            <th class="py-3.5 px-4 font-bold bg-nordic-navyLight/60 border-l border-nordic-navyLight">{pa['nome']}</th>
+                            <th class="py-3.5 px-4 font-bold bg-nordic-navyLight/60 border-l border-nordic-navyLight">{nome_pa}</th>
 
-                            <th class="py-3.5 px-4 font-bold border-l border-nordic-navyLight">{pb['nome']}</th>
+                            <th class="py-3.5 px-4 font-bold border-l border-nordic-navyLight">{nome_pb}</th>
 
                         </tr>
 
@@ -554,7 +558,7 @@ def render_article(artigo, lang="es"):
 
                 <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-4">
 
-                    <span class="font-display font-bold text-nordic-navy text-base">{pa['nome']}</span>
+                    <span class="font-display font-bold text-nordic-navy text-base">{nome_pa}</span>
 
                     <span class="text-xs font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">{flaws_badge}</span>
 
@@ -568,7 +572,7 @@ def render_article(artigo, lang="es"):
 
                 <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-4">
 
-                    <span class="font-display font-bold text-nordic-navy text-base">{pb['nome']}</span>
+                    <span class="font-display font-bold text-nordic-navy text-base">{nome_pb}</span>
 
                     <span class="text-xs font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">{flaws_badge}</span>
 
@@ -590,7 +594,7 @@ def render_article(artigo, lang="es"):
 
             <div class="flex items-center justify-between pb-4 border-b border-nordic-border mb-5">
 
-                <h3 class="font-display font-extrabold text-lg text-nordic-navy">{pa['nome']}</h3>
+                <h3 class="font-display font-extrabold text-lg text-nordic-navy">{nome_pa}</h3>
 
                 <button type="button" onclick="toggleTechDrawer('drawer-a')" class="w-8 h-8 rounded-full bg-slate-100 font-bold">✕</button>
 
@@ -610,7 +614,7 @@ def render_article(artigo, lang="es"):
 
             <div class="flex items-center justify-between pb-4 border-b border-nordic-border mb-5">
 
-                <h3 class="font-display font-extrabold text-lg text-nordic-navy">{pb['nome']}</h3>
+                <h3 class="font-display font-extrabold text-lg text-nordic-navy">{nome_pb}</h3>
 
                 <button type="button" onclick="toggleTechDrawer('drawer-b')" class="w-8 h-8 rounded-full bg-slate-100 font-bold">✕</button>
 

@@ -67,7 +67,9 @@
     "contras_de": [
       "3-Liter-Wassertank muss bei extrem feuchten Räumen täglich geleert werden",
       "Hartplastik-Rollen übertragen auf unebenem Dielenboden minimale Vibrationen"
-    ]
+    ],
+    "nome_es": "Comfee MDDF-20DEN7 (20L / 40m²)",
+    "nome_de": "Comfee MDDF-20DEN7 (20L / 40m²)"
   },
   "produto_b": {
     "id": "pro_breeze_20l",
@@ -130,7 +132,9 @@
     "contras_de": [
       "Stromaufnahme von 450W liegt ca. 25% über dem sparsameren Comfee-Modell",
       "Mit 45 dB im Schlafzimmer bei absoluter Nachtruhe wahrnehmbar"
-    ]
+    ],
+    "nome_es": "Pro Breeze 20L Compresor PB-08",
+    "nome_de": "Pro Breeze 20L Kompressor PB-08"
   },
   "veredito_resumo": {
     "es": "El Comfee MDDF-20DEN7 se corona ganador de la auditoría técnica gracias a su consumo contenido de 360W y menor sonoridad (41 dB), ideal para uso prolongado en salones y pisos. El Pro Breeze PB-08 es la alternativa idónea si buscas vaciar el agua con menor frecuencia gracias a su enorme tanque de 5.5 litros.",

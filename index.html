@@ -171,7 +171,7 @@
                 <span class="text-xs font-mono text-slate-500 hidden sm:inline" id="cat-section-hint">Selecciona para comparar modelos</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="categories-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="categories-grid">
                 <!-- Inserido dinamicamente conforme idioma selecionado -->
             </div>
         </section>
@@ -388,6 +388,8 @@
                 const catId = d.categoria_id || 'cafeteras';
                 const pa = d.produto_a;
                 const pb = d.produto_b;
+                const nomePa = isDe ? (pa.nome_de || pa.nome) : (pa.nome_es || pa.nome);
+                const nomePb = isDe ? (pb.nome_de || pb.nome) : (pb.nome_es || pb.nome);
                 const scoreLabA = pa.score_lab || '9.0';
                 const scoreLabB = pb.score_lab || '8.5';
                 const resumo = (d.veredito_resumo && d.veredito_resumo[currentLang]) ? d.veredito_resumo[currentLang] : '';
@@ -403,10 +405,10 @@
                             <div class="flex items-center justify-between gap-3 py-4 px-3 bg-nordic-canvas/60 rounded-xl border border-nordic-border mb-4">
                                 <div class="flex flex-col items-center text-center w-5/12">
                                     <div class="w-20 h-20 bg-white rounded-lg p-1.5 border border-nordic-border flex items-center justify-center shadow-sm mb-2">
-                                        <img src="${pa.imagem_url}" alt="${pa.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                        <img src="${pa.imagem_url}" alt="${nomePa}" class="w-full h-full object-contain">
                                     </div>
                                     <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${pa.marca}</span>
-                                    <strong class="text-xs font-display font-extrabold text-nordic-navy leading-tight truncate max-w-full">${pa.nome}</strong>
+                                    <strong class="text-xs font-display font-extrabold text-nordic-navy leading-tight truncate max-w-full">${nomePa}</strong>
                                     <span class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded mt-1 font-bold">Score: ${scoreLabA}/10</span>
                                 </div>
 
@@ -418,16 +420,16 @@
 
                                 <div class="flex flex-col items-center text-center w-5/12">
                                     <div class="w-20 h-20 bg-white rounded-lg p-1.5 border border-nordic-border flex items-center justify-center shadow-sm mb-2">
-                                        <img src="${pb.imagem_url}" alt="${pb.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                        <img src="${pb.imagem_url}" alt="${nomePb}" class="w-full h-full object-contain">
                                     </div>
                                     <span class="text-[10px] font-mono font-bold text-slate-500 uppercase">${pb.marca}</span>
-                                    <strong class="text-xs font-display font-extrabold text-nordic-navy leading-tight truncate max-w-full">${pb.nome}</strong>
+                                    <strong class="text-xs font-display font-extrabold text-nordic-navy leading-tight truncate max-w-full">${nomePb}</strong>
                                     <span class="text-[10px] font-mono text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded mt-1 font-bold">Score: ${scoreLabB}/10</span>
                                 </div>
                             </div>
 
                             <h4 class="font-display font-extrabold text-base sm:text-lg text-nordic-navy group-hover:text-nordic-emerald transition-colors mb-2">
-                                ${pa.nome} vs. ${pb.nome}
+                                ${nomePa} vs. ${nomePb}
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-5 line-clamp-3">
                                 ${resumo}
@@ -483,18 +485,20 @@
             const prods = catalogoData.produtos.filter(p => topIds.includes(p.id));
 
             container.innerHTML = prods.map(p => {
-                const badge = currentLang === 'de' ? p.score_badge_de : p.score_badge_es;
-                const linkLabel = currentLang === 'de' ? 'Im Vergleichstool prüfen &rarr;' : 'Comparar en la herramienta &rarr;';
-                const desc = currentLang === 'de' ? p.pros_de[0] : p.pros_es[0];
+                const isDe = currentLang === 'de';
+                const badge = isDe ? p.score_badge_de : p.score_badge_es;
+                const linkLabel = isDe ? 'Im Vergleichstool prüfen &rarr;' : 'Comparar en la herramienta &rarr;';
+                const desc = isDe ? p.pros_de[0] : p.pros_es[0];
+                const nome = isDe ? (p.nome_de || p.nome) : (p.nome_es || p.nome);
 
                 return `
                     <div class="border border-nordic-border rounded-lg p-5 bg-nordic-canvas/40 flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] font-mono font-bold uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">${badge}</span>
                             <div class="w-full h-32 my-3 p-2 bg-white rounded border border-nordic-border flex items-center justify-center">
-                                <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                                <img src="${p.imagem_url}" alt="${nome}" class="w-full h-full object-contain">
                             </div>
-                            <h4 class="font-display font-bold text-base text-nordic-navy">${p.nome}</h4>
+                            <h4 class="font-display font-bold text-base text-nordic-navy">${nome}</h4>
                             <p class="text-xs text-slate-600 mt-1">${desc}</p>
                         </div>
                         <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="mt-4 text-xs font-mono font-bold text-nordic-amber hover:text-nordic-amberHover flex items-center justify-between">
@@ -517,21 +521,26 @@
             }
 
             const isDe = currentLang === 'de';
-            const prodResults = catalogoData.produtos.filter(p => 
-                p.nome.toLowerCase().includes(clean) || 
-                p.marca.toLowerCase().includes(clean)
-            );
+            const prodResults = catalogoData.produtos.filter(p => {
+                const nEs = (p.nome_es || p.nome || '').toLowerCase();
+                const nDe = (p.nome_de || p.nome || '').toLowerCase();
+                const m = (p.marca || '').toLowerCase();
+                return nEs.includes(clean) || nDe.includes(clean) || m.includes(clean);
+            });
 
             let duelResults = [];
             if (duelosData) {
-                duelResults = duelosData.filter(d => 
-                    d.produto_a.nome.toLowerCase().includes(clean) ||
-                    d.produto_a.marca.toLowerCase().includes(clean) ||
-                    d.produto_b.nome.toLowerCase().includes(clean) ||
-                    d.produto_b.marca.toLowerCase().includes(clean) ||
-                    (d.categoria_es && d.categoria_es.toLowerCase().includes(clean)) ||
-                    (d.categoria_de && d.categoria_de.toLowerCase().includes(clean))
-                );
+                duelResults = duelosData.filter(d => {
+                    const pa = d.produto_a;
+                    const pb = d.produto_b;
+                    const paNames = ((pa.nome_es || '') + ' ' + (pa.nome_de || '') + ' ' + (pa.nome || '')).toLowerCase();
+                    const pbNames = ((pb.nome_es || '') + ' ' + (pb.nome_de || '') + ' ' + (pb.nome || '')).toLowerCase();
+                    const ma = (pa.marca || '').toLowerCase();
+                    const mb = (pb.marca || '').toLowerCase();
+                    const catEs = (d.categoria_es || '').toLowerCase();
+                    const catDe = (d.categoria_de || '').toLowerCase();
+                    return paNames.includes(clean) || pbNames.includes(clean) || ma.includes(clean) || mb.includes(clean) || catEs.includes(clean) || catDe.includes(clean);
+                });
             }
 
             if (prodResults.length === 0 && duelResults.length === 0) {
@@ -555,7 +564,7 @@
                             <span class="material-symbols-outlined text-nordic-emerald text-[20px] shrink-0">menu_book</span>
                             <div class="min-w-0">
                                 <span class="text-[9px] font-mono font-bold uppercase text-nordic-emerald block">${t.articleSearchBadge} • ${catName}</span>
-                                <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${d.produto_a.nome} vs ${d.produto_b.nome}</strong>
+                                <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${isDe ? (d.produto_a.nome_de || d.produto_a.nome) : (d.produto_a.nome_es || d.produto_a.nome)} vs ${isDe ? (d.produto_b.nome_de || d.produto_b.nome) : (d.produto_b.nome_es || d.produto_b.nome)}</strong>
                             </div>
                         </div>
                         <span class="text-xs font-mono font-bold text-nordic-emerald shrink-0">
@@ -570,11 +579,11 @@
                 htmlItems += `
                     <a href="/compare/?cat=${p.categoria_id}&a=${p.id}&lang=${currentLang}" class="flex items-center gap-3 p-3 hover:bg-nordic-canvas border-b border-nordic-border last:border-b-0 transition-colors">
                         <div class="w-10 h-10 bg-white rounded border border-nordic-border p-1 shrink-0 flex items-center justify-center">
-                            <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain mix-blend-multiply">
+                            <img src="${p.imagem_url}" alt="${p.nome}" class="w-full h-full object-contain">
                         </div>
                         <div class="flex-1 min-w-0">
                             <span class="text-[10px] font-mono font-bold text-nordic-petrol uppercase">${p.marca}</span>
-                            <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${p.nome}</strong>
+                            <strong class="text-xs font-display font-bold text-nordic-navy block truncate">${isDe ? (p.nome_de || p.nome) : (p.nome_es || p.nome)}</strong>
                         </div>
                         <span class="text-xs font-mono font-bold text-nordic-amber flex items-center gap-1 shrink-0">
                             ${t.compareBtn} &rarr;

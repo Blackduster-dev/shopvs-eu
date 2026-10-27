@@ -123,7 +123,7 @@
                 <label id="label-step-1" class="block text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-2">
                     PASO 1: SELECCIONA LA CATEGORÍA DE PRODUCTOS
                 </label>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="category-selector-container">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" id="category-selector-container">
                     <!-- Gerado dinamicamente -->
                 </div>
             </div>
@@ -283,6 +283,17 @@
         };
 
         const specsLabels = {
+            extraccion_diaria: { es: "Extracción Diaria", de: "Tägliche Entfeuchtung" },
+            deposito_litros: { es: "Depósito en Litros", de: "Wassertank (Liter)" },
+            area_cobertura: { es: "Área de Cobertura", de: "Raumabdeckung" },
+            consumo_w: { es: "Consumo Eléctrico", de: "Stromverbrauch (Watt)" },
+            nivel_ruido: { es: "Nivel de Ruido", de: "Geräuschpegel" },
+            secado_ropa: { es: "Modo Secado de Ropa", de: "Wäschetrocknungsmodus" },
+            capacidad_extraccion: { es: "Capacidad de Extracción", de: "Entfeuchtungsleistung" },
+            deposito_agua: { es: "Depósito de Agua", de: "Wassertank" },
+            area_recomendada: { es: "Área Recomendada", de: "Empfohlene Raumgröße" },
+            potencia_consumo: { es: "Potencia y Consumo", de: "Leistungsaufnahme" },
+            nivel_sonoro: { es: "Nivel Sonoro", de: "Geräuschpegel" },
             presion: { es: "Presión de Bomba", de: "Pumpendruck" },
             molinillo: { es: "Molinillo", de: "Mahlwerk" },
             infusor: { es: "Grupo Infusor", de: "Brühgruppe" },
@@ -477,14 +488,15 @@
             selectB.innerHTML = '';
 
             prods.forEach(p => {
+                const pNome = currentMarket === 'de' ? (p.nome_de || p.nome) : (p.nome_es || p.nome);
                 const optA = document.createElement('option');
                 optA.value = p.id;
-                optA.textContent = `${p.marca} • ${p.nome}`;
+                optA.textContent = `${p.marca} • ${pNome}`;
                 selectA.appendChild(optA);
 
                 const optB = document.createElement('option');
                 optB.value = p.id;
-                optB.textContent = `${p.marca} • ${p.nome}`;
+                optB.textContent = `${p.marca} • ${pNome}`;
                 selectB.appendChild(optB);
             });
 
@@ -603,6 +615,9 @@
             const isDe = currentMarket === 'de';
             const t = i18nCompare[currentMarket];
 
+            const nomeA = isDe ? (prodA.nome_de || prodA.nome) : (prodA.nome_es || prodA.nome);
+            const nomeB = isDe ? (prodB.nome_de || prodB.nome) : (prodB.nome_es || prodB.nome);
+
             // Cenário: Mesmo produto selecionado em A e B
             if (prodA.id === prodB.id) {
                 if (inlineAlert) {
@@ -637,7 +652,7 @@
                                         </div>
                                         <div class="text-left">
                                             <span class="text-[10px] text-slate-500 font-mono block">${alt.marca}</span>
-                                            <span class="font-display font-bold group-hover:text-nordic-amber transition-colors">${alt.nome}</span>
+                                            <span class="font-display font-bold group-hover:text-nordic-amber transition-colors">${isDe ? (alt.nome_de || alt.nome) : (alt.nome_es || alt.nome)}</span>
                                         </div>
                                         <span class="material-symbols-outlined text-[18px] text-nordic-amber group-hover:translate-x-1 transition-transform ml-2">arrow_forward</span>
                                     </button>
@@ -692,7 +707,9 @@
                 const slug = isDe ? matchingDuel.slug_de : matchingDuel.slug_es;
                 const artUrl = isDe ? `/de/${slug}.html` : `/es/${slug}.html`;
                 const bannerBadge = isDe ? "OFFIZIELLER PRÜFBERICHT VORHANDEN" : "INFORME DE LABORATORIO DISPONIBLE";
-                const bannerTitle = isDe ? `Vollständiger Labor-Härtetest: ${matchingDuel.produto_a.nome} vs ${matchingDuel.produto_b.nome}` : `Auditoría técnica editorial completa: ${matchingDuel.produto_a.nome} vs ${matchingDuel.produto_b.nome}`;
+                const dNomeA = isDe ? (matchingDuel.produto_a.nome_de || matchingDuel.produto_a.nome) : (matchingDuel.produto_a.nome_es || matchingDuel.produto_a.nome);
+                const dNomeB = isDe ? (matchingDuel.produto_b.nome_de || matchingDuel.produto_b.nome) : (matchingDuel.produto_b.nome_es || matchingDuel.produto_b.nome);
+                const bannerTitle = isDe ? `Vollständiger Labor-Härtetest: ${dNomeA} vs ${dNomeB}` : `Auditoría técnica editorial completa: ${dNomeA} vs ${dNomeB}`;
                 const bannerDesc = isDe ? "Unsere Ingenieure haben beide Modelle in 45 Parametern geprüft. Klicken Sie hier für Messwerte, Zerlegbarkeit und Langzeit-Schwachstellen." : "Nuestros ingenieros han enfrentado ambos modelos en 45 variables de laboratorio. Haz clic para ver mediciones, desmontaje y análisis de fallos crónicos.";
                 const btnLabel = isDe ? "Testbericht öffnen" : "Leer Informe Editorial Completo";
 
@@ -736,10 +753,17 @@
                 const valA = dictA[k] || '-';
                 const valB = dictB[k] || '-';
                 
-                const labelInfo = specsLabels[k];
-                const label = labelInfo 
-                    ? (isDe ? labelInfo.de : labelInfo.es) 
-                    : k.replace(/_/g, ' ').toUpperCase();
+                const catObj = catalogoData.categorias ? catalogoData.categorias.find(c => c.id === currentCategory) : null;
+                let label = null;
+                if (catObj && catObj.labels_specs && catObj.labels_specs[k]) {
+                    label = isDe ? (catObj.labels_specs[k].de || catObj.labels_specs[k].es) : (catObj.labels_specs[k].es || catObj.labels_specs[k].de);
+                }
+                if (!label && specsLabels[k]) {
+                    label = isDe ? specsLabels[k].de : specsLabels[k].es;
+                }
+                if (!label) {
+                    label = k.replace(/_/g, ' ').toUpperCase();
+                }
 
                 const bgCls = i % 2 === 0 ? 'bg-white' : 'bg-nordic-canvas/40';
 
@@ -769,7 +793,7 @@
                                 </div>
                                 <div>
                                     <span class="text-xs font-mono font-bold text-nordic-petrol uppercase">${prodA.marca}</span>
-                                    <h3 class="text-lg sm:text-xl font-display font-extrabold text-nordic-navy leading-tight mt-0.5">${prodA.nome}</h3>
+                                    <h3 class="text-lg sm:text-xl font-display font-extrabold text-nordic-navy leading-tight mt-0.5">${nomeA}</h3>
                                     <span class="text-[11px] text-slate-500 font-mono block mt-1">ASIN: ${prodA.asin}</span>
                                 </div>
                             </div>
@@ -798,7 +822,7 @@
                                 </div>
                                 <div>
                                     <span class="text-xs font-mono font-bold text-slate-500 uppercase">${prodB.marca}</span>
-                                    <h3 class="text-lg sm:text-xl font-display font-extrabold text-nordic-navy leading-tight mt-0.5">${prodB.nome}</h3>
+                                    <h3 class="text-lg sm:text-xl font-display font-extrabold text-nordic-navy leading-tight mt-0.5">${nomeB}</h3>
                                     <span class="text-[11px] text-slate-500 font-mono block mt-1">ASIN: ${prodB.asin}</span>
                                 </div>
                             </div>
@@ -829,8 +853,8 @@
                             <thead>
                                 <tr class="bg-nordic-navy text-white font-mono text-[11px] uppercase tracking-wider">
                                     <th class="py-3 px-4 font-bold">${t.thFeature}</th>
-                                    <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${prodA.nome}</th>
-                                    <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${prodB.nome}</th>
+                                    <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${nomeA}</th>
+                                    <th class="py-3 px-4 font-bold border-l border-nordic-navyLight">${nomeB}</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-nordic-border">
@@ -844,7 +868,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white border border-nordic-border rounded-xl p-5 shadow-technical">
                         <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-3">
-                            <span class="font-display font-bold text-nordic-navy text-sm">${prodA.nome}</span>
+                            <span class="font-display font-bold text-nordic-navy text-sm">${nomeA}</span>
                             <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">${t.weaknessesBadge}</span>
                         </div>
                         <ul class="space-y-2 text-xs text-slate-700">
@@ -854,7 +878,7 @@
 
                     <div class="bg-white border border-nordic-border rounded-xl p-5 shadow-technical">
                         <div class="flex items-center justify-between pb-3 border-b border-nordic-border mb-3">
-                            <span class="font-display font-bold text-nordic-navy text-sm">${prodB.nome}</span>
+                            <span class="font-display font-bold text-nordic-navy text-sm">${nomeB}</span>
                             <span class="text-[10px] font-mono text-nordic-crimson font-bold bg-nordic-crimsonBg px-2 py-0.5 rounded">${t.weaknessesBadge}</span>
                         </div>
                         <ul class="space-y-2 text-xs text-slate-700">
@@ -886,7 +910,7 @@
                                             <img src="${d.produto_b.imagem_url}" class="w-10 h-10 object-contain">
                                         </div>
                                         <h5 class="font-display font-bold text-xs text-nordic-navy group-hover:text-nordic-emerald transition-colors line-clamp-2 mt-1">
-                                            ${d.produto_a.nome} vs ${d.produto_b.nome}
+                                            ${isDe ? (d.produto_a.nome_de || d.produto_a.nome) : (d.produto_a.nome_es || d.produto_a.nome)} vs ${isDe ? (d.produto_b.nome_de || d.produto_b.nome) : (d.produto_b.nome_es || d.produto_b.nome)}
                                         </h5>
                                     </div>
                                     <span class="text-[11px] font-mono font-bold text-nordic-amber mt-3 flex items-center justify-between pt-2 border-t border-nordic-border">
