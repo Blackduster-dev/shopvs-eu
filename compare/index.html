@@ -159,10 +159,19 @@
                 </div>
             </div>
 
+            <!-- Alerta quando ambos os produtos selecionados são iguais -->
+            <div id="same-product-inline-alert" class="hidden mt-5 p-4 rounded-xl bg-amber-50 border-2 border-amber-300 text-amber-900 flex items-start gap-3 transition-all">
+                <span class="material-symbols-outlined text-amber-600 text-[24px] shrink-0 mt-0.5">warning</span>
+                <div class="flex-1 text-xs sm:text-sm">
+                    <strong id="same-product-inline-title" class="font-bold font-display block text-nordic-navy">No puedes comparar un producto consigo mismo</strong>
+                    <span id="same-product-inline-desc" class="text-slate-600 block mt-0.5">Has seleccionado el mismo modelo en ambos selectores. Por favor, elige un producto diferente en el segundo selector para realizar el análisis comparativo.</span>
+                </div>
+            </div>
+
             <!-- Passo 3: Ação Primária de Comparação -->
             <div class="mt-6 pt-6 border-t border-nordic-border flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-2.5 text-xs font-mono text-slate-500 order-2 sm:order-1 text-center sm:text-left">
-                    <span class="w-2.5 h-2.5 rounded-full bg-nordic-emerald inline-block animate-pulse shrink-0"></span>
+                    <span id="status-indicator-dot" class="w-2.5 h-2.5 rounded-full bg-nordic-emerald inline-block animate-pulse shrink-0"></span>
                     <span id="label-engine-status">Motor técnico listo • 2 modelos seleccionados</span>
                 </div>
                 <button type="button" 
@@ -222,6 +231,11 @@
                 engineReady: "Motor técnico listo • 2 modelos seleccionados",
                 engineChanged: "Modelos actualizados • Haz clic para comparar",
                 calculating: "Calculando matriz...",
+                sameProductTitle: "No puedes comparar un producto consigo mismo",
+                sameProductDesc: "Has seleccionado el mismo modelo en ambos lados. Debes seleccionar un producto diferente para comparar sus magnitudes técnicas, puntos fuertes y fallos reportados.",
+                sameProductStatus: "Atención: Debes seleccionar un producto diferente para comparar",
+                sameProductBtn: "Selecciona otro modelo",
+                sameProductAlternatives: "O compara directamente con una de estas alternativas:",
                 prodA: "PRODUCTO #1",
                 prodB: "PRODUCTO #2",
                 modelCount: "modelos auditados",
@@ -249,6 +263,11 @@
                 engineReady: "Labor-Matrix bereit • 2 Modelle gewählt",
                 engineChanged: "Modelle aktualisiert • Klick zum Vergleichen",
                 calculating: "Matrix wird berechnet...",
+                sameProductTitle: "Sie können ein Produkt nicht mit sich selbst vergleichen",
+                sameProductDesc: "Sie haben auf beiden Seiten dasselbe Modell ausgewählt. Bitte wählen Sie ein unterschiedliches Modell, um Spezifikationen, Stärken und Schwachstellen zu vergleichen.",
+                sameProductStatus: "Hinweis: Sie müssen ein anderes Modell zum Vergleichen wählen",
+                sameProductBtn: "Anderes Modell wählen",
+                sameProductAlternatives: "Oder vergleichen Sie direkt mit einer dieser Alternativen:",
                 prodA: "PRODUKT #1",
                 prodB: "PRODUKT #2",
                 modelCount: "Modelle im Test",
@@ -369,6 +388,10 @@
             if (btnDoCompareText) btnDoCompareText.textContent = t.btnCompare;
             const engineStatusEl = document.getElementById('label-engine-status');
             if (engineStatusEl) engineStatusEl.textContent = t.engineReady;
+            const inlineTitle = document.getElementById('same-product-inline-title');
+            if (inlineTitle) inlineTitle.textContent = t.sameProductTitle;
+            const inlineDesc = document.getElementById('same-product-inline-desc');
+            if (inlineDesc) inlineDesc.textContent = t.sameProductDesc;
             document.getElementById('label-prod-a').textContent = t.prodA;
             document.getElementById('label-prod-b').textContent = t.prodB;
             document.getElementById('footer-copy').textContent = t.footerCopy;
@@ -476,36 +499,46 @@
         }
 
         function onProductSelect() {
-            const selectA = document.getElementById('select-product-a');
-            const selectB = document.getElementById('select-product-b');
-            if (selectA && selectB && selectA.value === selectB.value) {
-                const prods = getProductsByCategory(currentCategory);
-                const outro = prods.find(p => p.id !== selectA.value);
-                if (outro) selectB.value = outro.id;
-            }
-
-            const t = i18nCompare[currentMarket];
-            const statusEl = document.getElementById('label-engine-status');
-            if (statusEl) {
-                statusEl.textContent = t.engineChanged;
-            }
-
-            const btn = document.getElementById('btn-do-compare');
-            if (btn) {
-                btn.classList.add('ring-4', 'ring-nordic-amber/40');
-                setTimeout(() => {
-                    btn.classList.remove('ring-4', 'ring-nordic-amber/40');
-                }, 1000);
-            }
-
             renderComparison();
             syncUrlParams();
         }
 
+        function selectAlternativeProduct(altId) {
+            const selectB = document.getElementById('select-product-b');
+            if (selectB) {
+                selectB.value = altId;
+                renderComparison();
+                syncUrlParams();
+                executeComparison(true);
+            }
+        }
+
         function executeComparison(shouldScroll = true) {
+            const selectA = document.getElementById('select-product-a');
+            const selectB = document.getElementById('select-product-b');
+            const isSame = selectA && selectB && selectA.value === selectB.value;
             const btn = document.getElementById('btn-do-compare');
             const btnText = document.getElementById('btn-do-compare-text');
             const t = i18nCompare[currentMarket];
+
+            if (isSame) {
+                if (btn) {
+                    btn.classList.add('ring-4', 'ring-amber-400');
+                    setTimeout(() => {
+                        btn.classList.remove('ring-4', 'ring-amber-400');
+                    }, 800);
+                }
+                renderComparison();
+                syncUrlParams();
+
+                if (shouldScroll) {
+                    const inlineAlert = document.getElementById('same-product-inline-alert');
+                    if (inlineAlert) {
+                        inlineAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+                return;
+            }
 
             if (btn && btnText) {
                 btnText.textContent = t.calculating;
@@ -552,11 +585,93 @@
             const prodA = catalogoData.produtos.find(p => p.id === selectA.value);
             const prodB = catalogoData.produtos.find(p => p.id === selectB.value);
             const output = document.getElementById('comparison-output');
+            const inlineAlert = document.getElementById('same-product-inline-alert');
+            const inlineTitle = document.getElementById('same-product-inline-title');
+            const inlineDesc = document.getElementById('same-product-inline-desc');
+            const statusIndicator = document.getElementById('status-indicator-dot');
+            const statusEl = document.getElementById('label-engine-status');
+            const btn = document.getElementById('btn-do-compare');
+            const btnText = document.getElementById('btn-do-compare-text');
 
             if (!prodA || !prodB) return;
 
             const isDe = currentMarket === 'de';
             const t = i18nCompare[currentMarket];
+
+            // Cenário: Mesmo produto selecionado em A e B
+            if (prodA.id === prodB.id) {
+                if (inlineAlert) {
+                    inlineAlert.classList.remove('hidden');
+                    if (inlineTitle) inlineTitle.textContent = t.sameProductTitle;
+                    if (inlineDesc) inlineDesc.textContent = t.sameProductDesc;
+                }
+                if (statusIndicator) {
+                    statusIndicator.className = 'w-2.5 h-2.5 rounded-full bg-amber-500 inline-block animate-pulse shrink-0';
+                }
+                if (statusEl) {
+                    statusEl.textContent = t.sameProductStatus;
+                }
+                if (btnText) {
+                    btnText.textContent = t.sameProductBtn;
+                }
+
+                const alternatives = catalogoData.produtos.filter(p => p.categoria_id === currentCategory && p.id !== prodA.id);
+
+                let alternativesHtml = '';
+                if (alternatives.length > 0) {
+                    alternativesHtml = `
+                        <div class="w-full pt-6 mt-6 border-t border-nordic-border flex flex-col items-center">
+                            <span class="text-xs font-mono font-bold uppercase text-nordic-petrol tracking-wider mb-4 block">
+                                ${t.sameProductAlternatives}
+                            </span>
+                            <div class="flex flex-wrap justify-center gap-3 w-full">
+                                ${alternatives.map(alt => `
+                                    <button type="button" onclick="selectAlternativeProduct('${alt.id}')" class="px-4 py-3 rounded-xl border border-nordic-border hover:border-nordic-amber bg-nordic-canvas hover:bg-white text-nordic-navy text-xs sm:text-sm font-semibold flex items-center gap-3 shadow-sm hover:shadow transition-all group cursor-pointer">
+                                        <div class="w-10 h-10 bg-white rounded-lg p-1 border border-nordic-border flex items-center justify-center shrink-0">
+                                            <img src="${alt.imagem_url}" alt="${alt.nome}" class="w-full h-full object-contain">
+                                        </div>
+                                        <div class="text-left">
+                                            <span class="text-[10px] text-slate-500 font-mono block">${alt.marca}</span>
+                                            <span class="font-display font-bold group-hover:text-nordic-amber transition-colors">${alt.nome}</span>
+                                        </div>
+                                        <span class="material-symbols-outlined text-[18px] text-nordic-amber group-hover:translate-x-1 transition-transform ml-2">arrow_forward</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                output.innerHTML = `
+                    <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 sm:p-12 shadow-technical text-center flex flex-col items-center max-w-2xl mx-auto my-6">
+                        <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center mb-5 shadow-sm">
+                            <span class="material-symbols-outlined text-[36px]">swap_horiz</span>
+                        </div>
+                        <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-600 bg-amber-100/60 px-3 py-1 rounded-full mb-3">
+                            ${isDe ? 'VERGLEICHSFEHLER' : 'SELECCIÓN IDÉNTICA'}
+                        </span>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-nordic-navy mb-3">
+                            ${t.sameProductTitle}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+                            ${t.sameProductDesc}
+                        </p>
+                        ${alternativesHtml}
+                    </div>
+                `;
+                return;
+            }
+
+            // Caso produtos diferentes: ocultar aviso inline e restaurar status
+            if (inlineAlert) {
+                inlineAlert.classList.add('hidden');
+            }
+            if (statusIndicator) {
+                statusIndicator.className = 'w-2.5 h-2.5 rounded-full bg-nordic-emerald inline-block animate-pulse shrink-0';
+            }
+            if (btnText) {
+                btnText.textContent = t.btnCompare;
+            }
 
             // Verificar se existe um artigo editorial completo para esse confronto
             let matchingDuel = null;
