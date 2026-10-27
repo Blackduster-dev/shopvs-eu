@@ -1,6 +1,6 @@
 {
   "versao": "2026.2",
-  "total_produtos": 7,
+  "total_produtos": 9,
   "itens": [
     {
       "id": "delonghi_magnifica_s",
@@ -92,6 +92,32 @@
       "img": "/assets/products/dreame_d10s_pro.png",
       "link_es": "https://www.amazon.es/dp/B0BPG631W5?tag=shopvseu-21",
       "link_de": "https://www.amazon.de/dp/B0BPG631W5?tag=shopvseu-21"
+    },
+    {
+      "id": "comfee_mddf_20den7",
+      "cat": "deshumidificadores",
+      "cat_nome_es": "Deshumidificadores de Aire",
+      "cat_nome_de": "Luftentfeuchter & Bautrockner",
+      "marca": "Comfee",
+      "nome": "Comfee MDDF-20DEN7 (20L / 40m²)",
+      "asin": "B07KJX6RDK",
+      "score": "9.3",
+      "img": "/assets/products/comfee_mddf_20den7.png",
+      "link_es": "https://www.amazon.es/dp/B07KJX6RDK?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07KJX6RDK?tag=shopvseu-21"
+    },
+    {
+      "id": "pro_breeze_20l",
+      "cat": "deshumidificadores",
+      "cat_nome_es": "Deshumidificadores de Aire",
+      "cat_nome_de": "Luftentfeuchter & Bautrockner",
+      "marca": "Pro Breeze",
+      "nome": "Pro Breeze 20L Compresor PB-08",
+      "asin": "B077H1MZ35",
+      "score": "8.8",
+      "img": "/assets/products/pro_breeze_20l.png",
+      "link_es": "https://www.amazon.es/dp/B077H1MZ35?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B077H1MZ35?tag=shopvseu-21"
     }
   ]
 }

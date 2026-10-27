@@ -666,23 +666,61 @@ def render_article(artigo, lang="es"):
 
 
 
-def build_all():
+def atualizar_sitemap(duelos):
+    sitemap_path = os.path.join(BASE_DIR, "sitemap.xml")
+    base_url = "https://shopvs-eu.pages.dev"
+    static_urls = [
+        f"{base_url}/",
+        f"{base_url}/compare/",
+        f"{base_url}/legal/",
+        f"{base_url}/es/",
+        f"{base_url}/de/"
+    ]
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    ]
+    for url in static_urls:
+        xml_lines.append(f'  <url><loc>{url}</loc></url>')
+    for d in duelos:
+        slug_es = d.get("slug_es")
+        slug_de = d.get("slug_de")
+        if slug_es:
+            xml_lines.append(f'  <url><loc>{base_url}/es/{slug_es}.html</loc></url>')
+        if slug_de:
+            xml_lines.append(f'  <url><loc>{base_url}/de/{slug_de}.html</loc></url>')
+    xml_lines.append('</urlset>')
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(xml_lines) + "\n")
+    print(f"[OK] sitemap.xml atualizado com {len(duelos)} duelos!")
 
+def build_all():
     duelos_file = os.path.join(BASE_DIR, "data", "duelos.json")
+    duplo_file = os.path.join(BASE_DIR, "data", "produto_duplo.json")
+
+    duelos = []
     if os.path.exists(duelos_file):
         with open(duelos_file, "r", encoding="utf-8") as f:
             duelos = json.load(f)
-    else:
-        duplo_data = load_json("data/produto_duplo.json")
-        duelos = duplo_data if isinstance(duplo_data, list) else [duplo_data]
+
+    if os.path.exists(duplo_file):
+        with open(duplo_file, "r", encoding="utf-8") as f:
+            duplo_data = json.load(f)
+            novos = duplo_data if isinstance(duplo_data, list) else [duplo_data]
+            for n in novos:
+                if not any(d.get("slug_es") == n.get("slug_es") for d in duelos):
+                    duelos.append(n)
+        with open(duelos_file, "w", encoding="utf-8") as f:
+            json.dump(duelos, f, ensure_ascii=False, indent=2)
 
     os.makedirs(os.path.join(BASE_DIR, "es"), exist_ok=True)
-
     os.makedirs(os.path.join(BASE_DIR, "de"), exist_ok=True)
 
     for artigo in duelos:
         render_article(artigo, "es")
         render_article(artigo, "de")
+
+    atualizar_sitemap(duelos)
     
 
 

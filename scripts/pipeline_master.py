@@ -31,14 +31,31 @@ def obter_lista_duelos():
     d = carregar_json("data/produto_duplo.json")
     return d if isinstance(d, list) else [d]
 
+def verificar_pauta_mercado():
+    print("[0/4] Verificando Pauta de Mercado (Ponto 0)...")
+    pauta_path = os.path.join(BASE_DIR, "data", "pauta_mercado.json")
+    if not os.path.exists(pauta_path):
+        print("  -> [AVISO] data/pauta_mercado.json não encontrado. Execute a Skill 00 para pesquisar novas pautas.")
+        return False
+    try:
+        pauta = carregar_json("data/pauta_mercado.json")
+        status = pauta.get("status_pauta", "")
+        cat = pauta.get("analise_macro", {}).get("categoria_id", "")
+        print(f"  -> [OK] Pauta detectada: Categoria '{cat}' (Status: {status})")
+        return True
+    except Exception as e:
+        print(f"  -> [ERRO] data/pauta_mercado.json corrompido: {e}")
+        return False
+
 def verificar_skills():
     skills_dir = os.path.join(BASE_DIR, ".antigravity", "skills") if os.path.exists(os.path.join(BASE_DIR, ".antigravity", "skills")) else os.path.join(BASE_DIR, "skills")
     skills_esperadas = [
+        "00_pesquisador_mercado_eu.md",
         "01_garimpador_duplo_eu.md",
         "02_redator_bilingue_es_de.md",
         "03_distribuidor_pinterest_telegram.md"
     ]
-    print("[1/4] Verificando Skills do Antigravity...")
+    print("[1/4] Verificando Skills da Esteira Antigravity...")
     for s in skills_esperadas:
         p = os.path.join(skills_dir, s)
         if os.path.exists(p):
@@ -127,6 +144,7 @@ def rodar_esteira():
     print("=" * 60)
     print("   INICIANDO ESTEIRA DUAL-MARKET SHOPVS EU (ES + DE)")
     print("=" * 60)
+    verificar_pauta_mercado()
     verificar_skills()
     executar_indexador_e_build()
     config = carregar_json("config_afiliados.json")

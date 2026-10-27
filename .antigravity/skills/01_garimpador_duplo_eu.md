@@ -1,28 +1,32 @@
 ---
 name: 01_garimpador_duplo_eu
-description: Garimpeiro Unificado Europa para mapear pares de produtos de alto ticket na Espanha e Alemanha, alimentando o catálogo dinâmico e os duelos bilíngues do ShopVS EU.
+description: Garimpeiro Unificado Europa para mapear pares de produtos de alto ticket na Espanha e Alemanha, alimentando o catálogo dinâmico e os duelos bilíngues do ShopVS EU a partir da pauta de mercado do Ponto 0.
 ---
 # Skill: Garimpeiro Unificado Europa (Espanha & Alemanha)
 
 **ID:** `garimpador_duplo_eu`  
 **Função:** Encontrar pares de produtos concorrentes diretos e campeões de venda na Amazon Espanha (`.es`), mapear simultaneamente o ASIN na Amazon Alemanha (`.de`) e alimentar os arquivos `data/produto_duplo.json` e `data/catalogo_produtos.json` no formato 100% bilíngue (Castelhano e Hochdeutsch), sem nenhum texto em português.
 
+## REGRA FUNDAMENTAL DE ENTRADA (CONEXÃO PONTO 0 -> PONTO 1)
+O `Hunter_Agent_EU` (Ponto 1) **SÓ PODE INICIAR** lendo o arquivo `data/pauta_mercado.json` gerado pelo Ponto 0 (`00_pesquisador_mercado_eu.md`):
+1. **Verificação de Pauta:** Se `data/pauta_mercado.json` não existir ou `status_pauta != "PRONTA_PARA_GARIMPAGEM"`, interrompa a execução e solicite o Ponto 0.
+2. **Criação de Categoria Dinâmica:** Se `"existe_no_catalogo": false` em `data/pauta_mercado.json`, insira automaticamente o objeto `nova_categoria_metadata` dentro do array `"categorias"` de `data/catalogo_produtos.json`.
+3. **Chaves Obrigatórias do Comparador:** Ao preencher `specs_es`, `specs_de` e `labels_specs` em `data/catalogo_produtos.json` e `data/produto_duplo.json`, use estritamente as chaves técnicas definidas em `chaves_obrigatorias_comparador` pelo Ponto 0.
+
 ## Regras de Operação e Guardrails
 
-1. **Seleção Baseada em Categorias do Catálogo:**
-   - Priorizar as categorias ativas do `ShopVS EU` (`cafeteras`, `freidoras_aire`, `aspiradoras_robot`) ou criar uma nova categoria estruturada em `data/catalogo_produtos.json`.
-2. **Critérios de Filtro de Qualidade:**
-   - Avaliação mínima do produto: $\ge 4.1$ estrelas e alto volume de avaliações ($> 300$ reviews).
+1. **Critérios de Filtro de Qualidade:**
+   - Avaliação mínima do produto: $\ge 4.1$ estrelas e alto volume de avaliações ($> 100$ reviews).
    - Preço de referência: mínimo de €80 na Espanha e €100 na Alemanha para assegurar comissão atrativa.
-   - Selecionar sempre 2 concorrentes diretos (Produto A vs. Produto B) da mesma categoria e faixa de preço.
+   - Selecionar sempre 2 concorrentes diretos (Produto A vs. Produto B) da mesma categoria e faixa de preço recomendados na pauta.
    - **Proibição de Preço Fixo:** Nunca salvar valores numéricos em Euro nas especificações ou prós/contras.
-3. **Mapeamento de ASIN, Imagens e StoreID Global (`shopvseu-21`):**
+2. **Mapeamento de ASIN, Imagens e StoreID Global (`shopvseu-21`):**
    - Extrair o código ASIN (10 caracteres alfanuméricos) de cada produto.
    - Ler `config_afiliados.json` (StoreID ativo: `shopvseu-21` via Amazon EU Global Earning) e montar os links:
      - **ES:** `https://www.amazon.es/dp/{ASIN}?tag=shopvseu-21`
      - **DE:** `https://www.amazon.de/dp/{ASIN}?tag=shopvseu-21`
    - Salvar a imagem oficial do produto (alta resolução, idealmente 500x500px em fundo branco puro ou transparente) em `assets/products/{id_produto}.png`.
-4. **Extração de Reviews Reais e Tradução Técnica Nativa (Zero Português):**
+3. **Extração de Reviews Reais e Tradução Técnica Nativa (Zero Português):**
    - Coletar avaliações reais de compradores (5 estrelas vs. 1 a 3 estrelas) e sintetizar:
      - **3 Pontos Fortes Comprovados (`pros_es` e `pros_de`):** Vantagens técnicas e práticas reais.
      - **2 Defeitos Crônicos / Pontos de Atenção (`contras_es` e `contras_de`):** Falhas reais mencionadas pelos donos (gera autoridade estilo *Stiftung Warentest* / *OCU*).
@@ -36,9 +40,10 @@ O agente DEVE atualizar dois arquivos JSON mantendo a codificação UTF-8 intact
 {
   "slug_es": "marca-modelo-a-vs-marca-modelo-b",
   "slug_de": "marca-modelo-a-vs-marca-modelo-b-test",
+  "categoria_id": "identificador_categoria",
   "categoria_es": "Nome da Categoria em Espanhol",
   "categoria_de": "Nome da Categoria em Alemão",
-  "data_publicacao": "2026-10-26",
+  "data_publicacao": "2026-10-27",
   "queda_preco_detectada": true,
   "produto_a": {
     "id": "marca_modelo_a",
@@ -99,5 +104,5 @@ O agente DEVE atualizar dois arquivos JSON mantendo a codificação UTF-8 intact
 }
 ```
 
-### Saída 2: `data/catalogo_produtos.json` (Para a Busca da Home e Comparador `/compare/`)
-Adicionar ou atualizar os dois produtos dentro do array `"produtos"` de `data/catalogo_produtos.json`, usando as chaves padronizadas da categoria (`presion`, `molinillo`, `infusor`, `potencia`, `capacidad`, `succion`, etc.) tanto no objeto `"specs"` (em espanhol) quanto em `"specs_de"` (em alemão), além de `"score_badge_es"`, `"score_badge_de"`, `"pros_es"`, `"contras_es"`, `"pros_de"` e `"contras_de"`.
+### Saída 2: `data/catalogo_produtos.json`
+Atualizar o catálogo adicionando os novos produtos e, se aplicável, a nova categoria sob `categorias`.

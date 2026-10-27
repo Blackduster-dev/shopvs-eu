@@ -586,5 +586,144 @@
       "es": "El Roborock Q8 Max es el ganador en poder de succión y limpieza en alfombras, gracias a su sistema de doble rodillo DuoRoller que evita atascos de pelo. El Dreame D10s Pro resulta más práctico en hogares donde suele haber cables o calcetines en el suelo, ya que su cámara con IA los esquiva activamente.",
       "de": "Der Roborock Q8 Max sichert sich den Testsieg bei der reinen Saugleistung auf Teppichböden dank der DuoRoller-Doppelwalzen. Der Dreame D10s Pro ist die cleverere Alternative für unaufgeräumte Böden, da seine KI-Kamera Kabel und Schuhe zuverlässig umfährt."
     }
+  },
+  {
+    "slug_es": "comfee-mddf-20den7-vs-pro-breeze-20l",
+    "slug_de": "comfee-mddf-20den7-vs-pro-breeze-20l-test",
+    "categoria_id": "deshumidificadores",
+    "categoria_es": "Deshumidificadores de Aire",
+    "categoria_de": "Luftentfeuchter & Bautrockner",
+    "data_publicacao": "2026-10-27",
+    "queda_preco_detectada": true,
+    "produto_a": {
+      "id": "comfee_mddf_20den7",
+      "nome": "Comfee MDDF-20DEN7 (20L / 40m²)",
+      "marca": "Comfee",
+      "asin": "B07KJX6RDK",
+      "imagem_url": "/assets/products/comfee_mddf_20den7.png",
+      "link_es": "https://www.amazon.es/dp/B07KJX6RDK?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07KJX6RDK?tag=shopvseu-21",
+      "score_lab": "9.3",
+      "score_label": "TESTSIEGER · SEHR GUT",
+      "score_label_es": "TESTSIEGER · SOBRESALIENTE",
+      "score_label_de": "TESTSIEGER · SEHR GUT",
+      "specs_es": {
+        "Capacidad de Extracción": "20 L / 24h (30°C, 80% HR)",
+        "Depósito de Agua": "3.0 Litros (Parada automática)",
+        "Área Recomendada": "Hasta 40 m² (100 m³)",
+        "Potencia y Consumo": "360 W (Refrigerante R290)",
+        "Nivel Sonoro": "41 dB(A) en modo silencioso",
+        "Modo Secado de Ropa": "Turbo continuo con oscilación"
+      },
+      "specs_de": {
+        "Entfeuchtungsleistung": "20 L / 24h (bei 30°C, 80% r.F.)",
+        "Wassertank": "3,0 Liter (mit Abschaltautomatik)",
+        "Empfohlene Raumgröße": "Bis zu 40 m² (ca. 100 m³)",
+        "Leistungsaufnahme": "360 W (Kältemittel R290)",
+        "Geräuschpegel": "41 dB(A) im Flüsterbetrieb",
+        "Wäschetrocknungsmodus": "Kontinuierlicher Turbo-Wäschemodus"
+      },
+      "ficha_expandida_es": {
+        "Gas Refrigerante": "R290 (Ecológico GWP 3)",
+        "Rango Higrostato": "35% a 85% de humedad relativa",
+        "Filtro de Aire": "Malla lavable antipolvo extraíble",
+        "Drenaje Continuo": "Tubo de desagüe continuo incluido",
+        "Movilidad": "4 ruedas multidireccionales y asa oculta",
+        "Dimensiones y Peso": "35 x 24,5 x 51 cm (14.4 kg)"
+      },
+      "ficha_expandida_de": {
+        "Kältemittel": "R290 (Umweltneutral GWP 3)",
+        "Hygrostat-Bereich": "35% bis 85% relative Feuchte",
+        "Luftfilter": "Herausnehmbarer, abwaschbarer Staubfilter",
+        "Dauerablauf": "Kondensat-Ablaufschlauch im Lieferumfang",
+        "Mobilität": "4 Transportrollen & integrierter Tragegriff",
+        "Abmessungen & Gewicht": "35 x 24,5 x 51 cm (14,4 kg)"
+      },
+      "pros_es": [
+        "Consumo eléctrico reducido de solo 360W con refrigerante natural R290",
+        "Higrostato inteligente con rango de humedad regulable del 35% al 85%",
+        "Incluye manguera para drenaje continuo sin vaciar el depósito a mano"
+      ],
+      "contras_es": [
+        "El depósito de 3L requiere vaciado frecuente si la estancia supera el 80% de humedad",
+        "Ruedas multidireccionales rígidas que transmiten vibración en suelos de parquet antiguo"
+      ],
+      "pros_de": [
+        "Extrem sparsamer Stromverbrauch von nur 360W mit natürlichem R290 Kältemittel",
+        "Präziser Hygrostat mit stufenloser Ziel-Luftfeuchtigkeit von 35% bis 85%",
+        "Inklusive Dauer-Ablaufschlauch für unterbrechungsfreien Dauerbetrieb"
+      ],
+      "contras_de": [
+        "3-Liter-Wassertank muss bei extrem feuchten Räumen täglich geleert werden",
+        "Hartplastik-Rollen übertragen auf unebenem Dielenboden minimale Vibrationen"
+      ]
+    },
+    "produto_b": {
+      "id": "pro_breeze_20l",
+      "nome": "Pro Breeze 20L Compresor PB-08",
+      "marca": "Pro Breeze",
+      "asin": "B077H1MZ35",
+      "imagem_url": "/assets/products/pro_breeze_20l.png",
+      "link_es": "https://www.amazon.es/dp/B077H1MZ35?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B077H1MZ35?tag=shopvseu-21",
+      "score_lab": "8.8",
+      "score_label": "GUT (2.0) · GROSSER TANK",
+      "score_label_es": "NOTABLE (2.0) · DEPÓSITO XXL",
+      "score_label_de": "GUT (2.0) · GROSSER TANK",
+      "specs_es": {
+        "Capacidad de Extracción": "20 L / 24h (30°C, 80% HR)",
+        "Depósito de Agua": "5.5 Litros (Extracción frontal)",
+        "Área Recomendada": "Hasta 35 m² (85 m³)",
+        "Potencia y Consumo": "450 W (Compresor de alta presión)",
+        "Nivel Sonoro": "45 dB(A)",
+        "Modo Secado de Ropa": "Sensor automático de secado rápido"
+      },
+      "specs_de": {
+        "Entfeuchtungsleistung": "20 L / 24h (bei 30°C, 80% r.F.)",
+        "Wassertank": "5,5 Liter (Frontal entnehmbar)",
+        "Empfohlene Raumgröße": "Bis zu 35 m² (ca. 85 m³)",
+        "Leistungsaufnahme": "450 W (Hochdruck-Kompressor)",
+        "Geräuschpegel": "45 dB(A)",
+        "Wäschetrocknungsmodus": "Automatische Wäschetrocknungs-Funktion"
+      },
+      "ficha_expandida_es": {
+        "Gas Refrigerante": "R290",
+        "Indicador LED": "Luz frontal de 3 colores según humedad",
+        "Temporizador": "24 horas programable (encendido/apagado)",
+        "Bloqueo Infantil": "Función Child-Lock en panel táctil",
+        "Drenaje Continuo": "Manguera incluida de 1 metro",
+        "Dimensiones y Peso": "38 x 26 x 58 cm (15.0 kg)"
+      },
+      "ficha_expandida_de": {
+        "Kältemittel": "R290",
+        "LED-Indikator": "3-Farben Frontleuchte nach Luftfeuchtigkeit",
+        "Timer": "24-Stunden Zeitschaltuhr (Ein/Aus)",
+        "Kindersicherung": "Child-Lock Sperre am Bedienfeld",
+        "Dauerablauf": "1-Meter Ablaufschlauch enthalten",
+        "Abmessungen & Gewicht": "38 x 26 x 58 cm (15,0 kg)"
+      },
+      "pros_es": [
+        "Depósito masivo de 5.5 litros que minimiza los viajes para vaciar el agua",
+        "Temporizador de 24 horas y bloqueo infantil de seguridad en el panel táctil",
+        "Sensor LED de 3 colores que indica el nivel de humedad ambiental de un vistazo"
+      ],
+      "contras_es": [
+        "Consumo de 450W, un 25% superior en la factura eléctrica respecto a Comfee",
+        "Nivel sonoro de 45 dB ligeramente audible en dormitorios durante la noche"
+      ],
+      "pros_de": [
+        "Großer 5,5-Liter-Wassertank erspart häufiges manuelles Entleeren",
+        "24-Stunden-Timer und integrierte Kindersicherung am Touch-Display",
+        "3-Farben-LED-Sensor visualisiert den Feuchtigkeitsstatus auf einen Blick"
+      ],
+      "contras_de": [
+        "Stromaufnahme von 450W liegt ca. 25% über dem sparsameren Comfee-Modell",
+        "Mit 45 dB im Schlafzimmer bei absoluter Nachtruhe wahrnehmbar"
+      ]
+    },
+    "veredito_resumo": {
+      "es": "El Comfee MDDF-20DEN7 se corona ganador de la auditoría técnica gracias a su consumo contenido de 360W y menor sonoridad (41 dB), ideal para uso prolongado en salones y pisos. El Pro Breeze PB-08 es la alternativa idónea si buscas vaciar el agua con menor frecuencia gracias a su enorme tanque de 5.5 litros.",
+      "de": "Der Comfee MDDF-20DEN7 setzt sich im Labortest als Testsieger durch: Mit nur 360W Leistungsaufnahme und leisen 41 dB arbeitet er sparsamer und unauffälliger im Wohnalltag. Der Pro Breeze PB-08 punktet hingegen mit seinem riesigen 5,5-Liter-Wassertank für alle, die das manuelle Entleeren minimieren wollen."
+    }
   }
 ]

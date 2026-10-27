@@ -23,6 +23,14 @@
       "icone": "smart_toy",
       "descricao_es": "Navegación láser LiDAR, potencia de succión en Pascales y base de autovaciado.",
       "descricao_de": "LiDAR-Lasernavigation, Saugleistung in Pascal und automatische Absaugstation."
+    },
+    {
+      "id": "deshumidificadores",
+      "nome_es": "Deshumidificadores de Aire",
+      "nome_de": "Luftentfeuchter & Bautrockner",
+      "icone": "water_drop",
+      "descricao_es": "Comparativas técnicas de deshumidificadores de compresor para erradicar humedad y moho con bajo consumo.",
+      "descricao_de": "Technischer Vergleich von Kompressor-Luftentfeuchtern gegen Feuchtigkeit und Schimmel bei minimalem Stromverbrauch."
     }
   ],
   "produtos": [
@@ -382,6 +390,100 @@
         "deposito": "570 ml Staub / 235 ml Wasser",
         "dimensiones": "35,0 x 35,0 x 9,7 cm (3,6 kg)"
       }
+    },
+    {
+      "id": "comfee_mddf_20den7",
+      "categoria_id": "deshumidificadores",
+      "marca": "Comfee",
+      "nome": "Comfee MDDF-20DEN7 (20L / 40m²)",
+      "asin": "B07KJX6RDK",
+      "imagem_url": "/assets/products/comfee_mddf_20den7.png",
+      "score_lab": "9.3",
+      "score_badge_es": "TESTSIEGER • MEJOR EFICIENCIA",
+      "score_badge_de": "TESTSIEGER • ENERGIESPARER",
+      "link_es": "https://www.amazon.es/dp/B07KJX6RDK?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07KJX6RDK?tag=shopvseu-21",
+      "specs": {
+        "capacidad_extraccion": "20 L / 24h (30°C, 80% HR)",
+        "deposito_agua": "3.0 Litros (Parada automática)",
+        "area_recomendada": "Hasta 40 m² (100 m³)",
+        "potencia_consumo": "360 W (Refrigerante R290)",
+        "nivel_sonoro": "41 dB(A) en modo silencioso",
+        "secado_ropa": "Turbo continuo con oscilación"
+      },
+      "specs_de": {
+        "capacidad_extraccion": "20 L / 24h (bei 30°C, 80% r.F.)",
+        "deposito_agua": "3,0 Liter (mit Abschaltautomatik)",
+        "area_recomendada": "Bis zu 40 m² (ca. 100 m³)",
+        "potencia_consumo": "360 W (Kältemittel R290)",
+        "nivel_sonoro": "41 dB(A) im Flüsterbetrieb",
+        "secado_ropa": "Kontinuierlicher Turbo-Wäschemodus"
+      },
+      "pros_es": [
+        "Consumo eléctrico reducido de solo 360W con refrigerante natural R290",
+        "Higrostato inteligente con rango de humedad regulable del 35% al 85%",
+        "Incluye manguera para drenaje continuo sin vaciar el depósito a mano"
+      ],
+      "contras_es": [
+        "El depósito de 3L requiere vaciado frecuente si la estancia supera el 80% de humedad",
+        "Ruedas multidireccionales rígidas que transmiten vibración en suelos de parquet antiguo"
+      ],
+      "pros_de": [
+        "Extrem sparsamer Stromverbrauch von nur 360W mit natürlichem R290 Kältemittel",
+        "Präziser Hygrostat mit stufenloser Ziel-Luftfeuchtigkeit von 35% bis 85%",
+        "Inklusive Dauer-Ablaufschlauch für unterbrechungsfreien Dauerbetrieb"
+      ],
+      "contras_de": [
+        "3-Liter-Wassertank muss bei extrem feuchten Räumen täglich geleert werden",
+        "Hartplastik-Rollen übertragen auf unebenem Dielenboden minimale Vibrationen"
+      ]
+    },
+    {
+      "id": "pro_breeze_20l",
+      "categoria_id": "deshumidificadores",
+      "marca": "Pro Breeze",
+      "nome": "Pro Breeze 20L Compresor PB-08",
+      "asin": "B077H1MZ35",
+      "imagem_url": "/assets/products/pro_breeze_20l.png",
+      "score_lab": "8.8",
+      "score_badge_es": "NOTABLE • DEPÓSITO XXL",
+      "score_badge_de": "GUT (2.0) • GROSSER TANK",
+      "link_es": "https://www.amazon.es/dp/B077H1MZ35?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B077H1MZ35?tag=shopvseu-21",
+      "specs": {
+        "capacidad_extraccion": "20 L / 24h (30°C, 80% HR)",
+        "deposito_agua": "5.5 Litros (Extracción frontal)",
+        "area_recomendada": "Hasta 35 m² (85 m³)",
+        "potencia_consumo": "450 W (Compresor de alta presión)",
+        "nivel_sonoro": "45 dB(A)",
+        "secado_ropa": "Sensor automático de secado rápido"
+      },
+      "specs_de": {
+        "capacidad_extraccion": "20 L / 24h (bei 30°C, 80% r.F.)",
+        "deposito_agua": "5,5 Liter (Frontal entnehmbar)",
+        "area_recomendada": "Bis zu 35 m² (ca. 85 m³)",
+        "potencia_consumo": "450 W (Hochdruck-Kompressor)",
+        "nivel_sonoro": "45 dB(A)",
+        "secado_ropa": "Automatische Wäschetrocknungs-Funktion"
+      },
+      "pros_es": [
+        "Depósito masivo de 5.5 litros que minimiza los viajes para vaciar el agua",
+        "Temporizador de 24 horas y bloqueo infantil de seguridad en el panel táctil",
+        "Sensor LED de 3 colores que indica el nivel de humedad ambiental de un vistazo"
+      ],
+      "contras_es": [
+        "Consumo de 450W, un 25% superior en la factura eléctrica respecto a Comfee",
+        "Nivel sonoro de 45 dB ligeramente audible en dormitorios durante la noche"
+      ],
+      "pros_de": [
+        "Großer 5,5-Liter-Wassertank erspart häufiges manuelles Entleeren",
+        "24-Stunden-Timer und integrierte Kindersicherung am Touch-Display",
+        "3-Farben-LED-Sensor visualisiert den Feuchtigkeitsstatus auf einen Blick"
+      ],
+      "contras_de": [
+        "Stromaufnahme von 450W liegt ca. 25% über dem sparsameren Comfee-Modell",
+        "Mit 45 dB im Schlafzimmer bei absoluter Nachtruhe wahrnehmbar"
+      ]
     }
   ]
 }

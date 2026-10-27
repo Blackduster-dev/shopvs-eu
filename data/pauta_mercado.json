@@ -1,0 +1,43 @@
+{
+  "data_pesquisa": "2026-10-27",
+  "status_pauta": "PRONTA_PARA_GARIMPAGEM",
+  "analise_macro": {
+    "perfil_lucro_escolhido": "1_ALTO_GIRO",
+    "categoria_id": "deshumidificadores",
+    "existe_no_catalogo": false,
+    "comissao_estimada_amazon_eu": "4.5%",
+    "ticket_medio_alvo_eur": 185,
+    "score_ilr_calculado": 9.55,
+    "justificativa_seo_sazonalidade": "Pico de demanda estacional de otoño e invierno en España y Alemania. Alta intención de compra para combatir condensación y moho con bajo consumo eléctrico en interiores. Duelo directo entre los dos líderes indiscutibles de volumen en Amazon EU."
+  },
+  "nova_categoria_metadata": {
+    "id": "deshumidificadores",
+    "nome_es": "Deshumidificadores de Aire",
+    "nome_de": "Luftentfeuchter & Bautrockner",
+    "icone": "water_drop",
+    "descricao_es": "Comparativas técnicas de deshumidificadores de compresor para erradicar humedad y moho con bajo consumo.",
+    "descricao_de": "Technischer Vergleich von Kompressor-Luftentfeuchtern gegen Feuchtigkeit und Schimmel bei minimalem Stromverbrauch."
+  },
+  "chaves_obrigatorias_comparador": {
+    "capacidad_extraccion": { "es": "Capacidad de Extracción", "de": "Entfeuchtungsleistung" },
+    "deposito_agua": { "es": "Depósito de Agua", "de": "Wassertank" },
+    "area_recomendada": { "es": "Área Recomendada", "de": "Empfohlene Raumgröße" },
+    "potencia_consumo": { "es": "Potencia y Consumo", "de": "Leistungsaufnahme" },
+    "nivel_sonoro": { "es": "Nivel Sonoro", "de": "Geräuschpegel" },
+    "secado_ropa": { "es": "Modo Secado de Ropa", "de": "Wäschetrocknungsmodus" }
+  },
+  "duelo_recomendado": {
+    "produto_a_alvo": {
+      "marca": "Comfee",
+      "modelo_busca": "Comfee MDDF-20DEN7",
+      "termo_busca_es": "Comfee Deshumidificador 20L MDDF-20DEN7",
+      "termo_busca_de": "Comfee Luftentfeuchter 20L MDDF-20DEN7"
+    },
+    "produto_b_alvo": {
+      "marca": "Pro Breeze",
+      "modelo_busca": "Pro Breeze PB-08-EU",
+      "termo_busca_es": "Pro Breeze Deshumidificador 20L Compresor PB-08",
+      "termo_busca_de": "Pro Breeze 20L Luftentfeuchter PB-08"
+    }
+  }
+}
