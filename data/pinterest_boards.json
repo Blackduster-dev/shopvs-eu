@@ -1,0 +1,52 @@
+{
+  "conta_pinterest": "shopvs_eu",
+  "store_id_global": "shopvseu-21",
+  "dominio_hospedagem_imagens": "https://shopvs-eu.pages.dev/assets/pins",
+  "mercados": {
+    "DE": {
+      "amazon_domain": "amazon.de",
+      "moeda": "EUR",
+      "aviso_curto_pin": "(Affiliate-Link / #Anzeige)",
+      "pastas": {
+        "cozinha_cafe": "Kaffeevollautomaten & Küche Test DE",
+        "tech_casa_ferramentas": "Saugroboter, Smart Home & Technik Vergleich DE"
+      }
+    },
+    "ES": {
+      "amazon_domain": "amazon.es",
+      "moeda": "EUR",
+      "aviso_curto_pin": "(Enlace de afiliado / #Publicidad)",
+      "pastas": {
+        "cozinha_cafe": "Cafeteras Superautomáticas & Freidoras de Aire ES",
+        "tech_casa_ferramentas": "Aspiradores Robot, Bricolaje & Tecnología ES"
+      }
+    },
+    "FR": {
+      "amazon_domain": "amazon.fr",
+      "moeda": "EUR",
+      "aviso_curto_pin": "(Lien affilié / #Publicité)",
+      "pastas": {
+        "cozinha_cafe": "Machine à Café Grain & Friteuse Sans Huile Comparatif FR",
+        "tech_casa_ferramentas": "Aspirateur Robot, Outillage & High-Tech Comparatif FR"
+      }
+    },
+    "IT": {
+      "amazon_domain": "amazon.it",
+      "moeda": "EUR",
+      "aviso_curto_pin": "(Link di affiliazione / #Pubblicità)",
+      "pastas": {
+        "cozinha_cafe": "Macchine da Caffè & Friggitrici ad Aria Offerte IT",
+        "tech_casa_ferramentas": "Robot Aspirapolvere, Fai da Te & Tecnologia IT"
+      }
+    },
+    "UK": {
+      "amazon_domain": "amazon.co.uk",
+      "moeda": "GBP",
+      "aviso_curto_pin": "(Affiliate link / #Ad)",
+      "pastas": {
+        "cozinha_cafe": "Bean to Cup Coffee Machines & Air Fryers UK Reviews",
+        "tech_casa_ferramentas": "Robot Vacuums, Power Tools & Smart Home UK Deals"
+      }
+    }
+  }
+}
