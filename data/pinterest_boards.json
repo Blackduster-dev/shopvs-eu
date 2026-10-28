@@ -26,8 +26,8 @@
       "moeda": "EUR",
       "aviso_curto_pin": "(Lien affilié / #Publicité)",
       "pastas": {
-        "cozinha_cafe": "Machine à Café Grain & Friteuse Sans Huile Comparatif FR",
-        "tech_casa_ferramentas": "Aspirateur Robot, Outillage & High-Tech Comparatif FR"
+        "cozinha_cafe": "Machine à Café Grain & Friteuse Sans Huile FR",
+        "tech_casa_ferramentas": "Aspirateur Robot, Outillage & High-Tech FR"
       }
     },
     "IT": {
@@ -44,7 +44,7 @@
       "moeda": "GBP",
       "aviso_curto_pin": "(Affiliate link / #Ad)",
       "pastas": {
-        "cozinha_cafe": "Bean to Cup Coffee Machines & Air Fryers UK Reviews",
+        "cozinha_cafe": "Bean to Cup Coffee Machines & Air Fryers UK Review",
         "tech_casa_ferramentas": "Robot Vacuums, Power Tools & Smart Home UK Deals"
       }
     }
