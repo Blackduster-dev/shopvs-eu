@@ -1,4 +1,138 @@
 {
-  "categorias": [],
-  "produtos": []
+  "categorias": [
+    {
+      "id": "cafeteras",
+      "nome_es": "Cafeteras Superautomáticas",
+      "nome_de": "Kaffeevollautomaten",
+      "icone": "coffee",
+      "descricao_es": "Análisis técnico y pruebas de laboratorio de Cafeteras Superautomáticas.",
+      "descricao_de": "Unabhängige Tests und Benchmarks für Kaffeevollautomaten."
+    },
+    {
+      "id": "freidoras_aire",
+      "nome_es": "Freidoras de Aire (Airfryers)",
+      "nome_de": "Heißluftfritteusen",
+      "icone": "skillet",
+      "descricao_es": "Análisis técnico y pruebas de laboratorio de Freidoras de Aire (Airfryers).",
+      "descricao_de": "Unabhängige Tests und Benchmarks für Heißluftfritteusen."
+    },
+    {
+      "id": "aspiradoras_robot",
+      "nome_es": "Robots Aspiradores",
+      "nome_de": "Saugroboter",
+      "icone": "smart_toy",
+      "descricao_es": "Análisis técnico y pruebas de laboratorio de Robots Aspiradores.",
+      "descricao_de": "Unabhängige Tests und Benchmarks für Saugroboter."
+    }
+  ],
+  "produtos": [
+    {
+      "id": "delonghi_magnifica_s",
+      "categoria_id": "cafeteras",
+      "marca": "De'Longhi",
+      "nome": "De'Longhi Magnifica S ECAM 22.110.B Máquina de Café Superautomática",
+      "nome_es": "De'Longhi Magnifica S ECAM 22.110.B Máquina de Café Superautomática",
+      "nome_de": "De'Longhi Magnifica S ECAM 22.110.B Máquina de Café Superautomática",
+      "asin": "B00400OMU0",
+      "score_lab": "9.4",
+      "score_badge_es": "TESTSIEGER • SOBRESALIENTE",
+      "score_badge_de": "TESTSIEGER • SEHR GUT",
+      "imagem_url": "/assets/products/delonghi_magnifica_s.png",
+      "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=shopvseu-21",
+      "pros_es": [
+        "Excelente crema y aroma con café en grano recién molido",
+        "Mantenimiento y descalcificación sencillos",
+        "Construcción italiana duradera"
+      ],
+      "pros_de": [
+        "Perfekte Crema und Aromaintensität",
+        "Einfache manuelle Reinigung der Brühgruppe",
+        "Sehr langlebiges italienisches Mahlwerk"
+      ],
+      "defeito_cronico_es": "Depósito de agua requiere llenado frecuente y purga inicial de vapor un poco ruidosa.",
+      "defeito_cronico_de": "Wassertank muss bei häufigem Spülen öfter nachgefüllt werden."
+    },
+    {
+      "id": "cosori_dual_blaze",
+      "categoria_id": "freidoras_aire",
+      "marca": "Cosori",
+      "nome": "Cosori Dual Blaze 6.4L Freidora de Aire Doble Resistencia",
+      "nome_es": "Cosori Dual Blaze 6.4L Freidora de Aire Doble Resistencia",
+      "nome_de": "Cosori Dual Blaze 6.4L Freidora de Aire Doble Resistencia",
+      "asin": "B07N8N6C85",
+      "score_lab": "9.5",
+      "score_badge_es": "CALIDAD-PRECIO RATING",
+      "score_badge_de": "PREIS-LEISTUNGS-SIEGER",
+      "imagem_url": "/assets/products/cosori_dual_blaze.png",
+      "link_es": "https://www.amazon.es/dp/B07N8N6C85?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07N8N6C85?tag=shopvseu-21",
+      "pros_es": [
+        "Doble resistencia elimina la necesidad de remover cestillo",
+        "Cesta espaciosa para pollo entero",
+        "App VeSync con recetas"
+      ],
+      "pros_de": [
+        "Doppelheizung macht Wenden überflüssig",
+        "Großer Korb für ganze Mahlzeiten",
+        "Sehr gleichmäßige Hitzeverteilung"
+      ],
+      "defeito_cronico_es": "Tamaño voluminoso sobre la encimera y exterior se calienta ligeramente.",
+      "defeito_cronico_de": "Relativ großes Gehäuse, benötigt ausreichend Platz auf der Arbeitsplatte."
+    },
+    {
+      "id": "ninja_foodi_dualzone",
+      "categoria_id": "freidoras_aire",
+      "marca": "Ninja",
+      "nome": "Ninja Foodi DualZone 7.6L Freidora de Aire 2 Zonas Independientes",
+      "nome_es": "Ninja Foodi DualZone 7.6L Freidora de Aire 2 Zonas Independientes",
+      "nome_de": "Ninja Foodi DualZone 7.6L Freidora de Aire 2 Zonas Independientes",
+      "asin": "B08GC1QZ5W",
+      "score_lab": "9.3",
+      "score_badge_es": "DOBLE ZONA INDEPENDIENTE",
+      "score_badge_de": "TESTSIEGER • DUAL-ZONE",
+      "imagem_url": "/assets/products/ninja_foodi_dualzone.png",
+      "link_es": "https://www.amazon.es/dp/B08GC1QZ5W?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B08GC1QZ5W?tag=shopvseu-21",
+      "pros_es": [
+        "Permite cocinar plato principal y guarnición a tiempos diferentes terminando juntos",
+        "Acabado antiadherente cerámico duradero",
+        "Gran potencia de fritura crujiente"
+      ],
+      "pros_de": [
+        "Zwei verschiedene Speisen zeitgleich fertigstellen",
+        "Sehr robuste Keramik-Antihaftbeschichtung",
+        "Knusprige Ergebnisse ohne Öl"
+      ],
+      "defeito_cronico_es": "Cajones individuales no caben pollos enteros grandes (máx. 1.6 kg por cajón).",
+      "defeito_cronico_de": "Einzelne Zonen sind schmaler als ein großer XXL-Korb."
+    },
+    {
+      "id": "roborock_q8_max",
+      "categoria_id": "aspiradoras_robot",
+      "marca": "Roborock",
+      "nome": "Roborock Q8 Max Robot Aspirador y Fregador con Navegación LiDAR",
+      "nome_es": "Roborock Q8 Max Robot Aspirador y Fregador con Navegación LiDAR",
+      "nome_de": "Roborock Q8 Max Robot Aspirador y Fregador con Navegación LiDAR",
+      "asin": "B0C7VMFRDZ",
+      "score_lab": "9.6",
+      "score_badge_es": "LÍDER EN ASPIRACIÓN LIDAR",
+      "score_badge_de": "TESTSIEGER • SMARTE NAVIGATION",
+      "imagem_url": "/assets/products/roborock_q8_max.png",
+      "link_es": "https://www.amazon.es/dp/B0C7VMFRDZ?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0C7VMFRDZ?tag=shopvseu-21",
+      "pros_es": [
+        "Cepillos DuoRoller antienredos ideales para pelos de mascotas",
+        "Mapeo multinivel ultrasónico",
+        "Autonomía de hasta 240 minutos"
+      ],
+      "pros_de": [
+        "DuoRoller Bürsten verwickeln kaum Haare",
+        "Präzise 3D-Hinderniserkennung",
+        "Bis zu 240 Min Laufzeit"
+      ],
+      "defeito_cronico_es": "Mopa de fregado es pasiva (sin vibración sónica activa) en este modelo estándar.",
+      "defeito_cronico_de": "Wischfunktion ist passiv ohne Vibration wie bei der S-Serie."
+    }
+  ]
 }

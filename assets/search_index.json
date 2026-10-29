@@ -1,5 +1,66 @@
 {
   "versao": "2026.2",
-  "total_produtos": 0,
-  "itens": []
+  "total_produtos": 4,
+  "itens": [
+    {
+      "id": "delonghi_magnifica_s",
+      "cat": "cafeteras",
+      "cat_nome_es": "Cafeteras Superautomáticas",
+      "cat_nome_de": "Kaffeevollautomaten",
+      "marca": "De'Longhi",
+      "nome": "De'Longhi Magnifica S ECAM 22.110.B Máquina de Café Superautomática",
+      "nome_es": "De'Longhi Magnifica S ECAM 22.110.B Máquina de Café Superautomática",
+      "nome_de": "De'Longhi Magnifica S ECAM 22.110.B Máquina de Café Superautomática",
+      "asin": "B00400OMU0",
+      "score": "9.4",
+      "img": "/assets/products/delonghi_magnifica_s.png",
+      "link_es": "https://www.amazon.es/dp/B00400OMU0?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B00400OMU0?tag=shopvseu-21"
+    },
+    {
+      "id": "cosori_dual_blaze",
+      "cat": "freidoras_aire",
+      "cat_nome_es": "Freidoras de Aire (Airfryers)",
+      "cat_nome_de": "Heißluftfritteusen",
+      "marca": "Cosori",
+      "nome": "Cosori Dual Blaze 6.4L Freidora de Aire Doble Resistencia",
+      "nome_es": "Cosori Dual Blaze 6.4L Freidora de Aire Doble Resistencia",
+      "nome_de": "Cosori Dual Blaze 6.4L Freidora de Aire Doble Resistencia",
+      "asin": "B07N8N6C85",
+      "score": "9.5",
+      "img": "/assets/products/cosori_dual_blaze.png",
+      "link_es": "https://www.amazon.es/dp/B07N8N6C85?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B07N8N6C85?tag=shopvseu-21"
+    },
+    {
+      "id": "ninja_foodi_dualzone",
+      "cat": "freidoras_aire",
+      "cat_nome_es": "Freidoras de Aire (Airfryers)",
+      "cat_nome_de": "Heißluftfritteusen",
+      "marca": "Ninja",
+      "nome": "Ninja Foodi DualZone 7.6L Freidora de Aire 2 Zonas Independientes",
+      "nome_es": "Ninja Foodi DualZone 7.6L Freidora de Aire 2 Zonas Independientes",
+      "nome_de": "Ninja Foodi DualZone 7.6L Freidora de Aire 2 Zonas Independientes",
+      "asin": "B08GC1QZ5W",
+      "score": "9.3",
+      "img": "/assets/products/ninja_foodi_dualzone.png",
+      "link_es": "https://www.amazon.es/dp/B08GC1QZ5W?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B08GC1QZ5W?tag=shopvseu-21"
+    },
+    {
+      "id": "roborock_q8_max",
+      "cat": "aspiradoras_robot",
+      "cat_nome_es": "Robots Aspiradores",
+      "cat_nome_de": "Saugroboter",
+      "marca": "Roborock",
+      "nome": "Roborock Q8 Max Robot Aspirador y Fregador con Navegación LiDAR",
+      "nome_es": "Roborock Q8 Max Robot Aspirador y Fregador con Navegación LiDAR",
+      "nome_de": "Roborock Q8 Max Robot Aspirador y Fregador con Navegación LiDAR",
+      "asin": "B0C7VMFRDZ",
+      "score": "9.6",
+      "img": "/assets/products/roborock_q8_max.png",
+      "link_es": "https://www.amazon.es/dp/B0C7VMFRDZ?tag=shopvseu-21",
+      "link_de": "https://www.amazon.de/dp/B0C7VMFRDZ?tag=shopvseu-21"
+    }
+  ]
 }

@@ -1,1 +1,151 @@
-{}
+{
+  "slug_es": "cosori-dual-blaze-vs-ninja-foodi-dualzone",
+  "slug_de": "cosori-dual-blaze-vs-ninja-foodi-dualzone-test",
+  "categoria_id": "freidoras_aire",
+  "categoria_es": "Freidoras de Aire (Airfryers)",
+  "categoria_de": "Heißluftfritteusen",
+  "data_publicacao": "2026-10-28",
+  "queda_preco_detectada": true,
+  "produto_a": {
+    "id": "cosori_dual_blaze",
+    "categoria_id": "freidoras_aire",
+    "marca": "Cosori",
+    "nome": "Cosori Dual Blaze 6.4L",
+    "nome_es": "Cosori Dual Blaze 6.4L Doble Resistencia",
+    "nome_de": "Cosori Dual Blaze Heißluftfritteuse 6,4L",
+    "asin": "B07N8N6C85",
+    "imagem_url": "/assets/products/cosori_dual_blaze.png",
+    "link_es": "https://www.amazon.es/dp/B07N8N6C85?tag=shopvseu-21",
+    "link_de": "https://www.amazon.de/dp/B07N8N6C85?tag=shopvseu-21",
+    "score_lab": "9.5",
+    "score_label": "TESTSIEGER • SEHR GUT",
+    "score_label_es": "TESTSIEGER • SOBRESALIENTE",
+    "score_label_de": "TESTSIEGER • SEHR GUT",
+    "score_badge_es": "Mejor Horneado: Doble Resistencia 360°",
+    "score_badge_de": "Beste Hitzeverteilung: Dual-Heizelement",
+    "specs": {
+      "capacidad": "6.4 L (Cesta única XXL)",
+      "potencia": "1700 W",
+      "resistencias": "Doble (Superior e Inferior con control independiente)",
+      "temperatura": "Hasta 205 °C",
+      "conectividad": "Wi-Fi con App VeSync y control por voz"
+    },
+    "specs_es": {
+      "Capacidad Total": "6.4 L (Cesta única XXL)",
+      "Potencia Nominal": "1700 W de bajo consumo eficiente",
+      "Tecnología de Resistencia": "Doble Resistencia 360 ThermoIQ (Superior + Inferior)",
+      "Rango de Temperatura": "35 °C a 205 °C",
+      "Conectividad Smart": "Wi-Fi con App VeSync y recetas en español",
+      "Dimensiones y Peso": "29,7 x 32,7 x 35,2 cm • 6.2 kg"
+    },
+    "specs_de": {
+      "Gesamtkapazität": "6,4 Liter (XXL-Einzelgarkorb)",
+      "Nennleistung": "1700 Watt energieeffizient",
+      "Heiztechnologie": "360 ThermoIQ Dual-Heizelemente (Oben + Unten)",
+      "Temperaturbereich": "35 °C bis 205 °C",
+      "Smart-Funktionen": "WLAN-Konnektivität mit VeSync App & Sprachsteuerung",
+      "Abmessungen & Gewicht": "29,7 x 32,7 x 35,2 cm • 6,2 kg"
+    },
+    "ficha_expandida_es": {
+      "Ventaja Termodinámica": "La resistencia inferior dora la base sin necesidad de agitar la cesta a mitad de cocción.",
+      "Material del Cestillo": "Aluminio fundido antiadherente de 3 capas libre de PFOA y BPA, apto para lavavajillas.",
+      "Programas Predefinidos": "12 funciones de un solo toque: Pollo, Carne, Pescado, Verduras, Patatas, Postres y Mantener caliente."
+    },
+    "ficha_expandida_de": {
+      "Thermodynamischer Vorteil": "Unteres Heizelement bräunt Speisen von unten ohne manuelles Wenden oder Schütteln.",
+      "Korbmaterial": "3-lagige PFOA-freie Antihaftbeschichtung aus robustem Aluguss, spülmaschinenfest.",
+      "Voreingestellte Programme": "12 One-Touch-Programme für Geflügel, Fleisch, Fisch, Gemüse, Pommes und Warmhalten."
+    },
+    "pros_es": [
+      "Doble resistencia superior e inferior: elimina por completo la necesidad de remover la comida",
+      "Gran cesta cuadrada de 6.4L donde cabe un pollo entero de 2.5 kg o molde de repostería",
+      "Control Wi-Fi para monitorizar la cocción desde el smartphone con notificaciones"
+    ],
+    "contras_es": [
+      "No permite cocinar dos alimentos a temperaturas distintas simultáneamente",
+      "Chasis exterior voluminoso que requiere espacio despejado en la encimera"
+    ],
+    "pros_de": [
+      "Doppelheizelemente oben und unten: kein Schütteln oder Wenden des Garguts nötig",
+      "Großer eckiger 6,4L XXL-Korb fasst ganze Hähnchen oder große Backformen",
+      "Smarte WLAN-Steuerung mit Rezeptdatenbank und Fertigstellungsbenachrichtigung"
+    ],
+    "contras_de": [
+      "Keine getrennten Garzonen für zwei verschiedene Gerichte gleichzeitig",
+      "Relativ breites Gehäuse benötigt ausreichend Stellfläche in der Küche"
+    ]
+  },
+  "produto_b": {
+    "id": "ninja_foodi_dualzone",
+    "categoria_id": "freidoras_aire",
+    "marca": "Ninja",
+    "nome": "Ninja Foodi DualZone AF300EU",
+    "nome_es": "Ninja Foodi DualZone 7.6L (AF300EU)",
+    "nome_de": "Ninja Foodi DualZone Heißluftfritteuse 7,6L (AF300EU)",
+    "asin": "B08GC1QZ5W",
+    "imagem_url": "/assets/products/ninja_foodi_dualzone.png",
+    "link_es": "https://www.amazon.es/dp/B08GC1QZ5W?tag=shopvseu-21",
+    "link_de": "https://www.amazon.de/dp/B08GC1QZ5W?tag=shopvseu-21",
+    "score_lab": "9.3",
+    "score_label": "GUT • DUAL-ZONE",
+    "score_label_es": "NOTABLE ALTO • DOBLE ZONA",
+    "score_label_de": "GUT • DUAL-ZONE",
+    "score_badge_es": "Más Versátil: 2 Zonas con Sync Finish",
+    "score_badge_de": "Höchste Flexibilität: 2 getrennte Zonen",
+    "specs": {
+      "capacidad": "7.6 L (2 cajones independientes de 3.8L)",
+      "potencia": "2400 W",
+      "resistencias": "Doble zona térmica individual con ventiladores dedicados",
+      "temperatura": "Hasta 240 °C con modo Max Crisp",
+      "conectividad": "Control manual digital con función Sync Finish y Match Cook"
+    },
+    "specs_es": {
+      "Capacidad Total": "7.6 L (2 cajones independientes de 3.8 L)",
+      "Potencia Nominal": "2400 W de alto rendimiento",
+      "Tecnología de Resistencia": "Doble circuito de convección independiente por cajón",
+      "Rango de Temperatura": "40 °C a 240 °C (Modo Max Crisp para congelados)",
+      "Conectividad Smart": "Panel táctil con sincronización automática Sync Finish",
+      "Dimensiones y Peso": "31,5 x 38,0 x 36,0 cm • 8.2 kg"
+    },
+    "specs_de": {
+      "Gesamtkapazität": "7,6 Liter (2 separate Schubladen à 3,8L)",
+      "Nennleistung": "2400 Watt High-Performance",
+      "Heiztechnologie": "Unabhängige Heißluftzirkulation pro Garzone",
+      "Temperaturbereich": "40 °C bis 240 °C (Max Crisp Technologie)",
+      "Smart-Funktionen": "Digitales Bedienfeld mit Sync-Finish & Match-Cook Funktion",
+      "Abmessungen & Gewicht": "31,5 x 38,0 x 36,0 cm • 8,2 kg"
+    },
+    "ficha_expandida_es": {
+      "Ventaja Termodinámica": "Permite asar carne en una zona y preparar patatas o verduras en la otra, finalizando exactamente al mismo tiempo.",
+      "Material del Cestillo": "Cajones con revestimiento cerámico antiadherente de alta resistencia al calor sin PTFE.",
+      "Programas Predefinidos": "6 funciones de cocción: Max Crisp, Air Fry, Roast, Reheat, Dehydrate y Bake."
+    },
+    "ficha_expandida_de": {
+      "Thermodynamischer Vorteil": "Fleisch und Beilagen mit völlig unterschiedlichen Garzeiten punktgenau zeitgleich servierbereit.",
+      "Korbmaterial": "Keramik-Antihaftbeschichtung ohne PTFE, kratzfest und spülmaschinengeeignet.",
+      "Voreingestellte Programme": "6 Zubereitungsarten: Max Crisp, Heißluft-Frittieren, Braten, Aufwärmen, Dörren und Backen."
+    },
+    "pros_es": [
+      "Función Sync Finish: cocina dos platos diferentes a temperaturas y tiempos distintos y los sirve calientes a la vez",
+      "Potencia extrema de 2400W con temperatura de hasta 240 °C para un crujido superior",
+      "Recubrimiento cerámico antiadherente de grado profesional libre de químicos dañinos"
+    ],
+    "contras_es": [
+      "Los cajones individuales son más estrechos (no apto para piezas muy anchas o aves enteras grandes)",
+      "Mayor consumo eléctrico instantáneo (2400W) al usar ambas zonas a máxima potencia"
+    ],
+    "pros_de": [
+      "Sync-Finish Funktion serviert zwei völlig unterschiedliche Speisen exakt zeitgleich heiß",
+      "Enorme 2400W Leistung mit bis zu 240 °C für extrem knusprige Texturen",
+      "Hochwertige Keramikbeschichtung ohne bedenkliche Schadstoffe"
+    ],
+    "contras_de": [
+      "Schmalere Schubladenbreite begrenzt das Einlegen von großen ganzen Hähnchen",
+      "Höhere Leistungsaufnahme bei Vollast beider Zonen"
+    ]
+  },
+  "veredito_resumo": {
+    "es": "La Cosori Dual Blaze es la ganadora indiscutible en uniformidad de cocción y comodidad diaria gracias a su doble resistencia superior e inferior que dora por ambos lados sin necesidad de agitar la cesta. La Ninja Foodi DualZone es la mejor opción para familias que buscan máxima versatilidad culinaria, permitiendo preparar un menú completo con plato principal y guarnición sincronizados al segundo con su tecnología Sync Finish.",
+    "de": "Die Cosori Dual Blaze überzeugt im Labortest mit der gleichmäßigsten Hitzeentwicklung: Die innovative Doppelheizung bräunt Speisen perfekt von beiden Seiten, ganz ohne lästiges Schütteln des Korbes. Die Ninja Foodi DualZone ist der König der Vielseitigkeit für Familien, da sie dank Sync-Finish-Technologie Hauptgericht und Beilage mit unterschiedlichen Garzeiten zeitgleich auf den Punkt serviert."
+  }
+}
